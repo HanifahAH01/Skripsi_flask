@@ -1,0 +1,732 @@
+/* ======== Google Style ======== */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* ======== Global Style ========*/
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --gray: #F6F5FF;
+    --gray2: #E4E9F7;
+    --dark_blue: #263997;
+    --light-blue: #4CA2D9;
+
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ======== Logo Image Styles ======== */
+.logo-img {
+    max-width: 75%;
+    max-height: 75%;
+    width: auto;
+    height: auto;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* ======== Navigition ======== */
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--dark_blue);
+    border-left: 10px solid var(--dark_blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li:nth-child(4) {
+    margin-bottom: 200px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li button {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+    border: none;
+    background: transparent;
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--black1);
+}
+
+.navigation ul li:hover button,
+.navigation ul li.hovered button {
+    color: var(--black1);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li button .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li button .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li button .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li a .title-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.navigation ul li a .title-brand b {
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+/* ========= Footer ============= */
+.navigation footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--dark_blue);
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+/* Style untuk link dalam footer */
+.navigation footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.navigation footer a:hover {
+    text-decoration: underline;
+}
+
+/* Gaya untuk Tautan Sosial Media */
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--white);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: var(--blue);
+}
+
+/* ======== Dark Mode ======== */
+.dark-mode .navigation {
+    background-color: var(--black1);
+    border-color: var(--black1);
+}
+
+
+.dark-mode .navigation ul li:hover,
+.dark-mode .navigation ul li.hovered {
+    background-color: var(--black2);
+}
+
+.dark-mode .navigation ul li a {
+    color: var(--black1);
+}
+
+.dark-mode .navigation ul li a .icon ion-icon,
+.dark-mode .navigation ul li button .icon ion-icon {
+    color: var(--white);
+}
+
+.dark-mode .navigation ul li:hover a .icon ion-icon,
+.dark-mode .navigation ul li.hovered button .icon ion-icon {
+    color: var(--black1);
+}
+
+.dark-mode .navigation ul li a .title,
+.dark-mode .navigation ul li button .title,
+.dark-mode .navigation ul li a .title-brand {
+    color: var(--white);
+}
+
+.dark-mode .navigation ul li:hover a .title,
+.dark-mode .navigation ul li:hover button .title,
+.dark-mode .navigation ul li:hover a .title-brand,
+.dark-mode .navigation ul li.hovered a .title,
+.dark-mode .navigation ul li.hovered button .title,
+.dark-mode .navigation ul li.hovered a .title-brand {
+    color: var(--black1);
+}
+
+.dark-mode .toggle ion-icon {
+    color: var(--black1);
+}
+
+.dark-mode .search label input {
+    background-color: #222;
+    color: #fff;
+    border-color: #333;
+}
+
+.dark-mode .user {
+    border-color: #444;
+}
+
+.dark-mode .user img {
+    filter: brightness(0.8);
+}
+
+.dark-mode .details .recentOrders,
+.dark-mode .details .recentCustomers {
+    background-color: var(--white);
+    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .text-content .side-text p,
+.dark-mode .text-content .side-text h1,
+.dark-mode .text-content .side-text h2,
+.dark-mode .text-content .down-text p {
+    color: var(--white);
+}
+
+.dark-mode .main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--black2);
+    transition: 0.5s;
+}
+
+.dark-mode .navigation ul li:hover a::before,
+.dark-mode .navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover button::before,
+.dark-mode .navigation ul li.hovered button::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover a::after,
+.dark-mode .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover button::after,
+.dark-mode .navigation ul li.hovered button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--black1);
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+/* Dark mode Kapasitas */
+.dark-mode .details .cardHeader h2 {
+    color: var(--black1);
+}
+
+
+.dark-mode .details .cardHeader .btn {
+    background: var(--black2);
+    color: var(--black1);
+}
+
+.dark-mode .details table {
+    color: var(--black1);
+}
+
+.dark-mode .details table thead td {
+    color: var(--black1);
+}
+
+.dark-mode .details .recentOrders table tr {
+    color: var(--black1);
+}
+
+.dark-mode .details .recentOrders table tbody tr:hover {
+    background: var(--black2);
+    color: var(--white);
+}
+
+.dark-mode .details .status {
+    color: var(--white);
+}
+
+/* Style untuk link dalam footer */
+.dark-mode .navigation footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.dark-mode .navigation footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/* =========== Curve outside =========== */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+
+}
+
+.navigation ul li:hover button::before,
+.navigation ul li.hovered button::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover button::after,
+.navigation ul li.hovered button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+/* ================ Main ============== */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    overflow-y: auto;
+    /* Tambahkan overflow-y: auto */
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========= Details ============= */
+.details {
+    position: relative;
+    width: 1850px;
+    padding: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.details .recentOrders {
+    position: relative;
+    width: 100%;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.details .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+.details table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td {
+    font-weight: 600;
+}
+
+
+.details .recentOrders table tr {
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentOrders table tbody tr:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.details .recentOrders table tr td {
+    padding: 10px;
+    text-align: center;
+}
+
+.status.deliveres {
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending {
+    padding: 2px 4px;
+    background: #e9b10a;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.return {
+    padding: 2px 4px;
+    background: #f00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.inProgress {
+    padding: 2px 4px;
+    background: #1795ce;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentCustomers {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.recentCustomers .imgBx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* Gaya CSS untuk pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Latar belakang putih transparan */
+    z-index: 9999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.btn,
+select {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #2a2185;
+    /* Sesuaikan dengan warna yang diinginkan */
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover,
+select:hover {
+    background-color: #263997;
+    /* Sesuaikan dengan warna yang diinginkan */
+}

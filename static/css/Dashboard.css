@@ -1,0 +1,732 @@
+/* ======== Google Style ======== */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* ======== Global Style ========*/
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #2a2185;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --gray: #F6F5FF;
+    --gray2: #E4E9F7;
+    --dark_blue: #263997;
+    --light-blue: #4CA2D9;
+
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ======== Logo Image Styles ======== */
+.logo-img {
+    max-width: 75%;
+    max-height: 75%;
+    width: auto;
+    height: auto;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* ======== Navigition ======== */
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--dark_blue);
+    border-left: 10px solid var(--dark_blue);
+    transition: 0.5s;
+    overflow: hidden;
+    /* border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; */
+
+}
+
+.navigation.active {
+    width: 80px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+    background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li:nth-child(4) {
+    margin-bottom: 200px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li button {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+    border: none;
+    background: transparent;
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: var(--black1);
+}
+
+.navigation ul li:hover button,
+.navigation ul li.hovered button {
+    color: var(--black1);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li button .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li button .icon ion-icon {
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li button .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li a .title-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.navigation ul li a .title-brand b {
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+/* ========= Footer ============= */
+
+.navigation footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--dark_blue);
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+/* Style untuk link dalam footer */
+.navigation footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.navigation footer a:hover {
+    text-decoration: underline;
+}
+
+/* Gaya untuk Tautan Sosial Media */
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--white);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: var(--blue);
+}
+
+/* ======== Dark Mode ======== */
+.dark-mode .navigation {
+    background-color: var(--black1);
+    /* Ubah warna latar belakang navigasi menjadi gelap */
+    border-color: var(--black1);
+    /* Ubah warna border menjadi gelap */
+}
+
+
+.dark-mode .navigation ul li:hover,
+.dark-mode .navigation ul li.hovered {
+    background-color: var(--black2);
+    /* Ubah warna latar belakang item navigasi saat dihover */
+}
+
+.dark-mode .navigation ul li a {
+    color: var(--black1);
+    /* Ubah warna teks item navigasi menjadi putih */
+}
+
+.dark-mode .navigation ul li a .icon ion-icon,
+.dark-mode .navigation ul li button .icon ion-icon {
+    color: var(--white);
+    /* Mengubah warna ikon menjadi putih saat mode gelap aktif */
+}
+
+.dark-mode .navigation ul li:hover a .icon ion-icon,
+.dark-mode .navigation ul li.hovered button .icon ion-icon {
+    color: var(--black1);
+    /* Mengubah warna ikon menjadi putih saat mode gelap aktif */
+}
+
+.dark-mode .navigation ul li a .title,
+.dark-mode .navigation ul li button .title,
+.dark-mode .navigation ul li a .title-brand {
+    color: var(--white);
+    /* Mengubah warna teks judul menjadi putih saat mode gelap aktif */
+}
+
+.dark-mode .navigation ul li:hover a .title,
+.dark-mode .navigation ul li:hover button .title,
+.dark-mode .navigation ul li:hover a .title-brand,
+.dark-mode .navigation ul li.hovered a .title,
+.dark-mode .navigation ul li.hovered button .title,
+.dark-mode .navigation ul li.hovered a .title-brand {
+    color: var(--black1);
+    /* Mengubah warna teks judul menjadi putih saat mode gelap aktif */
+}
+
+.dark-mode .toggle ion-icon {
+    color: var(--black1);
+    /* Ubah warna ikon toggle menjadi putih */
+}
+
+.dark-mode .search label input {
+    background-color: #222;
+    /* Ubah warna latar belakang input pencarian menjadi gelap */
+    color: #fff;
+    /* Ubah warna teks input pencarian menjadi putih */
+    border-color: #333;
+    /* Ubah warna border input pencarian menjadi gelap */
+}
+
+.dark-mode .user {
+    border-color: #444;
+    /* Ubah warna border foto pengguna menjadi gelap */
+}
+
+.dark-mode .user img {
+    filter: brightness(0.8);
+    /* Reduksi kecerahan foto pengguna untuk penyesuaian mode gelap */
+}
+
+.dark-mode .details .recentOrders {
+    background-color: #222;
+    /* Ubah warna latar belakang area detail menjadi gelap */
+    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
+    /* Atur bayangan menjadi putih untuk kontras */
+}
+
+.dark-mode .text-content .side-text p,
+.dark-mode .text-content .side-text h1,
+.dark-mode .text-content .side-text h2,
+.dark-mode .text-content .down-text p {
+    /* Ubah warna teks konten menjadi putih */
+    color: var(--white);
+}
+
+.dark-mode .main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--black2);
+    transition: 0.5s;
+}
+
+.dark-mode .navigation ul li:hover a::before,
+.dark-mode .navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover button::before,
+.dark-mode .navigation ul li.hovered button::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover a::after,
+.dark-mode .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover button::after,
+.dark-mode .navigation ul li.hovered button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--black1);
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+/* Style untuk link dalam footer */
+.dark-mode .navigation footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.dark-mode .navigation footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========== Curve outside =========== */
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+
+}
+
+.navigation ul li:hover button::before,
+.navigation ul li.hovered button::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.navigation ul li:hover button::after,
+.navigation ul li.hovered button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+
+/* ================ Main ============== */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    /* background: #ccc; */
+    /* top: 0; */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========= Details ============= */
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    /* display: grid; */
+    grid-template-columns: 2fr 1fr;
+    /* grid-gap: 30px; */
+    /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    /* width: 1580px; */
+    background: var(--gray2);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.details .cardHeader {
+    display: flex;
+    top: 0;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.cardHeader img {
+    width: 400px;
+    /* Atur lebar gambar */
+    height: auto;
+    /* Biarkan ketinggian gambar menyesuaikan proporsi */
+    margin-left: 20px;
+    /* Beri jarak antara teks dan gambar */
+    /* margin-top: 0; */
+}
+
+.text-content {
+    margin-left: 200px;
+    margin-top: 35px;
+    /* align-items: center; */
+}
+
+.text-content .side-text h1 {
+    margin-left: 110px;
+    font-size: 2.3em;
+    /* align-items: center; */
+}
+
+.text-content .side-text h2 {
+    margin-left: -10px;
+    font-size: 2.3em;
+    /* align-items: center; */
+}
+
+.text-content h2 {
+    margin-left: -50px;
+    font-size: 1.8em;
+}
+
+.text-content .side-text p {
+    margin-left: -150px;
+    font-size: 1.4em;
+    text-align: justify;
+}
+
+.text-content .down-text p {
+    margin-left: -590px;
+    font-size: 1.3em;
+    text-align: justify;
+    /* margin-top: px; */
+    /* color: #f00; */
+}
+
+/* ======= Cards ======= */
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--blue);
+
+}
+
+.cardBox .card .cardName {
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.cardBox .card .cardName .more {
+    color: var(--black2);
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+    font-size: 3.5rem;
+    color: var(--black2);
+}
+
+.cardBox .card:hover {
+    background: var(--dark_blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .more,
+.cardBox .card:hover .iconBx {
+    color: var(--white);
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--dark_blue);
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--dark_blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+/* Dark Mode Styles for Cards */
+.dark-mode .cardBox .card {
+    background: var(--white);
+    /* Ubah latar belakang kartu menjadi gelap */
+    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
+    /* Ubah bayangan kartu menjadi putih untuk kontras */
+    color: var(--white);
+    /* Ubah warna teks menjadi putih */
+}
+
+.dark-mode .cardBox .card .numbers,
+.dark-mode .cardBox .card .cardName,
+.dark-mode .cardBox .card .more,
+.dark-mode .cardBox .card .iconBx {
+    color: var(--black1);
+    /* Ubah warna teks kartu menjadi putih saat mode gelap aktif */
+}
+
+.dark-mode .cardBox .card:hover {
+    background: var(--black1);
+    /* Ubah latar belakang kartu menjadi lebih gelap saat dihover */
+}
+
+.dark-mode .cardBox .card:hover .numbers,
+.dark-mode .cardBox .card:hover .cardName,
+.dark-mode .cardBox .card:hover .more,
+.dark-mode .cardBox .card:hover .iconBx {
+    color: var(--white);
+    /* Ubah warna teks kartu menjadi putih saat dihover dalam mode gelap */
+}

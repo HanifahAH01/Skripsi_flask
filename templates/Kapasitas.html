@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/kapasitas.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <!-- <ion-icon name="logo-whatsapp"></ion-icon> -->
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">AddData</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Dashboard">
+                        <span class="icon">
+                            <!-- <ion-icon name="folder-open-outline"></ion-icon> -->
+                            <ion-icon name="podium-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">LogOut</span>
+                    </a>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                    <!-- Tambahkan tautan dan ikon untuk sosial media lainnya sesuai kebutuhan -->
+                </div>
+
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+
+
+
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" id="searchInput" placeholder="Search Here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <!-- <div class="user">
+                    <img src="assets/profile-1.jpg" alt="User">
+                </div> -->
+            </div>
+
+
+
+            <!-- ==========Details List=========== -->
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Ruang Kelas</h2>
+                        <a href="#" class="btn" onclick="viewAll()">
+                            <select id="viewOption">
+                                <option value="treemap">Treemap</option>
+                                <option value="table">Table</option>
+                            </select>
+                        </a>
+                    </div>
+                    <div class="tree" id="treemapContainer"></div>
+                    <!-- Tambahkan elemen div untuk pop-up -->
+                    <div id="popup" class="popup">
+                        <div class="popup-content">
+                            <span id="close" class="close">&times;</span>
+                            <h2>Detail Ruangan</h2>
+                            <p id="roomDetails"></p>
+                        </div>
+                    </div>
+                    <div id="tableContainer" style="display: none;">
+                        <table>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>No</td>
+                                        <td>FAK</td>
+                                        <td>FAKULTAS</td>
+                                        <td>KODE_RUANG</td>
+                                        <td>NAMA_RUANG</td>
+                                        <td>KAPASITAS</td>
+                                        <td>GEDUNG</td>
+                                        <td>LANTAI</td>
+                                        <td>JENIS_RUANG</td>
+                                        <td>Berbagi</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for kps in userDetails %}
+                                    <tr>
+                                        <td>{{ kps[0] }}</td>
+                                        <td>{{ kps[1] }}</td>
+                                        <td>{{ kps[2] }}</td>
+                                        <td>{{ kps[3] }}</td>
+                                        <td>{{ kps[4] }}</td>
+                                        <td>{{ kps[5] }}</td>
+                                        <td>{{ kps[6] }}</td>
+                                        <td>{{ kps[7] }}</td>
+                                        <td>{{ kps[8] }}</td>
+                                        <td>{{ kps[9] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============ D3.js ============ -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script>
+            // Data dari Flask dirender langsung ke dalam JavaScript
+            var userDetails = JSON.parse('{{ userDetails | tojson | safe }}');
+
+            // Ambil hanya nama ruangan dan kapasitas dari setiap baris data
+            var data = userDetails.map(function (kps) {
+                return { name: kps[4], value: kps[5] };
+            });
+
+            // Hitung jumlah kotak berdasarkan jumlah data
+            var numBoxes = data.length;
+
+            // Buat treemap dengan D3.js
+            var width = 1750;
+            var height = 1500;
+
+            var svg = d3.select("#treemapContainer")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            var treemap = d3.treemap()
+                .size([width, height])
+                .padding(1);
+
+            var root = d3.hierarchy({ children: data })
+                .sum(function (d) { return d.value; });
+
+            treemap(root);
+
+            svg.selectAll("rect")
+                .data(root.leaves())
+                .enter()
+                .append("rect")
+                .attr("x", function (d) { return d.x0; })
+                .attr("y", function (d) { return d.y0; })
+                .attr("width", function (d) { return d.x1 - d.x0; })
+                .attr("height", function (d) { return d.y1 - d.y0; })
+                .style("fill", "steelblue");
+
+            svg.selectAll("text")
+                .data(root.leaves())
+                .enter()
+                .append("text")
+                .attr("x", function (d) {
+                    var textLength = d.data.name.length;
+                    var maxWidth = d.x1 - d.x0 - 10; // Biarkan sedikit ruang di tepi
+                    if (textLength * 6 > maxWidth) { // Misalnya, setiap karakter memiliki lebar sekitar 6px
+                        return d.x0 + 5; // Geser teks ke sisi kiri kotak
+                    } else {
+                        return d.x0 + (d.x1 - d.x0) / 2; // Tengah horisontal kotak
+                    }
+                })
+                .attr("y", function (d) {
+                    return d.y0 + (d.y1 - d.y0) / 2; // Tengah vertikal kotak
+                })
+                .text(function (d) {
+                    var textLength = d.data.name.length;
+                    var maxWidth = d.x1 - d.x0 - 10; // Biarkan sedikit ruang di tepi
+                    if (textLength * 6 > maxWidth) { // Misalnya, setiap karakter memiliki lebar sekitar 6px
+                        return d.data.name.substring(0, Math.floor(maxWidth / 7)) + '...'; // Potong teks dan tambahkan tanda elipsis
+                    } else {
+                        return d.data.name; // Teks lengkap jika muat dalam kotak
+                    }
+                })
+                .attr("font-size", "12px")
+                .attr("fill", "white")
+                .attr("text-anchor", function (d) {
+                    var textLength = d.data.name.length;
+                    var maxWidth = d.x1 - d.x0 - 10; // Biarkan sedikit ruang di tepi
+                    if (textLength * 6 > maxWidth) { // Misalnya, setiap karakter memiliki lebar sekitar 6px
+                        return "start"; // Anchor ke awal teks
+                    } else {
+                        return "middle"; // Tengah untuk teks yang cukup singkat
+                    }
+                })
+                .attr("alignment-baseline", "middle")
+
+                // Logika untuk menampilkan pop-up dan mengisinya dengan detail ruangan
+                .on("click", function (event, d) {
+                    var clickedRoomName = d.data.name;
+                    var clickedRoomDetails = userDetails.find(function (room) {
+                        return room[4] === clickedRoomName;
+                    });
+
+                    if (clickedRoomDetails) {
+                        var fak = clickedRoomDetails[1];
+                        var fakultas = clickedRoomDetails[2];
+                        var kode_ruangan = clickedRoomDetails[3];
+                        var nama_ruangan = clickedRoomDetails[4];
+                        var kapasitas = clickedRoomDetails[5];
+                        var gedung = clickedRoomDetails[6];
+                        var lantai = clickedRoomDetails[7];
+                        var jenis_ruangan = clickedRoomDetails[8];
+                        var Berbagi = clickedRoomDetails[9];
+                        var roomInfo =
+                            "Fakultas: " + fakultas + "<br>" +
+                            "Nama Ruangan: " + nama_ruangan + "<br>" +
+                            "Kode Ruangan: " + kode_ruangan + "<br>" +
+                            "Kapasitas: " + kapasitas + "<br>" +
+                            "Gedung: " + gedung + "<br>" +
+                            "Lantai: " + lantai + "<br>" +
+                            "Jenis Ruangan: " + jenis_ruangan + "<br>" +
+                            "Berbagi: " + Berbagi;
+
+                        document.getElementById("roomDetails").innerHTML = roomInfo;
+
+                        // Menampilkan pop-up
+                        document.getElementById("popup").style.display = "block";
+                    } else {
+                        alert("Informasi ruangan tidak ditemukan.");
+                    }
+                });
+
+            // Menutup pop-up ketika tombol close di klik
+            document.getElementById("close").addEventListener("click", function () {
+                document.getElementById("popup").style.display = "none";
+            });
+        </script>
+
+        <!-- ======== Script ========= -->
+        <Script src="{{ url_for('static', filename='js/Kapasitas.js') }}"></Script>
+
+        <!-- ======== Ionicons ======== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

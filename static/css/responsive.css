@@ -1,0 +1,339 @@
+/* ======================= Responsive Design ============================ */
+@media (max-width: 991px) {
+    #treemapContainer svg {
+        width: 100%;
+        /* Mengisi lebar parent */
+        height: auto;
+        /* Menyesuaikan tinggi sesuai aspek rasio */
+    }
+
+    .dark-mode .navigation {
+        left: -300px;
+        /* Penyesuaian untuk navigasi dalam mode gelap */
+    }
+
+    .dark-mode .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .dark-mode .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .dark-mode .main.active {
+        left: 300px;
+    }
+
+    .dark-mode .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dark-mode .text-content {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .dark-mode .text-content .side-text h1,
+    .dark-mode .text-content .side-text h2 {
+        margin-left: 0;
+        font-size: 1.8em;
+    }
+
+    .dark-mode .text-content .side-text p {
+        margin-left: 0;
+        font-size: 1.2em;
+    }
+
+    .dark-mode .text-content .down-text p {
+        margin-left: 0;
+        font-size: 1em;
+    }
+
+    .dark-mode .toggle {
+        color: var(--white);
+        /* Mengubah warna ikon toggle menjadi putih */
+    }
+
+    .navigation {
+        left: -300px;
+    }
+
+    .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 300px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text-content {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .text-content .side-text h1,
+    .text-content .side-text h2 {
+        margin-left: 0;
+        font-size: 1.8em;
+    }
+
+    .text-content .side-text p {
+        margin-left: 0;
+        font-size: 1.2em;
+    }
+
+    .text-content .down-text p {
+        margin-left: 0;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    #treemapContainer svg {
+        width: 100%;
+        /* Mengisi lebar parent */
+        height: auto;
+        /* Menyesuaikan tinggi sesuai aspek rasio */
+    }
+
+    .dark-mode .navigation footer {
+        font-size: 12px;
+    }
+
+    .dark-mode .details {
+        grid-template-columns: 1fr;
+    }
+
+    .dark-mode .details .cardHeader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dark-mode .cardHeader img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .dark-mode .text-content {
+        margin-left: 0;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .dark-mode .text-content .side-text h1,
+    .dark-mode .text-content .side-text h2 {
+        font-size: 1.5em;
+    }
+
+    .dark-mode .text-content .side-text p {
+        font-size: 1em;
+    }
+
+    .dark-mode .text-content .down-text p {
+        font-size: 0.9em;
+    }
+
+    .dark-mode .recentOrders {
+        overflow-x: auto;
+    }
+
+    .dark-mode .status.inProgress {
+        white-space: nowrap;
+    }
+
+    .navigation footer {
+        font-size: 12px;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .details .cardHeader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardHeader img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .text-content {
+        margin-left: 0;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .text-content .side-text h1,
+    .text-content .side-text h2 {
+        font-size: 1.5em;
+    }
+
+    .text-content .side-text p {
+        font-size: 1em;
+    }
+
+    .text-content .down-text p {
+        font-size: 0.9em;
+    }
+
+
+    .recentOrders {
+        overflow-x: auto;
+    }
+
+    .status.inProgress {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #treemapContainer svg {
+        width: 100%;
+        /* Mengisi lebar parent */
+        height: auto;
+        /* Menyesuaikan tinggi sesuai aspek rasio */
+    }
+
+    .dark-mode .navigation footer {
+        font-size: 10px;
+        padding: 15px;
+    }
+
+    .dark-mode .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .dark-mode .cardHeader h2 {
+        font-size: 20px;
+    }
+
+    .dark-mode .user {
+        min-width: 40px;
+    }
+
+    .dark-mode .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .dark-mode .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .dark-mode .toggle {
+        z-index: 10001;
+        /* color: var(--black1); Mengubah warna ikon toggle menjadi hitam */
+    }
+
+    .dark-mode .navigation.active .toggle ion-icon {
+        z-index: 10001;
+        color: var(--white);
+        /* Mengubah warna ikon toggle menjadi hitam */
+    }
+
+    .dark-mode .toggle ion-icon {
+        z-index: 10001;
+        color: var(--white);
+        /*Mengubah warna ikon toggle menjadi hitam*/
+    }
+
+    .dark-mode .main.active {
+        max-width: calc(100% - 300px);
+    }
+
+    .dark-mode .main.active .toggle {
+        color: var(--black1);
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+
+    .dark-mode .text-content .side-text h1,
+    .dark-mode .text-content .side-text h2 {
+        font-size: 1.2em;
+    }
+
+    .dark-mode .text-content .side-text p {
+        font-size: 0.9em;
+    }
+
+    .dark-mode .text-content .down-text p {
+        font-size: 0.8em;
+    }
+
+    .navigation footer {
+        font-size: 10px;
+        padding: 15px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .cardHeader h2 {
+        font-size: 20px;
+    }
+
+    .user {
+        min-width: 40px;
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active {
+        max-width: calc(100% - 300px);
+    }
+
+    .main.active .toggle {
+        color: var(--black1);
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+
+    .text-content .side-text h1,
+    .text-content .side-text h2 {
+        font-size: 1.2em;
+    }
+
+    .text-content .side-text p {
+        font-size: 0.9em;
+    }
+
+    .text-content .down-text p {
+        font-size: 0.8em;
+    }
+}

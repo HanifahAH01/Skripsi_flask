@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <!-- <ion-icon name="logo-whatsapp"></ion-icon> -->
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="AddData.html">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">AddData</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Dashboard">
+                        <span class="icon">
+                            <ion-icon name="podium-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">LogOut</span>
+                    </a>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                </div>
+
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+
+
+
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+                <!-- <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search Here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div> -->
+                <div class="user">
+                    <img src="{{ url_for('static', filename='images/profile-1.jpg')}}" alt="User">
+                </div>
+            </div>
+
+
+
+            <!-- ==========Details List=========== -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <!-- <h2>Recent Orders</h2> -->
+                        <img src="{{ url_for('static', filename='images/logo_upi_mipa.png')}}" alt="FPMIPA">
+                        <!-- <a href="#" class="btn">View All</a> -->
+                        <div class="text-content">
+                            <div class="side-text">
+                                <h1><i>Jadwal Perkuliahan UPI</i></h1>
+                                <h2>Rencanakan Langkahmu Menuju Sukses</h2>
+
+                                <br>
+
+                                <p>Selamat Datang di Pusat Informasi Jadwal Kuliahan FPMIPA UPITerupdate!!</p>
+
+                                <br>
+
+                                <p>Dengan kami, Anda tidak hanya mendapatkan sekadar jadwal kuliah, .tetapi juga
+                                    sebuah pintu gerbang menuju kesuksesan akademis. Anda dapat menjelajahi dan
+                                    mencari jadwal dosen FPMIPA UPI dan jadwal perkuliahan FPMIPA UPI secara cepat
+                                    dan mudah. Kami menawarkan sistem yang terpadu, memungkinkan akses informasi </p>
+
+                                <br>
+                            </div>
+                            <div class="down-text">
+                                <p>dengan instan, sehingga Anda selalu terhubung dengan jadwal dosel dan jadwal kuliah
+                                    terkini. Kami percaya bahwa kemudahan akses adalah kunci kesuksesan, dan oleh karena
+                                    itu, kami hadir untuk memberikan pengalaman belajar yang lebih baik. Tidak hanya
+                                    itu,
+                                    platform kami menawarkan lebih dari sekadar jadwal. Platform ini juga menyeiakan
+                                    informasi terkait kapasitas ruangan dan ruangan yang tidak digunakan. </p>
+
+                                <br>
+
+                                <p>Jadi, bersiaplah untuk menjelajahi dunia pendidikan yang inovatif dan efisien.
+                                    Jadilah
+                                    bagian dari komunitas kami yang peduli terhadap peningkatan
+                                    pengalaman belajar. Mari bersama-sama mengukir jejak kesuksesan akademis dengan
+                                    penjadwalan perkuliahan yang tidak hanya memudahkan tetapi
+                                    juga memberikan Anda kendali penuh atas waktu dan perjalanan belajar Anda.
+                                    <b>Selamat
+                                        datang di tempat di mana pendidikan menjadi lebih mudah,
+                                        lebih baik, dan lebih terarah!</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======== Script ========= -->
+    <Script src="{{ url_for('static', filename='js/Home.js') }}"></Script>
+
+
+
+    <!-- ======== Ionicons ======== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Dosen.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <!-- <ion-icon name="logo-whatsapp"></ion-icon> -->
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">AddData</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Dashboard">
+                        <span class="icon">
+                            <!-- <ion-icon name="folder-open-outline"></ion-icon> -->
+                            <ion-icon name="podium-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">LogOut</span>
+                    </a>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                    <!-- Tambahkan tautan dan ikon untuk sosial media lainnya sesuai kebutuhan -->
+                </div>
+
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+
+
+
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search Here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <!-- <div class="user">
+                    <img src="assets/profile-1.jpg" alt="User">
+                </div> -->
+            </div>
+
+
+
+            <!-- ==========Details List=========== -->
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>DOSEN</h2>
+                        <a href="#" class="btn" onclick="viewAll()">
+                            <select id="viewOption">
+                                <option value="All" selected>ALL</option>
+                                <option value="FPMIPA">FPMIPA</option>
+                                <option value="treemapContainerKhusus">TreeMap</option>
+                            </select>
+                        </a>
+                        <button onclick="sortByTotal('desc')">Urutkan dari Terbanyak</button>
+                        <button onclick="sortByTotal('asc')">Urutkan dari Tersedikit</button>
+                    </div>
+                    <div id="tableall" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td rowspan="2">No</td>
+                                    <td rowspan="2">THN SMT</td>
+                                    <td rowspan="2">KODE</td>
+                                    <td rowspan="2">Nama Dosen</td>
+                                    <td colspan="3">MATA KULIAH</td>
+                                    <td colspan="3">SKS</td>
+                                    <td colspan="3">KELAS</td>
+                                    <td rowspan="2">Total</td> <!-- Kolom tambahan untuk jumlah total -->
+                                </tr>
+                                <tr>
+                                    <td>DSN 1</td>
+                                    <td>DSN 2</td>
+                                    <td>JML</td>
+                                    <td>DSN 1</td>
+                                    <td>DSN 2</td>
+                                    <td>JML</td>
+                                    <td>DSN 1</td>
+                                    <td>DSN 2</td>
+                                    <td>JML</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for dsn in userDetails %}
+                                <tr>
+                                    <td>{{ dsn[0] }}</td>
+                                    <td>{{ dsn[1] }}</td>
+                                    <td>{{ dsn[2] }}</td>
+                                    <td>{{ dsn[3] }}</td>
+                                    <td>{{ dsn[4] }}</td>
+                                    <td>{{ dsn[5] }}</td>
+                                    <td>{{ dsn[6] }}</td>
+                                    <td>{{ dsn[7] }}</td>
+                                    <td>{{ dsn[8] }}</td>
+                                    <td>{{ dsn[9] }}</td>
+                                    <td>{{ dsn[10] }}</td>
+                                    <td>{{ dsn[11] }}</td>
+                                    <td>{{ dsn[12] }}</td>
+                                    <td>{{ dsn[6] + dsn[9] + dsn[12] }}</td> <!-- Menampilkan jumlah total -->
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="tablefpmipa" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td rowspan="2">No</td>
+                                    <td rowspan="2">THN SMT</td>
+                                    <td rowspan="2">KODE</td>
+                                    <td rowspan="2">Nama Dosen</td>
+                                    <td colspan="3">MATA KULIAH</td>
+                                    <td colspan="3">SKS</td>
+                                    <td colspan="3">KELAS</td>
+                                    <td rowspan="2">Total</td> <!-- Kolom tambahan untuk jumlah total -->
+                                </tr>
+                                <tr>
+                                    <td>DSN 1</td>
+                                    <td>DSN 2</td>
+                                    <td>JML</td>
+                                    <td>DSN 1</td>
+                                    <td>DSN 2</td>
+                                    <td>JML</td>
+                                    <td>DSN 1</td>
+                                    <td>DSN 2</td>
+                                    <td>JML</td>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for dsn in userDetails %}
+                                {% if dsn[2] in list_kode_khusus %}
+                                <tr>
+                                    <td>{{ dsn[0] }}</td>
+                                    <td>{{ dsn[1] }}</td>
+                                    <td>{{ dsn[2] }}</td>
+                                    <td>{{ dsn[3] }}</td>
+                                    <td>{{ dsn[4] }}</td>
+                                    <td>{{ dsn[5] }}</td>
+                                    <td>{{ dsn[6] }}</td>
+                                    <td>{{ dsn[7] }}</td>
+                                    <td>{{ dsn[8] }}</td>
+                                    <td>{{ dsn[9] }}</td>
+                                    <td>{{ dsn[10] }}</td>
+                                    <td>{{ dsn[11] }}</td>
+                                    <td>{{ dsn[12] }}</td>
+                                    <td>{{ dsn[6] + dsn[9] + dsn[12] }}</td> <!-- Menampilkan jumlah total -->
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="treemapContainerKhusus" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ D3.js ============ -->
+        <!-- ============ D3.js ============ -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script>
+            // Data dari Flask dirender langsung ke dalam JavaScript
+            var userDetailsKhusus = JSON.parse('{{ userDetailsKhusus | tojson | safe }}');
+
+            // Ambil nama dosen dan jumlah total dari setiap baris data
+            var dataKhusus = userDetailsKhusus.map(function (dsn) {
+                return { name: dsn[3], value: dsn[6] + dsn[9] + dsn[12] }; // Mengambil penambahan dari kolom Jumlah
+            });
+
+            // Buat treemap dengan D3.js
+            var width = 1900;
+            var height = 1500;
+
+            var svgKhusus = d3.select("#treemapContainerKhusus")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            var treemapKhusus = d3.treemap()
+                .size([width, height])
+                .padding(1);
+
+            var rootKhusus = d3.hierarchy({ children: dataKhusus })
+                .sum(function (d) { return d.value; });
+
+            treemapKhusus(rootKhusus);
+
+            svgKhusus.selectAll("rect")
+                .data(rootKhusus.leaves())
+                .enter()
+                .append("rect")
+                .attr("x", function (d) { return d.x0; })
+                .attr("y", function (d) { return d.y0; })
+                .attr("width", function (d) { return d.x1 - d.x0; })
+                .attr("height", function (d) { return d.y1 - d.y0; })
+                .style("fill", function (d) {
+                    // Tentukan warna berdasarkan nilai total
+                    if (d.value >= 150) {
+                        return "darkred"; // Warna merah tua
+                    } else if (d.value >= 75) {
+                        return "lightcoral"; // Warna merah muda
+                    } else if (d.value >= 50) {
+                        return "navy"; // Warna biru tua
+                    } else {
+                        return "lightblue"; // Warna biru muda
+                    }
+                });
+
+            svgKhusus.selectAll("text")
+                .data(rootKhusus.leaves())
+                .enter()
+                .append("text")
+                .attr("x", function (d) {
+                    var textLength = d.data.name.length;
+                    var maxWidth = d.x1 - d.x0 - 10; // Biarkan sedikit ruang di tepi
+                    if (textLength * 6 > maxWidth) { // Misalnya, setiap karakter memiliki lebar sekitar 6px
+                        return d.x0 + 5; // Geser teks ke sisi kiri kotak
+                    } else {
+                        return d.x0 + (d.x1 - d.x0) / 2; // Tengah horisontal kotak
+                    }
+                })
+                .attr("y", function (d) {
+                    return d.y0 + (d.y1 - d.y0) / 2; // Tengah vertikal kotak
+                })
+                .text(function (d) {
+                    var textLength = d.data.name.length;
+                    var maxWidth = d.x1 - d.x0 - 10; // Biarkan sedikit ruang di tepi
+                    if (textLength * 6 > maxWidth) { // Misalnya, setiap karakter memiliki lebar sekitar 6px
+                        return d.data.name.substring(0, Math.floor(maxWidth / 6)) + '...'; // Potong teks dan tambahkan tanda elipsis
+                    } else {
+                        return d.data.name; // Teks lengkap jika muat dalam kotak
+                    }
+                })
+                .attr("font-size", "12px")
+                .attr("fill", "white")
+                .attr("text-anchor", function (d) {
+                    var textLength = d.data.name.length;
+                    var maxWidth = d.x1 - d.x0 - 10; // Biarkan sedikit ruang di tepi
+                    if (textLength * 6 > maxWidth) { // Misalnya, setiap karakter memiliki lebar sekitar 6px
+                        return "start"; // Anchor ke awal teks
+                    } else {
+                        return "middle"; // Tengah untuk teks yang cukup singkat
+                    }
+                })
+                .attr("alignment-baseline", "middle")
+        </script>
+
+        <script>
+            function sortByTotal(order) {
+                var rows = document.querySelectorAll('#tableall tbody tr');
+                var sortedRows = Array.from(rows).sort((a, b) => {
+                    var aValue = parseInt(a.cells[12].textContent);
+                    var bValue = parseInt(b.cells[12].textContent);
+                    if (order === 'asc') {
+                        return aValue - bValue;
+                    } else {
+                        return bValue - aValue;
+                    }
+                });
+                var tbody = document.querySelector('#tableall tbody');
+                tbody.innerHTML = '';
+                sortedRows.forEach(row => {
+                    tbody.appendChild(row);
+                });
+            }
+
+            // Panggil sortByTotal dengan urutan default (terbanyak ke terendah)
+            sortByTotal('desc');
+        </script>
+
+
+        <!-- ======== Script ========= -->
+        <Script src="{{ url_for('static', filename='js/Dosen.js') }}"></Script>
+
+
+
+        <!-- ======== Ionicons ======== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
