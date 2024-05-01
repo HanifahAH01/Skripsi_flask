@@ -715,18 +715,6 @@ body {
 .btn-secondary {
     background-color: var(--light-red);
     color: white;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-thirdty {
-    background-color: var(--blue);
-    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -739,3 +727,47 @@ body {
 .btn:hover {
     opacity: 0.8;
 }
+
+/* CSS untuk form report */
+.report-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.report-section h2 {
+    margin-bottom: 10px;
+}
+
+.report-section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.report-section form input[type="text"],
+.report-section form textarea,
+.report-section form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.report-section form input[type="submit"] {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.report-section form input[type="submit"]:hover {
+    background-color: #d32f2f;
+}
+

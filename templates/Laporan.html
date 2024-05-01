@@ -7,7 +7,7 @@
     <title>FPMIPA - Dashboard</title>
 
     <!-- ======= Style ====== -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Ruangkelas.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Laporan.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
     <style>
@@ -184,124 +184,97 @@
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Ruang Kelas</h2>
-                        <div class="btn-group">
-                            <a href="/allkelas" class="btn-primary">View ALL</a>
-                            <a href="/report" class="btn-secondary">Report</a>
-                            <a href="/laporan" class="btn-thirdty">Laporan</a>
-                        </div>
+                        <h2>Hasil Report</h2>
+                        <a href="/ruangan" class="btn-primary">Jadwal Kelas</a>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <td>Nama Ruangan</td>
-                                <td>Senin</td>
-                                <td>Selasa</td>
-                                <td>Rabu</td>
-                                <td>Kamis</td>
-                                <td>Jumat</td>
-                                <td>Sabtu</td>
-                                <td>Minggu</td>
+                                <th>No</th>
+                                <th>Nama Ruangan</th>
+                                <th>Hari</th>
+                                <th>Waktu</th>
+                                <th>Alasan</th>
+                                <th>Keterangan</th>
+
                             </tr>
                         </thead>
-                        <tbody id="jadwal-body">
-                            {% for jadwal in grouped_jadwal %}
+                        <tbody>
                             <tr>
-                                <td>{{ jadwal[1] }}</td>
-                                <td>{{ jadwal[2] }}</td>
-                                <td>{{ jadwal[3] }}</td>
-                                <td>{{ jadwal[4] }}</td>
-                                <td>{{ jadwal[5] }}</td>
-                                <td>{{ jadwal[6] }}</td>
-                                <td>{{ jadwal[7] }}</td>
-                                <td>{{ jadwal[8] }}</td>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
                             </tr>
-                            {% endfor %}
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ruang 101</td>
+                                <td>Senin</td>
+                                <td>08:00 - 10:00</td>
+                                <td>Kerusakan peralatan</td>
+                                <td>Keterangan</td>
+                            </tr>
+                            <!-- Tambahkan baris-baris data lainnya sesuai dengan hasil report -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 
-        <!-- ======== Popup ======= -->
-        <div id="popup" class="popup">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <p id="popup-content"></p>
-            <button id="booking-button" data-whatsapp="628819915128" onclick="openWhatsApp()">Booking via
-                WhatsApp</button>
-        </div>
-
-        <!-- ======== Script ========= -->
-        <!-- ======== Script ========= -->
-        <!-- ======== Script ========= -->
-        <script>
-            window.addEventListener('DOMContentLoaded', function () {
-                var tbody = document.getElementById('jadwal-body');
-                var rows = tbody.getElementsByTagName('tr');
-                for (var i = 0; i < rows.length; i++) {
-                    var cells = rows[i].getElementsByTagName('td');
-                    for (var j = 1; j <= 7; j++) { // Kolom 2 (Senin) hingga 8 (Minggu)
-                        var cellContent = cells[j].innerHTML.trim(); // Menghapus spasi di awal dan akhir
-                        if (cellContent.includes(',')) { // Jika terdapat koma dalam sel
-                            cells[j].innerHTML = 'Terpakai'; // Mengganti dengan "Terpakai"
-                            cells[j].classList.add('terpakai'); // Tambahkan kelas CSS untuk menandai sebagai "Terpakai"
-                            cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
-                            cells[j].addEventListener('click', openPopup);
-                        } else if (isTime(cellContent)) { // Jika isi sel adalah waktu
-                            cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
-                            cells[j].addEventListener('click', openPopup);
-                        }
-                    }
-                }
-            });
-
-            function isTime(content) {
-                // Implementasi sederhana untuk memeriksa apakah konten adalah waktu dalam format tertentu (HH:mm-HH:mm)
-                return /\d{2}:\d{2}-\d{2}:\d{2}/.test(content);
-            }
-
-            function openPopup(event) {
-                var popup = document.getElementById('popup');
-                var content = event.target.getAttribute('data-content'); // Mendapatkan isi sel yang diklik
-                var popupContent = document.getElementById('popup-content');
-                popupContent.textContent = content; // Menampilkan isi sel dalam popup
-
-                var bookingButton = document.getElementById('booking-button');
-                if (event.target.classList.contains('terpakai')) {
-                    // Jika sel terpakai, sembunyikan tombol booking
-                    if (bookingButton) {
-                        bookingButton.style.display = 'none';
-                    }
-                } else {
-                    // Jika sel tidak terpakai, tampilkan tombol booking
-                    if (bookingButton) {
-                        bookingButton.style.display = 'block';
-                    }
-                }
-
-                popup.style.display = 'block';
-            }
-
-            function closePopup() {
-                var popup = document.getElementById('popup');
-                popup.style.display = 'none';
-            }
-
-            // Fungsi untuk membuka aplikasi WhatsApp dengan nomor yang ditentukan
-            function openWhatsApp() {
-                var whatsappNumber = document.getElementById('booking-button').getAttribute('data-whatsapp');
-                var whatsappUrl = 'https://wa.me/' + whatsappNumber;
-                window.open(whatsappUrl, '_blank');
-            }
-        </script>
-
-
-
-
-
-
-
+        <!-- ======== Script ======== -->
         <Script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></Script>
+
+
 
         <!-- ======== Ionicons ======== -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

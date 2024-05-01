@@ -42,12 +42,20 @@ def index():
     return render_template("Home.html")
 
 # Dashboard
-@app.route("/Dashboard")
+@app.route("/dashboard")
 def Dashboard():
     return render_template("Dashboard.html")
 
+@app.route("/report")
+def report():
+    return render_template("Report.html")
+
+@app.route("/laporan")
+def laporan():
+    return render_template("Laporan.html")
+
 # Kapasitas
-@app.route('/Kapasitas')
+@app.route('/kapasitas')
 def kapasitas_():
 
     cur = mysql.connection.cursor()
@@ -58,7 +66,7 @@ def kapasitas_():
     return render_template('Kapasitas.html', userDetails=userDetails)
 
 # Dosen
-@app.route("/Dosen")
+@app.route("/dosen")
 def dosen():
     # Mendapatkan instance dari kelas Data_Dosen
     scraper = Data_Dosen(url=url2)
@@ -83,7 +91,7 @@ def dosen():
     return render_template('Dosen.html', userDetails=userDetails, userDetailsKhusus=userDetailsKhusus, list_kode_khusus=list_kode_khusus)
 
 # Ruangan
-@app.route("/Ruangan")
+@app.route("/ruangan")
 def ruangan():
     # Mengambil data jadwal dari database
     cur = mysql.connection.cursor()
