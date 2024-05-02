@@ -36,9 +36,19 @@ insert_real_data_jadwal()
 
 # Fungsi Untuk mengakses setiap Halaman Website
 
-# Home
+# Welcome
 @app.route("/")
 def index():
+    return render_template("Welcome.html")
+
+# login
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+# Home
+@app.route("/home")
+def home():
     return render_template("Home.html")
 
 # Dashboard
