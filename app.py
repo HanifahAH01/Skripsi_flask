@@ -46,6 +46,16 @@ def index():
 def login():
     return render_template("login.html")
 
+# login
+@app.route("/admin")
+def admin():
+    return render_template("Admin.html")
+
+# Add Data
+@app.route("/adddata")
+def adddata():
+    return render_template("AddData.html")
+
 # Home
 @app.route("/home")
 def home():

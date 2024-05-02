@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <!-- <ion-icon name="logo-whatsapp"></ion-icon> -->
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <!-- <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">AddData</span>
+                    </a>
+                </li> -->
+
+                <li>
+                    <a href="/dashboard">
+                        <span class="icon">
+                            <!-- <ion-icon name="folder-open-outline"></ion-icon> -->
+                            <ion-icon name="podium-outline"></ion-icon>
+
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">LogIn</span>
+                    </a>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                    <!-- Tambahkan tautan dan ikon untuk sosial media lainnya sesuai kebutuhan -->
+                </div>
+
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+
+
+
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+
+                <!-- <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search Here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div> -->
+
+                <div class="user">
+                    <img src="{{ url_for('static', filename='images/profile-1.jpg')}}" alt="User">
+                </div>
+            </div>
+
+
+            <!-- ========== cards =========== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">Ruang kelas</div>
+                        <div class="cardName">
+                            <a href="/ruangan" class="more">More Info -></a>
+                        </div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="duplicate-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">Daftar Dosen</div>
+                        <!-- <div class="cardName">Daily View</div> -->
+                        <div class="cardName">
+                            <a href="/dosen" class="more">More Info -></a>
+                        </div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">Kapasitas Ruangan</div>
+                        <!-- <div class="cardName">Daily View</div> -->
+                        <div class="cardName">
+                            <a href="/kapasitas" class="more">More Info -></a>
+                        </div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="business-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======== Script ========= -->
+    <Script src="{{ url_for('static', filename='js/Dashboard.js') }}"></Script>
+
+
+
+    <!-- ======== Ionicons ======== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
