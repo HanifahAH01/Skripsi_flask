@@ -35,3 +35,15 @@ const storedDarkMode = localStorage.getItem('darkMode');
 if (storedDarkMode) {
     document.body.classList.toggle('dark-mode', storedDarkMode === 'true');
 }
+
+function viewAll() {
+    var viewOption = document.getElementById("viewOption").value;
+
+    if (viewOption === "heatmap-container") {
+        document.getElementById("heatmap-container").style.display = "block";
+        document.getElementById("Jadwal").style.display = "none";
+    } else if (viewOption === "Jadwal") {
+        document.getElementById("Jadwal").style.display = "block";
+        document.getElementById("heatmap-container").style.display = "none";
+    }
+}

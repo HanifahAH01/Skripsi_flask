@@ -118,29 +118,10 @@ def ruangan():
     cur.execute("SELECT * FROM real_jadwal")
     jadwal_records = cur.fetchall()
     cur.close()
-    
-    # Proses data untuk menggabungkan judul yang sama
-    # grouped_records = {}
-    # for record in jadwal_records:
-    #     judul = record[1]  # Anggap judul berada di indeks 1
-    #     if judul not in grouped_records:
-    #         grouped_records[judul] = [record]
-    #     else:
-    #         grouped_records[judul].append(record)
-
-    # Kelompokkan data jadwal berdasarkan nama ruangan
-    # grouped_jadwal = {}
-    # for record in jadwal_records:
-    #     ruangan = record[1]
-    #     if ruangan in grouped_jadwal:
-    #         grouped_jadwal[ruangan].append(record)
-    #     else:
-    #         grouped_jadwal[ruangan] = [record]
 
     return render_template("Ruangkelas.html", grouped_jadwal=jadwal_records)
     
-    # Kirim data yang telah diproses ke templat HTML
-    # return render_template("Ruangkelas.html", jadwal=grouped_jadwal)
+
 
 # Menjalankan aplikasi
 if __name__ == "__main__":

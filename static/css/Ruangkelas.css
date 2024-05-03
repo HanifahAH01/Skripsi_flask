@@ -739,3 +739,24 @@ body {
 .btn:hover {
     opacity: 0.8;
 }
+
+.btn,
+select {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #2a2185;
+    /* Sesuaikan dengan warna yang diinginkan */
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover,
+select:hover {
+    background-color: #263997;
+    /* Sesuaikan dengan warna yang diinginkan */
+}

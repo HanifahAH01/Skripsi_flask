@@ -189,40 +189,47 @@
                     <div class="cardHeader">
                         <h2>Ruang Kelas</h2>
                         <div class="btn-group">
-                            <a href="/allkelas" class="btn-primary">View ALL</a>
+                            <a href="#" class="btn" onclick="viewAll()">
+                                <select id="viewOption">
+                                    <option value="heatmap-container" selected>Heatmap</option>
+                                    <option value="Jadwal">Jadwal</option>
+                                </select>
+                            </a>
                             <a href="/report" class="btn-secondary">Report</a>
                             <a href="/laporan" class="btn-thirdty">Laporan</a>
                         </div>
                     </div>
-                    <div id="heatmap-container" style="width: 800px; height: 600px;"></div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Nama Ruangan</td>
-                                <td>Senin</td>
-                                <td>Selasa</td>
-                                <td>Rabu</td>
-                                <td>Kamis</td>
-                                <td>Jumat</td>
-                                <td>Sabtu</td>
-                                <td>Minggu</td>
-                            </tr>
-                        </thead>
-                        <tbody id="jadwal-body">
-                            {% for jadwal in grouped_jadwal %}
-                            <tr>
-                                <td>{{ jadwal[1] }}</td>
-                                <td>{{ jadwal[2] }}</td>
-                                <td>{{ jadwal[3] }}</td>
-                                <td>{{ jadwal[4] }}</td>
-                                <td>{{ jadwal[5] }}</td>
-                                <td>{{ jadwal[6] }}</td>
-                                <td>{{ jadwal[7] }}</td>
-                                <td>{{ jadwal[8] }}</td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                    <div id="heatmap-container" style="width: 800px; height: 600px; display: none;"></div>
+                    <div id="Jadwal" style="display: none;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Nama Ruangan</td>
+                                    <td>Senin</td>
+                                    <td>Selasa</td>
+                                    <td>Rabu</td>
+                                    <td>Kamis</td>
+                                    <td>Jumat</td>
+                                    <td>Sabtu</td>
+                                    <td>Minggu</td>
+                                </tr>
+                            </thead>
+                            <tbody id="jadwal-body">
+                                {% for jadwal in grouped_jadwal %}
+                                <tr>
+                                    <td>{{ jadwal[1] }}</td>
+                                    <td>{{ jadwal[2] }}</td>
+                                    <td>{{ jadwal[3] }}</td>
+                                    <td>{{ jadwal[4] }}</td>
+                                    <td>{{ jadwal[5] }}</td>
+                                    <td>{{ jadwal[6] }}</td>
+                                    <td>{{ jadwal[7] }}</td>
+                                    <td>{{ jadwal[8] }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
