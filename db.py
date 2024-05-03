@@ -262,12 +262,3 @@ def insert_real_data_jadwal(file_name="hasil_jadwal.json", limit=886):
                 cur.close()
         else:
             print("File", file_name, "not found")
-
-
-
-
-
-
-
-
-

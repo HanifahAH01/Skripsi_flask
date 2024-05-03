@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Ruangkelas.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <style>
         /* Background color for cells with content "Terpakai" */
         #jadwal-body td[data-content="Terpakai"] {
@@ -191,6 +194,7 @@
                             <a href="/laporan" class="btn-thirdty">Laporan</a>
                         </div>
                     </div>
+                    <div id="heatmap-container" style="width: 800px; height: 600px;"></div>
                     <table>
                         <thead>
                             <tr>
@@ -223,6 +227,7 @@
             </div>
         </div>
 
+
         <!-- ======== Popup ======= -->
         <div id="popup" class="popup">
             <span class="close-btn" onclick="closePopup()">&times;</span>
@@ -232,8 +237,7 @@
         </div>
 
         <!-- ======== Script ========= -->
-        <!-- ======== Script ========= -->
-        <!-- ======== Script ========= -->
+
         <script>
             window.addEventListener('DOMContentLoaded', function () {
                 var tbody = document.getElementById('jadwal-body');
@@ -295,11 +299,26 @@
             }
         </script>
 
+        <script>
+            // Sample data (replace with your own data)
+            var data = [
+                { x: ['Span1', 'Span2', 'Span3', 'Span4'], y: ['Senin', 'Selasa', 'Rabu'], z: [[3, 4, 5, 6], [1, 2, 3, 4], [6, 5, 4, 3]], type: 'heatmap' }
+            ];
 
+            // Layout configuration
+            var layout = {
+                title: 'Heatmap with Span on X-axis',
+                xaxis: {
+                    title: 'Span'
+                },
+                yaxis: {
+                    title: 'Hari'
+                }
+            };
 
-
-
-
+            // Plot the heatmap
+            Plotly.newPlot('heatmap-container', data, layout);
+        </script>
 
         <Script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></Script>
 
