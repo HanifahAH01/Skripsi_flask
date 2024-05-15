@@ -1,10 +1,10 @@
 import json
-import requests
-from bs4 import BeautifulSoup
-import shutil
 import os
+import requests
+import shutil
+from bs4 import BeautifulSoup
 
-class Data_Dosen(object):
+class Data_Dosen:
     def __init__(self, url):
         self.url = url
         self.headers = {
@@ -44,21 +44,22 @@ class Data_Dosen(object):
     def get_list_kode_khusus(self):
         return self.list_kode_khusus
 
-    def Get_Data_Dosen(self, file_name="static/json/Data_Dosen.json", backup_file_name="static/json/Data_Dosen_backup.json"):
-        res = requests.get(self.url, headers=self.headers)
+    def get_data_dosen(self, file_name="static/json/Data_Dosen.json", backup_file_name="static/json/Data_Dosen_backup.json"):
+        response = requests.get(self.url, headers=self.headers)
 
-        if res.status_code == 200:
-            soup = BeautifulSoup(res.content, "html.parser")
-
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, "html.parser")
             content = soup.find("div", class_="table-container mb-0")
+
             if content:
                 table = content.find("table", class_="table is-hoverable")
                 if table:
                     rows = table.find_all("tr")
                     dosen_list = []
+
                     for row in rows[1:]:
                         columns = row.find_all("td")
-                        if columns and len(columns) >= 13:  # Adjust this if needed
+                        if columns and len(columns) >= 13:
                             no = columns[0].get_text(strip=True)
                             thn_smt = columns[1].get_text(strip=True)
                             kode = columns[2].find("a").get_text(strip=True) if columns[2].find("a") else ""
@@ -90,17 +91,17 @@ class Data_Dosen(object):
                                 "Dosen_Total": dsn_total
                             }
                             dosen_list.append(data_dict)
-        
-        # Proses Pengolahan Data
+
         # Backup file jika sudah ada
         if os.path.exists(file_name):
             shutil.copyfile(file_name, backup_file_name)
-        
+
         with open(file_name, "w+") as f:
-            json.dump(dosen_list, f)
-        
-        print("Data Berhasil Di-generate")
+            json.dump(dosen_list, f, indent=4)
+
+        print("Data berhasil digenerate")
+
 if __name__ == "__main__":
     url = 'https://siak.upi.edu/jadwal/dosensks'
     scraper = Data_Dosen(url=url)
-    scraper.Get_Data_Dosen()
+    scraper.get_data_dosen()

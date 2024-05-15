@@ -2,24 +2,24 @@ from flask import Flask
 from flask_mysqldb import MySQL
 import json
 import os
-# import shutil
 
-# --------------------------#
-# Database In Use           #
-# Sesuaikan dengan Database #
-# --------------------------#
+# Inisialisasi aplikasi Flask
 app = Flask(__name__)
+
+# Konfigurasi database MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'db_tskrip'
+
+# Inisialisasi objek MySQL
 mysql = MySQL(app)
 
 # ----------------------------------#
-# Fungsi Fungsi untuk Membuat table #
+# Fungsi-fungsi untuk membuat tabel #
 # ----------------------------------#
 
-# Table Dosen
+# Membuat tabel Dosen
 def create_table_dosen():
     with app.app_context():
         cur = mysql.connection.cursor()
@@ -37,14 +37,15 @@ def create_table_dosen():
                 KELAS_TOTAL INT,
                 Dosen_1 INT,
                 Dosen_2 INT,
-                Dosen_Total INT
+                Dosen_Total INT,
+                Total INT
             )
         """)
         mysql.connection.commit()
         cur.close()
-        print("Database Dosen Telah dibuat")
+        print("Tabel Dosen telah dibuat")
 
-# Table Kapasitas Ruangan
+# Membuat tabel Kapasitas Ruangan
 def create_table_kapasitas_ruangan():
     with app.app_context():
         cur = mysql.connection.cursor()
@@ -65,9 +66,9 @@ def create_table_kapasitas_ruangan():
         """)
         mysql.connection.commit()
         cur.close()
-        print("Database kapasitas Ruangan Telah Dibuat")
+        print("Tabel Kapasitas Ruangan telah dibuat")
 
-# Table Jadwal
+# Membuat tabel Jadwal
 def create_table_jadwal():
     with app.app_context():
         cur = mysql.connection.cursor()
@@ -87,9 +88,9 @@ def create_table_jadwal():
         """)
         mysql.connection.commit()
         cur.close()
-    print("Database Jadwal Telah Dibuat")
+        print("Tabel Jadwal telah dibuat")
 
-# Table Real Jadwal
+# Membuat tabel Real Jadwal
 def create_real_table_jadwal():
     with app.app_context():
         cur = mysql.connection.cursor()
@@ -108,13 +109,13 @@ def create_real_table_jadwal():
         """)
         mysql.connection.commit()
         cur.close()
-    print("Tabel Jadwal Telah Dibuat")
+        print("Tabel Real Jadwal telah dibuat")
 
-# --------------------------------------#
-# Fungsi Fungsi untuk menginputkan Data #
-# --------------------------------------#
+# ------------------------------------#
+# Fungsi-fungsi untuk memasukkan data #
+# ------------------------------------#
 
-# Input Data Dosen
+# Memasukkan data Dosen
 def insert_data_dosen():
     with app.app_context():
         with open('static/json/Data_Dosen.json', 'r') as file:
@@ -122,18 +123,27 @@ def insert_data_dosen():
 
         cur = mysql.connection.cursor()
         for item in data:
+            # Ambil nilai dengan penggantian default ke 0 jika tidak ada dan konversi ke integer
+            sks_total = int(item.get('SKS_TOTAL', 0) or 0)
+            kelas_total = int(float(item.get('KELAS_TOTAL', 0) or 0))
+            dosen_total = int(item.get('Dosen_Total', 0) or 0)
+
+
+            # Hitung total keseluruhan
+            total = sks_total + kelas_total + dosen_total
+
             cur.execute("SELECT NO FROM Jdw_Dosen WHERE NO = %s", (item['NO'],))
             result = cur.fetchone()
             if result is None:
                 cur.execute("""
-                    INSERT INTO Jdw_Dosen (NO, THN_SMT, KODE, DOSEN, SKS_1, SKS_2, SKS_TOTAL, KELAS_1, KELAS_2, KELAS_TOTAL, Dosen_1, Dosen_2, Dosen_Total) 
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                """, (item['NO'], item['THN_SMT'], item['KODE'], item['DOSEN'], item['SKS_1'], item['SKS_2'], item['SKS_TOTAL'], item['KELAS_1'], item['KELAS_2'], item['KELAS_TOTAL'], item['Dosen_1'], item['Dosen_2'], item['Dosen_Total']))
+                    INSERT INTO Jdw_Dosen (NO, THN_SMT, KODE, DOSEN, SKS_1, SKS_2, SKS_TOTAL, KELAS_1, KELAS_2, KELAS_TOTAL, Dosen_1, Dosen_2, Dosen_Total, TOTAL) 
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """, (item['NO'], item['THN_SMT'], item['KODE'], item['DOSEN'], item['SKS_1'], item['SKS_2'], sks_total, item['KELAS_1'], item['KELAS_2'], kelas_total, item['Dosen_1'], item['Dosen_2'], dosen_total, total))
         mysql.connection.commit()
         cur.close()
-    print("Data Dosen Berhasil Dimasukan ")
+        print("Data Dosen berhasil dimasukkan")
 
-# Input Data Kapasitas Dosen
+# Memasukkan data Kapasitas Ruangan
 def insert_data_kapasitas_ruangan():
     with app.app_context():
         with open('static/json/kapasitas.json', 'r') as file:
@@ -150,9 +160,9 @@ def insert_data_kapasitas_ruangan():
                 """, (item['FAK'], item['FAKULTAS'], item['KODE_RUANG'], item['NAMA_RUANG'], item['KAPASITAS'], item['GEDUNG'], item['LANTAI'], item['JENIS_RUANG'], item['BERBAGI'], item['JAM_SKS']))
         mysql.connection.commit()
         cur.close()
-    print("Data Kapasitas Ruangan Berhasil Dimasukkan")
+        print("Data Kapasitas Ruangan berhasil dimasukkan")
 
-# Input Data Jadwal
+# Memasukkan data Jadwal
 def insert_data_jadwal():
     with app.app_context():
         with open('static/json/jadwal.json', 'r') as file:
@@ -169,38 +179,9 @@ def insert_data_jadwal():
                 """, (item['Span'], item['Waktu'], item['Senin'], item['Selasa'], item['Rabu'], item['Kamis'], item['Jumat'], item['Sabtu'], item['Minggu']))
         mysql.connection.commit()
         cur.close()
-    print("Data Jadwal Berhasil Dimasukkan")
+        print("Data Jadwal berhasil dimasukkan")
 
-# Input Data Real Jadwal
-# def insert_real_data_jadwal(file_name="hasil_jadwal.json"):
-#     with app.app_context():
-#         if os.path.exists(file_name):
-#             with open(file_name, 'r') as file:
-#                 data = json.load(file)
-
-#             cur = mysql.connection.cursor()
-#             for key, item in data.items():
-#                 span = item['Span']  # Menggunakan 'Judul' sebagai nilai untuk kolom 'Span'
-#                 senin = item['Senin']
-#                 selasa = item['Selasa']
-#                 rabu = item['Rabu']
-#                 kamis = item['Kamis']
-#                 jumat = item['Jumat']
-#                 sabtu = item['Sabtu']
-#                 minggu = item['Minggu']
-
-#                 cur.execute("""
-#                     INSERT INTO real_jadwal (Span, Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu) 
-#                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-#                 """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
-                
-#             mysql.connection.commit()
-#             cur.close()
-#             print("Data dari", file_name, "telah dimasukkan ke dalam tabel Jadwal")
-#         else:
-#             print("File", file_name, "tidak ditemukan")
-
-
+# Memasukkan data Jadwal hasil realisasi
 def insert_real_data_jadwal(file_name="hasil_jadwal.json", limit=886):
     with app.app_context():
         if os.path.exists(file_name):
@@ -209,13 +190,13 @@ def insert_real_data_jadwal(file_name="hasil_jadwal.json", limit=886):
 
             cur = mysql.connection.cursor()
             try:
-                cur.execute("START TRANSACTION")  # Start transaction
+                cur.execute("START TRANSACTION")  # Memulai transaksi
 
-                # Get the current count of data in the table
+                # Mendapatkan jumlah data saat ini di tabel
                 cur.execute("SELECT COUNT(*) FROM real_jadwal")
                 current_count = cur.fetchone()[0]
 
-                count = 0  # Variable to count the number of inserted data
+                count = 0  # Variabel untuk menghitung jumlah data yang dimasukkan
 
                 for key, item in data.items():
                     span = item['Span']
@@ -227,12 +208,12 @@ def insert_real_data_jadwal(file_name="hasil_jadwal.json", limit=886):
                     sabtu = item['Sabtu']
                     minggu = item['Minggu']
 
-                    # Check if data insertion will exceed the limit
+                    # Periksa apakah pemasukan data akan melebihi batas
                     if current_count + count >= limit:
-                        print("Data insertion limit reached.")
+                        print("Batas pemasukan data telah tercapai.")
                         break
 
-                    # Check if data already exists
+                    # Periksa apakah data sudah ada
                     cur.execute("""
                         SELECT * FROM real_jadwal 
                         WHERE Span = %s AND Senin = %s AND Selasa = %s 
@@ -242,23 +223,23 @@ def insert_real_data_jadwal(file_name="hasil_jadwal.json", limit=886):
                     existing_data = cur.fetchone()
 
                     if existing_data:
-                        # If data already exists, skip
-                        print(f"Data for {span} already exists, skipping.")
+                        # Jika data sudah ada, lewati
+                        print(f"Data untuk {span} sudah ada, dilewati.")
                     else:
-                        # If data does not exist, insert
+                        # Jika data tidak ada, masukkan
                         cur.execute("""
                             INSERT INTO real_jadwal 
                             (Span, Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu) 
                             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                         """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
-                        count += 1  # Increment the count of inserted data
+                        count += 1  # Tingkatkan jumlah data yang dimasukkan
 
-                mysql.connection.commit()  # Commit transaction
-                print("Data from", file_name, "has been inserted into the Jadwal table.")
+                mysql.connection.commit()  # Komit transaksi
+                print("Data dari", file_name, "telah dimasukkan ke dalam tabel Jadwal.")
             except Exception as e:
-                mysql.connection.rollback()  # Rollback transaction in case of error
+                mysql.connection.rollback()  # Rollback transaksi jika terjadi kesalahan
                 print("Error:", e)
             finally:
                 cur.close()
         else:
-            print("File", file_name, "not found")
+            print("File", file_name, "tidak ditemukan")

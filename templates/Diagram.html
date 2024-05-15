@@ -7,7 +7,7 @@
     <title>FPMIPA - Dashboard</title>
 
     <!-- ======= Style ====== -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 
@@ -120,63 +120,54 @@
                     <img src="{{ url_for('static', filename='images/profile-1.jpg')}}" alt="User">
                 </div>
             </div>
-
-
-            <!-- ========== cards =========== -->
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">Ruang kelas</div>
-                        <div class="cardName">
-                            <a href="/ruangan" class="more">More Info -></a>
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Ruang Kelas</h2>
+                        <!-- <a href="#" class="btn" onclick="viewAll()">
+                            <select id="viewOption">
+                                <option value="treemap">Treemap</option>
+                                <option value="table">Table</option>
+                            </select>
+                        </a> -->
+                    </div>
+                    <div class="container_chart">
+                        <div class="chart">
+                            <p>Ini Chart Batang</p>
+                            <select id="viewOption">
+                                <option value="treemap">Treemap</option>
+                                <option value="table">Table</option>
+                            </select>
+                            <canvas id="myChart" width="300" height="300"></canvas>
                         </div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="duplicate-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">Daftar Dosen</div>
-                        <!-- <div class="cardName">Daily View</div> -->
-                        <div class="cardName">
-                            <a href="/dosen" class="more">More Info -></a>
+                        <div class="chart">
+                            <canvas id="myChart2" width="300" height="300"></canvas>
                         </div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="people-circle-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">Kapasitas Ruangan</div>
-                        <!-- <div class="cardName">Daily View</div> -->
-                        <div class="cardName">
-                            <a href="/kapasitas" class="more">More Info -></a>
+                        <div class="chart">
+                            <canvas id="doughnut" width="300" height="300"></canvas>
                         </div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="business-outline"></ion-icon>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- ======== Script ========= -->
-    <Script src="{{ url_for('static', filename='js/Dashboard.js') }}"></Script>
+        <!-- ======== Script ========= -->
+        <Script src="{{ url_for('static', filename='js/Dashboard.js') }}"></Script>
+        <!-- <Script src="{{ url_for('static', filename='js/chart1.js') }}"></Script> -->
+
+
+        <!-- ======== Chartjs ========= -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <Script src="{{ url_for('static', filename='js/chart1.js') }}"></Script>
+        <Script src="{{ url_for('static', filename='js/chart2.js') }}"></Script>
 
 
 
-    <!-- ======== Ionicons ======== -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- ======== Ionicons ======== -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
