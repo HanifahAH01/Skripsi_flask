@@ -9,6 +9,9 @@
     <!-- ======= Style ====== -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -134,19 +137,19 @@
                     </div>
                     <div class="container_chart">
                         <div class="chart">
-                            <p>Ini Chart Batang</p>
+                            <!-- <p>Ini Chart Batang</p>
                             <select id="viewOption">
                                 <option value="treemap">Treemap</option>
                                 <option value="table">Table</option>
-                            </select>
-                            <canvas id="myChart" width="300" height="300"></canvas>
+                            </select> -->
+                            <canvas id="myChart" width="750" height="7500"></canvas>
                         </div>
-                        <div class="chart">
+                        <!-- <div class="chart">
                             <canvas id="myChart2" width="300" height="300"></canvas>
                         </div>
                         <div class="chart">
                             <canvas id="doughnut" width="300" height="300"></canvas>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -161,7 +164,7 @@
         <!-- ======== Chartjs ========= -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <Script src="{{ url_for('static', filename='js/chart1.js') }}"></Script>
-        <Script src="{{ url_for('static', filename='js/chart2.js') }}"></Script>
+        <!-- <Script src="{{ url_for('static', filename='js/chart2.js') }}"></Script> -->
 
 
 

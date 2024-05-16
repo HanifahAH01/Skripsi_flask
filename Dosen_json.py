@@ -29,7 +29,7 @@ for user in userDetails:
         "Tahun": user[1],
         "Kode": user[2],
         "Dosen": user[3],
-        "SKS_1": user[4],db_tskrip
+        "SKS_1": user[4],
         "SKS_2": user[5],
         "SKS_Total": user[6],
         "Kelas_1": user[7],
@@ -43,9 +43,14 @@ for user in userDetails:
     }
     data_dosen.append(dosen)
 
+# Struktur data dengan nama list array
+data = {
+    "dosen_list": data_dosen
+}
+
 # Simpan data ke dalam file JSON
 file_name = "data_dosen.json"
 with open(file_name, "w") as json_file:
-    json.dump(data_dosen, json_file, indent=4)
+    json.dump(data, json_file, indent=4)
 
 print("Data dosen berhasil disimpan dalam file JSON:", file_name)

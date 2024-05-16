@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+import os
+from flask import Flask, render_template, send_from_directory
 from flask_mysqldb import MySQL
 from Dosen import Data_Dosen
 from Jadwal import Jadwal
@@ -52,6 +53,10 @@ def admin():
 @app.route("/diagram")
 def diagram():
     return render_template("Diagram.html")
+
+@app.route("/data_dosen")
+def get_data_dosen():
+    return send_from_directory(os.getcwd(), 'data_dosen.json')
 
 # Add Data
 @app.route("/adddata")
