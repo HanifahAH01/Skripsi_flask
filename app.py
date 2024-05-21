@@ -39,6 +39,10 @@ insert_real_data_jadwal()
 def index():
     return render_template("Welcome.html")
 
+@app.route("/testing")
+def testing():
+    return render_template("cobadiagram.html")
+
 # Login
 @app.route("/login")
 def login():
