@@ -1,0 +1,206 @@
+/* ======== Dark Mode ======== */
+
+/* ======== Start Dark Mode Navigation ======== */
+.dark-mode .navigation {
+    background-color: var(--black1);
+    border-color: var(--black1);
+
+}
+
+.dark-mode .navigation ul li:hover,
+.dark-mode .navigation ul li.hovered {
+    background-color: var(--black2);
+}
+
+.dark-mode .navigation ul li a {
+    color: var(--black1);
+}
+
+.dark-mode .navigation ul li a .icon ion-icon,
+.dark-mode .navigation ul li button .icon ion-icon {
+    color: var(--white);
+}
+
+.dark-mode .navigation ul li:hover a .icon ion-icon,
+.dark-mode .navigation ul li.hovered button .icon ion-icon {
+    color: var(--black1);
+}
+
+.dark-mode .navigation ul li a .title,
+.dark-mode .navigation ul li button .title,
+.dark-mode .navigation ul li a .title-brand {
+    color: var(--white);
+}
+
+.dark-mode .navigation ul li:hover a .title,
+.dark-mode .navigation ul li:hover button .title,
+.dark-mode .navigation ul li:hover a .title-brand,
+.dark-mode .navigation ul li.hovered a .title,
+.dark-mode .navigation ul li.hovered button .title,
+.dark-mode .navigation ul li.hovered a .title-brand {
+    color: var(--black1);
+}
+
+.dark-mode .navigation ul li:hover a::before,
+.dark-mode .navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover button::before,
+.dark-mode .navigation ul li.hovered button::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover a::after,
+.dark-mode .navigation ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation ul li:hover button::after,
+.dark-mode .navigation ul li.hovered button::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--black2);
+    pointer-events: none;
+}
+
+.dark-mode .navigation footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--black1);
+    color: var(--white);
+    text-align: center;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.dark-mode .navigation footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.dark-mode .navigation footer a:hover {
+    text-decoration: underline;
+}
+
+/* ======== Finish Dark Mode Navigation ======== */
+
+/* ======== Start Dark Mode Toggle ======== */
+.dark-mode .toggle ion-icon {
+    color: var(--black1);
+}
+
+/* ======== Finish Dark Mode Toggle ======== */
+
+/* ======== Start Dark Mode search ======== */
+.dark-mode .search label input {
+    background-color: #222;
+    color: #fff;
+    border-color: #333;
+}
+
+/* ======== Finish Dark Mode search ======== */
+
+/* ======== Start Dark Mode User ======== */
+.dark-mode .user {
+    border-color: #444;
+}
+
+.dark-mode .user img {
+    filter: brightness(0.8);
+}
+
+/* ======== Finish Dark Mode User ======== */
+
+/* ======== Start Dark Mode RecentOrders ======== */
+.dark-mode .details .recentOrders {
+    background-color: #222;
+    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
+}
+
+/* ======== Finish Dark Mode RecentOrders ======== */
+
+/* ======== Start Dark Mode Text Content ======== */
+.dark-mode .text-content .side-text p,
+.dark-mode .text-content .side-text h1,
+.dark-mode .text-content .side-text h2,
+.dark-mode .text-content .down-text p {
+    color: var(--white);
+}
+
+/* ======== Finish Dark Mode Text Content ======== */
+
+/* ======== Start Dark Mode Text Main ======== */
+.dark-mode .main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--black2);
+    transition: 0.5s;
+}
+
+/* ======== Finish Dark Mode Text Main ======== */
+
+/* ======== Start Dark Mode Text Card ======== */
+.dark-mode .cardBox .card {
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
+    color: var(--white);
+}
+
+.dark-mode .cardBox .card .numbers,
+.dark-mode .cardBox .card .cardName,
+.dark-mode .cardBox .card .more,
+.dark-mode .cardBox .card .iconBx {
+    color: var(--black1);
+}
+
+.dark-mode .cardBox .card:hover {
+    background: var(--black1);
+}
+
+.dark-mode .cardBox .card:hover .numbers,
+.dark-mode .cardBox .card:hover .cardName,
+.dark-mode .cardBox .card:hover .more,
+.dark-mode .cardBox .card:hover .iconBx {
+    color: var(--white);
+}
+
+/* ======== Finish Dark Mode Text Card ======== */

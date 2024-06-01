@@ -1,0 +1,130 @@
+{
+    "kapasitas_list": [
+        {
+            "Gedung": "FPMIPA B",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Pembelajaran Kimia B 106",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Pembelajaran Fisika B 108",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab. Biologi IPSE B 201",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Physics Ipse B - 207",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Lab Multimedia Ipse B 208",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Lab Chemistry ipse B 213",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Bioteknologi 1 B 307",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Bioteknologi 2 B 311",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Pembelajaran Matematika B 314",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Kimia Makanan B 401",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Hayati Kimia B 403",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Unggulan Kimia B 404",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Instrumentasi Fisika B 407",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Komputasi Fisika B 408",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Rekayasa Teknologi Fisika B 410",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Material dan Hayati B 413",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Kimia Lingkungan B 414",
+                    "Kapasitas": 10
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 113 S2 , S3 Ujian S2 / S3",
+                    "Kapasitas": 15
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 114 S2 , S3 Ujian S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 115 S2 , S3 Ujian S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 203",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 205",
+                    "Kapasitas": 70
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 210",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 210",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 301",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 303",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 304",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 305",
+                    "Kapasitas": 70
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 405",
+                    "Kapasitas": 70
+                },
+                {
+                    "Nama_Ruangan": "Microteaching Biologi B 309",
+                    "Kapasitas": 40
+                }
+            ],
+            "Jumlah_Total_Ruangan": 30
+        }
+    ]
+}

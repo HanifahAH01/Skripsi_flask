@@ -223,185 +223,7 @@ body {
     color: var(--blue);
 }
 
-/* ======== Dark Mode ======== */
-.dark-mode .navigation {
-    background-color: var(--black1);
-    /* Ubah warna latar belakang navigasi menjadi gelap */
-    border-color: var(--black1);
-    /* Ubah warna border menjadi gelap */
-}
-
-
-.dark-mode .navigation ul li:hover,
-.dark-mode .navigation ul li.hovered {
-    background-color: var(--black2);
-    /* Ubah warna latar belakang item navigasi saat dihover */
-}
-
-.dark-mode .navigation ul li a {
-    color: var(--black1);
-    /* Ubah warna teks item navigasi menjadi putih */
-}
-
-.dark-mode .navigation ul li a .icon ion-icon,
-.dark-mode .navigation ul li button .icon ion-icon {
-    color: var(--white);
-    /* Mengubah warna ikon menjadi putih saat mode gelap aktif */
-}
-
-.dark-mode .navigation ul li:hover a .icon ion-icon,
-.dark-mode .navigation ul li.hovered button .icon ion-icon {
-    color: var(--black1);
-    /* Mengubah warna ikon menjadi putih saat mode gelap aktif */
-}
-
-.dark-mode .navigation ul li a .title,
-.dark-mode .navigation ul li button .title,
-.dark-mode .navigation ul li a .title-brand {
-    color: var(--white);
-    /* Mengubah warna teks judul menjadi putih saat mode gelap aktif */
-}
-
-.dark-mode .navigation ul li:hover a .title,
-.dark-mode .navigation ul li:hover button .title,
-.dark-mode .navigation ul li:hover a .title-brand,
-.dark-mode .navigation ul li.hovered a .title,
-.dark-mode .navigation ul li.hovered button .title,
-.dark-mode .navigation ul li.hovered a .title-brand {
-    color: var(--black1);
-    /* Mengubah warna teks judul menjadi putih saat mode gelap aktif */
-}
-
-.dark-mode .toggle ion-icon {
-    color: var(--black1);
-    /* Ubah warna ikon toggle menjadi putih */
-}
-
-.dark-mode .search label input {
-    background-color: #222;
-    /* Ubah warna latar belakang input pencarian menjadi gelap */
-    color: #fff;
-    /* Ubah warna teks input pencarian menjadi putih */
-    border-color: #333;
-    /* Ubah warna border input pencarian menjadi gelap */
-}
-
-.dark-mode .user {
-    border-color: #444;
-    /* Ubah warna border foto pengguna menjadi gelap */
-}
-
-.dark-mode .user img {
-    filter: brightness(0.8);
-    /* Reduksi kecerahan foto pengguna untuk penyesuaian mode gelap */
-}
-
-.dark-mode .details .recentOrders {
-    background-color: #222;
-    /* Ubah warna latar belakang area detail menjadi gelap */
-    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
-    /* Atur bayangan menjadi putih untuk kontras */
-}
-
-.dark-mode .text-content .side-text p,
-.dark-mode .text-content .side-text h1,
-.dark-mode .text-content .side-text h2,
-.dark-mode .text-content .down-text p {
-    /* Ubah warna teks konten menjadi putih */
-    color: var(--white);
-}
-
-.dark-mode .main {
-    position: absolute;
-    width: calc(100% - 300px);
-    left: 300px;
-    min-height: 100vh;
-    background: var(--black2);
-    transition: 0.5s;
-}
-
-.dark-mode .navigation ul li:hover a::before,
-.dark-mode .navigation ul li.hovered a::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px var(--black2);
-    pointer-events: none;
-}
-
-.dark-mode .navigation ul li:hover button::before,
-.dark-mode .navigation ul li.hovered button::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px 35px 0 10px var(--black2);
-    pointer-events: none;
-}
-
-.dark-mode .navigation ul li:hover a::after,
-.dark-mode .navigation ul li.hovered a::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px var(--black2);
-    pointer-events: none;
-}
-
-.dark-mode .navigation ul li:hover button::after,
-.dark-mode .navigation ul li.hovered button::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -50px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 35px -35px 0 10px var(--black2);
-    pointer-events: none;
-}
-
-.dark-mode .navigation footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background-color: var(--black1);
-    color: var(--white);
-    text-align: center;
-    font-size: 14px;
-    transition: 0.5s;
-}
-
-/* Style untuk link dalam footer */
-.dark-mode .navigation footer a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-.dark-mode .navigation footer a:hover {
-    text-decoration: underline;
-}
-
-
 /* =========== Curve outside =========== */
-
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before {
     content: '';
@@ -561,11 +383,12 @@ body {
     position: relative;
     display: grid;
     min-height: 500px;
-    /* width: 1580px; */
+    width: 1580px;
     background: var(--gray2);
     padding: 20px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
+    overflow-x: scroll;
 }
 
 .details .cardHeader {
@@ -700,57 +523,52 @@ body {
     border-radius: 6px;
 }
 
-/* Dark Mode Styles for Cards */
-.dark-mode .cardBox .card {
-    background: var(--white);
-    /* Ubah latar belakang kartu menjadi gelap */
-    box-shadow: 0 7px 25px rgba(255, 255, 255, 0.08);
-    /* Ubah bayangan kartu menjadi putih untuk kontras */
-    color: var(--white);
-    /* Ubah warna teks menjadi putih */
-}
-
-.dark-mode .cardBox .card .numbers,
-.dark-mode .cardBox .card .cardName,
-.dark-mode .cardBox .card .more,
-.dark-mode .cardBox .card .iconBx {
-    color: var(--black1);
-    /* Ubah warna teks kartu menjadi putih saat mode gelap aktif */
-}
-
-.dark-mode .cardBox .card:hover {
-    background: var(--black1);
-    /* Ubah latar belakang kartu menjadi lebih gelap saat dihover */
-}
-
-.dark-mode .cardBox .card:hover .numbers,
-.dark-mode .cardBox .card:hover .cardName,
-.dark-mode .cardBox .card:hover .more,
-.dark-mode .cardBox .card:hover .iconBx {
-    color: var(--white);
-    /* Ubah warna teks kartu menjadi putih saat dihover dalam mode gelap */
-}
-
 /* ========== Chart =============== */
-
-.container_chart {
+.chartMenu {
+    width: 100vw;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
 }
 
-.chart {
-    padding: 2rem;
-    border-radius: 1px solid #f49131;
-    border-radius: 1rem;
-    background: #251c35;
-    box-shadow: 0 0 16 rgba(0, 0, 0, 0.08);
+.chartMenu p {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
 }
 
-.chart p {
-    color: white;
-    /* Warna teks putih */
-    font-weight: bold;
-    /* Teks tebal */
+.details .recentOrders .chartCard {
+    width: 100vw;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: start;
+}
+
+.details .recentOrders .chartCard .chartBox {
+    width: 45%; /* Mengubah lebar menjadi 45% */
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 3px rgba(54, 162, 235, 1);
+    background: white;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.details .recentOrders .chartCard .scrollBox {
+    height: auto; /* Menghapus tinggi tetap */
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.details .recentOrders .chartCard .scrollBox .scrollBoxBody {
+    height: auto; /* Menghapus tinggi tetap */
+}
+
+.details .recentOrders .chartCard .chartBox .box {
+    height: 50px;
 }

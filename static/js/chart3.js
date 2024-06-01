@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/kapasitas_all";
+    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_a";
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
@@ -29,23 +29,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // setup myChart 1
             const data = {
-                labels: Gedung,
+                labels: Nama_Ruangan,
                 datasets: [{
                     label: 'Total Ruangan',
-                    data: Jumlah_Total_Ruangan,
+                    data: Kapasitas,
                     borderWidth: 1
                 }]
             };
 
             // config 
             const config = {
-                type: 'pie',
+                type: 'bar',
                 data: data,
             };
 
             // render init block
-            const myChart3 = new Chart(
-                document.getElementById('myChart3'),
+            const myChart4 = new Chart(
+                document.getElementById('myChart4'),
                 config
             );
         }

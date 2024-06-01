@@ -1,0 +1,110 @@
+{
+    "kapasitas_list": [
+        {
+            "Gedung": "FPMIPA C",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Komputer Matematika 3 C 104",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Praktikum C 201",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Kecerdasan Artifisial C 202",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab. Sistem Jaringan dan Teknik Komputer C 203",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Umum C 204",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Digital , Pedagogical dan Didactical C 205",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Smart learning Environment C 206",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Rekayasa Perangkat Lunak dan Manajemen Invormasi C 207",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Multimedia Ilkom C 306",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Ruang Laboratorium Digital C - 101 S2 / S3",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 102 S2 / S3",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 103 S2 / S3",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 105 S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 106 S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 107 S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 301",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 302",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 303",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 304",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 305",
+                    "Kapasitas": 22
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 307",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 308",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 309",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 309",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Lab STEAM Model C 208",
+                    "Kapasitas": 20
+                }
+            ],
+            "Jumlah_Total_Ruangan": 25
+        }
+    ]
+}

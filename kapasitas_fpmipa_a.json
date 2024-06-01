@@ -1,0 +1,130 @@
+{
+    "kapasitas_list": [
+        {
+            "Gedung": "Gedung JICA FPMIPA A",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Komputer Matematika 1 E 305",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Lab Komputer Matematika 2 E 306",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Lab Struktur Tumbuhan N - 105",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Struktur Tumbuhan",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisiologi N 118",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisiologi N 118",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Struktur Hewan N 205",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Microbiologi N 210",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Bumi Antariksa N 220",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Elektronika N 305",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisika Dasar N 309",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisika Lanjut N 313",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisika Material N 318",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Pengajaran Matematika E 302",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia dasar dan Analiktik N 405",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Proses Belajar dan Mengajar Kimia N 410",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Fisik Dan Anorganik N 505",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Organik Dan Bio KIMIA N 509",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Instrumen N 519",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+                    "Kapasitas": 120
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas E - 301 PPG Matematika",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S- 306",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S -305",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S- 304",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S - 302",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S - 301",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+                    "Kapasitas": 120
+                },
+                {
+                    "Nama_Ruangan": "Smart Class Fpmipa E 210",
+                    "Kapasitas": 27
+                },
+                {
+                    "Nama_Ruangan": "Ruang Smartclass/ Digital Lab Kerjasama Okayama University",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Smart Classroom NTNU Taiwan",
+                    "Kapasitas": 65
+                }
+            ],
+            "Jumlah_Total_Ruangan": 30
+        }
+    ]
+}

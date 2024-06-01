@@ -1,0 +1,380 @@
+{
+    "kapasitas_list": [
+        {
+            "Gedung": "FPMIPA B",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Pembelajaran Kimia B 106",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Pembelajaran Fisika B 108",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab. Biologi IPSE B 201",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Physics Ipse B - 207",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Lab Multimedia Ipse B 208",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Lab Chemistry ipse B 213",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Bioteknologi 1 B 307",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Bioteknologi 2 B 311",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Pembelajaran Matematika B 314",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Kimia Makanan B 401",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Hayati Kimia B 403",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Unggulan Kimia B 404",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Instrumentasi Fisika B 407",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Komputasi Fisika B 408",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Rekayasa Teknologi Fisika B 410",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Material dan Hayati B 413",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Riset Kimia Lingkungan B 414",
+                    "Kapasitas": 10
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 113 S2 , S3 Ujian S2 / S3",
+                    "Kapasitas": 15
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 114 S2 , S3 Ujian S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 115 S2 , S3 Ujian S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 203",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 205",
+                    "Kapasitas": 70
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 210",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B 210",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 301",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 303",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 304",
+                    "Kapasitas": 50
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 305",
+                    "Kapasitas": 70
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas B - 405",
+                    "Kapasitas": 70
+                },
+                {
+                    "Nama_Ruangan": "Microteaching Biologi B 309",
+                    "Kapasitas": 40
+                }
+            ],
+            "Jumlah_Total_Ruangan": 30
+        },
+        {
+            "Gedung": "Gedung JICA FPMIPA A",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Komputer Matematika 1 E 305",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Lab Komputer Matematika 2 E 306",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Lab Struktur Tumbuhan N - 105",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Struktur Tumbuhan",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisiologi N 118",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisiologi N 118",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Struktur Hewan N 205",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Microbiologi N 210",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Bumi Antariksa N 220",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Elektronika N 305",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisika Dasar N 309",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisika Lanjut N 313",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Fisika Material N 318",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Pengajaran Matematika E 302",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia dasar dan Analiktik N 405",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Proses Belajar dan Mengajar Kimia N 410",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Fisik Dan Anorganik N 505",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Organik Dan Bio KIMIA N 509",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Lab Kimia Instrumen N 519",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+                    "Kapasitas": 120
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas E - 301 PPG Matematika",
+                    "Kapasitas": 40
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S- 306",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S -305",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S- 304",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S - 302",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas S - 301",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+                    "Kapasitas": 120
+                },
+                {
+                    "Nama_Ruangan": "Smart Class Fpmipa E 210",
+                    "Kapasitas": 27
+                },
+                {
+                    "Nama_Ruangan": "Ruang Smartclass/ Digital Lab Kerjasama Okayama University",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Smart Classroom NTNU Taiwan",
+                    "Kapasitas": 65
+                }
+            ],
+            "Jumlah_Total_Ruangan": 30
+        },
+        {
+            "Gedung": "FPMIPA C",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Komputer Matematika 3 C 104",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Praktikum C 201",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Kecerdasan Artifisial C 202",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab. Sistem Jaringan dan Teknik Komputer C 203",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Umum C 204",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Digital , Pedagogical dan Didactical C 205",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Smart learning Environment C 206",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Rekayasa Perangkat Lunak dan Manajemen Invormasi C 207",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Multimedia Ilkom C 306",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Ruang Laboratorium Digital C - 101 S2 / S3",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 102 S2 / S3",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 103 S2 / S3",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 105 S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 106 S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 107 S2 / S3",
+                    "Kapasitas": 25
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 301",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 302",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 303",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 304",
+                    "Kapasitas": 30
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 305",
+                    "Kapasitas": 22
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 307",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 308",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 309",
+                    "Kapasitas": 65
+                },
+                {
+                    "Nama_Ruangan": "Ruang Kelas C - 309",
+                    "Kapasitas": 60
+                },
+                {
+                    "Nama_Ruangan": "Lab STEAM Model C 208",
+                    "Kapasitas": 20
+                }
+            ],
+            "Jumlah_Total_Ruangan": 25
+        },
+        {
+            "Gedung": "Bangunan Praktek Botani",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Ekologi",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Ekologi",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "LaB Botani",
+                    "Kapasitas": 20
+                }
+            ],
+            "Jumlah_Total_Ruangan": 3
+        }
+    ]
+}

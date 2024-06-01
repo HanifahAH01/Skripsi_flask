@@ -68,3 +68,97 @@
 #             print("Data dari", file_name, "telah dimasukkan ke dalam tabel Jadwal")
 #         else:
 #             print("File", file_name, "tidak ditemukan")
+
+
+# Chart Koneksi
+# const data1 = {
+#                         labels: Gedung,
+#                         datasets: [{
+#                             label: 'Total Ruangan',
+#                             data: Jumlah_Total_Ruangan,
+#                             backgroundColor: [
+#                                 'rgba(255, 26, 104, 0.2)',
+#                                 'rgba(54, 162, 235, 0.2)',
+#                                 'rgba(255, 206, 86, 0.2)',
+#                                 'rgba(75, 192, 192, 0.2)',
+#                                 'rgba(153, 102, 255, 0.2)',
+#                                 'rgba(255, 159, 64, 0.2)',
+#                                 'rgba(0, 0, 0, 0.2)'
+#                             ],
+#                             borderColor: [
+#                                 'rgba(255, 26, 104, 1)',
+#                                 'rgba(54, 162, 235, 1)',
+#                                 'rgba(255, 206, 86, 1)',
+#                                 'rgba(75, 192, 192, 1)',
+#                                 'rgba(153, 102, 255, 1)',
+#                                 'rgba(255, 159, 64, 1)',
+#                                 'rgba(0, 0, 0, 1)'
+#                             ],
+#                             borderWidth: 1
+#                         }]
+#                     };
+
+#                     // config 
+#                     const config1 = {
+#                         type: 'bar',
+#                         data: data1,
+#                         options: {
+#                             scales: {
+#                                 y: {
+#                                     beginAtZero: true
+#                                 }
+#                             }
+#                         }
+#                     };
+
+#                     // render init block
+#                     const myChart = new Chart(
+#                         document.getElementById('myChart'),
+#                         config1
+#                     );
+
+#                     const data2 = {
+#                         labels: Gedung,
+#                         datasets: [{
+#                             label: 'Total Kapasitas',
+#                             data: Jumlah_Total_Ruangan,
+#                             backgroundColor: [
+#                                 'rgba(255, 26, 104, 0.2)',
+#                                 'rgba(54, 162, 235, 0.2)',
+#                                 'rgba(255, 206, 86, 0.2)',
+#                                 'rgba(75, 192, 192, 0.2)',
+#                             ],
+#                             borderColor: [
+#                                 'rgba(255, 26, 104, 1)',
+#                                 'rgba(54, 162, 235, 1)',
+#                                 'rgba(255, 206, 86, 1)',
+#                                 'rgba(75, 192, 192, 1)',
+#                             ],
+#                             borderWidth: 1
+#                         }]
+#                     };
+
+#                     // config 
+#                     const config2 = {
+#                         type: 'pie',
+#                         data: data2,
+#                         options: {
+#                             aspectRatio: 2,
+#                         }
+#                     };
+
+#                     // render init block
+#                     const myChart2 = new Chart(
+#                         document.getElementById('myChart2'),
+#                         config2
+#                     );
+
+#                     function clickHandler(click) {
+#                         const points = myChart.getElementsAtEventForMode(click, 'nearest', { intersect: true }, true);
+#                         if (points.length) {
+#                             myChart2.data.datasets[0].data = Jumlah_Total_Kapasitas[points[0]._index];
+#                             myChart2.update();
+#                         }
+#                     }
+
+#                     myChart.canvas.onclick = clickHandler

@@ -101,6 +101,11 @@
 }
 
 @media (max-width: 768px) {
+    .chartBox {
+        flex: 1 1 100%; /* Pada layar yang lebih kecil, chartBox mengambil seluruh lebar container */
+        margin-right: 0; /* Menghapus margin yang ditetapkan pada layar yang lebih besar */
+    }
+
     #treemapContainer svg {
         width: 100%;
         /* Mengisi lebar parent */

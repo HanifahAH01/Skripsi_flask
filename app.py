@@ -58,9 +58,29 @@ def admin():
 def diagram():
     return render_template("Diagram.html")
 
-@app.route("/data_dosen")
-def get_data_dosen():
-    return send_from_directory(os.getcwd(), 'data_dosen.json')
+@app.route("/dosen_chart")
+def get_dosen_chart():
+    return send_from_directory(os.getcwd(), 'data_dosen_chart.json')
+
+@app.route("/kapasitas_all")
+def get_kapasitas_all():
+    return send_from_directory(os.getcwd(), 'kapasitas_all.json')
+
+@app.route("/kapasitas_fpmipa_a")
+def get_kapasitas_fpmipa_a():
+    return send_from_directory(os.getcwd(), 'kapasitas_fpmipa_a.json')
+
+@app.route("/kapasitas_fpmipa_b")
+def get_kapasitas_fpmipa_b():
+    return send_from_directory(os.getcwd(), 'kapasitas_fpmipa_b.json')
+
+@app.route("/kapasitas_fpmipa_c")
+def get_kapasitas_fpmipa_c():
+    return send_from_directory(os.getcwd(), 'kapasitas_fpmipa_c.json')
+
+@app.route("/kapasitas_fpmipa_lab")
+def get_kapasitas_fpmipa_lab():
+    return send_from_directory(os.getcwd(), 'kapasitas_fpmipa_lab.json')
 
 # Add Data
 @app.route("/adddata")

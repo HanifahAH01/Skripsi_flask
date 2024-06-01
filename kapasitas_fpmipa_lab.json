@@ -1,0 +1,22 @@
+{
+    "kapasitas_list": [
+        {
+            "Gedung": "Bangunan Praktek Botani",
+            "Ruangan": [
+                {
+                    "Nama_Ruangan": "Lab Ekologi",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "Lab Ekologi",
+                    "Kapasitas": 20
+                },
+                {
+                    "Nama_Ruangan": "LaB Botani",
+                    "Kapasitas": 20
+                }
+            ],
+            "Jumlah_Total_Ruangan": 3
+        }
+    ]
+}
