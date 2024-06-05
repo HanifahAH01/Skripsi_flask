@@ -1,45 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     var xmlhttp = new XMLHttpRequest();
-//     var url = "http://127.0.0.1:54587/data_dosen";
-//     xmlhttp.open("GET", url, true);
-//     xmlhttp.send();
-//     xmlhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             var data = JSON.parse(this.responseText);
-//             var Dosen = data.dosen_list.map(function (elem) {
-//                 return elem.Dosen;
-//             });
-//             var Total = data.dosen_list.map(function (elem) {
-//                 return elem.Total;
-//             });
-
-//             const ctx = document.getElementById('myChart').getContext('2d');
-
-//             new Chart(ctx, {
-//                 type: 'bar',
-//                 data: {
-//                     labels: Dosen,
-//                     datasets: [{
-//                         axis: 'y',
-//                         label: 'Total',
-//                         data: Total,
-//                         borderWidth: 1,
-//                         barThickness: 20
-//                     }]
-//                 },
-//                 options: {
-//                     indexAxis: 'y',
-//                     scales: {
-//                         x: {
-//                             beginAtZero: true
-//                         }
-//                     }
-//                 }
-//             });
-//         }
-//     }
-// });
-
+// Chart 1 & 2 SKS Dosen 
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
     var url = "http://127.0.0.1:54587/dosen_chart";
@@ -209,3 +168,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+

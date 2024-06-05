@@ -3,7 +3,7 @@ from flask import Flask, render_template, send_from_directory
 from flask_mysqldb import MySQL
 from Dosen import Data_Dosen
 from Jadwal import Jadwal
-from db import create_table_dosen, create_table_jadwal, create_table_kapasitas_ruangan, create_real_table_jadwal, insert_data_dosen, insert_data_jadwal, insert_data_kapasitas_ruangan, insert_real_data_jadwal
+from db import create_table_dosen,create_real_table_jadwal,create_table_kapasitas_ruangan,create_table_heatmap, insert_data_dosen, insert_data_kapasitas_ruangan, insert_real_data_jadwal, insert_table_heatmap
 
 # Inisiasi Object Flask
 app = Flask(__name__)
@@ -23,14 +23,14 @@ url2 = 'https://siak.upi.edu/jadwal/dosensks'
 
 # Create and Insert Database
 create_table_dosen()
-create_table_kapasitas_ruangan()
-create_table_jadwal()
 create_real_table_jadwal()
+create_table_kapasitas_ruangan()
+create_table_heatmap()
 
 insert_data_dosen()
 insert_data_kapasitas_ruangan()
-insert_data_jadwal()
 insert_real_data_jadwal()
+insert_table_heatmap()
 
 # Fungsi Untuk mengakses setiap Halaman Website
 
@@ -56,7 +56,35 @@ def admin():
 # Admin
 @app.route("/diagram")
 def diagram():
-    return render_template("Diagram.html")
+    # Mengambil data dosen dari database
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM jdw_dosen")
+    userDetails = cur.fetchall()
+    cur.close()
+
+    # Kapasitas
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM kapasitas_ruangan")
+    userDetailskapasitas = cur.fetchall()
+    cur.close()
+
+    # Mengambil data jadwal dari database
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM real_jadwal")
+    jadwal_records = cur.fetchall()
+    cur.close()
+
+    # Mengambil data jadwal dari database
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM heatmap")
+    heatmap_records = cur.fetchall()
+    cur.close()
+
+    return render_template("Diagram.html", heatmap_records=heatmap_records,jadwal_records=jadwal_records,userDetails=userDetails, userDetailskapasitas=userDetailskapasitas)
+
+@app.route("/total_jadwal")
+def get_heatmap():
+    return send_from_directory(os.getcwd(), 'total_jadwal.json')
 
 @app.route("/dosen_chart")
 def get_dosen_chart():

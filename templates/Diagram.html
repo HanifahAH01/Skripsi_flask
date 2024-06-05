@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/darkmode.css') }}">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 </head>
 
 <body>
@@ -128,9 +130,18 @@
                                 <div class="scrollBoxBody">
                                     <canvas id="myChart3"></canvas>
                                     <canvas id="myChart4"></canvas>
+                                    <canvas id="myChart5"></canvas>
+                                    <canvas id="myChart6"></canvas>
+                                    <canvas id="myChart7"></canvas>
                                 </div>
                             </div>
                             <!-- Komentar dan elemen lainnya di sini -->
+                        </div>
+                    </div>
+                    <div class="chartCard">
+                        <div class="chartBox">
+                            <h2>TreeMap Dosen</h2>
+                            <div id="heatmap-container" style="width: 800px; height: 600px;"></div>
                         </div>
                     </div>
                 </div>
@@ -139,11 +150,151 @@
 
         <!-- ======== Script ========= -->
         <script src="{{ url_for('static', filename='js/Dashboard.js') }}"></script>
+
         <!-- ======== Chartjs ========= -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="{{ url_for('static', filename='js/chart1.js') }}"></script>
         <script src="{{ url_for('static', filename='js/chart2.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/chart3.js') }}"></script>
+
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <!-- ruangan -->
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+                var tbody = document.getElementById('jadwal-body');
+                var rows = tbody.getElementsByTagName('tr');
+                for (var i = 0; i < rows.length; i++) {
+                    var cells = rows[i].getElementsByTagName('td');
+                    for (var j = 1; j <= 7; j++) { // Kolom 2 (Senin) hingga 8 (Minggu)
+                        var cellContent = cells[j].innerHTML.trim(); // Menghapus spasi di awal dan akhir
+                        if (cellContent.includes(',')) { // Jika terdapat koma dalam sel
+                            cells[j].innerHTML = 'Terpakai'; // Mengganti dengan "Terpakai"
+                            cells[j].classList.add('terpakai'); // Tambahkan kelas CSS untuk menandai sebagai "Terpakai"
+                            cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
+                            cells[j].addEventListener('click', openPopup);
+                        } else if (isTime(cellContent)) { // Jika isi sel adalah waktu
+                            cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
+                            cells[j].addEventListener('click', openPopup);
+                        }
+                    }
+                }
+            });
+
+            function isTime(content) {
+                // Implementasi sederhana untuk memeriksa apakah konten adalah waktu dalam format tertentu (HH:mm-HH:mm)
+                return /\d{2}:\d{2}-\d{2}:\d{2}/.test(content);
+            }
+
+            function openPopup(event) {
+                var popup = document.getElementById('popup');
+                var content = event.target.getAttribute('data-content'); // Mendapatkan isi sel yang diklik
+                var popupContent = document.getElementById('popup-content');
+                popupContent.textContent = content; // Menampilkan isi sel dalam popup
+
+                var bookingButton = document.getElementById('booking-button');
+                if (event.target.classList.contains('terpakai')) {
+                    // Jika sel terpakai, sembunyikan tombol booking
+                    if (bookingButton) {
+                        bookingButton.style.display = 'none';
+                    }
+                } else {
+                    // Jika sel tidak terpakai, tampilkan tombol booking
+                    if (bookingButton) {
+                        bookingButton.style.display = 'block';
+                    }
+                }
+
+                popup.style.display = 'block';
+            }
+
+            function closePopup() {
+                var popup = document.getElementById('popup');
+                popup.style.display = 'none';
+            }
+
+            // Fungsi untuk membuka aplikasi WhatsApp dengan nomor yang ditentukan
+            function openWhatsApp() {
+                var whatsappNumber = document.getElementById('booking-button').getAttribute('data-whatsapp');
+                var whatsappUrl = 'https://wa.me/' + whatsappNumber;
+                window.open(whatsappUrl, '_blank');
+            }
+        </script>
+
+        <!-- <script>
+
+            // Sample data (replace with your own data)
+            var data = [
+                { x: ['Span1', 'Span2', 'Span3', 'Span4'], y: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'], z: [[3, 4, 5, 6], [1, 2, 3, 4], [6, 5, 4, 3]], type: 'heatmap' }
+            ];
+
+            // Layout configuration
+            var layout = {
+                title: 'Heatmap',
+                xaxis: {
+                    title: 'Ruangan'
+                },
+                yaxis: {
+                    title: 'Hari'
+                }
+            };
+
+            // Plot the heatmap
+            Plotly.newPlot('heatmap-container', data, layout);
+        </script> -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var xmlhttp = new XMLHttpRequest();
+                var url = "http://127.0.0.1:54587/total_jadwal";
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var response = JSON.parse(this.responseText);
+
+                        // Menyiapkan array untuk data ruangan (x)
+                        var x = [];
+                        // Menyiapkan array untuk data hari (y)
+                        var y = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+                        // Menyiapkan array 2D untuk data jumlah (z)
+                        var z = [];
+
+                        // Mendapatkan data ruangan dan jumlah dari JSON
+                        response.Total.forEach(function (item) {
+                            var ruangan = Object.keys(item)[0];
+                            x.push(ruangan);
+
+                            var jumlahHari = Object.values(item[ruangan]).slice(1); // Mengambil nilai total hari dari objek item
+                            z.push(jumlahHari);
+                        });
+
+                        var data = [{
+                            x: x,
+                            y: y,
+                            z: z,
+                            type: 'heatmap',
+                            colorscale: 'Viridis' // Opsional: menentukan skala warna heatmap
+                        }];
+
+                        // Layout configuration
+                        var layout = {
+                            title: 'Heatmap',
+                            xaxis: {
+                                title: 'Ruangan'
+                            },
+                            yaxis: {
+                                title: 'Hari'
+                            }
+                        };
+
+                        // Plot the heatmap
+                        Plotly.newPlot('heatmap-container', data, layout);
+                    }
+                }
+            });
+
+
+
+        </script>
 
         <!-- ======== Ionicons ======== -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
