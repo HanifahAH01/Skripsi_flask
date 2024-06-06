@@ -100,22 +100,20 @@ class Jadwal(object):
                             total_per_span[span_content]["Total Sabtu"] += total_sabtu
                             total_per_span[span_content]["Total Minggu"] += total_minggu
 
-            # Menambahkan entri tambahan ke jadwal_dict untuk menunjukkan total per hari untuk setiap span
-            total_dict = {"Total": []}
+            # Menambahkan entri tambahan ke total_per_span untuk menunjukkan total per hari untuk setiap span
+            total_entries = []
             for span, total in total_per_span.items():
                 total_entry = {
-                    span: {
-                        "Span": span,
-                        "Total_Senin": total["Total Senin"],
-                        "Total_Selasa": total["Total Selasa"],
-                        "Total_Rabu": total["Total Rabu"],
-                        "Total_Kamis": total["Total Kamis"],
-                        "Total_Jumat": total["Total Jumat"],
-                        "Total_Sabtu": total["Total Sabtu"],
-                        "Total_Minggu": total["Total Minggu"]
-                    }
+                    "Span": span,
+                    "Total Senin": total["Total Senin"],
+                    "Total Selasa": total["Total Selasa"],
+                    "Total Rabu": total["Total Rabu"],
+                    "Total Kamis": total["Total Kamis"],
+                    "Total Jumat": total["Total Jumat"],
+                    "Total Sabtu": total["Total Sabtu"],
+                    "Total Minggu": total["Total Minggu"]
                 }
-                total_dict["Total"].append(total_entry)
+                total_entries.append(total_entry)
 
             # Backup file jika sudah ada
             if os.path.exists(file_name):
@@ -127,7 +125,7 @@ class Jadwal(object):
 
             # Menyimpan hasil total per span dalam file JSON terpisah
             with open(total_file_name, 'w') as total_file:
-                json.dump(total_dict, total_file, indent=4)
+                json.dump(total_entries, total_file, indent=4)
 
             print("Data Jadwal Berhasil Di-generate")
             print("Data Total Per Span Berhasil Di-generate")
