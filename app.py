@@ -4,7 +4,7 @@ from flask_mysqldb import MySQL
 from Dosen import Data_Dosen
 from Jadwal import Jadwal
 from db import create_table_dosen,create_real_table_jadwal,create_table_kapasitas_ruangan,create_table_heatmap, insert_data_dosen, insert_data_kapasitas_ruangan, insert_real_data_jadwal, insert_table_heatmap
-
+from heatmap import generate_plot
 # Inisiasi Object Flask
 app = Flask(__name__)
 
@@ -56,6 +56,9 @@ def admin():
 # Admin
 @app.route("/diagram")
 def diagram():
+    # heatmap 
+    plot_html = generate_plot()
+
     # Mengambil data dosen dari database
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM jdw_dosen")
@@ -80,7 +83,7 @@ def diagram():
     heatmap_records = cur.fetchall()
     cur.close()
 
-    return render_template("Diagram.html", heatmap_records=heatmap_records,jadwal_records=jadwal_records,userDetails=userDetails, userDetailskapasitas=userDetailskapasitas)
+    return render_template("Diagram.html", plot_html=plot_html, heatmap_records=heatmap_records,jadwal_records=jadwal_records,userDetails=userDetails, userDetailskapasitas=userDetailskapasitas)
 
 @app.route("/total_jadwal")
 def get_heatmap():

@@ -100,20 +100,23 @@ class Jadwal(object):
                             total_per_span[span_content]["Total Sabtu"] += total_sabtu
                             total_per_span[span_content]["Total Minggu"] += total_minggu
 
-            # Menambahkan entri tambahan ke total_per_span untuk menunjukkan total per hari untuk setiap span
-            total_entries = []
-            for span, total in total_per_span.items():
-                total_entry = {
-                    "Span": span,
-                    "Total Senin": total["Total Senin"],
-                    "Total Selasa": total["Total Selasa"],
-                    "Total Rabu": total["Total Rabu"],
-                    "Total Kamis": total["Total Kamis"],
-                    "Total Jumat": total["Total Jumat"],
-                    "Total Sabtu": total["Total Sabtu"],
-                    "Total Minggu": total["Total Minggu"]
-                }
-                total_entries.append(total_entry)
+        # Menambahkan entri tambahan ke total_per_span untuk menunjukkan total per hari untuk setiap span
+        total_entries = []
+        for span, total in total_per_span.items():
+            # Memisahkan nama span setelah tanda "-"
+            span_name = span.split("-")[1].strip()
+
+            total_entry = {
+                "Span": span_name,  # Menggunakan nama span setelah tanda "-"
+                "Total Senin": total["Total Senin"],
+                "Total Selasa": total["Total Selasa"],
+                "Total Rabu": total["Total Rabu"],
+                "Total Kamis": total["Total Kamis"],
+                "Total Jumat": total["Total Jumat"],
+                "Total Sabtu": total["Total Sabtu"],
+                "Total Minggu": total["Total Minggu"]
+            }
+            total_entries.append(total_entry)
 
             # Backup file jika sudah ada
             if os.path.exists(file_name):

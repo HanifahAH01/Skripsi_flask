@@ -13,6 +13,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://mpld3.github.io/js/mpld3.v0.3.js"></script>
 
 </head>
 
@@ -129,19 +132,49 @@
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
                                     <canvas id="myChart3"></canvas>
+                                </div>
+                            </div>
+                            <!-- Komentar dan elemen lainnya di sini -->
+                        </div>
+                        <div class="chartBox">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
                                     <canvas id="myChart4"></canvas>
+                                </div>
+                            </div>
+                            <!-- Komentar dan elemen lainnya di sini -->
+                        </div>
+                        <div class="chartBox">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
                                     <canvas id="myChart5"></canvas>
+                                </div>
+                            </div>
+                            <!-- Komentar dan elemen lainnya di sini -->
+                        </div>
+                        <div class="chartBox">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
                                     <canvas id="myChart6"></canvas>
+                                </div>
+                            </div>
+                            <!-- Komentar dan elemen lainnya di sini -->
+                        </div>
+                        <div class="chartBox">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
                                     <canvas id="myChart7"></canvas>
                                 </div>
                             </div>
                             <!-- Komentar dan elemen lainnya di sini -->
                         </div>
-                    </div>
-                    <div class="chartCard">
-                        <div class="chartBox">
-                            <h2>TreeMap Dosen</h2>
-                            <div id="heatmap-container" style="width: 800px; height: 600px;"></div>
+                        <div class="chartCard">
+                            <div class="chartBox">
+                                <h2>Heatmap Dosen</h2>
+                                <div style="width: 800px; height: 600px;">
+                                    {{ plot_html | safe }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,175 +190,6 @@
         <script src="{{ url_for('static', filename='js/chart2.js') }}"></script>
 
         <script src="https://d3js.org/d3.v7.min.js"></script>
-
-        <!-- <script>
-
-            // Sample data (replace with your own data)
-            var data = [
-                { x: ['Span1', 'Span2', 'Span3', 'Span4'], y: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'], z: [[3, 4, 5, 6], [1, 2, 3, 4], [6, 5, 4, 3]], type: 'heatmap' }
-            ];
-
-            // Layout configuration
-            var layout = {
-                title: 'Heatmap',
-                xaxis: {
-                    title: 'Ruangan'
-                },
-                yaxis: {
-                    title: 'Hari'
-                }
-            };
-
-            // Plot the heatmap
-            Plotly.newPlot('heatmap-container', data, layout);
-        </script> -->
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                var response = [
-                    {
-                        "Span": "1. 04.4B.01.005 - Lab Pembelajaran Kimia B 106",
-                        "Total Senin": 2,
-                        "Total Selasa": 2,
-                        "Total Rabu": 2,
-                        "Total Kamis": 2,
-                        "Total Jumat": 0,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "2. 04.4A.03.013 - Lab Komputer Matematika 1 E 305",
-                        "Total Senin": 3,
-                        "Total Selasa": 1,
-                        "Total Rabu": 3,
-                        "Total Kamis": 1,
-                        "Total Jumat": 3,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "3. 04.4A.03.014 - Lab Komputer Matematika 2 E 306",
-                        "Total Senin": 2,
-                        "Total Selasa": 1,
-                        "Total Rabu": 3,
-                        "Total Kamis": 3,
-                        "Total Jumat": 1,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "4. 04.4C.01.004 - Lab Komputer Matematika 3 C 104",
-                        "Total Senin": 1,
-                        "Total Selasa": 3,
-                        "Total Rabu": 3,
-                        "Total Kamis": 0,
-                        "Total Jumat": 1,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "5. 04.4C.02.001 - Lab Praktikum C 201",
-                        "Total Senin": 0,
-                        "Total Selasa": 0,
-                        "Total Rabu": 0,
-                        "Total Kamis": 0,
-                        "Total Jumat": 0,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "6. 04.4C.02.002 - Lab Kecerdasan Artifisial C 202",
-                        "Total Senin": 1,
-                        "Total Selasa": 0,
-                        "Total Rabu": 0,
-                        "Total Kamis": 0,
-                        "Total Jumat": 0,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "7. 04.4C.02.004 - Lab. Sistem Jaringan dan Teknik Komputer C 203",
-                        "Total Senin": 0,
-                        "Total Selasa": 2,
-                        "Total Rabu": 0,
-                        "Total Kamis": 0,
-                        "Total Jumat": 0,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-                    {
-                        "Span": "8. 04.4C.02.005 - Lab Umum C 204",
-                        "Total Senin": 1,
-                        "Total Selasa": 1,
-                        "Total Rabu": 0,
-                        "Total Kamis": 0,
-                        "Total Jumat": 0,
-                        "Total Sabtu": 0,
-                        "Total Minggu": 0
-                    },
-
-                ];
-
-                // Menyiapkan array untuk data ruangan (x)
-                var x = [];
-                // Menyiapkan array untuk data hari (y)
-                var y = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
-                // Menyiapkan array 2D untuk data jumlah (z)
-                var z = [];
-
-                // Mendapatkan data ruangan dan jumlah dari JSON
-                response.forEach(function (item) {
-                    var ruangan = item["Span"];
-                    x.push(ruangan);
-
-                    var jumlahHari = [
-                        item["Total Senin"],
-                        item["Total Selasa"],
-                        item["Total Rabu"],
-                        item["Total Kamis"],
-                        item["Total Jumat"],
-                        item["Total Sabtu"],
-                        item["Total Minggu"]
-                    ];
-
-                    // Verifikasi bahwa semua nilai dalam jumlahHari adalah angka
-                    jumlahHari = jumlahHari.map(val => isNaN(val) ? 0 : val);
-
-                    // Pastikan jumlahHari memiliki panjang yang sama dengan y
-                    if (jumlahHari.length === y.length) {
-                        z.push(jumlahHari);
-                    } else {
-                        console.warn(`Data untuk ruangan ${ruangan} tidak konsisten:`, jumlahHari);
-                    }
-                });
-
-                console.log('Data x:', x);
-                console.log('Data y:', y);
-                console.log('Data z:', z);
-
-                var data = [{
-                    x: x,
-                    y: y,
-                    z: z,
-                    type: 'heatmap',
-                    colorscale: 'Viridis' // Opsional: menentukan skala warna heatmap
-                }];
-
-                // Layout configuration
-                var layout = {
-                    title: 'Heatmap',
-                    xaxis: {
-                        title: 'Ruangan'
-                    },
-                    yaxis: {
-                        title: 'Hari'
-                    }
-                };
-
-                // Plot the heatmap
-                Plotly.newPlot('heatmap-container', data, layout);
-            });
-        </script>
 
         <!-- ======== Ionicons ======== -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

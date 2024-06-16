@@ -561,7 +561,7 @@ body {
 
 .details .recentOrders .chartCard .scrollBox {
     height: auto; /* Menghapus tinggi tetap */
-    max-height: 250px;
+    max-height: 100%;
     overflow-y: scroll;
 }
 
