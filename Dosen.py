@@ -44,7 +44,7 @@ class Data_Dosen:
     def get_list_kode_khusus(self):
         return self.list_kode_khusus
 
-    def get_data_dosen(self, file_name="static/json/Data_Dosen.json", backup_file_name="static/json/Data_Dosen_backup.json"):
+    def get_data_dosen(self, file_name="app/static/json/Data_Dosen.json", backup_file_name="app/static/json/Data_Dosen_backup.json"):
         response = requests.get(self.url, headers=self.headers)
 
         if response.status_code == 200:

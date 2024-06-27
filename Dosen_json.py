@@ -83,7 +83,7 @@ data = {
 }
 
 # Simpan data ke dalam file JSON
-file_name = "data_dosen_chart.json"
+file_name = "app/static/json/data_dosen_chart.json"
 with open(file_name, "w") as json_file:
     json.dump(data, json_file, indent=4)
 

@@ -550,7 +550,7 @@ body {
 }
 
 .details .recentOrders .chartCard .chartBox {
-    width: 45%; /* Mengubah lebar menjadi 45% */
+    width: 85%; /* Mengubah lebar menjadi 45% */
     padding: 20px;
     border-radius: 20px;
     border: solid 3px rgba(54, 162, 235, 1);
@@ -564,6 +564,13 @@ body {
     max-height: 100%;
     overflow-y: scroll;
 }
+
+#myChart3 {
+    width: 400px !important;
+    height: 400px !important;
+    
+}
+
 
 .details .recentOrders .chartCard .scrollBox .scrollBoxBody {
     height: auto; /* Menghapus tinggi tetap */

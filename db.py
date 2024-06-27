@@ -137,7 +137,7 @@ def create_table_heatmap():
 # Input Data Dosen
 def insert_data_dosen():
     with app.app_context():
-        with open('static/json/Data_Dosen.json', 'r') as file:
+        with open('app/static/json/Data_Dosen.json', 'r') as file:
             data = json.load(file)
 
         cur = mysql.connection.cursor()
@@ -156,7 +156,7 @@ def insert_data_dosen():
 # Input Data Kapasitas Dosen
 def insert_data_kapasitas_ruangan():
     with app.app_context():
-        with open('static/json/kapasitas.json', 'r') as file:
+        with open('app/static/json/kapasitas.json', 'r') as file:
             data = json.load(file)
 
         cur = mysql.connection.cursor()
@@ -175,7 +175,7 @@ def insert_data_kapasitas_ruangan():
 # Input Data Jadwal
 def insert_data_jadwal():
     with app.app_context():
-        with open('static/json/jadwal.json', 'r') as file:
+        with open('app/static/json/jadwal.json', 'r') as file:
             data = json.load(file)
 
         cur = mysql.connection.cursor()
@@ -191,7 +191,7 @@ def insert_data_jadwal():
         cur.close()
     print("Data Jadwal Berhasil Dimasukkan")
 
-def insert_real_data_jadwal(file_name="static/json/hasil_jadwal.json", limit=886):
+def insert_real_data_jadwal(file_name="app/static/json/hasil_jadwal.json", limit=886):
     with app.app_context():
         if os.path.exists(file_name):
             with open(file_name, 'r') as file:

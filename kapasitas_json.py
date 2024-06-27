@@ -284,11 +284,11 @@ def kapasitas_fpmipa_lab(db_config, file_name5):
     print(f"Data kapasitas ruangan FPMIPA Lab berhasil disimpan dalam file JSON: {file_name5}")
 
 # Nama file JSON
-file_name = "kapasitas_all.json"
-file_name2 = "kapasitas_fpmipa_b.json"
-file_name3 = "kapasitas_fpmipa_a.json"
-file_name4 = "kapasitas_fpmipa_c.json"
-file_name5 = "kapasitas_fpmipa_lab.json"
+file_name = "app/static/json/kapasitas_all.json"
+file_name2 = "app/static/json/kapasitas_fpmipa_b.json"
+file_name3 = "app/static/json/kapasitas_fpmipa_a.json"
+file_name4 = "app/static/json/kapasitas_fpmipa_c.json"
+file_name5 = "app/static/json/kapasitas_fpmipa_lab.json"
 
 # Panggil fungsi
 all_kapasitas(db_config, file_name)

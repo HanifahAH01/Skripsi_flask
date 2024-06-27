@@ -18,8 +18,8 @@
             --gray2: #E4E9F7;
             --dark_blue: #263997;
             --light-blue: #4CA2D9;
-        
         }
+
         body {
             display: flex;
             justify-content: center;
@@ -42,16 +42,17 @@
             border-radius: 9px;
         }
     </style>
-    
+
 </head>
 
 <body>
-    
+
     <div class="container">
-        <img src="{{ url_for('static', filename='images/Group 30.png')}}" style="width:500px; height:100px;">
-        <button type="submit"  onclick="window.location.href='/admin'" style="background-color: var(--dark_blue); color:var(--white)">Admin</button>
-        <button type="submit"  onclick="window.location.href='/home'" style="background-color: var(--light-blue); color:var(--white)">Sivitas Akademik</button>
+        <img src="{{ url_for('static', filename='images/Group_30.png') }}" style="width: 500px; height: 100px;">
+        <button type="button" onclick="window.location.href='/login'" style="background-color: var(--dark_blue); color: var(--white)">Admin</button>
+        <button type="button" onclick="window.location.href='/home'" style="background-color: var(--light-blue); color: var(--white)">Sivitas Akademik</button>
     </div>
+
 </body>
 
 </html>

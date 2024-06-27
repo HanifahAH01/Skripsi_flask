@@ -2,7 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 import shutil
-import os
+import os 
 
 fakultas = 'D'
 
@@ -15,7 +15,7 @@ class Jadwal(object):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
         }
 
-    def get_data_jadwal(self, file_name="static/json/jadwal.json", backup_file_name="static/json/jadwal_backup.json"):
+    def get_data_jadwal(self, file_name="app/static/json/jadwal.json", backup_file_name="app/static/json/jadwal_backup.json"):
         res = requests.get(self.url, headers=self.headers)
 
         if res.status_code == 200:
