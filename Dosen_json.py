@@ -57,6 +57,7 @@ db_connection.close()
 # Konversi data menjadi struktur yang sesuai untuk disimpan dalam file JSON
 data_dosen = []
 for user in userDetails:
+    total = user[6] + user[9] + user[12]  # Penjumlahan SKS_Total + Kelas_Total + Dosen_Total
     dosen = {
         "id": user[0],
         "Tahun": user[1],
@@ -71,8 +72,7 @@ for user in userDetails:
         "Dosen_1": user[10],
         "Dosen_2": user[11],
         "Dosen_Total": user[12],
-        "Total": user[13],
-        # Tambahkan kolom lain sesuai kebutuhan
+        "Total": total  # Menambahkan hasil penjumlahan ke dalam dictionary
     }
     data_dosen.append(dosen)
 

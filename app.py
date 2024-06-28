@@ -169,7 +169,7 @@ def get_heatmap():
 def get_dosen_chart():
     # Path ke direktori json
     json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'Data_Dosen.json')
+    return send_from_directory(json_dir, 'data_dosen_chart.json')
 
 @app.route("/kapasitas_all")
 def get_kapasitas_all():

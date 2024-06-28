@@ -224,6 +224,18 @@
                         </div>
                         <!-- End Chart Bar Horizontal SKS Dosen -->
 
+                        <!-- Start Chart Heatmap -->
+                        <div class="chartBox">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
+                                    <h2>Heatmap Dosen</h2>
+                                    <div class="plot-container">
+                                        {{ plot_html | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Chart Heatmap -->
 
                         <div class="chartCard">
                             <div class="chartBox">
@@ -259,32 +271,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Start Chart Heatmap -->
-                        <!-- <div class="chartBox">
-                            <div class="scrollBox">
-                                <div class="scrollBoxBody">
-                                    <h2>Heatmap Dosen</h2>
-                                    <div class="plot-container">
-                                        {{ plot_html | safe }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                        <div class="chartCard">
-                            <div class="chartBox">
-                                <h2>Heatmap Dosen</h2>
-                                <div class="plot-container">
-                                    {{ plot_html | safe }}
-                                </div>
-                                <!-- <div>
-                                    <h2>Debugging Data</h2>
-                                    <pre>{{ harvest_data | safe }}</pre>
-                                </div> -->
-                            </div>
-                        </div>
-                        <!-- End Chart Heatmap -->
                     </div>
                 </div>
             </div>
