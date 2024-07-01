@@ -1,21 +1,44 @@
 import plotly.graph_objects as go
+import mysql.connector
 import json
 
 def generate_plot():
-    # Ambil data dari file JSON
-    with open('app/static/json/total_jadwal.json') as f:
-        data = json.load(f)
+    # Membuat koneksi ke database
+    db_connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="db_tskrip"
+    )
+    cursor = db_connection.cursor(dictionary=True)
 
+    # Mengambil data dari tabel heatmap
+    cursor.execute("SELECT * FROM heatmap")
+    data = cursor.fetchall()
+
+    # Menutup koneksi database
+    cursor.close()
+    db_connection.close()
+
+    # Debug: Cetak data untuk memeriksa struktur
+    # print(data)
+
+    # Menyiapkan data untuk plot
     vegetables = [entry['Span'] for entry in data]
     farmers = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]
-    harvest = [[entry['Total ' + farmer] for farmer in farmers] for entry in data]
+    
+    # Cek apakah nama kolom sesuai dengan yang ada di data
+    harvest = [[entry['Total_Senin'], entry['Total_Selasa'], entry['Total_Rabu'],
+                entry['Total_Kamis'], entry['Total_Jumat'], entry['Total_Sabtu'],
+                entry['Total_Minggu']] for entry in data]
 
-    # Definisi skala warna kustom
+    # Definisi skala warna kustom dengan 5 warna
     custom_colorscale = [
-        [0, 'rgb(255, 193, 0)'],   # Warna pertama (kuning)
-        [0.33, 'rgb(255, 138, 8)'], # Warna kedua (oranye)
-        [0.66, 'rgb(255, 101, 0)'],  # Warna ketiga (merah oranye)
-        [1, 'rgb(196, 12, 12)']     # Warna keempat (merah tua)
+        [0, 'rgb(155, 236, 0)'],    # Warna pertama (kuning)
+        [0.20, 'rgb(243, 232, 78)'], # Warna kedua (oranye)
+        [0.40, 'rgb(237, 98, 29)'],  # Warna ketiga (merah oranye)
+        [0.60, 'rgb(231, 30, 30)'],  # Warna keempat (merah tua)
+        [1, 'rgb(186, 14, 14)']      # Warna kelima (merah sangat tua)
     ]
 
     # Membuat plot menggunakan Plotly

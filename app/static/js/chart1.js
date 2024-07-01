@@ -1,7 +1,6 @@
-// Chart 1 & 2 SKS Dosen 
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/dosen_chart";
+    var url = "http://127.0.0.1:54587/dosen_chart";  // Pastikan URL ini sesuai dengan endpoint Flask Anda
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return elem.Total;
             });
 
-            // setup myChart 1
+            // Setup Chart 1
             const data1 = {
                 labels: dosen,
                 datasets: [{
@@ -39,14 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         'rgba(0, 0, 0, 1)'
                     ],
                     borderWidth: 1
-                },
-                    // {
-                    //     label: 'Total',
-                    // }
-                ]
+                }]
             };
 
-            // config 
+            // Config Chart 1
             const config1 = {
                 type: 'bar',
                 data: data1,
@@ -81,13 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             };
 
-            // render init block for myChart 1
+            // Render Chart 1
             const myChart = new Chart(
                 document.getElementById('myChart'),
                 config1
             );
 
-            // setup myChart 2
+            // Setup Chart 2
             const data2 = {
                 labels: [],
                 datasets: [{
@@ -115,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }]
             };
 
-            // config 2
+            // Config Chart 2
             const config2 = {
                 type: 'bar',
                 data: data2,
@@ -154,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             };
 
-            // render init block for myChart 2
+            // Render Chart 2
             const myChart2 = new Chart(
                 document.getElementById('myChart2'),
                 config2
@@ -168,4 +163,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-

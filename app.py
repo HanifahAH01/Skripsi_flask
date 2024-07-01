@@ -1,10 +1,12 @@
 import os
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, jsonify, render_template, send_from_directory
 from flask_mysqldb import MySQL
 from Dosen import Data_Dosen
 from Jadwal import Jadwal
 from db import create_table_dosen,create_real_table_jadwal,create_table_kapasitas_ruangan,create_table_heatmap, insert_data_dosen, insert_data_kapasitas_ruangan, insert_real_data_jadwal, insert_table_heatmap
 from heatmap import generate_plot
+import mysql.connector
+
 
 # Inisiasi Object Flask
 app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
@@ -165,36 +167,177 @@ def get_heatmap():
     json_dir = os.path.join(app.static_folder, 'json')
     return send_from_directory(json_dir, 'total_jadwal.json')
 
-@app.route("/dosen_chart")
-def get_dosen_chart():
-    # Path ke direktori json
-    json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'data_dosen_chart.json')
+@app.route('/dosen_chart', methods=['GET'])
+def dosen_chart():
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT DOSEN, Total FROM sks_dosen_fpmipa")
+        result = cur.fetchall()
+        
+        dosen_list = []
+        for row in result:
+            dosen_list.append({"Dosen": row[0], "Total": row[1]})
+        
+        cur.close()
+        return jsonify(dosen_list=dosen_list)
+    except Exception as e:
+        return str(e), 500
+
 
 @app.route("/kapasitas_all")
 def get_kapasitas_all():
-    json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'kapasitas_all.json')
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        SELECT g.nama_gedung, g.jumlah_total_ruangan, r.nama_ruangan, r.kapasitas
+        FROM gedung g
+        JOIN ruangan r ON g.no = r.gedung_no
+    """)
+    result = cur.fetchall()
+    cur.close()
+
+    # Mengatur data untuk dikirim sebagai JSON
+    kapasitas_list = []
+    gedung_dict = {}
+    for row in result:
+        nama_gedung, jumlah_total_ruangan, nama_ruangan, kapasitas = row
+        if nama_gedung not in gedung_dict:
+            gedung_dict[nama_gedung] = {
+                "Gedung": nama_gedung,
+                "Jumlah_Total_Ruangan": jumlah_total_ruangan,
+                "Ruangan": []
+            }
+        gedung_dict[nama_gedung]["Ruangan"].append({
+            "Nama_Ruangan": nama_ruangan,
+            "Kapasitas": kapasitas
+        })
+
+    kapasitas_list = list(gedung_dict.values())
+
+    return jsonify({"kapasitas_list": kapasitas_list})
 
 @app.route("/kapasitas_fpmipa_a")
 def get_kapasitas_fpmipa_a():
-    json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'kapasitas_fpmipa_a.json')
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        SELECT g.nama_gedung, r.nama_ruangan, r.kapasitas
+        FROM gedung g
+        JOIN ruangan r ON g.no = r.gedung_no
+        WHERE g.nama_gedung = 'Gedung JICA FPMIPA A'
+    """)
+    result = cur.fetchall()
+    cur.close()
+
+    # Mengatur data untuk dikirim sebagai JSON
+    kapasitas_list = []
+    gedung_dict = {}
+    for row in result:
+        nama_gedung, nama_ruangan, kapasitas = row
+        if nama_gedung not in gedung_dict:
+            gedung_dict[nama_gedung] = {
+                "Gedung": nama_gedung,
+                "Ruangan": []
+            }
+        gedung_dict[nama_gedung]["Ruangan"].append({
+            "Nama_Ruangan": nama_ruangan,
+            "Kapasitas": kapasitas
+        })
+
+    kapasitas_list = list(gedung_dict.values())
+
+    return jsonify({"kapasitas_list": kapasitas_list})
 
 @app.route("/kapasitas_fpmipa_b")
 def get_kapasitas_fpmipa_b():
-    json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'kapasitas_fpmipa_b.json')
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        SELECT g.nama_gedung, r.nama_ruangan, r.kapasitas
+        FROM gedung g
+        JOIN ruangan r ON g.no = r.gedung_no
+        WHERE g.nama_gedung = 'FPMIPA B'
+    """)
+    result = cur.fetchall()
+    cur.close()
+
+    # Mengatur data untuk dikirim sebagai JSON
+    kapasitas_list = []
+    gedung_dict = {}
+    for row in result:
+        nama_gedung, nama_ruangan, kapasitas = row
+        if nama_gedung not in gedung_dict:
+            gedung_dict[nama_gedung] = {
+                "Gedung": nama_gedung,
+                "Ruangan": []
+            }
+        gedung_dict[nama_gedung]["Ruangan"].append({
+            "Nama_Ruangan": nama_ruangan,
+            "Kapasitas": kapasitas
+        })
+
+    kapasitas_list = list(gedung_dict.values())
+
+    return jsonify({"kapasitas_list": kapasitas_list})
 
 @app.route("/kapasitas_fpmipa_c")
 def get_kapasitas_fpmipa_c():
-    json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'kapasitas_fpmipa_c.json')
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        SELECT g.nama_gedung, r.nama_ruangan, r.kapasitas
+        FROM gedung g
+        JOIN ruangan r ON g.no = r.gedung_no
+        WHERE g.nama_gedung = 'FPMIPA C'
+    """)
+    result = cur.fetchall()
+    cur.close()
+
+    # Mengatur data untuk dikirim sebagai JSON
+    kapasitas_list = []
+    gedung_dict = {}
+    for row in result:
+        nama_gedung, nama_ruangan, kapasitas = row
+        if nama_gedung not in gedung_dict:
+            gedung_dict[nama_gedung] = {
+                "Gedung": nama_gedung,
+                "Ruangan": []
+            }
+        gedung_dict[nama_gedung]["Ruangan"].append({
+            "Nama_Ruangan": nama_ruangan,
+            "Kapasitas": kapasitas
+        })
+
+    kapasitas_list = list(gedung_dict.values())
+
+    return jsonify({"kapasitas_list": kapasitas_list})
 
 @app.route("/kapasitas_fpmipa_lab")
 def get_kapasitas_fpmipa_lab():
-    json_dir = os.path.join(app.static_folder, 'json')
-    return send_from_directory(json_dir, 'kapasitas_fpmipa_lab.json')
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        SELECT g.nama_gedung, r.nama_ruangan, r.kapasitas
+        FROM gedung g
+        JOIN ruangan r ON g.no = r.gedung_no
+        WHERE g.nama_gedung = 'Bangunan Praktek Botani'
+    """)
+    result = cur.fetchall()
+    cur.close()
+
+    # Mengatur data untuk dikirim sebagai JSON
+    kapasitas_list = []
+    gedung_dict = {}
+    for row in result:
+        nama_gedung, nama_ruangan, kapasitas = row
+        if nama_gedung not in gedung_dict:
+            gedung_dict[nama_gedung] = {
+                "Gedung": nama_gedung,
+                "Ruangan": []
+            }
+        gedung_dict[nama_gedung]["Ruangan"].append({
+            "Nama_Ruangan": nama_ruangan,
+            "Kapasitas": kapasitas
+        })
+
+    kapasitas_list = list(gedung_dict.values())
+
+    return jsonify({"kapasitas_list": kapasitas_list})
 
 # Add Data
 @app.route("/adddata")
