@@ -477,9 +477,264 @@ def insert_data_sks_dosen_fpmipa():
 
     except Exception as e:
         print(f"Error: {e}")
+        
+def update_data_sks_dosen_fpmipa():
+    try:
+        with app.app_context():
+            mysql = MySQL()
+
+            # Membaca data JSON
+            with open('app/static/json/data_dosen_chart.json', 'r', encoding='utf-8') as file:
+                data = json.load(file)
+
+            # Mengupdate data di tabel 'sks_dosen_fpmipa'
+            cur = mysql.connection.cursor()
+            for dosen_data in data['dosen_list']:
+                Tahun = dosen_data['Tahun']
+                Kode = dosen_data['Kode']
+                Dosen = dosen_data['Dosen']
+                SKS_1 = dosen_data['SKS_1']
+                SKS_2 = dosen_data['SKS_2']
+                SKS_Total = dosen_data['SKS_Total']
+                Kelas_1 = dosen_data['Kelas_1']
+                Kelas_2 = dosen_data['Kelas_2']
+                Kelas_Total = dosen_data['Kelas_Total']
+                Dosen_1 = dosen_data['Dosen_1']
+                Dosen_2 = dosen_data['Dosen_2']
+                Dosen_Total = dosen_data['Dosen_Total']
+                Total = dosen_data['Total']
+
+                # Periksa apakah data dosen sudah ada
+                cur.execute("""
+                    SELECT * FROM sks_dosen_fpmipa 
+                    WHERE Tahun = %s AND Kode = %s AND Dosen = %s
+                """, (Tahun, Kode, Dosen))
+                existing_data = cur.fetchone()
+
+                if existing_data:
+                    # Jika data ada, perbarui dengan nilai baru
+                    cur.execute("""
+                        UPDATE sks_dosen_fpmipa 
+                        SET SKS_1 = %s, SKS_2 = %s, SKS_Total = %s, 
+                            Kelas_1 = %s, Kelas_2 = %s, Kelas_Total = %s, 
+                            Dosen_1 = %s, Dosen_2 = %s, Dosen_Total = %s, Total = %s
+                        WHERE Tahun = %s AND Kode = %s AND Dosen = %s
+                    """, (SKS_1, SKS_2, SKS_Total, Kelas_1, Kelas_2, Kelas_Total, 
+                            Dosen_1, Dosen_2, Dosen_Total, Total, Tahun, Kode, Dosen))
+                    print(f"Data for {Dosen} in year {Tahun} has been updated.")
+                else:
+                    # Jika data tidak ada, sisipkan data baru
+                    cur.execute("""
+                        INSERT INTO sks_dosen_fpmipa 
+                        (Tahun, Kode, Dosen, SKS_1, SKS_2, SKS_Total, Kelas_1, Kelas_2, Kelas_Total, Dosen_1, Dosen_2, Dosen_Total, Total) 
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """, (Tahun, Kode, Dosen, SKS_1, SKS_2, SKS_Total, Kelas_1, Kelas_2, Kelas_Total, Dosen_1, Dosen_2, Dosen_Total, Total))
+                    print(f"Data for {Dosen} in year {Tahun} has been inserted.")
+
+            # Menyimpan perubahan dan menutup cursor
+            mysql.connection.commit()
+            cur.close()
+            print("Data telah berhasil diperbarui di tabel sks_dosen_fpmipa")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
 
 # --------------------------------------#
-# Fungsi Fungsi untuk Trigger Data #
+# Fungsi Fungsi untuk update Data       #
+# --------------------------------------#
+
+def update_data_dosen():
+    with app.app_context():
+        with open('app/static/json/Data_Dosen.json', 'r') as file:
+            data = json.load(file)
+
+        cur = mysql.connection.cursor()
+        for item in data:
+            cur.execute("SELECT NO FROM Jdw_Dosen WHERE NO = %s", (item['NO'],))
+            result = cur.fetchone()
+            if result:
+                # Konversi nilai ke float dan hitung total
+                sks_1 = float(item['SKS_1']) if item['SKS_1'] else 0
+                sks_2 = float(item['SKS_2']) if item['SKS_2'] else 0
+                kelas_1 = float(item['KELAS_1']) if item['KELAS_1'] else 0
+                kelas_2 = float(item['KELAS_2']) if item['KELAS_2'] else 0
+                dosen_1 = float(item['Dosen_1']) if item['Dosen_1'] else 0
+                dosen_2 = float(item['Dosen_2']) if item['Dosen_2'] else 0
+
+                sks_total = sks_1 + sks_2
+                kelas_total = kelas_1 + kelas_2
+                dosen_total = dosen_1 + dosen_2
+                total = sks_total + kelas_total + dosen_total
+
+                cur.execute("""
+                    UPDATE Jdw_Dosen 
+                    SET THN_SMT = %s, KODE = %s, DOSEN = %s, SKS_1 = %s, SKS_2 = %s, 
+                        SKS_TOTAL = %s, KELAS_1 = %s, KELAS_2 = %s, KELAS_TOTAL = %s, 
+                        Dosen_1 = %s, Dosen_2 = %s, Dosen_Total = %s, Total = %s 
+                    WHERE NO = %s
+                """, (
+                    item['THN_SMT'], item['KODE'], item['DOSEN'], sks_1, sks_2, 
+                    sks_total, kelas_1, kelas_2, kelas_total, 
+                    dosen_1, dosen_2, dosen_total, total, item['NO']
+                ))
+        mysql.connection.commit()
+        cur.close()
+    print("Data Dosen Berhasil Diperbarui")
+
+def update_real_data_jadwal(file_name="app/static/json/hasil_jadwal.json"):
+    with app.app_context():
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as file:
+                data = json.load(file)
+
+            cur = mysql.connection.cursor()
+            try:
+                cur.execute("START TRANSACTION")  # Mulai transaksi
+
+                for key, item in data.items():
+                    span = item['Span']
+                    senin = item['Senin']
+                    selasa = item['Selasa']
+                    rabu = item['Rabu']
+                    kamis = item['Kamis']
+                    jumat = item['Jumat']
+                    sabtu = item['Sabtu']
+                    minggu = item['Minggu']
+
+                    # Periksa apakah data sudah ada
+                    cur.execute("""
+                        SELECT * FROM real_jadwal 
+                        WHERE Span = %s AND Senin = %s AND Selasa = %s 
+                        AND Rabu = %s AND Kamis = %s AND Jumat = %s 
+                        AND Sabtu = %s AND Minggu = %s
+                    """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
+                    existing_data = cur.fetchone()
+
+                    if existing_data:
+                        # Jika data ada, perbarui dengan nilai baru
+                        cur.execute("""
+                            UPDATE real_jadwal 
+                            SET Senin = %s, Selasa = %s, Rabu = %s, Kamis = %s, 
+                                Jumat = %s, Sabtu = %s, Minggu = %s
+                            WHERE Span = %s
+                        """, (senin, selasa, rabu, kamis, jumat, sabtu, minggu, span))
+                        print(f"Data for {span} has been updated.")
+                    else:
+                        # Jika data tidak ada, lewati
+                        print(f"Data for {span} does not exist, skipping.")
+
+                mysql.connection.commit()  # Commit transaksi
+                print("Data from", file_name, "has been updated in the Jadwal table.")
+            except Exception as e:
+                mysql.connection.rollback()  # Rollback transaksi jika terjadi kesalahan
+                print("Error:", e)
+            finally:
+                cur.close()
+        else:
+            print("File", file_name, "not found")
+
+def update_table_heatmap(file_name="total_jadwal.json"):
+    with app.app_context():
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as file:
+                data = json.load(file)
+
+            cur = mysql.connection.cursor()
+            try:
+                cur.execute("START TRANSACTION")  # Mulai transaksi
+
+                for key, item in data.items():
+                    span = item['Span']
+                    total_senin = item['Total_Senin']
+                    total_selasa = item['Total_Selasa']
+                    total_rabu = item['Total_Rabu']
+                    total_kamis = item['Total_Kamis']
+                    total_jumat = item['Total_Jumat']
+                    total_sabtu = item['Total_Sabtu']
+                    total_minggu = item['Total_Minggu']
+
+                    # Periksa apakah data sudah ada
+                    cur.execute("""
+                        SELECT * FROM heatmap 
+                        WHERE Span = %s
+                    """, (span,))
+                    existing_data = cur.fetchone()
+
+                    if existing_data:
+                        # Jika data ada, perbarui dengan nilai baru
+                        cur.execute("""
+                            UPDATE heatmap 
+                            SET Total_Senin = %s, Total_Selasa = %s, Total_Rabu = %s, 
+                                Total_Kamis = %s, Total_Jumat = %s, Total_Sabtu = %s, 
+                                Total_Minggu = %s
+                            WHERE Span = %s
+                        """, (total_senin, total_selasa, total_rabu, total_kamis, total_jumat, total_sabtu, total_minggu, span))
+                        print(f"Data for {span} has been updated.")
+                    else:
+                        # Jika data tidak ada, lewati
+                        print(f"Data for {span} does not exist, skipping.")
+
+                mysql.connection.commit()  # Commit transaksi
+                print("Data from", file_name, "has been updated in the heatmap table.")
+            except Exception as e:
+                mysql.connection.rollback()  # Rollback transaksi jika terjadi kesalahan
+                print("Error:", e)
+            finally:
+                cur.close()
+        else:
+            print("File", file_name, "not found")
+
+def update_data_heatmap():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        
+        # Membaca data JSON
+        with open('app/static/json/kapasitas_all.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        # Mengupdate data di tabel 'gedung' dan 'ruangan'
+        for gedung in data['kapasitas_list']:
+            nama_gedung = gedung['Gedung']
+            jumlah_total_ruangan = gedung['Jumlah_Total_Ruangan']
+            
+            # Periksa apakah data gedung sudah ada
+            cur.execute("SELECT no FROM gedung WHERE nama_gedung = %s", (nama_gedung,))
+            gedung_no = cur.fetchone()
+
+            if gedung_no:
+                gedung_no = gedung_no[0]
+                # Update data gedung jika sudah ada
+                cur.execute("UPDATE gedung SET jumlah_total_ruangan = %s WHERE no = %s", (jumlah_total_ruangan, gedung_no))
+            else:
+                # Sisipkan data gedung jika belum ada
+                cur.execute("INSERT INTO gedung (nama_gedung, jumlah_total_ruangan) VALUES (%s, %s)", (nama_gedung, jumlah_total_ruangan))
+                gedung_no = cur.lastrowid
+
+            for ruangan in gedung['Ruangan']:
+                nama_ruangan = ruangan['Nama_Ruangan']
+                kapasitas = ruangan['Kapasitas']
+                
+                # Periksa apakah data ruangan sudah ada
+                cur.execute("SELECT no FROM ruangan WHERE nama_ruangan = %s AND gedung_no = %s", (nama_ruangan, gedung_no))
+                ruangan_no = cur.fetchone()
+
+                if ruangan_no:
+                    ruangan_no = ruangan_no[0]
+                    # Update data ruangan jika sudah ada
+                    cur.execute("UPDATE ruangan SET kapasitas = %s WHERE no = %s", (kapasitas, ruangan_no))
+                else:
+                    # Sisipkan data ruangan jika belum ada
+                    cur.execute("INSERT INTO ruangan (nama_ruangan, kapasitas, gedung_no) VALUES (%s, %s, %s)", (nama_ruangan, kapasitas, gedung_no))
+
+        # Menyimpan perubahan dan menutup cursor
+        mysql.connection.commit()
+        cur.close()
+        print("Data telah berhasil diperbarui dari JSON")
+
+
+# --------------------------------------#
+# Fungsi Fungsi untuk Trigger Data      #
 # --------------------------------------#
 
 def create_triggers():
@@ -653,27 +908,30 @@ def create_triggers_sks_dosen_fpmipa():
 
 if __name__ == "__main__":
     # create table
-    create_users()
-    create_table_dosen()
-    create_table_kapasitas_ruangan()
-    create_table_jadwal()
-    create_real_table_jadwal()
-    create_real_table_jadwal()
-    create_table_heatmap()
-    create_heatmap_gedung()
-    create_heatmap_ruangan()
-    create_sks_dosen_fpmipa()
+    # create_users()
+    # create_table_dosen()
+    # create_table_kapasitas_ruangan()
+    # create_table_jadwal()
+    # create_real_table_jadwal()
+    # create_real_table_jadwal()
+    # create_table_heatmap()
+    # create_heatmap_gedung()
+    # create_heatmap_ruangan()
+    # create_sks_dosen_fpmipa()
 
     # insert
-    insert_data_dosen()
-    insert_data_kapasitas_ruangan()
+    # insert_data_dosen()
+    # insert_data_kapasitas_ruangan()
     # insert_data_jadwal()
-    insert_real_data_jadwal()
-    insert_table_heatmap()
-    insert_data_heatmap()
-    insert_data_sks_dosen_fpmipa()
+    # insert_real_data_jadwal()
+    # insert_table_heatmap()
+    # insert_data_heatmap()
+    # insert_data_sks_dosen_fpmipa()
+    
+    # Update
+    # update_data_dosen()
+    update_real_data_jadwal()
 
     # trigger
-    create_triggers()
-    create_triggers_sks_dosen_fpmipa()
-    
+    # create_triggers()
+    # create_triggers_sks_dosen_fpmipa()

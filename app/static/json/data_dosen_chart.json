@@ -7,14 +7,14 @@
             "Dosen": "Achmad Faqihuddin, S.Pd., M.Pd.",
             "SKS_1": 6,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 7.0,
             "Kelas_1": 22,
             "Kelas_2": 1,
-            "Kelas_Total": 23,
+            "Kelas_Total": 23.0,
             "Dosen_1": 10,
             "Dosen_2": 1,
-            "Dosen_Total": 11,
-            "Total": 40
+            "Dosen_Total": 11.0,
+            "Total": 41.0
         },
         {
             "id": 25,
@@ -23,14 +23,14 @@
             "Dosen": "Agus Fany Chandra Wijaya, S.Pd., M.Pd.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 3,
             "Kelas_2": 0,
-            "Kelas_Total": 3,
+            "Kelas_Total": 3.0,
             "Dosen_1": 1,
             "Dosen_2": 0,
-            "Dosen_Total": 1,
-            "Total": 5
+            "Dosen_Total": 1.0,
+            "Total": 5.0
         },
         {
             "id": 40,
@@ -39,14 +39,14 @@
             "Dosen": "Ahmad Fu'adin, S.Pd., M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 24,
             "Kelas_2": 0,
-            "Kelas_Total": 24,
+            "Kelas_Total": 24.0,
             "Dosen_1": 11,
             "Dosen_2": 0,
-            "Dosen_Total": 11,
-            "Total": 37
+            "Dosen_Total": 11.0,
+            "Total": 37.0
         },
         {
             "id": 48,
@@ -55,14 +55,14 @@
             "Dosen": "Alfiansah Sandion Prakoso, S.Pd., M.Pd.",
             "SKS_1": 2,
             "SKS_2": 2,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 6,
             "Kelas_2": 5,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 2,
             "Dosen_2": 3,
-            "Dosen_Total": 5,
-            "Total": 20
+            "Dosen_Total": 5.0,
+            "Total": 20.0
         },
         {
             "id": 54,
@@ -71,14 +71,14 @@
             "Dosen": "Amelinda Pratiwi, M.Si.",
             "SKS_1": 3,
             "SKS_2": 3,
-            "SKS_Total": 4,
+            "SKS_Total": 6.0,
             "Kelas_1": 4,
             "Kelas_2": 3,
-            "Kelas_Total": 7,
+            "Kelas_Total": 7.0,
             "Dosen_1": 3,
             "Dosen_2": 3,
-            "Dosen_Total": 6,
-            "Total": 17
+            "Dosen_Total": 6.0,
+            "Total": 19.0
         },
         {
             "id": 60,
@@ -87,14 +87,14 @@
             "Dosen": "Andini Setya Arianti, M.Ds.",
             "SKS_1": 1,
             "SKS_2": 3,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 3,
             "Kelas_2": 4,
-            "Kelas_Total": 7,
+            "Kelas_Total": 7.0,
             "Dosen_1": 1,
             "Dosen_2": 3,
-            "Dosen_Total": 4,
-            "Total": 15
+            "Dosen_Total": 4.0,
+            "Total": 15.0
         },
         {
             "id": 66,
@@ -103,14 +103,14 @@
             "Dosen": "Ani Anisyah, M.T.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 82,
@@ -119,14 +119,14 @@
             "Dosen": "Arif Hidayat, S.Pd., M.Si., Ph.D.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 8,
             "Kelas_2": 1,
-            "Kelas_Total": 9,
+            "Kelas_Total": 9.0,
             "Dosen_1": 3,
             "Dosen_2": 1,
-            "Dosen_Total": 4,
-            "Total": 17
+            "Dosen_Total": 4.0,
+            "Total": 17.0
         },
         {
             "id": 93,
@@ -135,14 +135,14 @@
             "Dosen": "Asep Saefudin, M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 7,
             "Kelas_2": 0,
-            "Kelas_Total": 7,
+            "Kelas_Total": 7.0,
             "Dosen_1": 2,
             "Dosen_2": 0,
-            "Dosen_Total": 2,
-            "Total": 11
+            "Dosen_Total": 2.0,
+            "Total": 11.0
         },
         {
             "id": 131,
@@ -151,14 +151,14 @@
             "Dosen": "DADI MULYADI NUGRAHA, S.Pd., M.Pd.",
             "SKS_1": 1,
             "SKS_2": 1,
-            "SKS_Total": 1,
+            "SKS_Total": 2.0,
             "Kelas_1": 16,
             "Kelas_2": 2,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 8,
             "Dosen_2": 2,
-            "Dosen_Total": 10,
-            "Total": 29
+            "Dosen_Total": 10.0,
+            "Total": 30.0
         },
         {
             "id": 141,
@@ -167,14 +167,14 @@
             "Dosen": "Dedi Warsana, M.Sn.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 38
+            "Dosen_Total": 7.0,
+            "Total": 38.0
         },
         {
             "id": 175,
@@ -183,14 +183,14 @@
             "Dosen": "Didin Wahyudin,S.Pd.,MT.,Ph.D.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 24,
             "Kelas_2": 0,
-            "Kelas_Total": 24,
+            "Kelas_Total": 24.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 42
+            "Dosen_Total": 10.0,
+            "Total": 42.0
         },
         {
             "id": 188,
@@ -199,14 +199,14 @@
             "Dosen": "Dr. Achmad Samsudin, S.Pd., M.Pd.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
-            "Kelas_1": 19,
+            "SKS_Total": 7.0,
+            "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 18.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 34
+            "Dosen_Total": 8.0,
+            "Total": 33.0
         },
         {
             "id": 193,
@@ -215,14 +215,14 @@
             "Dosen": "Dr. Agus Fakhruddin, M.Pd.",
             "SKS_1": 8,
             "SKS_2": 1,
-            "SKS_Total": 9,
+            "SKS_Total": 9.0,
             "Kelas_1": 30,
             "Kelas_2": 3,
-            "Kelas_Total": 33,
+            "Kelas_Total": 33.0,
             "Dosen_1": 14,
             "Dosen_2": 2,
-            "Dosen_Total": 16,
-            "Total": 58
+            "Dosen_Total": 16.0,
+            "Total": 58.0
         },
         {
             "id": 203,
@@ -231,14 +231,14 @@
             "Dosen": "Dr. Al Azhary Masta, S.Si., M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 15,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 25
+            "Dosen_Total": 5.0,
+            "Total": 25.0
         },
         {
             "id": 206,
@@ -247,14 +247,14 @@
             "Dosen": "Dr. Amprasto, M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 21,
             "Kelas_2": 0,
-            "Kelas_Total": 21,
+            "Kelas_Total": 21.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 39
+            "Dosen_Total": 10.0,
+            "Total": 39.0
         },
         {
             "id": 207,
@@ -263,14 +263,14 @@
             "Dosen": "Dr. Ana Ratna Wulan, M.Pd.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 6,
             "Kelas_2": 0,
-            "Kelas_Total": 6,
+            "Kelas_Total": 6.0,
             "Dosen_1": 2,
             "Dosen_2": 0,
-            "Dosen_Total": 2,
-            "Total": 9
+            "Dosen_Total": 2.0,
+            "Total": 9.0
         },
         {
             "id": 214,
@@ -279,14 +279,14 @@
             "Dosen": "Dr. Arie Rakhmat Riyadi, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 6.0,
             "Kelas_1": 13,
             "Kelas_2": 1,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 6,
             "Dosen_2": 1,
-            "Dosen_Total": 7,
-            "Total": 26
+            "Dosen_Total": 7.0,
+            "Total": 27.0
         },
         {
             "id": 226,
@@ -295,14 +295,14 @@
             "Dosen": "Dr. Asep Sumpena, S.Pd., M.Pd.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 46
+            "Dosen_Total": 12.0,
+            "Total": 46.0
         },
         {
             "id": 228,
@@ -311,14 +311,14 @@
             "Dosen": "Dr. Asep Wahyudin, S.Kom., M.T.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 23
+            "Dosen_Total": 5.0,
+            "Total": 23.0
         },
         {
             "id": 229,
@@ -327,14 +327,14 @@
             "Dosen": "Dr. Ayo Sunaryo, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 4,
-            "SKS_Total": 7,
+            "SKS_Total": 9.0,
             "Kelas_1": 13,
             "Kelas_2": 6,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 8,
             "Dosen_2": 4,
-            "Dosen_Total": 12,
-            "Total": 38
+            "Dosen_Total": 12.0,
+            "Total": 40.0
         },
         {
             "id": 233,
@@ -343,14 +343,14 @@
             "Dosen": "Dr. Bambang Avip Priatna, M.Si.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 21,
             "Kelas_2": 0,
-            "Kelas_Total": 21,
+            "Kelas_Total": 21.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 36
+            "Dosen_Total": 8.0,
+            "Total": 36.0
         },
         {
             "id": 235,
@@ -359,14 +359,14 @@
             "Dosen": "Dr. Bambang Supriatno, M.Si.",
             "SKS_1": 6,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 7.0,
             "Kelas_1": 18,
             "Kelas_2": 1,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 7,
             "Dosen_2": 1,
-            "Dosen_Total": 8,
-            "Total": 33
+            "Dosen_Total": 8.0,
+            "Total": 34.0
         },
         {
             "id": 238,
@@ -375,14 +375,14 @@
             "Dosen": "Dr. Budi Laksono Putro, S.Si., M.T.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 33
+            "Dosen_Total": 7.0,
+            "Total": 33.0
         },
         {
             "id": 250,
@@ -391,14 +391,14 @@
             "Dosen": "Dr. Dadan Dasari, M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 28,
             "Kelas_2": 0,
-            "Kelas_Total": 28,
+            "Kelas_Total": 28.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 46
+            "Dosen_Total": 10.0,
+            "Total": 46.0
         },
         {
             "id": 252,
@@ -407,14 +407,14 @@
             "Dosen": "Dr. Dadi Rusdiana, M.Si.",
             "SKS_1": 10,
             "SKS_2": 0,
-            "SKS_Total": 10,
+            "SKS_Total": 10.0,
             "Kelas_1": 29,
             "Kelas_2": 0,
-            "Kelas_Total": 29,
+            "Kelas_Total": 29.0,
             "Dosen_1": 11,
             "Dosen_2": 0,
-            "Dosen_Total": 11,
-            "Total": 50
+            "Dosen_Total": 11.0,
+            "Total": 50.0
         },
         {
             "id": 257,
@@ -423,14 +423,14 @@
             "Dosen": "Dr. Deni Kadarsah, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 35
+            "Dosen_Total": 10.0,
+            "Total": 35.0
         },
         {
             "id": 270,
@@ -439,14 +439,14 @@
             "Dosen": "Dr. Didik Priyandoko, M.Si.",
             "SKS_1": 6,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 7.0,
             "Kelas_1": 15,
             "Kelas_2": 1,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 6,
             "Dosen_2": 1,
-            "Dosen_Total": 7,
-            "Total": 29
+            "Dosen_Total": 7.0,
+            "Total": 30.0
         },
         {
             "id": 278,
@@ -455,14 +455,14 @@
             "Dosen": "Dr. Duden Saepuzaman, S.Pd., M.Pd., M.Si.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 13,
             "Kelas_2": 2,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 24
+            "Dosen_Total": 5.0,
+            "Total": 24.0
         },
         {
             "id": 280,
@@ -471,14 +471,14 @@
             "Dosen": "Dr. Eka Prihatin, M.Pd",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 41
+            "Dosen_Total": 10.0,
+            "Total": 41.0
         },
         {
             "id": 283,
@@ -487,14 +487,14 @@
             "Dosen": "Dr. Elah Nurlaelah, M.Si.",
             "SKS_1": 13,
             "SKS_2": 0,
-            "SKS_Total": 13,
+            "SKS_Total": 13.0,
             "Kelas_1": 43,
             "Kelas_2": 0,
-            "Kelas_Total": 43,
+            "Kelas_Total": 43.0,
             "Dosen_1": 15,
             "Dosen_2": 0,
-            "Dosen_Total": 15,
-            "Total": 71
+            "Dosen_Total": 15.0,
+            "Total": 71.0
         },
         {
             "id": 284,
@@ -503,14 +503,14 @@
             "Dosen": "Dr. Elan Sumarna, M.Ag.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 27
+            "Dosen_Total": 8.0,
+            "Total": 27.0
         },
         {
             "id": 293,
@@ -519,14 +519,14 @@
             "Dosen": "Dr. Eni Nuraeni, S.Pd., M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
-            "Kelas_1": 9,
+            "SKS_Total": 4.0,
+            "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 9,
+            "Kelas_Total": 8.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 17
+            "Dosen_Total": 4.0,
+            "Total": 16.0
         },
         {
             "id": 294,
@@ -535,14 +535,14 @@
             "Dosen": "Dr. Entit Puspita, S.Pd., M.Si.",
             "SKS_1": 7,
             "SKS_2": 2,
-            "SKS_Total": 9,
+            "SKS_Total": 9.0,
             "Kelas_1": 16,
-            "Kelas_2": 3,
-            "Kelas_Total": 18,
+            "Kelas_2": 2,
+            "Kelas_Total": 18.0,
             "Dosen_1": 7,
             "Dosen_2": 2,
-            "Dosen_Total": 9,
-            "Total": 36
+            "Dosen_Total": 9.0,
+            "Total": 36.0
         },
         {
             "id": 299,
@@ -551,14 +551,14 @@
             "Dosen": "Dr. Eviana Hikamudin, S.Pd., M.M.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 11,
             "Kelas_2": 0,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 19
+            "Dosen_Total": 5.0,
+            "Total": 19.0
         },
         {
             "id": 300,
@@ -567,14 +567,14 @@
             "Dosen": "Dr. Eyus Sudihartinih, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 2,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 12,
             "Kelas_2": 3,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 5,
             "Dosen_2": 2,
-            "Dosen_Total": 7,
-            "Total": 29
+            "Dosen_Total": 7.0,
+            "Total": 29.0
         },
         {
             "id": 301,
@@ -583,14 +583,14 @@
             "Dosen": "Dr. Fahrudin, M.Ag.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 13,
             "Kelas_2": 0,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 23
+            "Dosen_Total": 7.0,
+            "Total": 23.0
         },
         {
             "id": 307,
@@ -599,14 +599,14 @@
             "Dosen": "Dr. Galuh Yuliani, M.Si., Ph.D.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 9,
             "Kelas_2": 1,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 20
+            "Dosen_Total": 5.0,
+            "Total": 20.0
         },
         {
             "id": 316,
@@ -615,14 +615,14 @@
             "Dosen": "Dr. H. Andhy Setiawan, M.Si.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 26
+            "Dosen_Total": 6.0,
+            "Total": 26.0
         },
         {
             "id": 318,
@@ -631,14 +631,14 @@
             "Dosen": "Dr. H. Asep Supriatna, M.Si.",
             "SKS_1": 3,
             "SKS_2": 2,
-            "SKS_Total": 4,
+            "SKS_Total": 5.0,
             "Kelas_1": 6,
             "Kelas_2": 2,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 3,
             "Dosen_2": 2,
-            "Dosen_Total": 5,
-            "Total": 17
+            "Dosen_Total": 5.0,
+            "Total": 18.0
         },
         {
             "id": 322,
@@ -647,14 +647,14 @@
             "Dosen": "Dr. H. Budiman Anwar, S.Si., M.Si.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 7,
             "Kelas_2": 1,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 3,
             "Dosen_2": 1,
-            "Dosen_Total": 4,
-            "Total": 16
+            "Dosen_Total": 4.0,
+            "Total": 16.0
         },
         {
             "id": 323,
@@ -663,14 +663,14 @@
             "Dosen": "Dr. H. Cece Kustiawan, M.Si.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
-            "Kelas_1": 17,
+            "SKS_Total": 7.0,
+            "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 16.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 31
+            "Dosen_Total": 7.0,
+            "Total": 30.0
         },
         {
             "id": 330,
@@ -679,14 +679,14 @@
             "Dosen": "Dr. H. Endang Cahya Mulyaning A., M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 22,
             "Kelas_2": 0,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 38
+            "Dosen_Total": 8.0,
+            "Total": 38.0
         },
         {
             "id": 332,
@@ -695,14 +695,14 @@
             "Dosen": "Dr. H. Enjang Ali Nurdin, M.Kom.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 27
+            "Dosen_Total": 6.0,
+            "Total": 27.0
         },
         {
             "id": 336,
@@ -711,14 +711,14 @@
             "Dosen": "Dr. H. Mulyana Abdullah, M.Pd.I.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 20
+            "Dosen_Total": 6.0,
+            "Total": 20.0
         },
         {
             "id": 344,
@@ -727,14 +727,14 @@
             "Dosen": "Dr. H. Sudirman, M.Ag.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 20
+            "Dosen_Total": 6.0,
+            "Total": 20.0
         },
         {
             "id": 346,
@@ -743,14 +743,14 @@
             "Dosen": "Dr. H. Taufik Rahman, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 2,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 11,
             "Kelas_2": 2,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 5,
             "Dosen_2": 2,
-            "Dosen_Total": 7,
-            "Total": 27
+            "Dosen_Total": 7.0,
+            "Total": 27.0
         },
         {
             "id": 349,
@@ -759,14 +759,14 @@
             "Dosen": "Dr. H. Wiji, M.Si.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 6,
-            "Kelas_1": 9,
+            "SKS_Total": 6.0,
+            "Kelas_1": 8,
             "Kelas_2": 2,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 22
+            "Dosen_Total": 6.0,
+            "Total": 22.0
         },
         {
             "id": 353,
@@ -775,14 +775,14 @@
             "Dosen": "Dr. Hafiziani Eka Putri, M.Pd.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 358,
@@ -791,14 +791,14 @@
             "Dosen": "Dr. Heli Siti Halimatul Munawaroh, M.Si.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 13,
             "Kelas_2": 1,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 6,
             "Dosen_2": 1,
-            "Dosen_Total": 7,
-            "Total": 27
+            "Dosen_Total": 7.0,
+            "Total": 27.0
         },
         {
             "id": 360,
@@ -807,14 +807,14 @@
             "Dosen": "Dr. Hendrawan, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 11,
             "Kelas_2": 0,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 20
+            "Dosen_Total": 5.0,
+            "Total": 20.0
         },
         {
             "id": 366,
@@ -823,14 +823,14 @@
             "Dosen": "Dr. Hera Novia, M.T.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 14,
             "Kelas_2": 2,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 28
+            "Dosen_Total": 6.0,
+            "Total": 28.0
         },
         {
             "id": 369,
@@ -839,14 +839,14 @@
             "Dosen": "Dr. Hernani, M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
-            "Kelas_1": 23,
+            "SKS_Total": 8.0,
+            "Kelas_1": 22,
             "Kelas_2": 0,
-            "Kelas_Total": 23,
+            "Kelas_Total": 22.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 40
+            "Dosen_Total": 9.0,
+            "Total": 39.0
         },
         {
             "id": 370,
@@ -855,14 +855,14 @@
             "Dosen": "Dr. Hernawati, S.Pt., M.Si.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 14
+            "Dosen_Total": 3.0,
+            "Total": 14.0
         },
         {
             "id": 374,
@@ -871,14 +871,14 @@
             "Dosen": "Dr. Hj. Aan Hasanah, M.Pd.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 15,
             "Kelas_2": 2,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 7,
             "Dosen_2": 1,
-            "Dosen_Total": 8,
-            "Total": 33
+            "Dosen_Total": 8.0,
+            "Total": 33.0
         },
         {
             "id": 377,
@@ -887,14 +887,14 @@
             "Dosen": "Dr. Hj. Any Aryani, S.Si., M.Si.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 9,
             "Kelas_2": 0,
-            "Kelas_Total": 9,
+            "Kelas_Total": 9.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 15
+            "Dosen_Total": 3.0,
+            "Total": 15.0
         },
         {
             "id": 378,
@@ -903,14 +903,14 @@
             "Dosen": "Dr. Hj. Any Fitriani, M.Si.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 14
+            "Dosen_Total": 3.0,
+            "Total": 14.0
         },
         {
             "id": 380,
@@ -919,14 +919,14 @@
             "Dosen": "Dr. Hj. Diah Kusumawaty, M.Si.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 7,
+            "SKS_Total": 8.0,
             "Kelas_1": 18,
             "Kelas_2": 1,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 8,
             "Dosen_2": 1,
-            "Dosen_Total": 9,
-            "Total": 35
+            "Dosen_Total": 9.0,
+            "Total": 36.0
         },
         {
             "id": 383,
@@ -935,14 +935,14 @@
             "Dosen": "Dr. Hj. Kokom St Komariah, M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 23
+            "Dosen_Total": 7.0,
+            "Total": 23.0
         },
         {
             "id": 392,
@@ -951,14 +951,14 @@
             "Dosen": "Dr. Hj. Peristiwati, M.Kes.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 10,
             "Kelas_2": 0,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 395,
@@ -967,14 +967,14 @@
             "Dosen": "Dr. Hj. Sariwulan Diana, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
-            "Kelas_1": 9,
+            "SKS_Total": 4.0,
+            "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 9,
+            "Kelas_Total": 8.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 18
+            "Dosen_Total": 5.0,
+            "Total": 17.0
         },
         {
             "id": 397,
@@ -983,14 +983,14 @@
             "Dosen": "Dr. Hj. Siti Sriyati, M.Si.",
             "SKS_1": 6,
             "SKS_2": 2,
-            "SKS_Total": 6,
+            "SKS_Total": 8.0,
             "Kelas_1": 19,
-            "Kelas_2": 3,
-            "Kelas_Total": 22,
+            "Kelas_2": 2,
+            "Kelas_Total": 21.0,
             "Dosen_1": 8,
             "Dosen_2": 2,
-            "Dosen_Total": 10,
-            "Total": 38
+            "Dosen_Total": 10.0,
+            "Total": 39.0
         },
         {
             "id": 401,
@@ -999,14 +999,14 @@
             "Dosen": "Dr. Hj. Winny Liliawati, M.Si.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 22,
             "Kelas_2": 0,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 35
+            "Dosen_Total": 7.0,
+            "Total": 35.0
         },
         {
             "id": 404,
@@ -1015,14 +1015,14 @@
             "Dosen": "Dr. I Wayan Ratnata, S.T., M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 4,
             "Kelas_2": 0,
-            "Kelas_Total": 4,
+            "Kelas_Total": 4.0,
             "Dosen_1": 2,
             "Dosen_2": 0,
-            "Dosen_Total": 2,
-            "Total": 8
+            "Dosen_Total": 2.0,
+            "Total": 8.0
         },
         {
             "id": 411,
@@ -1031,14 +1031,14 @@
             "Dosen": "Dr. Ijang Rohman, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
-            "Kelas_1": 9,
+            "SKS_Total": 4.0,
+            "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 9,
+            "Kelas_Total": 8.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 17
+            "Dosen_Total": 4.0,
+            "Total": 16.0
         },
         {
             "id": 412,
@@ -1047,14 +1047,14 @@
             "Dosen": "Dr. Ika Mustika Sari, M.PFis.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 39
+            "Dosen_Total": 8.0,
+            "Total": 39.0
         },
         {
             "id": 420,
@@ -1063,14 +1063,14 @@
             "Dosen": "Dr. Ipah Saripah, M.Pd.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
-            "Kelas_1": 7,
+            "SKS_Total": 4.0,
+            "Kelas_1": 6,
             "Kelas_2": 1,
-            "Kelas_Total": 8,
+            "Kelas_Total": 7.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 17
+            "Dosen_Total": 5.0,
+            "Total": 16.0
         },
         {
             "id": 421,
@@ -1079,14 +1079,14 @@
             "Dosen": "Dr. Iqbal Musthapa, M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 18
+            "Dosen_Total": 5.0,
+            "Total": 18.0
         },
         {
             "id": 431,
@@ -1095,14 +1095,14 @@
             "Dosen": "Dr. Jarnawi Afgani Dahlan, M.Kes.",
             "SKS_1": 11,
             "SKS_2": 0,
-            "SKS_Total": 11,
+            "SKS_Total": 11.0,
             "Kelas_1": 36,
             "Kelas_2": 0,
-            "Kelas_Total": 36,
+            "Kelas_Total": 36.0,
             "Dosen_1": 13,
             "Dosen_2": 0,
-            "Dosen_Total": 13,
-            "Total": 60
+            "Dosen_Total": 13.0,
+            "Total": 60.0
         },
         {
             "id": 435,
@@ -1111,14 +1111,14 @@
             "Dosen": "Dr. Judhistira Aria Utama, M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 36
+            "Dosen_Total": 8.0,
+            "Total": 36.0
         },
         {
             "id": 440,
@@ -1127,14 +1127,14 @@
             "Dosen": "Dr. Kartika Yulianti, M.Si.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 10,
             "Kelas_2": 2,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 442,
@@ -1143,14 +1143,14 @@
             "Dosen": "Dr. Khusnul Novianingsih, S.Si., M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 20
+            "Dosen_Total": 4.0,
+            "Total": 20.0
         },
         {
             "id": 447,
@@ -1159,14 +1159,14 @@
             "Dosen": "Dr. Kusnadi, M.Si.",
             "SKS_1": 8,
             "SKS_2": 1,
-            "SKS_Total": 8,
-            "Kelas_1": 19,
+            "SKS_Total": 9.0,
+            "Kelas_1": 18,
             "Kelas_2": 1,
-            "Kelas_Total": 20,
+            "Kelas_Total": 19.0,
             "Dosen_1": 10,
             "Dosen_2": 1,
-            "Dosen_Total": 11,
-            "Total": 39
+            "Dosen_Total": 11.0,
+            "Total": 39.0
         },
         {
             "id": 448,
@@ -1175,14 +1175,14 @@
             "Dosen": "Dr. Kusnandi, M.Si.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 19
+            "Dosen_Total": 4.0,
+            "Total": 19.0
         },
         {
             "id": 457,
@@ -1191,14 +1191,14 @@
             "Dosen": "Dr. Lilit Rusyati, S.Pd., M.Pd.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 22,
             "Kelas_2": 0,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 37
+            "Dosen_Total": 9.0,
+            "Total": 37.0
         },
         {
             "id": 462,
@@ -1207,14 +1207,14 @@
             "Dosen": "Dr. Lukman, S.Si., M.Si.",
             "SKS_1": 2,
             "SKS_2": 1,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 12,
             "Kelas_2": 2,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 473,
@@ -1223,14 +1223,14 @@
             "Dosen": "Dr. Mimin Iryanti, S.Si., M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 28
+            "Dosen_Total": 6.0,
+            "Total": 28.0
         },
         {
             "id": 474,
@@ -1239,14 +1239,14 @@
             "Dosen": "Dr. Mimin Nurjhani Kusumastuti, M.Pd.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 7,
+            "SKS_Total": 8.0,
             "Kelas_1": 26,
             "Kelas_2": 1,
-            "Kelas_Total": 27,
+            "Kelas_Total": 27.0,
             "Dosen_1": 9,
             "Dosen_2": 1,
-            "Dosen_Total": 10,
-            "Total": 44
+            "Dosen_Total": 10.0,
+            "Total": 45.0
         },
         {
             "id": 475,
@@ -1255,14 +1255,14 @@
             "Dosen": "Dr. Mochamad Whilky Rizkyanfi, S.Pd., M.Pd.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 22,
             "Kelas_2": 3,
-            "Kelas_Total": 25,
+            "Kelas_Total": 25.0,
             "Dosen_1": 11,
             "Dosen_2": 2,
-            "Dosen_Total": 13,
-            "Total": 42
+            "Dosen_Total": 13.0,
+            "Total": 42.0
         },
         {
             "id": 477,
@@ -1271,14 +1271,14 @@
             "Dosen": "Dr. Mubarok Somantri, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 13,
             "Kelas_2": 1,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 25
+            "Dosen_Total": 6.0,
+            "Total": 25.0
         },
         {
             "id": 479,
@@ -1287,14 +1287,14 @@
             "Dosen": "Dr. Muhamad Nursalman, M.T.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 32
+            "Dosen_Total": 8.0,
+            "Total": 32.0
         },
         {
             "id": 480,
@@ -1303,14 +1303,14 @@
             "Dosen": "Dr. Muhamad Parhan, S.Pd.I., M.Ag.",
             "SKS_1": 6,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 7.0,
             "Kelas_1": 22,
             "Kelas_2": 1,
-            "Kelas_Total": 23,
+            "Kelas_Total": 23.0,
             "Dosen_1": 10,
             "Dosen_2": 1,
-            "Dosen_Total": 11,
-            "Total": 40
+            "Dosen_Total": 11.0,
+            "Total": 41.0
         },
         {
             "id": 484,
@@ -1319,14 +1319,14 @@
             "Dosen": "Dr. Muslim, M.Pd.",
             "SKS_1": 10,
             "SKS_2": 0,
-            "SKS_Total": 10,
+            "SKS_Total": 10.0,
             "Kelas_1": 25,
             "Kelas_2": 0,
-            "Kelas_Total": 25,
+            "Kelas_Total": 25.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 45
+            "Dosen_Total": 10.0,
+            "Total": 45.0
         },
         {
             "id": 486,
@@ -1335,14 +1335,14 @@
             "Dosen": "Dr. Nanang Winarno, S.Pd., S.Si., M.Pd.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 26,
             "Kelas_2": 1,
-            "Kelas_Total": 27,
+            "Kelas_Total": 27.0,
             "Dosen_1": 10,
             "Dosen_2": 1,
-            "Dosen_Total": 11,
-            "Total": 46
+            "Dosen_Total": 11.0,
+            "Total": 46.0
         },
         {
             "id": 504,
@@ -1351,14 +1351,14 @@
             "Dosen": "Dr. Nurti Budiyanti, S.Pd., M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 20
+            "Dosen_Total": 6.0,
+            "Total": 20.0
         },
         {
             "id": 516,
@@ -1367,14 +1367,14 @@
             "Dosen": "Dr. R. Kusdianti, M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
-            "Kelas_1": 17,
+            "SKS_Total": 5.0,
+            "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 16.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 29
+            "Dosen_Total": 7.0,
+            "Total": 28.0
         },
         {
             "id": 518,
@@ -1383,14 +1383,14 @@
             "Dosen": "Dr. Rama Wijaya Abdul Rozak, S.Pd., M.Pd.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 31
+            "Dosen_Total": 10.0,
+            "Total": 31.0
         },
         {
             "id": 519,
@@ -1399,14 +1399,14 @@
             "Dosen": "Dr. Rani Megasari, S.Kom., M.T.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 15,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 26
+            "Dosen_Total": 6.0,
+            "Total": 26.0
         },
         {
             "id": 520,
@@ -1415,14 +1415,14 @@
             "Dosen": "Dr. Rasim, S.T., M.T.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 34
+            "Dosen_Total": 8.0,
+            "Total": 34.0
         },
         {
             "id": 524,
@@ -1431,14 +1431,14 @@
             "Dosen": "Dr. rer. nat. Adi Rahmat, M.Si.",
             "SKS_1": 13,
             "SKS_2": 3,
-            "SKS_Total": 13,
+            "SKS_Total": 16.0,
             "Kelas_1": 32,
             "Kelas_2": 5,
-            "Kelas_Total": 37,
+            "Kelas_Total": 37.0,
             "Dosen_1": 18,
             "Dosen_2": 4,
-            "Dosen_Total": 22,
-            "Total": 72
+            "Dosen_Total": 22.0,
+            "Total": 75.0
         },
         {
             "id": 526,
@@ -1447,14 +1447,14 @@
             "Dosen": "Dr. rer. nat. Omay Sumarna, M.Si.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
-            "Kelas_1": 11,
+            "SKS_Total": 5.0,
+            "Kelas_1": 10,
             "Kelas_2": 1,
-            "Kelas_Total": 12,
+            "Kelas_Total": 11.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 21.0
         },
         {
             "id": 527,
@@ -1463,14 +1463,14 @@
             "Dosen": "Dr. Reshandi Nugraha, M.Pd.",
             "SKS_1": 12,
             "SKS_2": 1,
-            "SKS_Total": 13,
+            "SKS_Total": 13.0,
             "Kelas_1": 30,
             "Kelas_2": 1,
-            "Kelas_Total": 31,
+            "Kelas_Total": 31.0,
             "Dosen_1": 13,
             "Dosen_2": 1,
-            "Dosen_Total": 14,
-            "Total": 58
+            "Dosen_Total": 14.0,
+            "Total": 58.0
         },
         {
             "id": 528,
@@ -1479,14 +1479,14 @@
             "Dosen": "Dr. Ridwan Efendi, M.Pd.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 10,
             "Kelas_2": 2,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 21
+            "Dosen_Total": 5.0,
+            "Total": 21.0
         },
         {
             "id": 529,
@@ -1495,14 +1495,14 @@
             "Dosen": "Dr. Ridwan Effendi, M.Ed.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 9,
             "Kelas_2": 0,
-            "Kelas_Total": 9,
+            "Kelas_Total": 9.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 17
+            "Dosen_Total": 5.0,
+            "Total": 17.0
         },
         {
             "id": 530,
@@ -1511,14 +1511,14 @@
             "Dosen": "Dr. Rika Rafikah Agustin, S.Pd., M.Pd.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 26,
             "Kelas_2": 2,
-            "Kelas_Total": 27,
+            "Kelas_Total": 28.0,
             "Dosen_1": 11,
             "Dosen_2": 1,
-            "Dosen_Total": 12,
-            "Total": 47
+            "Dosen_Total": 12.0,
+            "Total": 48.0
         },
         {
             "id": 546,
@@ -1527,14 +1527,14 @@
             "Dosen": "Dr. Rusdiono Muryanto, M.T.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 30
+            "Dosen_Total": 9.0,
+            "Total": 30.0
         },
         {
             "id": 549,
@@ -1543,14 +1543,14 @@
             "Dosen": "Dr. Saepul Anwar, S.Pd.I., M.Ag.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 33,
             "Kelas_2": 0,
-            "Kelas_Total": 33,
+            "Kelas_Total": 33.0,
             "Dosen_1": 13,
             "Dosen_2": 0,
-            "Dosen_Total": 13,
-            "Total": 53
+            "Dosen_Total": 13.0,
+            "Total": 53.0
         },
         {
             "id": 557,
@@ -1559,14 +1559,14 @@
             "Dosen": "Dr. Selly Feranie, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 27
+            "Dosen_Total": 6.0,
+            "Total": 27.0
         },
         {
             "id": 563,
@@ -1575,14 +1575,14 @@
             "Dosen": "Dr. Siti Aisyah, S.Pd., M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 10,
             "Kelas_2": 0,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 564,
@@ -1591,14 +1591,14 @@
             "Dosen": "Dr. Soja Siti Fatimah, S.Si., M.Si.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 27
+            "Dosen_Total": 7.0,
+            "Total": 27.0
         },
         {
             "id": 578,
@@ -1607,14 +1607,14 @@
             "Dosen": "Dr. Sumanang Muhtar Gozali, M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 30,
             "Kelas_2": 0,
-            "Kelas_Total": 30,
+            "Kelas_Total": 30.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 47
+            "Dosen_Total": 9.0,
+            "Total": 47.0
         },
         {
             "id": 595,
@@ -1623,14 +1623,14 @@
             "Dosen": "Dr. Tia Purniati, S.Pd, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 11,
             "Kelas_2": 2,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 23
+            "Dosen_Total": 5.0,
+            "Total": 23.0
         },
         {
             "id": 599,
@@ -1639,14 +1639,14 @@
             "Dosen": "Dr. Toni Setiawan Sutanto, S.Pd., M.Sn",
             "SKS_1": 10,
             "SKS_2": 0,
-            "SKS_Total": 10,
+            "SKS_Total": 10.0,
             "Kelas_1": 29,
             "Kelas_2": 0,
-            "Kelas_Total": 29,
+            "Kelas_Total": 29.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 49
+            "Dosen_Total": 10.0,
+            "Total": 49.0
         },
         {
             "id": 605,
@@ -1655,14 +1655,14 @@
             "Dosen": "Dr. Wahyu Surakusumah, M.T.",
             "SKS_1": 8,
             "SKS_2": 2,
-            "SKS_Total": 8,
-            "Kelas_1": 21,
-            "Kelas_2": 3,
-            "Kelas_Total": 23,
+            "SKS_Total": 10.0,
+            "Kelas_1": 20,
+            "Kelas_2": 2,
+            "Kelas_Total": 22.0,
             "Dosen_1": 9,
             "Dosen_2": 2,
-            "Dosen_Total": 11,
-            "Total": 42
+            "Dosen_Total": 11.0,
+            "Total": 43.0
         },
         {
             "id": 606,
@@ -1671,14 +1671,14 @@
             "Dosen": "Dr. Wahyudin, M.T.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 24,
             "Kelas_2": 0,
-            "Kelas_Total": 24,
+            "Kelas_Total": 24.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 42
+            "Dosen_Total": 10.0,
+            "Total": 42.0
         },
         {
             "id": 609,
@@ -1687,14 +1687,14 @@
             "Dosen": "Dr. Wawan Wahyu, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 9,
             "Kelas_2": 1,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 21
+            "Dosen_Total": 6.0,
+            "Total": 21.0
         },
         {
             "id": 610,
@@ -1703,14 +1703,14 @@
             "Dosen": "Dr. Welsi Damayanti, S.Pd., M.Pd.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 22,
             "Kelas_2": 0,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 35
+            "Dosen_Total": 10.0,
+            "Total": 35.0
         },
         {
             "id": 616,
@@ -1719,14 +1719,14 @@
             "Dosen": "Dr. Yadi Ruyadi, M.Si.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 4,
             "Kelas_2": 0,
-            "Kelas_Total": 4,
+            "Kelas_Total": 4.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 10
+            "Dosen_Total": 3.0,
+            "Total": 10.0
         },
         {
             "id": 619,
@@ -1735,14 +1735,14 @@
             "Dosen": "Dr. Yanti Hamdiyati, M.Si.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 5.0,
             "Kelas_1": 16,
             "Kelas_2": 3,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 6,
             "Dosen_2": 2,
-            "Dosen_Total": 8,
-            "Total": 31
+            "Dosen_Total": 8.0,
+            "Total": 32.0
         },
         {
             "id": 623,
@@ -1751,14 +1751,14 @@
             "Dosen": "Dr. Yaya Sunarya, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 42
+            "Dosen_Total": 12.0,
+            "Total": 42.0
         },
         {
             "id": 630,
@@ -1767,14 +1767,14 @@
             "Dosen": "Dr. Yudi Wibisono, S.T., M.T.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 637,
@@ -1783,14 +1783,14 @@
             "Dosen": "Dr. Yusi Riksa Yustiana, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 4,
-            "Kelas_1": 11,
+            "SKS_Total": 5.0,
+            "Kelas_1": 10,
             "Kelas_2": 1,
-            "Kelas_Total": 12,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 22
+            "Dosen_Total": 6.0,
+            "Total": 22.0
         },
         {
             "id": 638,
@@ -1799,14 +1799,14 @@
             "Dosen": "Dr. Yuyu Rachmat Tayubi, M.Si.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 6,
             "Kelas_2": 0,
-            "Kelas_Total": 6,
+            "Kelas_Total": 6.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 11
+            "Dosen_Total": 3.0,
+            "Total": 11.0
         },
         {
             "id": 647,
@@ -1815,14 +1815,14 @@
             "Dosen": "Dra. Encum Sumiaty, M.Si.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 33
+            "Dosen_Total": 7.0,
+            "Total": 33.0
         },
         {
             "id": 653,
@@ -1831,14 +1831,14 @@
             "Dosen": "Dra. Hj. Heni Rusnayati, M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 658,
@@ -1847,14 +1847,14 @@
             "Dosen": "Dra. Hj. Rini Marwati, M.S.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 31
+            "Dosen_Total": 8.0,
+            "Total": 31.0
         },
         {
             "id": 659,
@@ -1863,14 +1863,14 @@
             "Dosen": "Dra. Hj. Siti Komariah, M.Si., Ph.D.",
             "SKS_1": 5,
             "SKS_2": 2,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 14,
             "Kelas_2": 3,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 10,
             "Dosen_2": 2,
-            "Dosen_Total": 12,
-            "Total": 36
+            "Dosen_Total": 12.0,
+            "Total": 36.0
         },
         {
             "id": 664,
@@ -1879,14 +1879,14 @@
             "Dosen": "Dra. Hj. Zackiyah, M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 10,
             "Kelas_2": 0,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 20
+            "Dosen_Total": 5.0,
+            "Total": 20.0
         },
         {
             "id": 690,
@@ -1895,14 +1895,14 @@
             "Dosen": "Drs. Agus Danawan, M.Si.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 34
+            "Dosen_Total": 8.0,
+            "Total": 34.0
         },
         {
             "id": 694,
@@ -1911,14 +1911,14 @@
             "Dosen": "Drs. Ali Kusrijadi, M.Si.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 6.0,
             "Kelas_1": 10,
             "Kelas_2": 1,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 22
+            "Dosen_Total": 6.0,
+            "Total": 23.0
         },
         {
             "id": 696,
@@ -1927,14 +1927,14 @@
             "Dosen": "Drs. Amsor, M.Si.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 2,
             "Kelas_2": 0,
-            "Kelas_Total": 2,
+            "Kelas_Total": 2.0,
             "Dosen_1": 1,
             "Dosen_2": 0,
-            "Dosen_Total": 1,
-            "Total": 4
+            "Dosen_Total": 1.0,
+            "Total": 4.0
         },
         {
             "id": 704,
@@ -1943,14 +1943,14 @@
             "Dosen": "Drs. Dedi Sasmita, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 26
+            "Dosen_Total": 5.0,
+            "Total": 26.0
         },
         {
             "id": 719,
@@ -1959,14 +1959,14 @@
             "Dosen": "Drs. H. Dadang Machmudin, M.S.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
-            "Kelas_1": 13,
+            "SKS_Total": 3.0,
+            "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 13,
+            "Kelas_Total": 12.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 21
+            "Dosen_Total": 5.0,
+            "Total": 20.0
         },
         {
             "id": 720,
@@ -1975,14 +1975,14 @@
             "Dosen": "Drs. H. Eka Fitrajaya Rahman, M.T.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 30
+            "Dosen_Total": 6.0,
+            "Total": 30.0
         },
         {
             "id": 735,
@@ -1991,14 +1991,14 @@
             "Dosen": "Drs. Hokcu Suhanda, M.Si.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 11,
             "Kelas_2": 2,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 4,
             "Dosen_2": 2,
-            "Dosen_Total": 6,
-            "Total": 23
+            "Dosen_Total": 6.0,
+            "Total": 23.0
         },
         {
             "id": 738,
@@ -2007,14 +2007,14 @@
             "Dosen": "Drs. Iyon Suyana, M.Si.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 31
+            "Dosen_Total": 6.0,
+            "Total": 31.0
         },
         {
             "id": 746,
@@ -2023,14 +2023,14 @@
             "Dosen": "Drs. Nar Herrhyanto, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
-            "Kelas_1": 15,
+            "SKS_Total": 4.0,
+            "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 14.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 24
+            "Dosen_Total": 5.0,
+            "Total": 23.0
         },
         {
             "id": 753,
@@ -2039,14 +2039,14 @@
             "Dosen": "Drs. Saeful Karim, M.Si.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 6,
             "Kelas_2": 0,
-            "Kelas_Total": 6,
+            "Kelas_Total": 6.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 11
+            "Dosen_Total": 3.0,
+            "Total": 11.0
         },
         {
             "id": 757,
@@ -2055,14 +2055,14 @@
             "Dosen": "Drs. Suhara, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 21
+            "Dosen_Total": 5.0,
+            "Total": 21.0
         },
         {
             "id": 762,
@@ -2071,14 +2071,14 @@
             "Dosen": "Drs. Waslaluddin, M.T.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 13,
             "Kelas_2": 0,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 20
+            "Dosen_Total": 4.0,
+            "Total": 20.0
         },
         {
             "id": 765,
@@ -2087,14 +2087,14 @@
             "Dosen": "Drs. Yaya Sonjaya, M.Si.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 11,
             "Kelas_2": 1,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 22
+            "Dosen_Total": 5.0,
+            "Total": 22.0
         },
         {
             "id": 771,
@@ -2103,14 +2103,14 @@
             "Dosen": "Eddy Prasetyo Nugroho, M.T.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 9,
             "Kelas_2": 0,
-            "Kelas_Total": 9,
+            "Kelas_Total": 9.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 15
+            "Dosen_Total": 3.0,
+            "Total": 15.0
         },
         {
             "id": 774,
@@ -2119,14 +2119,14 @@
             "Dosen": "Eka Cahya Prima, M.T., Dr.",
             "SKS_1": 8,
             "SKS_2": 2,
-            "SKS_Total": 9,
+            "SKS_Total": 10.0,
             "Kelas_1": 28,
             "Kelas_2": 3,
-            "Kelas_Total": 31,
+            "Kelas_Total": 31.0,
             "Dosen_1": 10,
             "Dosen_2": 2,
-            "Dosen_Total": 12,
-            "Total": 52
+            "Dosen_Total": 12.0,
+            "Total": 53.0
         },
         {
             "id": 778,
@@ -2135,14 +2135,14 @@
             "Dosen": "Eki Nugraha, S.Pd., M.Kom.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 15,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 23
+            "Dosen_Total": 5.0,
+            "Total": 23.0
         },
         {
             "id": 781,
@@ -2151,14 +2151,14 @@
             "Dosen": "Eliyawati, S.Pd., M.Pd.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 15
+            "Dosen_Total": 4.0,
+            "Total": 15.0
         },
         {
             "id": 788,
@@ -2167,14 +2167,14 @@
             "Dosen": "Enjun Junaeti, S.Si., M.Si.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 6,
             "Kelas_2": 0,
-            "Kelas_Total": 6,
+            "Kelas_Total": 6.0,
             "Dosen_1": 2,
             "Dosen_2": 0,
-            "Dosen_Total": 2,
-            "Total": 9
+            "Dosen_Total": 2.0,
+            "Total": 9.0
         },
         {
             "id": 791,
@@ -2183,14 +2183,14 @@
             "Dosen": "Erlangga, S.Kom., M.T.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 793,
@@ -2199,14 +2199,14 @@
             "Dosen": "Erna Piantari,S.Kom.,M.T.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 19
+            "Dosen_Total": 4.0,
+            "Total": 19.0
         },
         {
             "id": 800,
@@ -2215,14 +2215,14 @@
             "Dosen": "Faisal Sadam Murron, M.Pd.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 31
+            "Dosen_Total": 9.0,
+            "Total": 31.0
         },
         {
             "id": 804,
@@ -2231,14 +2231,14 @@
             "Dosen": "Farhan Reza Paz, S.Pd., M.Sn.",
             "SKS_1": 13,
             "SKS_2": 0,
-            "SKS_Total": 13,
+            "SKS_Total": 13.0,
             "Kelas_1": 46,
             "Kelas_2": 0,
-            "Kelas_Total": 46,
+            "Kelas_Total": 46.0,
             "Dosen_1": 13,
             "Dosen_2": 0,
-            "Dosen_Total": 13,
-            "Total": 72
+            "Dosen_Total": 13.0,
+            "Total": 72.0
         },
         {
             "id": 813,
@@ -2247,14 +2247,14 @@
             "Dosen": "Febbry Cipta, M.Pd.",
             "SKS_1": 11,
             "SKS_2": 0,
-            "SKS_Total": 11,
+            "SKS_Total": 11.0,
             "Kelas_1": 36,
             "Kelas_2": 0,
-            "Kelas_Total": 36,
+            "Kelas_Total": 36.0,
             "Dosen_1": 14,
             "Dosen_2": 0,
-            "Dosen_Total": 14,
-            "Total": 61
+            "Dosen_Total": 14.0,
+            "Total": 61.0
         },
         {
             "id": 825,
@@ -2263,14 +2263,14 @@
             "Dosen": "Fitriani Agustina, S.Si., M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 28
+            "Dosen_Total": 6.0,
+            "Total": 28.0
         },
         {
             "id": 832,
@@ -2279,14 +2279,14 @@
             "Dosen": "Ganjar Eka Subakti, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 11,
             "Dosen_2": 0,
-            "Dosen_Total": 11,
-            "Total": 42
+            "Dosen_Total": 11.0,
+            "Total": 42.0
         },
         {
             "id": 846,
@@ -2295,14 +2295,14 @@
             "Dosen": "Gun Gun Gumilar, M.Si.",
             "SKS_1": 3,
             "SKS_2": 1,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 10,
             "Kelas_2": 1,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 4,
             "Dosen_2": 1,
-            "Dosen_Total": 5,
-            "Total": 20
+            "Dosen_Total": 5.0,
+            "Total": 20.0
         },
         {
             "id": 860,
@@ -2311,14 +2311,14 @@
             "Dosen": "Hardini Puspitaningrum, S.Si, M.Si.",
             "SKS_1": 0,
             "SKS_2": 4,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 0,
             "Kelas_2": 9,
-            "Kelas_Total": 9,
+            "Kelas_Total": 9.0,
             "Dosen_1": 0,
             "Dosen_2": 6,
-            "Dosen_Total": 6,
-            "Total": 19
+            "Dosen_Total": 6.0,
+            "Total": 19.0
         },
         {
             "id": 863,
@@ -2327,14 +2327,14 @@
             "Dosen": "Harsa Wara Prabawa, S.Si., M.Pd.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 13,
             "Kelas_2": 0,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 22
+            "Dosen_Total": 6.0,
+            "Total": 22.0
         },
         {
             "id": 869,
@@ -2343,14 +2343,14 @@
             "Dosen": "Henri Nusantara, S.Pd., M.Pd.",
             "SKS_1": 10,
             "SKS_2": 0,
-            "SKS_Total": 10,
+            "SKS_Total": 10.0,
             "Kelas_1": 31,
             "Kelas_2": 0,
-            "Kelas_Total": 31,
+            "Kelas_Total": 31.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 53
+            "Dosen_Total": 12.0,
+            "Total": 53.0
         },
         {
             "id": 870,
@@ -2359,14 +2359,14 @@
             "Dosen": "Herbert, S.Kom., M.T.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 15,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 26
+            "Dosen_Total": 6.0,
+            "Total": 26.0
         },
         {
             "id": 876,
@@ -2375,14 +2375,14 @@
             "Dosen": "Hilman Taufiq Abdillah, M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 23
+            "Dosen_Total": 7.0,
+            "Total": 23.0
         },
         {
             "id": 879,
@@ -2391,14 +2391,14 @@
             "Dosen": "Hj. Dewi Rachmatin, S.Si., M.Si.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 17
+            "Dosen_Total": 4.0,
+            "Total": 17.0
         },
         {
             "id": 883,
@@ -2407,14 +2407,14 @@
             "Dosen": "Hj. Ria Sabaria, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 29
+            "Dosen_Total": 10.0,
+            "Total": 29.0
         },
         {
             "id": 885,
@@ -2423,14 +2423,14 @@
             "Dosen": "Hj. Tina Safaria Nilawati, M.Si.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 7,
+            "SKS_Total": 8.0,
             "Kelas_1": 18,
             "Kelas_2": 2,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 8,
             "Dosen_2": 1,
-            "Dosen_Total": 9,
-            "Total": 36
+            "Dosen_Total": 9.0,
+            "Total": 37.0
         },
         {
             "id": 887,
@@ -2439,14 +2439,14 @@
             "Dosen": "Husty Serviana Husain, S.Si., M.Si.",
             "SKS_1": 1,
             "SKS_2": 1,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 2,
             "Kelas_2": 2,
-            "Kelas_Total": 4,
+            "Kelas_Total": 4.0,
             "Dosen_1": 1,
             "Dosen_2": 1,
-            "Dosen_Total": 2,
-            "Total": 8
+            "Dosen_Total": 2.0,
+            "Total": 8.0
         },
         {
             "id": 900,
@@ -2455,14 +2455,14 @@
             "Dosen": "Imam Nugraha Albania, Ph.D.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 26
+            "Dosen_Total": 5.0,
+            "Total": 26.0
         },
         {
             "id": 916,
@@ -2471,14 +2471,14 @@
             "Dosen": "Irma Rahma Suwarma, S.Si., M.Pd., Ph.D.",
             "SKS_1": 9,
             "SKS_2": 3,
-            "SKS_Total": 10,
+            "SKS_Total": 12.0,
             "Kelas_1": 22,
             "Kelas_2": 4,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 9,
             "Dosen_2": 3,
-            "Dosen_Total": 12,
-            "Total": 48
+            "Dosen_Total": 12.0,
+            "Total": 50.0
         },
         {
             "id": 924,
@@ -2487,14 +2487,14 @@
             "Dosen": "Istiqomah Putri Lushinta, S.Pd., M.Pd.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 31
+            "Dosen_Total": 10.0,
+            "Total": 31.0
         },
         {
             "id": 927,
@@ -2503,14 +2503,14 @@
             "Dosen": "Ivan Rivan Firdaus, S.Si., M.Pd.",
             "SKS_1": 12,
             "SKS_2": 0,
-            "SKS_Total": 12,
+            "SKS_Total": 12.0,
             "Kelas_1": 33,
             "Kelas_2": 0,
-            "Kelas_Total": 33,
+            "Kelas_Total": 33.0,
             "Dosen_1": 14,
             "Dosen_2": 0,
-            "Dosen_Total": 14,
-            "Total": 59
+            "Dosen_Total": 14.0,
+            "Total": 59.0
         },
         {
             "id": 934,
@@ -2519,14 +2519,14 @@
             "Dosen": "Jajang Kusnendar, S.T., M.T.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 11,
             "Kelas_2": 0,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 954,
@@ -2535,14 +2535,14 @@
             "Dosen": "Lina Aviyanti, S.Pd., M.Si., Ph.D.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 28
+            "Dosen_Total": 6.0,
+            "Total": 28.0
         },
         {
             "id": 991,
@@ -2551,14 +2551,14 @@
             "Dosen": "MOHAMMAD RINDU FAJAR ISLAMY, Lc., M.Ag.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 22,
             "Kelas_2": 0,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 36
+            "Dosen_Total": 9.0,
+            "Total": 36.0
         },
         {
             "id": 992,
@@ -2567,14 +2567,14 @@
             "Dosen": "Mohammad Zaky, S.Si., M.Pd.",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 8,
+            "SKS_Total": 8.0,
             "Kelas_1": 16,
             "Kelas_2": 1,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 8,
             "Dosen_2": 1,
-            "Dosen_Total": 9,
-            "Total": 34
+            "Dosen_Total": 9.0,
+            "Total": 34.0
         },
         {
             "id": 993,
@@ -2583,14 +2583,14 @@
             "Dosen": "Mokh. Iman Firmansyah, S.Pd.I., M.Ag.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 21,
             "Kelas_2": 3,
-            "Kelas_Total": 24,
+            "Kelas_Total": 24.0,
             "Dosen_1": 7,
             "Dosen_2": 2,
-            "Dosen_Total": 9,
-            "Total": 38
+            "Dosen_Total": 9.0,
+            "Total": 38.0
         },
         {
             "id": 997,
@@ -2599,14 +2599,14 @@
             "Dosen": "Muh. Husen Arifin, M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 24
+            "Dosen_Total": 5.0,
+            "Total": 24.0
         },
         {
             "id": 998,
@@ -2615,14 +2615,14 @@
             "Dosen": "Muhamad Iqbal, M.Si.",
             "SKS_1": 6,
             "SKS_2": 1,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 20,
             "Kelas_2": 1,
-            "Kelas_Total": 21,
+            "Kelas_Total": 21.0,
             "Dosen_1": 9,
             "Dosen_2": 1,
-            "Dosen_Total": 10,
-            "Total": 38
+            "Dosen_Total": 10.0,
+            "Total": 38.0
         },
         {
             "id": 1000,
@@ -2631,14 +2631,14 @@
             "Dosen": "Muhamad Nurul Hana, S.Pd., M.Pd.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 9,
             "Kelas_2": 2,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 23
+            "Dosen_Total": 6.0,
+            "Total": 23.0
         },
         {
             "id": 1023,
@@ -2647,14 +2647,14 @@
             "Dosen": "Nanang Dwi Ardi, S.Si., M.T.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 13,
             "Kelas_2": 0,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 23
+            "Dosen_Total": 5.0,
+            "Total": 23.0
         },
         {
             "id": 1031,
@@ -2663,14 +2663,14 @@
             "Dosen": "Nisrina Nurul Insani, M.Pd.",
             "SKS_1": 2,
             "SKS_2": 3,
-            "SKS_Total": 4,
+            "SKS_Total": 5.0,
             "Kelas_1": 16,
             "Kelas_2": 6,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 7,
             "Dosen_2": 5,
-            "Dosen_Total": 12,
-            "Total": 38
+            "Dosen_Total": 12.0,
+            "Total": 39.0
         },
         {
             "id": 1048,
@@ -2679,14 +2679,14 @@
             "Dosen": "Nusuki Syariati Fatimah, M.Pd.",
             "SKS_1": 0,
             "SKS_2": 3,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 0,
-            "Kelas_2": 5,
-            "Kelas_Total": 5,
+            "Kelas_2": 4,
+            "Kelas_Total": 4.0,
             "Dosen_1": 0,
             "Dosen_2": 3,
-            "Dosen_Total": 3,
-            "Total": 11
+            "Dosen_Total": 3.0,
+            "Total": 10.0
         },
         {
             "id": 1054,
@@ -2695,14 +2695,14 @@
             "Dosen": "Palupi Argani, S.Ds., M.Ds.",
             "SKS_1": 8,
             "SKS_2": 1,
-            "SKS_Total": 9,
-            "Kelas_1": 31,
+            "SKS_Total": 9.0,
+            "Kelas_1": 30,
             "Kelas_2": 6,
-            "Kelas_Total": 37,
+            "Kelas_Total": 36.0,
             "Dosen_1": 12,
             "Dosen_2": 3,
-            "Dosen_Total": 15,
-            "Total": 61
+            "Dosen_Total": 15.0,
+            "Total": 60.0
         },
         {
             "id": 1067,
@@ -2711,14 +2711,14 @@
             "Dosen": "Prof. Al Jupri, S.Pd., M.Sc., Ph.D.",
             "SKS_1": 10,
             "SKS_2": 0,
-            "SKS_Total": 10,
+            "SKS_Total": 10.0,
             "Kelas_1": 28,
             "Kelas_2": 0,
-            "Kelas_Total": 28,
+            "Kelas_Total": 28.0,
             "Dosen_1": 11,
             "Dosen_2": 0,
-            "Dosen_Total": 11,
-            "Total": 49
+            "Dosen_Total": 11.0,
+            "Total": 49.0
         },
         {
             "id": 1069,
@@ -2727,14 +2727,14 @@
             "Dosen": "Prof. Dr. Aceng Ruhendi Syaifullah, M.Hum.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 11,
             "Kelas_2": 0,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 1077,
@@ -2743,14 +2743,14 @@
             "Dosen": "Prof. Dr. Andi Suhandi, M.Si.",
             "SKS_1": 12,
             "SKS_2": 0,
-            "SKS_Total": 12,
+            "SKS_Total": 12.0,
             "Kelas_1": 36,
             "Kelas_2": 0,
-            "Kelas_Total": 36,
+            "Kelas_Total": 36.0,
             "Dosen_1": 13,
             "Dosen_2": 0,
-            "Dosen_Total": 13,
-            "Total": 61
+            "Dosen_Total": 13.0,
+            "Total": 61.0
         },
         {
             "id": 1092,
@@ -2759,14 +2759,14 @@
             "Dosen": "Prof. Dr. Dra. Nurjanah, M.Pd.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 35
+            "Dosen_Total": 8.0,
+            "Total": 35.0
         },
         {
             "id": 1094,
@@ -2775,14 +2775,14 @@
             "Dosen": "Prof. Dr. Edi Suresman, S.Pd., M.Ag.",
             "SKS_1": 3,
             "SKS_2": 2,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 12,
             "Kelas_2": 2,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 6,
             "Dosen_2": 2,
-            "Dosen_Total": 8,
-            "Total": 27
+            "Dosen_Total": 8.0,
+            "Total": 27.0
         },
         {
             "id": 1095,
@@ -2791,14 +2791,14 @@
             "Dosen": "Prof. Dr. Elly Malihah, M.Si.",
             "SKS_1": 9,
             "SKS_2": 2,
-            "SKS_Total": 11,
+            "SKS_Total": 11.0,
             "Kelas_1": 21,
             "Kelas_2": 2,
-            "Kelas_Total": 23,
+            "Kelas_Total": 23.0,
             "Dosen_1": 12,
             "Dosen_2": 2,
-            "Dosen_Total": 14,
-            "Total": 48
+            "Dosen_Total": 14.0,
+            "Total": 48.0
         },
         {
             "id": 1098,
@@ -2807,14 +2807,14 @@
             "Dosen": "Prof. Dr. Endi Suhendi, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 29
+            "Dosen_Total": 6.0,
+            "Total": 29.0
         },
         {
             "id": 1099,
@@ -2823,14 +2823,14 @@
             "Dosen": "Prof. Dr. Eng. H. Asep Bayu Dani Nandiyanto, S.T., M.Eng.",
             "SKS_1": 1,
             "SKS_2": 2,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 2,
             "Kelas_2": 3,
-            "Kelas_Total": 5,
+            "Kelas_Total": 5.0,
             "Dosen_1": 1,
             "Dosen_2": 2,
-            "Dosen_Total": 3,
-            "Total": 11
+            "Dosen_Total": 3.0,
+            "Total": 11.0
         },
         {
             "id": 1101,
@@ -2839,14 +2839,14 @@
             "Dosen": "Prof. Dr. Fitri Khoerunnisa, M.Si., Ph.D.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 9,
             "Kelas_2": 2,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 22
+            "Dosen_Total": 6.0,
+            "Total": 22.0
         },
         {
             "id": 1110,
@@ -2855,14 +2855,14 @@
             "Dosen": "Prof. Dr. H. Ari Widodo, M.Ed.",
             "SKS_1": 15,
             "SKS_2": 1,
-            "SKS_Total": 16,
+            "SKS_Total": 16.0,
             "Kelas_1": 48,
             "Kelas_2": 2,
-            "Kelas_Total": 50,
+            "Kelas_Total": 50.0,
             "Dosen_1": 18,
             "Dosen_2": 1,
-            "Dosen_Total": 19,
-            "Total": 85
+            "Dosen_Total": 19.0,
+            "Total": 85.0
         },
         {
             "id": 1117,
@@ -2871,14 +2871,14 @@
             "Dosen": "Prof. Dr. H. Dadang Juandi, M.Si.",
             "SKS_1": 12,
             "SKS_2": 0,
-            "SKS_Total": 12,
+            "SKS_Total": 12.0,
             "Kelas_1": 34,
             "Kelas_2": 0,
-            "Kelas_Total": 34,
+            "Kelas_Total": 34.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 58
+            "Dosen_Total": 12.0,
+            "Total": 58.0
         },
         {
             "id": 1139,
@@ -2887,14 +2887,14 @@
             "Dosen": "Prof. Dr. H. Makhmud Syafe'i, M.Ag.,M.Pd.I.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 10,
             "Kelas_2": 0,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 17
+            "Dosen_Total": 5.0,
+            "Total": 17.0
         },
         {
             "id": 1150,
@@ -2903,14 +2903,14 @@
             "Dosen": "Prof. Dr. H. Nanang Priatna, M.Pd.",
             "SKS_1": 9,
             "SKS_2": 0,
-            "SKS_Total": 9,
+            "SKS_Total": 9.0,
             "Kelas_1": 27,
             "Kelas_2": 0,
-            "Kelas_Total": 27,
+            "Kelas_Total": 27.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 46
+            "Dosen_Total": 10.0,
+            "Total": 46.0
         },
         {
             "id": 1157,
@@ -2919,14 +2919,14 @@
             "Dosen": "Prof. Dr. H. Riandi, M.Si.",
             "SKS_1": 7,
             "SKS_2": 2,
-            "SKS_Total": 9,
-            "Kelas_1": 27,
+            "SKS_Total": 9.0,
+            "Kelas_1": 26,
             "Kelas_2": 2,
-            "Kelas_Total": 29,
+            "Kelas_Total": 28.0,
             "Dosen_1": 12,
             "Dosen_2": 2,
-            "Dosen_Total": 14,
-            "Total": 52
+            "Dosen_Total": 14.0,
+            "Total": 51.0
         },
         {
             "id": 1165,
@@ -2935,14 +2935,14 @@
             "Dosen": "Prof. Dr. H. Syahidin, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 31
+            "Dosen_Total": 9.0,
+            "Total": 31.0
         },
         {
             "id": 1167,
@@ -2951,14 +2951,14 @@
             "Dosen": "Prof. Dr. H. Tatang Herman, M.Ed.",
             "SKS_1": 12,
             "SKS_2": 0,
-            "SKS_Total": 12,
-            "Kelas_1": 29,
+            "SKS_Total": 12.0,
+            "Kelas_1": 28,
             "Kelas_2": 0,
-            "Kelas_Total": 29,
+            "Kelas_Total": 28.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 53
+            "Dosen_Total": 12.0,
+            "Total": 52.0
         },
         {
             "id": 1176,
@@ -2967,14 +2967,14 @@
             "Dosen": "Prof. Dr. Hj. Diana Rochintaniawati, M.Ed.",
             "SKS_1": 9,
             "SKS_2": 1,
-            "SKS_Total": 9,
-            "Kelas_1": 23,
+            "SKS_Total": 10.0,
+            "Kelas_1": 22,
             "Kelas_2": 1,
-            "Kelas_Total": 24,
+            "Kelas_Total": 23.0,
             "Dosen_1": 12,
             "Dosen_2": 1,
-            "Dosen_Total": 13,
-            "Total": 46
+            "Dosen_Total": 13.0,
+            "Total": 46.0
         },
         {
             "id": 1188,
@@ -2983,14 +2983,14 @@
             "Dosen": "Prof. Dr. Hj. Widi Purwianingsih, M.Si.",
             "SKS_1": 4,
             "SKS_2": 1,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 12,
             "Kelas_2": 2,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 5,
             "Dosen_2": 1,
-            "Dosen_Total": 6,
-            "Total": 25
+            "Dosen_Total": 6.0,
+            "Total": 25.0
         },
         {
             "id": 1190,
@@ -2999,14 +2999,14 @@
             "Dosen": "Prof. Dr. Ida Hamidah, M.Si.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 32
+            "Dosen_Total": 8.0,
+            "Total": 32.0
         },
         {
             "id": 1191,
@@ -3015,14 +3015,14 @@
             "Dosen": "Prof. Dr. Ida Kaniawati, M.Si.",
             "SKS_1": 15,
             "SKS_2": 0,
-            "SKS_Total": 15,
+            "SKS_Total": 15.0,
             "Kelas_1": 43,
             "Kelas_2": 0,
-            "Kelas_Total": 43,
+            "Kelas_Total": 43.0,
             "Dosen_1": 17,
             "Dosen_2": 0,
-            "Dosen_Total": 17,
-            "Total": 75
+            "Dosen_Total": 17.0,
+            "Total": 75.0
         },
         {
             "id": 1204,
@@ -3031,14 +3031,14 @@
             "Dosen": "Prof. Dr. Lala Septem Riza, M.T.",
             "SKS_1": 8,
             "SKS_2": 0,
-            "SKS_Total": 8,
-            "Kelas_1": 25,
+            "SKS_Total": 8.0,
+            "Kelas_1": 24,
             "Kelas_2": 0,
-            "Kelas_Total": 25,
+            "Kelas_Total": 24.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 45
+            "Dosen_Total": 12.0,
+            "Total": 44.0
         },
         {
             "id": 1206,
@@ -3047,14 +3047,14 @@
             "Dosen": "Prof. Dr. Lilik Hasanah, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 21
+            "Dosen_Total": 5.0,
+            "Total": 21.0
         },
         {
             "id": 1211,
@@ -3063,14 +3063,14 @@
             "Dosen": "Prof. Dr. Munawar Rahmat, M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 15,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 27
+            "Dosen_Total": 8.0,
+            "Total": 27.0
         },
         {
             "id": 1212,
@@ -3079,14 +3079,14 @@
             "Dosen": "Prof. Dr. Munir, M.IT.",
             "SKS_1": 10,
             "SKS_2": 0,
-            "SKS_Total": 10,
+            "SKS_Total": 10.0,
             "Kelas_1": 32,
             "Kelas_2": 0,
-            "Kelas_Total": 32,
+            "Kelas_Total": 32.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 54
+            "Dosen_Total": 12.0,
+            "Total": 54.0
         },
         {
             "id": 1213,
@@ -3095,14 +3095,14 @@
             "Dosen": "Prof. Dr. Nahadi, M.Pd., M.Si.",
             "SKS_1": 10,
             "SKS_2": 1,
-            "SKS_Total": 10,
+            "SKS_Total": 11.0,
             "Kelas_1": 24,
             "Kelas_2": 1,
-            "Kelas_Total": 25,
+            "Kelas_Total": 25.0,
             "Dosen_1": 10,
             "Dosen_2": 1,
-            "Dosen_Total": 11,
-            "Total": 46
+            "Dosen_Total": 11.0,
+            "Total": 47.0
         },
         {
             "id": 1220,
@@ -3111,14 +3111,14 @@
             "Dosen": "Prof. Dr. paed. H. Wahyu Sopandi, M.A.",
             "SKS_1": 8,
             "SKS_2": 1,
-            "SKS_Total": 9,
+            "SKS_Total": 9.0,
             "Kelas_1": 20,
             "Kelas_2": 2,
-            "Kelas_Total": 22,
+            "Kelas_Total": 22.0,
             "Dosen_1": 8,
             "Dosen_2": 1,
-            "Dosen_Total": 9,
-            "Total": 40
+            "Dosen_Total": 9.0,
+            "Total": 40.0
         },
         {
             "id": 1221,
@@ -3127,14 +3127,14 @@
             "Dosen": "Prof. Dr. Parlindungan Sinaga, M.Si.",
             "SKS_1": 9,
             "SKS_2": 0,
-            "SKS_Total": 9,
+            "SKS_Total": 9.0,
             "Kelas_1": 28,
             "Kelas_2": 0,
-            "Kelas_Total": 28,
+            "Kelas_Total": 28.0,
             "Dosen_1": 10,
             "Dosen_2": 0,
-            "Dosen_Total": 10,
-            "Total": 47
+            "Dosen_Total": 10.0,
+            "Total": 47.0
         },
         {
             "id": 1224,
@@ -3143,14 +3143,14 @@
             "Dosen": "Prof. Dr. Ratnaningsih Eko Sardjono, M.Si.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 6,
             "Kelas_2": 0,
-            "Kelas_Total": 6,
+            "Kelas_Total": 6.0,
             "Dosen_1": 3,
             "Dosen_2": 0,
-            "Dosen_Total": 3,
-            "Total": 12
+            "Dosen_Total": 3.0,
+            "Total": 12.0
         },
         {
             "id": 1225,
@@ -3159,14 +3159,14 @@
             "Dosen": "Prof. Dr. rer. nat. H. Ahmad Mudzakir, M.Si.",
             "SKS_1": 9,
             "SKS_2": 0,
-            "SKS_Total": 9,
+            "SKS_Total": 9.0,
             "Kelas_1": 26,
             "Kelas_2": 0,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 12,
             "Dosen_2": 0,
-            "Dosen_Total": 12,
-            "Total": 47
+            "Dosen_Total": 12.0,
+            "Total": 47.0
         },
         {
             "id": 1227,
@@ -3175,14 +3175,14 @@
             "Dosen": "Prof. Dr. Rizky Rosjanuardi, M.Si.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 28
+            "Dosen_Total": 6.0,
+            "Total": 28.0
         },
         {
             "id": 1242,
@@ -3191,14 +3191,14 @@
             "Dosen": "Prof. Dr. Yayan Sanjaya, M.Si.",
             "SKS_1": 6,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 7.0,
             "Kelas_1": 20,
             "Kelas_2": 1,
-            "Kelas_Total": 21,
+            "Kelas_Total": 21.0,
             "Dosen_1": 8,
             "Dosen_2": 1,
-            "Dosen_Total": 9,
-            "Total": 36
+            "Dosen_Total": 9.0,
+            "Total": 37.0
         },
         {
             "id": 1254,
@@ -3207,14 +3207,14 @@
             "Dosen": "Prof. Siti Fatimah, S.Pd., M.Si., Ph.D.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 17,
             "Kelas_2": 0,
-            "Kelas_Total": 17,
+            "Kelas_Total": 17.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 29
+            "Dosen_Total": 6.0,
+            "Total": 29.0
         },
         {
             "id": 1255,
@@ -3223,14 +3223,14 @@
             "Dosen": "Prof. Suhendra, M.Ed., Ph.D.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 28
+            "Dosen_Total": 6.0,
+            "Total": 28.0
         },
         {
             "id": 1256,
@@ -3239,14 +3239,14 @@
             "Dosen": "Prof. Topik Hidayat, S.Pd., M.Si., Ph.D.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 21,
             "Kelas_2": 0,
-            "Kelas_Total": 21,
+            "Kelas_Total": 21.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 37
+            "Dosen_Total": 9.0,
+            "Total": 37.0
         },
         {
             "id": 1266,
@@ -3255,14 +3255,14 @@
             "Dosen": "Puti Siswandari, S.Pd., M.Si.",
             "SKS_1": 0,
             "SKS_2": 5,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 0,
             "Kelas_2": 10,
-            "Kelas_Total": 10,
+            "Kelas_Total": 10.0,
             "Dosen_1": 0,
             "Dosen_2": 7,
-            "Dosen_Total": 7,
-            "Total": 22
+            "Dosen_Total": 7.0,
+            "Total": 22.0
         },
         {
             "id": 1282,
@@ -3271,14 +3271,14 @@
             "Dosen": "RATNA FITRIA, S.PD.,M.SI.",
             "SKS_1": 2,
             "SKS_2": 2,
-            "SKS_Total": 2,
+            "SKS_Total": 4.0,
             "Kelas_1": 12,
             "Kelas_2": 4,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 6,
             "Dosen_2": 4,
-            "Dosen_Total": 10,
-            "Total": 28
+            "Dosen_Total": 10.0,
+            "Total": 30.0
         },
         {
             "id": 1294,
@@ -3287,14 +3287,14 @@
             "Dosen": "Ricky Wibowo, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 31
+            "Dosen_Total": 8.0,
+            "Total": 31.0
         },
         {
             "id": 1304,
@@ -3303,14 +3303,14 @@
             "Dosen": "Rika Sartika, S.Pd., M.Pd.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 31
+            "Dosen_Total": 9.0,
+            "Total": 31.0
         },
         {
             "id": 1305,
@@ -3319,14 +3319,14 @@
             "Dosen": "Rika Widawati, S.S., M.Pd.",
             "SKS_1": 1,
             "SKS_2": 0,
-            "SKS_Total": 1,
+            "SKS_Total": 1.0,
             "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 25
+            "Dosen_Total": 8.0,
+            "Total": 25.0
         },
         {
             "id": 1311,
@@ -3335,14 +3335,14 @@
             "Dosen": "Rini Solihat, Dr., M.Si.",
             "SKS_1": 3,
             "SKS_2": 2,
-            "SKS_Total": 4,
+            "SKS_Total": 5.0,
             "Kelas_1": 10,
-            "Kelas_2": 3,
-            "Kelas_Total": 12,
+            "Kelas_2": 2,
+            "Kelas_Total": 12.0,
             "Dosen_1": 6,
             "Dosen_2": 2,
-            "Dosen_Total": 8,
-            "Total": 24
+            "Dosen_Total": 8.0,
+            "Total": 25.0
         },
         {
             "id": 1314,
@@ -3351,14 +3351,14 @@
             "Dosen": "Ririn Sispiyati, S.Si., M.Si.",
             "SKS_1": 5,
             "SKS_2": 0,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 11,
             "Kelas_2": 0,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 5,
             "Dosen_2": 0,
-            "Dosen_Total": 5,
-            "Total": 21
+            "Dosen_Total": 5.0,
+            "Total": 21.0
         },
         {
             "id": 1319,
@@ -3367,14 +3367,14 @@
             "Dosen": "Risris Hari Nugraha, M.Hum",
             "SKS_1": 7,
             "SKS_2": 1,
-            "SKS_Total": 7,
+            "SKS_Total": 8.0,
             "Kelas_1": 30,
             "Kelas_2": 1,
-            "Kelas_Total": 31,
+            "Kelas_Total": 31.0,
             "Dosen_1": 13,
             "Dosen_2": 1,
-            "Dosen_Total": 14,
-            "Total": 52
+            "Dosen_Total": 14.0,
+            "Total": 53.0
         },
         {
             "id": 1325,
@@ -3383,14 +3383,14 @@
             "Dosen": "Rizki Zakwandi, S.Pd., M.Pd.",
             "SKS_1": 2,
             "SKS_2": 3,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 5,
-            "Kelas_2": 5,
-            "Kelas_Total": 10,
+            "Kelas_2": 4,
+            "Kelas_Total": 9.0,
             "Dosen_1": 2,
             "Dosen_2": 3,
-            "Dosen_Total": 5,
-            "Total": 20
+            "Dosen_Total": 5.0,
+            "Total": 19.0
         },
         {
             "id": 1326,
@@ -3399,14 +3399,14 @@
             "Dosen": "Rizky Rachman Judhie Putra, M.Kom.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 18,
             "Kelas_2": 0,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 32
+            "Dosen_Total": 8.0,
+            "Total": 32.0
         },
         {
             "id": 1329,
@@ -3415,14 +3415,14 @@
             "Dosen": "Rosa Ariani Sukamto, M.T.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 12,
             "Kelas_2": 0,
-            "Kelas_Total": 12,
+            "Kelas_Total": 12.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 1356,
@@ -3431,14 +3431,14 @@
             "Dosen": "Siti Hamidah, S.Pd., M.Pd.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
+            "SKS_Total": 2.0,
             "Kelas_1": 20,
             "Kelas_2": 0,
-            "Kelas_Total": 20,
+            "Kelas_Total": 20.0,
             "Dosen_1": 9,
             "Dosen_2": 0,
-            "Dosen_Total": 9,
-            "Total": 31
+            "Dosen_Total": 9.0,
+            "Total": 31.0
         },
         {
             "id": 1377,
@@ -3447,14 +3447,14 @@
             "Dosen": "Suka Prayanta Pandia, S.Pd., M.P.Fis",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 60,
             "Kelas_2": 0,
-            "Kelas_Total": 60,
+            "Kelas_Total": 60.0,
             "Dosen_1": 26,
             "Dosen_2": 0,
-            "Dosen_Total": 26,
-            "Total": 93
+            "Dosen_Total": 26.0,
+            "Total": 93.0
         },
         {
             "id": 1386,
@@ -3463,14 +3463,14 @@
             "Dosen": "Syam Hardwis, S.Si., M.Pd.",
             "SKS_1": 4,
             "SKS_2": 0,
-            "SKS_Total": 4,
+            "SKS_Total": 4.0,
             "Kelas_1": 8,
             "Kelas_2": 0,
-            "Kelas_Total": 8,
+            "Kelas_Total": 8.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 16
+            "Dosen_Total": 4.0,
+            "Total": 16.0
         },
         {
             "id": 1403,
@@ -3479,14 +3479,14 @@
             "Dosen": "Tri Suwandi, S.Pd., M.Sc.",
             "SKS_1": 1,
             "SKS_2": 4,
-            "SKS_Total": 5,
+            "SKS_Total": 5.0,
             "Kelas_1": 3,
             "Kelas_2": 10,
-            "Kelas_Total": 13,
+            "Kelas_Total": 13.0,
             "Dosen_1": 1,
             "Dosen_2": 7,
-            "Dosen_Total": 8,
-            "Total": 26
+            "Dosen_Total": 8.0,
+            "Total": 26.0
         },
         {
             "id": 1405,
@@ -3495,14 +3495,14 @@
             "Dosen": "Triannisa Rahmawati, M.Si",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 14,
             "Kelas_2": 0,
-            "Kelas_Total": 14,
+            "Kelas_Total": 14.0,
             "Dosen_1": 7,
             "Dosen_2": 0,
-            "Dosen_Total": 7,
-            "Total": 27
+            "Dosen_Total": 7.0,
+            "Total": 27.0
         },
         {
             "id": 1408,
@@ -3511,14 +3511,14 @@
             "Dosen": "Tuszie Widhiyanti, M.Pd., Ph.D.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 6,
-            "Kelas_1": 17,
+            "SKS_Total": 6.0,
+            "Kelas_1": 16,
             "Kelas_2": 2,
-            "Kelas_Total": 18,
+            "Kelas_Total": 18.0,
             "Dosen_1": 6,
             "Dosen_2": 1,
-            "Dosen_Total": 7,
-            "Total": 31
+            "Dosen_Total": 7.0,
+            "Total": 31.0
         },
         {
             "id": 1410,
@@ -3527,14 +3527,14 @@
             "Dosen": "Undang Sudana, S.S., M.Hum",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 19,
             "Kelas_2": 0,
-            "Kelas_Total": 19,
+            "Kelas_Total": 19.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 30
+            "Dosen_Total": 8.0,
+            "Total": 30.0
         },
         {
             "id": 1414,
@@ -3543,14 +3543,14 @@
             "Dosen": "Usup Romli, M.Pd.",
             "SKS_1": 5,
             "SKS_2": 1,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 24,
             "Kelas_2": 2,
-            "Kelas_Total": 26,
+            "Kelas_Total": 26.0,
             "Dosen_1": 11,
             "Dosen_2": 2,
-            "Dosen_Total": 13,
-            "Total": 45
+            "Dosen_Total": 13.0,
+            "Total": 45.0
         },
         {
             "id": 1415,
@@ -3559,14 +3559,14 @@
             "Dosen": "Utari Wijayanti, S.Kom., M.Si.",
             "SKS_1": 2,
             "SKS_2": 0,
-            "SKS_Total": 2,
-            "Kelas_1": 5,
+            "SKS_Total": 2.0,
+            "Kelas_1": 4,
             "Kelas_2": 0,
-            "Kelas_Total": 5,
+            "Kelas_Total": 4.0,
             "Dosen_1": 2,
             "Dosen_2": 0,
-            "Dosen_Total": 2,
-            "Total": 9
+            "Dosen_Total": 2.0,
+            "Total": 8.0
         },
         {
             "id": 1420,
@@ -3575,14 +3575,14 @@
             "Dosen": "Vidia Afina Nurani, S.Si., M.Sc.",
             "SKS_1": 2,
             "SKS_2": 4,
-            "SKS_Total": 4,
+            "SKS_Total": 6.0,
             "Kelas_1": 2,
-            "Kelas_2": 5,
-            "Kelas_Total": 7,
+            "Kelas_2": 4,
+            "Kelas_Total": 6.0,
             "Dosen_1": 2,
             "Dosen_2": 4,
-            "Dosen_Total": 6,
-            "Total": 17
+            "Dosen_Total": 6.0,
+            "Total": 18.0
         },
         {
             "id": 1441,
@@ -3591,14 +3591,14 @@
             "Dosen": "Yaya Wihardi, S.Kom., M.Kom.",
             "SKS_1": 3,
             "SKS_2": 0,
-            "SKS_Total": 3,
+            "SKS_Total": 3.0,
             "Kelas_1": 11,
             "Kelas_2": 0,
-            "Kelas_Total": 11,
+            "Kelas_Total": 11.0,
             "Dosen_1": 4,
             "Dosen_2": 0,
-            "Dosen_Total": 4,
-            "Total": 18
+            "Dosen_Total": 4.0,
+            "Total": 18.0
         },
         {
             "id": 1452,
@@ -3607,14 +3607,14 @@
             "Dosen": "Yudi Ahmad Hambali, S.Kom., M.T.",
             "SKS_1": 6,
             "SKS_2": 0,
-            "SKS_Total": 6,
+            "SKS_Total": 6.0,
             "Kelas_1": 15,
             "Kelas_2": 0,
-            "Kelas_Total": 15,
+            "Kelas_Total": 15.0,
             "Dosen_1": 6,
             "Dosen_2": 0,
-            "Dosen_Total": 6,
-            "Total": 27
+            "Dosen_Total": 6.0,
+            "Total": 27.0
         },
         {
             "id": 1453,
@@ -3623,14 +3623,14 @@
             "Dosen": "Yudi Nurcahya,M.Pd.",
             "SKS_1": 7,
             "SKS_2": 0,
-            "SKS_Total": 7,
+            "SKS_Total": 7.0,
             "Kelas_1": 16,
             "Kelas_2": 0,
-            "Kelas_Total": 16,
+            "Kelas_Total": 16.0,
             "Dosen_1": 8,
             "Dosen_2": 0,
-            "Dosen_Total": 8,
-            "Total": 31
+            "Dosen_Total": 8.0,
+            "Total": 31.0
         }
     ]
 }
