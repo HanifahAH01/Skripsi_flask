@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div class="form-wrapper sign-in">
+            <form action="{{ url_for('login') }}" method="POST">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="text" name="nip" required>
+                    <label for="">NIP</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <!-- <div class="form-wrapper sign-up" id="sign-up-form">
+            <form action="{{ url_for('registrasi') }}" method="POST">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" name="nip" required>
+                    <label for="">NIP</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="signInBtn-link">
+                    <p>Already have an account? <a href="#" class="signInBtn-link" id="to-sign-in">Sign In</a></p>
+                </div>
+            </form>
+        </div> -->
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form-wrapper sign-Up">
+            <form action="#">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">NIP</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Email</label>
+                </div>
+                <button type="Sbmit">Sign Up</button>
+                <div class="signInBtn-link">
+                    <p>Don't have an account? <a href="/login" class="signInBtn-link">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+
+</html>

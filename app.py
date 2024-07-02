@@ -1,5 +1,7 @@
 import os
-from flask import Flask, jsonify, render_template, send_from_directory
+import bcrypt
+import werkzeug
+from flask import Flask, jsonify, render_template, send_from_directory, request, redirect, url_for, session, flash
 from flask_mysqldb import MySQL
 from Dosen import Data_Dosen
 from Jadwal import Jadwal
@@ -7,16 +9,16 @@ from db import create_table_dosen,create_real_table_jadwal,create_table_kapasita
 from heatmap import generate_plot
 import mysql.connector
 
-
 # Inisiasi Object Flask
 app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
-
+app.secret_key = 'webfpmipaupi'
 
 # Config Database
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'db_tskrip'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 # Scraping URL
@@ -36,9 +38,7 @@ insert_data_kapasitas_ruangan()
 insert_real_data_jadwal()
 insert_table_heatmap()
 
-# Fungsi Untuk mengakses setiap Halaman Website
-
-
+# Routes Untuk mengakses setiap Halaman Website
 # Welcome
 @app.route("/")
 def index():
@@ -52,15 +52,71 @@ def home():
 # admin
 @app.route("/admin")
 def admin():
-    return render_template("admin.html")
+    if 'email' in session:
+        return render_template("Dashboard_Admin/Admin.html")
+    else:
+        return redirect(url_for('login'))
+    
+@app.route("/datatables")
+def datatables():
+    if 'email' in session:
+        return render_template("Dashboard_Admin/datatables.html")
+    else:
+        return redirect(url_for('login'))
 
-# login
-@app.route("/login")
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    if request.method == 'POST':
+        nip = request.form['nip']
+        password = request.form['password'].encode('utf-8')
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM users WHERE nip=%s", (nip,))
+        user = cur.fetchone()
+        cur.close()
+
+        if user is not None and len(user) > 0:
+            if bcrypt.checkpw(password, user['password'].encode('utf-8')):
+                session['nip'] = user['nip']
+                session['email'] = user['email']
+                return redirect(url_for('admin'))
+            else:
+                flash("Gagal, NIP dan password tidak cocok")
+                return redirect(url_for('login'))
+        else:
+            flash("Gagal, user tidak ditemukan")
+            return redirect(url_for('login'))
+    else:
+        return render_template("logres/login.html")
+
+
+@app.route('/regis', methods=['POST', 'GET'])
+def registrasi():
+    if request.method == 'GET':
+        return render_template('login.html')
+    else:
+        nip = request.form['nip']
+        email = request.form['email']
+        password = request.form['password']
+        hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO users(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hash_password))
+        mysql.connection.commit()
+        cur.close()
+
+        session['nip'] = nip
+        session['email'] = email
+        return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    session.pop('nip', None)
+    session.pop('email', None)
+    return redirect(url_for('login'))
+
+
 
 # Route Diagram
-# Route Diagram dibuat untuk menampilkan seluruh chart yang ada pada website
 @app.route("/diagram")
 def diagram():
 
@@ -161,7 +217,6 @@ def ruangan():
 
     return render_template("Recap/Ruangkelas.html", grouped_jadwal=jadwal_records)
 
-
 @app.route("/total_jadwal")
 def get_heatmap():
     json_dir = os.path.join(app.static_folder, 'json')
@@ -182,7 +237,6 @@ def dosen_chart():
         return jsonify(dosen_list=dosen_list)
     except Exception as e:
         return str(e), 500
-
 
 @app.route("/kapasitas_all")
 def get_kapasitas_all():
@@ -339,11 +393,6 @@ def get_kapasitas_fpmipa_lab():
 
     return jsonify({"kapasitas_list": kapasitas_list})
 
-# Add Data
-@app.route("/adddata")
-def adddata():
-    return render_template("AddData.html")
-    
 # Menjalankan aplikasi
 if __name__ == "__main__":
     app.run(debug=True, port=120123)

@@ -1,11 +1,15 @@
-const signInBtnLink = document.querySelector('.signInBtn-link');
-const signUpBtnLink = document.querySelector('.signUpBtn-link');
-const wrapper = document.querySelector('.wrapper');
+document.addEventListener("DOMContentLoaded", function() {
+    const wrapper = document.getElementById('wrapper');
+    const toSignUp = document.getElementById('to-sign-up');
+    const toSignIn = document.getElementById('to-sign-in');
 
-signUpBtnLink.addEventListener('click', () => {
-    wrapper.classList.toggle('active');
-});
+    toSignUp.addEventListener('click', function(event) {
+        event.preventDefault();
+        wrapper.classList.add('active');
+    });
 
-signInBtnLink.addEventListener('click', () =>{
-    wrapper.classList.toggle('active');
+    toSignIn.addEventListener('click', function(event) {
+        event.preventDefault();
+        wrapper.classList.remove('active');
+    });
 });

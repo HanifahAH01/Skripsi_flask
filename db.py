@@ -191,6 +191,20 @@ def create_sks_dosen_fpmipa():
         cur.close()
         print("Tabel Heatmap Ruangan telah dibuat")
 
+def create_users():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS users(
+                no INT AUTO_INCREMENT PRIMARY KEY,
+                nip VARCHAR(50) NOT NULL,
+                email VARCHAR(120) NOT NULL,
+                password VARCHAR(60) NOT NULL
+            )
+        """)
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel Users Telah Dibuat")
 
 
 # --------------------------------------#
@@ -638,13 +652,28 @@ def create_triggers_sks_dosen_fpmipa():
 
 
 if __name__ == "__main__":
-    # create_table_dosen()
-    # create_triggers()
-    # insert_data_dosen()
-    # create_heatmap_gedung()
-    # create_heatmap_ruangan()
-    # insert_data_heatmap()
-    # create_sks_dosen_fpmipa()
-    # insert_data_sks_dosen_fpmipa()
-    # create_triggers_sks_dosen_fpmipa()
+    # create table
+    create_users()
+    create_table_dosen()
+    create_table_kapasitas_ruangan()
+    create_table_jadwal()
+    create_real_table_jadwal()
+    create_real_table_jadwal()
+    create_table_heatmap()
+    create_heatmap_gedung()
+    create_heatmap_ruangan()
+    create_sks_dosen_fpmipa()
+
+    # insert
+    insert_data_dosen()
+    insert_data_kapasitas_ruangan()
+    # insert_data_jadwal()
+    insert_real_data_jadwal()
+    insert_table_heatmap()
+    insert_data_heatmap()
+    insert_data_sks_dosen_fpmipa()
+
+    # trigger
+    create_triggers()
     create_triggers_sks_dosen_fpmipa()
+    
