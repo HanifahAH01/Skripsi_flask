@@ -1,5 +1,5 @@
 import os
-import bcrypt
+import bcrypt # type: ignore
 import werkzeug
 from flask import Flask, jsonify, render_template, send_from_directory, request, redirect, url_for, session, flash
 from flask_mysqldb import MySQL
@@ -18,7 +18,7 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'db_tskrip'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 # Scraping URL
@@ -235,6 +235,7 @@ def dosen_chart():
         
         cur.close()
         return jsonify(dosen_list=dosen_list)
+    
     except Exception as e:
         return str(e), 500
 

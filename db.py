@@ -908,30 +908,30 @@ def create_triggers_sks_dosen_fpmipa():
 
 if __name__ == "__main__":
     # create table
-    # create_users()
-    # create_table_dosen()
-    # create_table_kapasitas_ruangan()
-    # create_table_jadwal()
-    # create_real_table_jadwal()
-    # create_real_table_jadwal()
-    # create_table_heatmap()
-    # create_heatmap_gedung()
-    # create_heatmap_ruangan()
-    # create_sks_dosen_fpmipa()
+    create_users()
+    create_table_dosen()
+    create_table_kapasitas_ruangan()
+    create_table_jadwal()
+    create_real_table_jadwal()
+    create_real_table_jadwal()
+    create_table_heatmap()
+    create_heatmap_gedung()
+    create_heatmap_ruangan()
+    create_sks_dosen_fpmipa()
 
     # insert
-    # insert_data_dosen()
-    # insert_data_kapasitas_ruangan()
+    insert_data_dosen()
+    insert_data_kapasitas_ruangan()
     # insert_data_jadwal()
-    # insert_real_data_jadwal()
-    # insert_table_heatmap()
-    # insert_data_heatmap()
-    # insert_data_sks_dosen_fpmipa()
+    insert_real_data_jadwal()
+    insert_table_heatmap()
+    insert_data_heatmap()
+    insert_data_sks_dosen_fpmipa()
     
     # Update
     # update_data_dosen()
-    update_real_data_jadwal()
+    # update_real_data_jadwal()
 
     # trigger
-    # create_triggers()
-    # create_triggers_sks_dosen_fpmipa()
+    create_triggers()
+    create_triggers_sks_dosen_fpmipa()

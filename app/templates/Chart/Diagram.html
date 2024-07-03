@@ -181,21 +181,6 @@
                         <span class="title">Dark Mode</span>
                     </button>
                 </li>
-                {% if 'email' in session %}
-                <a href="/logout">
-                    <span class="icon">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                    </span>
-                    <span class="title">Log Out</span>
-                </a>
-                {% else %}
-                <a href="/login">
-                    <span class="icon">
-                        <ion-icon name="log-in-outline"></ion-icon>
-                    </span>
-                    <span class="title">Log In</span>
-                </a>
-                {% endif %}
             </ul>
             <footer>
                 <!-- Tautan Sosial Media -->
@@ -276,7 +261,7 @@
                         <!-- End Chart PIE Gedung FPMIPA -->
 
                         <!-- Start Chart Bar Horizontal SKS Dosen -->
-                        <!-- <div class="chartBox" id="sks_dosen">
+                        <div class="chartBox" id="sks_dosen">
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
                                     <h2>SKS Dosen</h2>
@@ -292,11 +277,11 @@
                             <div class="box">
                                 <canvas id="myChart2"></canvas>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- End Chart Bar Horizontal SKS Dosen -->
 
                         <!-- Start Chart Heatmap -->
-                        <!-- <div class="chartBox" id="heatmap">
+                        <div class="chartBox" id="heatmap">
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
                                     <h2>Heatmap</h2>
@@ -313,7 +298,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                         <!-- End Chart Heatmap -->
 
                         <!-- Start Jadwal Ruang Kelas -->
