@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     data: Kapasitas,
                     backgroundColor: backgroundColors, // Warna latar belakang
                     borderColor: borderColors, // Warna border
+                    borderColor: borderColors, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -201,10 +202,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 type: 'bar',
                 data: data,
                 options: {
-                    indexAxis: 'y', // Membuat tulisan menjadi horizontal
+                    indexAxis: 'x', // Membuat tulisan menjadi horizontal
                     scales: {
                         x: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                maxRotation: 0, // Mengatur label supaya horizontal
+                                minRotation: 0,
+                                autoSkip: false // Menjaga agar label tidak di-skip
+                            }
                         }
                     },
                     plugins: {
