@@ -7,7 +7,7 @@
     <title>FPMIPA - Dashboard</title>
 
     <!-- ======= Style ====== -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Report.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tambah.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 
     <style>
@@ -63,10 +63,34 @@
             /* Transisi untuk perubahan warna latar */
         }
 
-        /* Hover effect untuk tombol */
+
         #booking-button:hover {
             background-color: #45a049;
-            /* Warna latar hijau lebih gelap saat dihover */
+        }
+
+        /* Style for the WhatsApp booking button */
+        #whatsapp-button {
+            background-color: #25D366;
+            /* Warna latar hijau khas WhatsApp */
+            color: white;
+            /* Warna teks putih */
+            padding: 10px 20px;
+            /* Padding tombol */
+            border: none;
+            /* Menghapus border */
+            border-radius: 5px;
+            /* Border radius */
+            font-size: 16px;
+            /* Ukuran font */
+            cursor: pointer;
+            /* Mengubah kursor menjadi pointer saat diarahkan */
+            transition: background-color 0.3s;
+            /* Transisi untuk perubahan warna latar */
+        }
+
+        #whatsapp-button:hover {
+            background-color: #1EBE5B;
+            /* Warna latar saat tombol di-hover */
         }
     </style>
 </head>
@@ -163,17 +187,6 @@
                 <div class="toggle">
                     <ion-icon name="grid-outline"></ion-icon>
                 </div>
-
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search Here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
-                </div>
-
-                <!-- <div class="user">
-                    <img src="assets/profile-1.jpg" alt="User">
-                </div> -->
             </div>
 
             <!-- ==========Details List=========== -->
@@ -181,9 +194,9 @@
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Report Ruang Kelas</h2>
+                        <h2>Booking Ruang Kelas</h2>
                         <div class="btn-group">
-                            <a href="/diagram" class="btn-primary">Jadwal Kelas</a>
+                            <a href="/diagram" class="btn-primary">Ruang Kelas</a>
                             <!-- <a href="#" class="btn-secondary">Laporan</a> -->
                         </div>
                     </div>
@@ -209,7 +222,7 @@
                                 <option value="minggu">Minggu</option>
                                 <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
                             </select>
-                            
+
                             <label for="waktu">Waktu:</label>
                             <select id="waktu" name="waktu" required>
                                 <option value="senin">07.00-07.50</option>
@@ -217,12 +230,12 @@
                                 <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
                             </select>
                             <!-- <input type="text" id="waktu" name="waktu" required> -->
-
-                            <label for="alasan">Alasan Report:</label>
+                            <label for="alasan">Tujuan Booking:</label>
                             <textarea id="alasan" name="alasan" required></textarea>
 
-                            <input type="submit" value="Report">
-                            
+                            <input type="submit" value="Booking">
+                            <button type="button" id="whatsapp-button" data-whatsapp="+6281364986912"
+                                onclick="openWhatsApp()">WhatsApp</button>
                         </form>
                     </div>
                 </div>
@@ -232,11 +245,38 @@
         <!-- ======== Script ======== -->
         <Script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></Script>
 
-        
+
 
         <!-- ======== Ionicons ======== -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <!-- Custom JavaScript for WhatsApp functionality -->
+        <script>
+            function openWhatsApp() {
+                var phoneNumber = document.getElementById("whatsapp-button").getAttribute("data-whatsapp");
+                var room = document.getElementById("judul").value;
+                var date = document.getElementById("hari").value;
+                var time = document.getElementById("waktu").value;
+                var alasan = document.getElementById("alasan").value;
+
+                var message = `Yth. Bagian Administrasi,\nSaya ingin melakukan pemesanan ruangan perkuliahan untuk kegiatan berikut:\n\n` +
+                    `Atas Nama: [Nama Pemesan]\n` +
+                    `Nama Kegiatan: (Kegiatan / Perkuliahan)\n` +
+                    `Mata Kuliah (Isi jika untuk kegiatan kuliah): [Mata kuliah]\n` +
+                    `Pengajar (Isi jika untuk kegiatan kuliah): [Nama Dosen]\n` +
+                    `Tanggal: ${date}\n` +
+                    `Waktu: ${time}\n` +
+                    `Ruangan yang Diinginkan: ${room}\n\n` +
+                    `Tujuan Booking: ${alasan}\n\n` +
+                    `Mohon konfirmasi ketersediaan ruangan dan informasi lebih lanjut jika ada persyaratan atau prosedur tambahan yang perlu dilakukan.\n` +
+                    `Terima kasih atas perhatian dan kerjasamanya.`;
+
+                var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+                window.open(whatsappURL, '_blank');
+            }
+        </script>
 </body>
 
 </html>

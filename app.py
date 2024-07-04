@@ -88,7 +88,6 @@ def login():
     else:
         return render_template("logres/login.html")
 
-
 @app.route('/regis', methods=['POST', 'GET'])
 def registrasi():
     if request.method == 'GET':
@@ -170,6 +169,16 @@ def report():
 @app.route("/laporan")
 def laporan():
     return render_template("Recap/Laporan.html")
+
+
+@app.route("/add")
+def add():
+    cur = mysql.connection.cursor()
+    query = "SELECT no, nama_ruangan FROM ruangan"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    rooms = cur.fetchall()
+    cur.close()
+    return render_template("Recap/tambah.html", rooms=rooms)
 
 # Kapasitas
 @app.route('/kapasitas')

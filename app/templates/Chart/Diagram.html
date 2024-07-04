@@ -45,6 +45,39 @@
         .tersedia:hover {
             background-color: #99ff99;
         }
+
+        .popup {
+            display: none;
+            /* Default to hidden */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #popup-content {
+            margin-bottom: 20px;
+        }
+
+        /* Style untuk sel dengan status Boking */
+        td.boking {
+            background-color: green;
+            /* Ganti dengan warna hijau yang Anda inginkan */
+            color: white;
+            /* Ganti dengan warna teks yang sesuai jika perlu */
+        }
     </style>
 </head>
 
@@ -136,7 +169,7 @@
                         <h2>Ruang Kelas</h2>
                         <div class="button-group">
                             <a class="btn-secondary" data-filter="all_chart" onclick="filterCharts(event)">ALL</a>
-                            <a class="btn-secondary" data-filter="chart_bar" onclick="filterCharts(event)">Bar
+                            <a class="btn-thirdty" data-filter="chart_bar" onclick="filterCharts(event)">Bar
                                 Ruangan</a>
                             <a class="btn-thirdty" data-filter="sks_dosen" onclick="filterCharts(event)">SKS Dosen</a>
                             <a class="btn-thirdty" data-filter="heatmap" onclick="filterCharts(event)">Heatmap</a>
@@ -149,12 +182,6 @@
                         <!-- Start Chart PIE Gedung FPMIPA -->
                         <div class="chartBox" id="chart_bar">
                             <h2>Perbandingan Ruang</h2>
-                            <div class="search">
-                                <label>
-                                    <input type="text" id="searchInput" placeholder="Search Here">
-                                    <ion-icon name="search-outline"></ion-icon>
-                                </label>
-                            </div>
                             <div class="scrollBox">
                                 <canvas id="myChart3" style="width: 400px; height: 400px;"></canvas>
                             </div>
@@ -180,12 +207,7 @@
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
                                     <h2>SKS Dosen</h2>
-                                    <div class="search">
-                                        <label>
-                                            <input type="text" id="searchInput" placeholder="Search Here">
-                                            <ion-icon name="search-outline"></ion-icon>
-                                        </label>
-                                    </div>
+
                                     <canvas id="myChart"></canvas>
                                 </div>
                             </div>
@@ -200,12 +222,6 @@
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
                                     <h2>Heatmap</h2>
-                                    <div class="search">
-                                        <label>
-                                            <input type="text" id="searchInput" placeholder="Search Here">
-                                            <ion-icon name="search-outline"></ion-icon>
-                                        </label>
-                                    </div>
                                     <br>
                                     <div class="scrollBoxBody">
                                         <div class="plot-container" style="max-width: 150;">
@@ -220,13 +236,8 @@
                         <!-- Start Jadwal Ruang Kelas -->
                         <div class="chartBox" id="jadwal_ruangan">
                             <h2>Jadwal FPMIPA</h2>
-                            <div class="search">
-                                <label>
-                                    <input type="text" id="searchInput" placeholder="Search Here">
-                                    <ion-icon name="search-outline"></ion-icon>
-                                </label>
-                            </div>
                             <br>
+                            <a href="/add" class="btn-thirdty">Boking</a>
                             <a href="/report" class="btn-secondary">Report</a>
                             <a href="/laporan" class="btn-thirdty">Laporan</a>
                             <br>
@@ -281,61 +292,59 @@
         <button id="booking-button" data-whatsapp="+6281364986912" onclick="openWhatsApp()">Booking via
             WhatsApp</button>
     </div>
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p id="popup-content"></p>
+        <button id="booking-button" data-whatsapp="+6281364986912" onclick="openWhatsApp()">Booking via
+            WhatsApp</button>
+    </div>
 
     <!-- ======== Script ========= -->
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             var tbody = document.getElementById('jadwal-body');
             var rows = tbody.getElementsByTagName('tr');
-            var days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+            var days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
 
             for (var i = 0; i < rows.length; i++) {
                 var cells = rows[i].getElementsByTagName('td');
-                var room = cells[0].innerHTML.trim(); // Nama ruangan dari kolom pertama
+                var room = cells[0].innerHTML.trim();
 
-                for (var j = 1; j <= 7; j++) { // Kolom 2 (Senin) hingga 8 (Minggu)
-                    var cellContent = cells[j].innerHTML.trim(); // Menghapus spasi di awal dan akhir
-                    if (cellContent.includes(',')) { // Jika terdapat koma dalam sel
-                        cells[j].innerHTML = 'Terpakai'; // Mengganti dengan "Terpakai"
-                        cells[j].classList.add('terpakai'); // Tambahkan kelas CSS untuk menandai sebagai "Terpakai"
-                        cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
-                        cells[j].setAttribute('data-room', room); // Menambahkan atribut data-room dengan nama ruangan
-                        cells[j].setAttribute('data-day', days[j - 1]); // Menambahkan atribut data-day dengan hari
+                for (var j = 1; j <= 7; j++) {
+                    var cellContent = cells[j].innerHTML.trim();
+                    if (cellContent.includes(',')) {
+                        cells[j].innerHTML = 'Terpakai';
+                        cells[j].classList.add('terpakai');
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
                         cells[j].addEventListener('click', openPopup);
-                    } else if (isTime(cellContent)) { // Jika isi sel adalah waktu
-                        cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
-                        cells[j].setAttribute('data-room', room); // Menambahkan atribut data-room dengan nama ruangan
-                        cells[j].setAttribute('data-day', days[j - 1]); // Menambahkan atribut data-day dengan hari
+                    } else if (isTime(cellContent)) {
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
                         cells[j].addEventListener('click', openPopup);
-                    } else if (cellContent !== '-' && cellContent !== '') { // Jika tidak ada koma, tidak waktu, dan bukan '-'
-                        cells[j].innerHTML = 'Boking'; // Mengganti dengan "Boking"
-                        cells[j].classList.add('tersedia'); // Tambahkan kelas CSS untuk menandai sebagai "Boking"
-                        cells[j].setAttribute('data-content', cellContent); // Menambahkan atribut data-content dengan isi sel
-                        cells[j].setAttribute('data-room', room); // Menambahkan atribut data-room dengan nama ruangan
-                        cells[j].setAttribute('data-day', days[j - 1]); // Menambahkan atribut data-day dengan hari
+                    } else if (cellContent !== '-' && cellContent !== '') {
+                        cells[j].innerHTML = 'Boking';
+                        cells[j].classList.add('boking');
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
                         cells[j].addEventListener('click', openPopup);
                     }
                 }
             }
         });
 
-
-
-        function isTime(content) {
-            // Implementasi sederhana untuk memeriksa apakah konten adalah waktu dalam format tertentu (HH:mm-HH:mm)
-            return /\d{2}:\d{2}-\d{2}:\d{2}/.test(content);
-        }
-
         function openPopup(event) {
             var popup = document.getElementById('popup');
-            var content = event.target.getAttribute('data-content'); // Mendapatkan isi sel yang diklik
-            var room = event.target.getAttribute('data-room'); // Mendapatkan nama ruangan
-            var day = event.target.getAttribute('data-day'); // Mendapatkan hari
-            var time = event.target.getAttribute('data-content'); // Mendapatkan waktu
+            var content = event.target.getAttribute('data-content');
+            var room = event.target.getAttribute('data-room');
+            var day = event.target.getAttribute('data-day');
+            var time = event.target.getAttribute('data-content');
 
-            var date = getNextDate(day); // Mendapatkan tanggal berikutnya berdasarkan hari
+            var date = getNextDate(day);
 
-            // Menampilkan data dalam popup
             var popupContent = document.getElementById('popup-content');
             popupContent.innerText = `Ruangan: ${room}\nTanggal: ${date}\nWaktu: ${time}`;
 
@@ -344,21 +353,19 @@
             bookingButton.setAttribute('data-date', date);
             bookingButton.setAttribute('data-time', time);
 
-            if (event.target.classList.contains('terpakai')) {
-                // Jika sel terpakai, sembunyikan tombol booking
-                if (bookingButton) {
-                    bookingButton.style.display = 'none';
-                }
+            if (event.target.classList.contains('terpakai') || event.target.classList.contains('boking')) {
+                bookingButton.style.display = 'none';
             } else {
-                // Jika sel tidak terpakai, tampilkan tombol booking
-                if (bookingButton) {
-                    bookingButton.style.display = 'block';
-                }
+                bookingButton.style.display = 'block';
             }
+
             popup.style.display = 'block';
         }
 
-        // Function to get the next date based on the day
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
         function getNextDate(day) {
             var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             var dayIndex = daysOfWeek.indexOf(day);
@@ -368,12 +375,10 @@
             return resultDate.toISOString().split('T')[0];
         }
 
-        // Function to close the popup
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
+        function isTime(content) {
+            return /\d{2}:\d{2}-\d{2}:\d{2}/.test(content);
         }
 
-        // Function to open WhatsApp with formatted message
         function openWhatsApp() {
             var phoneNumber = document.getElementById("booking-button").getAttribute("data-whatsapp");
             var room = document.getElementById("booking-button").getAttribute("data-room");
@@ -396,25 +401,35 @@
             window.open(whatsappURL, '_blank');
         }
 
+
+
         // Function to filter charts
         function filterCharts(event) {
-            var filter = event.target.getAttribute("data-filter");
-            var chartBoxes = document.querySelectorAll(".chartBox");
+            var filter = event.target.getAttribute('data-filter');
+            var charts = document.getElementsByClassName('chartBox');
 
-            if (filter === "all_chart") {
-                chartBoxes.forEach(function (box) {
-                    box.style.display = "block"; // Show all charts
-                });
-            } else {
-                chartBoxes.forEach(function (box) {
-                    if (box.id === filter) {
-                        box.style.display = "block";
-                    } else {
-                        box.style.display = "none";
-                    }
-                });
+            for (var i = 0; i < charts.length; i++) {
+                if (filter === 'all_chart') {
+                    charts[i].style.display = 'block';
+                } else if (charts[i].id === filter) {
+                    charts[i].style.display = 'block';
+                } else {
+                    charts[i].style.display = 'none';
+                }
             }
+
+            // Update button styles
+            var buttons = document.querySelectorAll('.button-group a');
+            buttons.forEach(function (button) {
+                button.classList.remove('btn-secondary');
+                button.classList.add('btn-thirdty');
+            });
+
+            // Set clicked button to btn-secondary
+            event.target.classList.remove('btn-thirdty');
+            event.target.classList.add('btn-secondary');
         }
+
 
         // Ensure all charts are displayed on page load
         document.addEventListener("DOMContentLoaded", function () {
