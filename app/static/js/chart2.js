@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // My Chart 4 ( Diagram Bar Kapasitas Gedung B )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_b";
+    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_a";
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     label: Gedung[0],
                     data: Kapasitas,
                     backgroundColor: backgroundColors, // Warna latar belakang
-                    borderColor: borderColors,
+                    borderColor: borderColors, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -187,6 +187,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const config = {
                 type: 'bar',
                 data: data,
+                options: {
+                    indexAxis: 'x', // Membuat tulisan menjadi horizontal
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                maxRotation: 0, // Mengatur label supaya horizontal
+                                minRotation: 0,
+                                autoSkip: false // Menjaga agar label tidak di-skip
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    }
+                }
             };
 
             // render init block

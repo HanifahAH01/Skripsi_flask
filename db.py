@@ -348,7 +348,7 @@ def insert_real_data_jadwal(file_name="app/static/json/hasil_jadwal.json", limit
         else:
             print("File", file_name, "not found")
 
-def insert_table_heatmap(file_name="total_jadwal.json", limit=88):
+def insert_table_heatmap(file_name='app/static/json/total_jadwal.json', limit=88):
     with app.app_context():
         if os.path.exists(file_name):
             with open(file_name, 'r') as file:
@@ -364,15 +364,15 @@ def insert_table_heatmap(file_name="total_jadwal.json", limit=88):
 
                 count = 0  # Variable to count the number of inserted data
 
-                for key, item in data.items():
+                for item in data:
                     span = item['Span']
-                    total_senin = item['Total_Senin']
-                    total_selasa = item['Total_Selasa']
-                    total_rabu = item['Total_Rabu']
-                    total_kamis = item['Total_Kamis']
-                    total_jumat = item['Total_Jumat']
-                    total_sabtu = item['Total_Sabtu']
-                    total_minggu = item['Total_Minggu']
+                    total_senin = item['Total Senin']
+                    total_selasa = item['Total Selasa']
+                    total_rabu = item['Total Rabu']
+                    total_kamis = item['Total Kamis']
+                    total_jumat = item['Total Jumat']
+                    total_sabtu = item['Total Sabtu']
+                    total_minggu = item['Total Minggu']
 
                     # Check if data insertion will exceed the limit
                     if current_count + count >= limit:
@@ -401,7 +401,7 @@ def insert_table_heatmap(file_name="total_jadwal.json", limit=88):
                         count += 1  # Increment the count of inserted data
 
                 mysql.connection.commit()  # Commit transaction
-                print("Data from", file_name, "has been inserted into the Jadwal table.")
+                print("Data from", file_name, "has been inserted into the heatmap table.")
             except Exception as e:
                 mysql.connection.rollback()  # Rollback transaction in case of error
                 print("Error:", e)
