@@ -205,11 +205,12 @@
                         <!-- <h2>Report Ruangan</h2> -->
                         <form action="#">
                             <label for="judul">Nama Ruangan:</label>
-                            <select id="judul" name="judul" required>
+                            <input list="room-list" id="judul-input" name="judul" oninput="filterRooms()" required>
+                            <datalist id="room-list">
                                 {% for room in rooms %}
-                                <option value="{{ room[0] }}">{{ room[1] }}</option>
+                                <option value="{{ room[1] }}"></option>
                                 {% endfor %}
-                            </select>
+                            </datalist>
 
                             <label for="hari">Hari:</label>
                             <select id="hari" name="hari" required>

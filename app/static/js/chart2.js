@@ -216,8 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             // render init block
-            const myChart4 = new Chart(
-                document.getElementById('myChart4'),
+            const myChart5 = new Chart(
+                document.getElementById('myChart5'),
                 config
             );
         }
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // My Chart 6 ( Diagram Bar Kapasitas Gedung c )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_a";
+    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_c";
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {

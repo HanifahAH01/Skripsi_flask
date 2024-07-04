@@ -785,3 +785,68 @@ body {
     background-color: #05b713;
 }
 
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    /* Highlight saat fokus */
+}
+
+form textarea {
+    height: 100px;
+    /* Tinggi textarea */
+}
+
+form input[type="submit"],
+form input[type="button"] {
+    background-color: #4CAF50;
+    /* Warna latar hijau */
+    color: white;
+    /* Warna teks putih */
+    padding: 10px 20px;
+    /* Padding tombol */
+    border: none;
+    /* Menghapus border */
+    border-radius: 5px;
+    /* Border radius */
+    font-size: 16px;
+    /* Ukuran font */
+    cursor: pointer;
+    /* Mengubah kursor menjadi pointer saat diarahkan */
+    transition: background-color 0.3s;
+    /* Transisi untuk perubahan warna latar */
+}
+
+form input[type="submit"]:hover,
+form input[type="button"]:hover {
+    background-color: #45a049;
+    /* Warna latar saat hover */
+}
