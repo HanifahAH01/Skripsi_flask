@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // My Chart 4 ( Diagram Bar Kapasitas Gedung B )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_a";
+    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_b";
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
@@ -192,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     data: Kapasitas,
                     backgroundColor: backgroundColors, // Warna latar belakang
                     borderColor: borderColors, // Warna border
-                    borderColor: borderColors, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -202,15 +201,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 type: 'bar',
                 data: data,
                 options: {
-                    indexAxis: 'x', // Membuat tulisan menjadi horizontal
+                    indexAxis: 'y', // Membuat tulisan menjadi horizontal
                     scales: {
                         x: {
-                            beginAtZero: true,
-                            ticks: {
-                                maxRotation: 0, // Mengatur label supaya horizontal
-                                minRotation: 0,
-                                autoSkip: false // Menjaga agar label tidak di-skip
-                            }
+                            beginAtZero: true
                         }
                     },
                     plugins: {
@@ -222,8 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             // render init block
-            const myChart5 = new Chart(
-                document.getElementById('myChart5'),
+            const myChart4 = new Chart(
+                document.getElementById('myChart4'),
                 config
             );
         }
@@ -346,11 +340,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else if (value >= 21 && value <= 40) {
                     return 'rgb(232, 62, 62)';
                 } else if (value >= 41 && value <= 60) {
-                    return 'rgb(243, 232, 78)';
+                    return 'rgb(237, 98, 29)';
                 } else if (value >= 61 && value <= 100) {
-                    return 'rgb(155, 236, 0)';
+                    return 'rgb(243, 232, 78)';
                 }
-                return 'rgba(0, 0, 0, 0.2)'; // Warna default jika nilai tidak sesuai rentang
+                return 'rgb(155, 236, 0)'; // Warna default jika nilai tidak sesuai rentang
             }
 
             var backgroundColors = Kapasitas.map(getColor);
