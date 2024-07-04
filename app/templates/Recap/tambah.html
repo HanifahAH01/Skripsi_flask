@@ -206,9 +206,9 @@
                         <form action="#">
                             <label for="judul">Nama Ruangan:</label>
                             <select id="judul" name="judul" required>
-                                <option value="106">1. 04.4B.01.005 - Lab Pembelajaran Kimia B 106</option>
-                                <option value="305">2. 04.4A.03.013 - Lab Komputer Matematika 1 E 305</option>
-                                <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
+                                {% for room in rooms %}
+                                <option value="{{ room[0] }}">{{ room[1] }}</option>
+                                {% endfor %}
                             </select>
 
                             <label for="hari">Hari:</label>
