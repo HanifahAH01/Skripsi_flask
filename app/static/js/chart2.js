@@ -1,4 +1,3 @@
-// My chart 3 ( Diagram Pie Kapsitas Per Gedung )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
     var url = "http://127.0.0.1:54587/kapasitas_all";  // pastikan port sesuai dengan app Flask
@@ -21,6 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 datasets: [{
                     label: 'Total Ruangan',
                     data: Jumlah_Total_Ruangan,
+                    backgroundColor: [
+                        'rgb(255, 0, 0)',
+                        'rgb(0, 0, 255)',
+                        'rgb(0, 255, 0)',
+                        'rgb(255, 255, 0)',
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 159, 64)'
+                    ],
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 206, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 159, 64)'
+                    ],
                     borderWidth: 1
                 }]
             };
@@ -29,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const config = {
                 type: 'pie',
                 data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                }
             };
 
             // render init block
@@ -40,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// My Chart 4 ( Diagram Bar Kapasitas Gedung A )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
     var url = "http://127.0.0.1:54587/kapasitas_fpmipa_a";
@@ -66,12 +84,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
+            // Tentukan warna berdasarkan nilai kapasitas
+            function getColor(value) {
+                if (value >= 1 && value <= 20) {
+                    return 'rgb(231, 30, 30)';
+                } else if (value >= 21 && value <= 40) {
+                    return 'rgb(237, 98, 29)';
+                } else if (value >= 41 && value <= 60) {
+                    return 'rgb(243, 232, 78)';
+                } else if (value >= 61 && value <= 100) {
+                    return 'rgb(155, 236, 0)';
+                }
+                return 'rgba(0, 0, 0, 0.2)'; // Warna default jika nilai tidak sesuai rentang
+            }
+
+            var backgroundColors = Kapasitas.map(getColor);
+            var borderColors = Kapasitas.map(getColor); // Sama dengan background color
+
             // setup myChart 1
             const data = {
                 labels: Nama_Ruangan,
                 datasets: [{
                     label: Gedung[0],
                     data: Kapasitas,
+                    backgroundColor: backgroundColors, // Warna latar belakang
+                    borderColor: borderColors, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -117,12 +154,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
+            // Tentukan warna berdasarkan nilai kapasitas
+            function getColor(value) {
+                if (value >= 1 && value <= 20) {
+                    return 'rgb(231, 30, 30)';
+                } else if (value >= 21 && value <= 40) {
+                    return 'rgb(237, 98, 29)';
+                } else if (value >= 41 && value <= 60) {
+                    return 'rgb(243, 232, 78)';
+                } else if (value >= 61 && value <= 100) {
+                    return 'rgb(155, 236, 0)';
+                }
+                return 'rgba(0, 0, 0, 0.2)'; // Warna default jika nilai tidak sesuai rentang
+            }
+
+            var backgroundColors = Kapasitas.map(getColor);
+            var borderColors = Kapasitas.map(getColor); // Sama dengan background color
+
             // setup myChart 1
             const data = {
                 labels: Nama_Ruangan,
                 datasets: [{
                     label: Gedung[0],
                     data: Kapasitas,
+                    backgroundColor: backgroundColors, // Warna latar belakang
+                    borderColor: borderColors,
                     borderWidth: 1
                 }]
             };
@@ -168,12 +224,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
+            // Tentukan warna berdasarkan nilai kapasitas
+            function getColor(value) {
+                if (value >= 1 && value <= 20) {
+                    return 'rgb(231, 30, 30)';
+                } else if (value >= 21 && value <= 40) {
+                    return 'rgb(237, 98, 29)';
+                } else if (value >= 41 && value <= 60) {
+                    return 'rgb(243, 232, 78)';
+                } else if (value >= 61 && value <= 100) {
+                    return 'rgb(155, 236, 0)';
+                }
+                return 'rgba(0, 0, 0, 0.2)'; // Warna default jika nilai tidak sesuai rentang
+            }
+
+            var backgroundColors = Kapasitas.map(getColor);
+            var borderColors = Kapasitas.map(getColor); // Sama dengan background color
+
             // setup myChart 1
             const data = {
                 labels: Nama_Ruangan,
                 datasets: [{
                     label: Gedung[0],
                     data: Kapasitas,
+                    backgroundColor: backgroundColors, // Warna latar belakang
+                    borderColor: borderColors,
                     borderWidth: 1
                 }]
             };
@@ -219,12 +294,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
+            // Tentukan warna berdasarkan nilai kapasitas
+            function getColor(value) {
+                if (value >= 1 && value <= 20) {
+                    return 'rgb(231, 30, 30)';
+                } else if (value >= 21 && value <= 40) {
+                    return 'rgb(237, 98, 29)';
+                } else if (value >= 41 && value <= 60) {
+                    return 'rgb(243, 232, 78)';
+                } else if (value >= 61 && value <= 100) {
+                    return 'rgb(155, 236, 0)';
+                }
+                return 'rgba(0, 0, 0, 0.2)'; // Warna default jika nilai tidak sesuai rentang
+            }
+
+            var backgroundColors = Kapasitas.map(getColor);
+            var borderColors = Kapasitas.map(getColor); // Sama dengan background color
+
             // setup myChart 1
             const data = {
                 labels: Nama_Ruangan,
                 datasets: [{
                     label: Gedung[0],
                     data: Kapasitas,
+                    backgroundColor: backgroundColors, // Warna latar belakang
+                    borderColor: borderColors,
                     borderWidth: 1
                 }]
             };

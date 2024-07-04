@@ -13,30 +13,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 return elem.Total;
             });
 
+            // Tentukan warna berdasarkan nilai
+            function getColor(value) {
+                if (value >= 1 && value <= 20) {
+                    return 'rgb(155, 236, 0)';
+                } else if (value >= 21 && value <= 40) {
+                    return 'rgb(243, 232, 78)';
+                } else if (value >= 41 && value <= 60) {
+                    return 'rgb(237, 98, 29)';
+                } else if (value >= 61 && value <= 80) {
+                    return 'rgb(231, 30, 30)';
+                } else if (value >= 81 && value <= 100) {
+                    return 'rgb(186, 14, 14)';
+                }
+                return 'rgba(0, 0, 0, 0.2)';
+            }
+
+            var backgroundColors = Total.map(getColor);
+            var borderColors = Total.map(getColor); // Sama dengan background color
+
             // Setup Chart 1
             const data1 = {
                 labels: dosen,
                 datasets: [{
                     label: 'Total',
                     data: Total,
-                    backgroundColor: [
-                        'rgba(255, 26, 104, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(0, 0, 0, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 26, 104, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(0, 0, 0, 1)'
-                    ],
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
                     borderWidth: 1
                 }]
             };
@@ -88,24 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 datasets: [{
                     label: 'Total',
                     data: myChart.data.datasets[0].data,
-                    backgroundColor: [
-                        'rgba(255, 26, 104, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(0, 0, 0, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 26, 104, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
-                        'rgba(0, 0, 0, 1)'
-                    ],
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
                     borderWidth: 1
                 }]
             };
