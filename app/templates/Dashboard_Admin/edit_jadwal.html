@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Jadwal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Jadwal</h2>
+        <form action="{{ url_for('update_jadwal', id=jadwal.id) }}" method="post">
+            <div class="form-group">
+                <label for="nama_ruangan">Nama Ruangan:</label>
+                <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan"
+                    value="{{ jadwal.nama_ruangan }}">
+            </div>
+            <div class="form-group">
+                <label for="senin">Senin:</label>
+                <input type="text" class="form-control" id="senin" name="senin" value="{{ jadwal.senin }}">
+            </div>
+            <div class="form-group">
+                <label for="selasa">Selasa:</label>
+                <input type="text" class="form-control" id="selasa" name="selasa" value="{{ jadwal.selasa }}">
+            </div>
+            <div class="form-group">
+                <label for="rabu">Rabu:</label>
+                <input type="text" class="form-control" id="rabu" name="rabu" value="{{ jadwal.rabu }}">
+            </div>
+            <div class="form-group">
+                <label for="kamis">Kamis:</label>
+                <input type="text" class="form-control" id="kamis" name="kamis" value="{{ jadwal.kamis }}">
+            </div>
+            <div class="form-group">
+                <label for="jumat">Jumat:</label>
+                <input type="text" class="form-control" id="jumat" name="jumat" value="{{ jadwal.jumat }}">
+            </div>
+            <div class="form-group">
+                <label for="sabtu">Sabtu:</label>
+                <input type="text" class="form-control" id="sabtu" name="sabtu" value="{{ jadwal.sabtu }}">
+            </div>
+            <div class="form-group">
+                <label for="minggu">Minggu:</label>
+                <input type="text" class="form-control" id="minggu" name="minggu" value="{{ jadwal.minggu }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+
+</html>

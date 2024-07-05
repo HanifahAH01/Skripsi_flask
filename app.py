@@ -1,5 +1,5 @@
 import os
-import bcrypt # type: ignore
+import bcrypt
 import werkzeug
 from flask import Flask, jsonify, render_template, send_from_directory, request, redirect, url_for, session, flash
 from flask_mysqldb import MySQL
@@ -64,48 +64,76 @@ def datatables():
     else:
         return redirect(url_for('login'))
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login-admin')
 def login():
-    if request.method == 'POST':
-        nip = request.form['nip']
-        password = request.form['password'].encode('utf-8')
-        cur = mysql.connection.cursor()
-        cur.execute("SELECT * FROM users WHERE nip=%s", (nip,))
-        user = cur.fetchone()
-        cur.close()
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM real_jadwal"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    Jadwal = cur.fetchall()
+    cur.close()
 
-        if user is not None and len(user) > 0:
-            if bcrypt.checkpw(password, user['password'].encode('utf-8')):
-                session['nip'] = user['nip']
-                session['email'] = user['email']
-                return redirect(url_for('admin'))
-            else:
-                flash("Gagal, NIP dan password tidak cocok")
-                return redirect(url_for('login'))
-        else:
-            flash("Gagal, user tidak ditemukan")
-            return redirect(url_for('login'))
-    else:
-        return render_template("logres/login.html")
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM booking"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    booking = cur.fetchall()
+    cur.close()
 
-@app.route('/regis', methods=['POST', 'GET'])
-def registrasi():
-    if request.method == 'GET':
-        return render_template('login.html')
-    else:
-        nip = request.form['nip']
-        email = request.form['email']
-        password = request.form['password']
-        hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM report"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    laporan = cur.fetchall()
+    cur.close()
 
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hash_password))
-        mysql.connection.commit()
-        cur.close()
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM sks_dosen_fpmipa"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    sks = cur.fetchall()
+    cur.close()
 
-        session['nip'] = nip
-        session['email'] = email
-        return redirect(url_for('index'))
+    return render_template('Dashboard_Admin/datatables.html', Jadwal=Jadwal, booking=booking, laporan=laporan, sks=sks)
+
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         nip = request.form['nip']
+#         password = request.form['password'].encode('utf-8')
+#         cur = mysql.connection.cursor()
+#         cur.execute("SELECT * FROM users WHERE nip=%s", (nip,))
+#         user = cur.fetchone()
+#         cur.close()
+
+#         if user is not None and len(user) > 0:
+#             if bcrypt.checkpw(password, user['password'].encode('utf-8')):
+#                 session['nip'] = user['nip']
+#                 session['email'] = user['email']
+#                 return redirect(url_for('admin'))
+#             else:
+#                 flash("Gagal, NIP dan password tidak cocok")
+#                 return redirect(url_for('login'))
+#         else:
+#             flash("Gagal, user tidak ditemukan")
+#             return redirect(url_for('login'))
+#     else:
+#         return render_template("logres/login.html")
+
+# @app.route('/regis', methods=['POST', 'GET'])
+# def registrasi():
+#     if request.method == 'GET':
+#         return render_template('login.html')
+#     else:
+#         nip = request.form['nip']
+#         email = request.form['email']
+#         password = request.form['password']
+#         hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+#         cur = mysql.connection.cursor()
+#         cur.execute("INSERT INTO users(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hash_password))
+#         mysql.connection.commit()
+#         cur.close()
+
+#         session['nip'] = nip
+#         session['email'] = email
+#         return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():
@@ -163,12 +191,29 @@ def Dashboard():
 # Report
 @app.route("/report")
 def report():
-    return render_template("Recap/Report.html")
+    cur = mysql.connection.cursor()
+    query = "SELECT no, nama_ruangan FROM ruangan"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    rooms = cur.fetchall()
+    cur.close()
+
+    cur1 = mysql.connection.cursor()
+    query = "SELECT id, jam FROM waktu"
+    cur1.execute(query)
+    waktu_data = cur1.fetchall()
+    cur1.close()
+
+    return render_template("Recap/Report.html", rooms=rooms, waktu_data=waktu_data)
 
 # Laporan
 @app.route("/laporan")
 def laporan():
-    return render_template("Recap/Laporan.html")
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM report"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    laporan = cur.fetchall()
+    cur.close()
+    return render_template("Recap/Laporan.html", laporan=laporan)
 
 
 @app.route("/add")
@@ -178,7 +223,56 @@ def add():
     cur.execute(query)
     rooms = cur.fetchall()
     cur.close()
-    return render_template("Recap/tambah.html", rooms=rooms)
+
+    cur1 = mysql.connection.cursor()
+    query = "SELECT id, jam FROM waktu"
+    cur1.execute(query)
+    waktu_data = cur1.fetchall()
+    cur1.close()
+
+    return render_template("Recap/tambah.html", rooms=rooms, waktu_data=waktu_data)
+
+@app.route('/submit_booking', methods=['POST'])
+def submit_booking():
+    if request.method == 'POST':
+        nama_ruangan = request.form['judul']
+        hari = request.form['hari']
+        waktu_awal = request.form['waktu_awal']
+        waktu_akhir = request.form['waktu_akhir']
+        tujuan_booking = request.form['alasan']
+        
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            INSERT INTO booking (nama_ruangan, hari, waktu_awal, waktu_akhir, tujuan_boking)
+            VALUES (%s, %s, %s, %s, %s)
+        """, (nama_ruangan, hari, waktu_awal, waktu_akhir, tujuan_booking))
+        
+        mysql.connection.commit()
+        cur.close()
+        
+        flash('Booking berhasil dilakukan', 'success')
+        return redirect(url_for('add'))
+    
+@app.route('/submit_report', methods=['POST'])
+def submit_report():
+    if request.method == 'POST':
+        nama_ruangan = request.form['judul']
+        hari = request.form['hari']
+        waktu_awal = request.form['waktu_awal']
+        alasan = request.form['alasan']
+        
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            INSERT INTO report (nama_ruangan, hari, waktu_awal, alasan)
+            VALUES (%s, %s, %s, %s)
+        """, (nama_ruangan, hari, waktu_awal, alasan))
+        
+        mysql.connection.commit()
+        cur.close()
+        
+        flash('Booking berhasil dilakukan', 'success')
+        return redirect(url_for('add'))
+    
 
 # Kapasitas
 @app.route('/kapasitas')

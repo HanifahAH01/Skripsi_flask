@@ -92,6 +92,23 @@
             background-color: #1EBE5B;
             /* Warna latar saat tombol di-hover */
         }
+
+        /* Styling untuk input dengan atribut list */
+        input[list] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[list]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            /* Highlight saat fokus */
+        }
     </style>
 </head>
 
@@ -203,7 +220,7 @@
                     <!-- Form Report Section -->
                     <div id="report-section" class="report-section">
                         <!-- <h2>Report Ruangan</h2> -->
-                        <form action="#">
+                        <form action="/submit_booking" method="POST">
                             <label for="judul">Nama Ruangan:</label>
                             <input list="room-list" id="judul-input" name="judul" oninput="filterRooms()" required>
                             <datalist id="room-list">
@@ -216,28 +233,38 @@
                             <select id="hari" name="hari" required>
                                 <option value="senin">Senin</option>
                                 <option value="selasa">Selasa</option>
-                                <option value="selasa">Rabu</option>
-                                <option value="selasa">Kamis</option>
-                                <option value="selasa">Jumat</option>
-                                <option value="selasa">Sabtu</option>
+                                <option value="rabu">Rabu</option>
+                                <option value="kamis">Kamis</option>
+                                <option value="jumat">Jumat</option>
+                                <option value="sabtu">Sabtu</option>
                                 <option value="minggu">Minggu</option>
-                                <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
                             </select>
 
-                            <label for="waktu">Waktu:</label>
-                            <select id="waktu" name="waktu" required>
-                                <option value="senin">07.00-07.50</option>
-                                <option value="selasa">07.50-08.40</option>
-                                <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
-                            </select>
-                            <!-- <input type="text" id="waktu" name="waktu" required> -->
+                            <label for="waktu_awal">Dari Pukul:</label>
+                            <input list="waktu-list" id="waktu_awal" name="waktu_awal" oninput="filterWaktu()" required>
+                            <datalist id="waktu-list">
+                                {% for waktu in waktu_data %}
+                                <option value="{{ waktu[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+
+                            <label for="waktu_akhir">Hingga Pukul:</label>
+                            <input list="waktu-list" id="waktu_akhir" name="waktu_akhir" oninput="filterWaktu()"
+                                required>
+                            <datalist id="waktu-list">
+                                {% for waktu in waktu_data %}
+                                <option value="{{ waktu[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
+
                             <label for="alasan">Tujuan Booking:</label>
                             <textarea id="alasan" name="alasan" required></textarea>
 
                             <input type="submit" value="Booking">
-                            <button type="button" id="whatsapp-button" data-whatsapp="+6281364986912"
-                                onclick="openWhatsApp()">WhatsApp</button>
+                            <!-- <button type="button" id="whatsapp-button" data-whatsapp="+6281364986912"
+                                onclick="openWhatsApp()">WhatsApp</button> -->
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -253,7 +280,7 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <!-- Custom JavaScript for WhatsApp functionality -->
-        <script>
+        <!-- <script>
             function openWhatsApp() {
                 var phoneNumber = document.getElementById("whatsapp-button").getAttribute("data-whatsapp");
                 var room = document.getElementById("judul").value;
@@ -277,7 +304,7 @@
 
                 window.open(whatsappURL, '_blank');
             }
-        </script>
+        </script> -->
 </body>
 
 </html>
