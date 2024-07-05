@@ -104,6 +104,54 @@
                     <a href="/home">
                       <span class="sub-item">Home</span>
                     </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#tables">
+                <i class="fas fa-table"></i>
+                <p>Sinkronisasi</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="tables">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="/#">
+                      <span class="sub-item">Kapasitas Json</span>
+                      <button onclick="runKapasitas()">Run Kapasitas Json</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/#">
+                      <span class="sub-item">Kapasitas</span>
+                      <button onclick="runKapasitas()">Run Kapasitas</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/#">
+                      <span class="sub-item">Jadwal</span>
+                      <button onclick="runKapasitas()">Run Jadwal</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/#">
+                      <span class="sub-item">Jadwal Json</span>
+                      <button onclick="runKapasitas()">Run Jadwal Json</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/#">
+                      <span class="sub-item">Dosen</span>
+                      <button onclick="runKapasitas()">Run Dosen</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/#">
+                      <span class="sub-item">Dosen Json</span>
+                      <button onclick="runKapasitas()">Run Dosen Json</button>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -434,74 +482,6 @@
               </div>
             </div>
 
-
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">SKS DOSEN</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="basic-datatables" class="display table table-striped table-hover">
-                      <thead>
-                        <tr>
-                          <th>Nama Ruangan</th>
-                          <th>Senin</th>
-                          <th>Selasa</th>
-                          <th>Rabu</th>
-                          <th>Kamis</th>
-                          <th>Jumat</th>
-                          <th>Sabtu</th>
-                          <th>Minggu</th>
-                          <!-- <th>action</th> -->
-                          <th style="width: 10%">Action</th>
-                        </tr>
-                      </thead>
-                      <tfoot>
-                        <tr>
-                          <th>NO</th>
-                          <th>TAHUN</th>
-                          <th>KODE</th>
-                          <th>SKS_1</th>
-                          <th>SKS_2</th>
-                          <th>SKS_TOTAL</th>
-                          <th>KELAS_1</th>
-                          <th>KELAS_2</th>
-                          <th>KELAS_TOTAL</th>
-                          <th>DOSEN_1</th>
-                          <th>DOSEN_2</th>
-                          <th>DOSEN_TOTAL</th>
-                          <th>TOTAL</th>
-                          <!-- <th>action</th> -->
-                          <!-- <th style="width: 10%">Action</th> -->
-
-                        </tr>
-                      </tfoot>
-                      <tbody>
-                        {% for sks in sks %}
-                        <tr>
-                          <td>{{ sks[0] }}</td>
-                          <td>{{ sks[1] }}</td>
-                          <td>{{ sks[2] }}</td>
-                          <td>{{ sks[3] }}</td>
-                          <td>{{ sks[4] }}</td>
-                          <td>{{ sks[5] }}</td>
-                          <td>{{ sks[6] }}</td>
-                          <td>{{ sks[7] }}</td>
-                          <td>{{ sks[8] }}</td>
-                          <td>{{ sks[9] }}</td>
-                          <td>{{ sks[10] }}</td>
-                          <td>{{ sks[11] }}</td>
-                          <td>{{ sks[12] }}</td>
-                        </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
@@ -727,6 +707,79 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">SKS DOSEN</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id="basic-datatables" class="display table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>NO</th>
+                          <th>TAHUN</th>
+                          <th>KODE</th>
+                          <th>SKS_1</th>
+                          <th>SKS_2</th>
+                          <th>SKS_TOTAL</th>
+                          <th>KELAS_1</th>
+                          <th>KELAS_2</th>
+                          <th>KELAS_TOTAL</th>
+                          <th>DOSEN_1</th>
+                          <th>DOSEN_2</th>
+                          <th>DOSEN_TOTAL</th>
+                          <th>TOTAL</th>
+                          <!-- <th>action</th> -->
+                          <th style="width: 10%">Action</th>
+                        </tr>
+                      </thead>
+                      <tfoot>
+                        <tr>
+                          <th>NO</th>
+                          <th>TAHUN</th>
+                          <th>KODE</th>
+                          <th>SKS_1</th>
+                          <th>SKS_2</th>
+                          <th>SKS_TOTAL</th>
+                          <th>KELAS_1</th>
+                          <th>KELAS_2</th>
+                          <th>KELAS_TOTAL</th>
+                          <th>DOSEN_1</th>
+                          <th>DOSEN_2</th>
+                          <th>DOSEN_TOTAL</th>
+                          <th>TOTAL</th>
+                          <!-- <th>action</th> -->
+                          <!-- <th style="width: 10%">Action</th> -->
+
+                        </tr>
+                      </tfoot>
+                      <tbody>
+                        {% for sks in sks %}
+                        <tr>
+                          <td>{{ sks[0] }}</td>
+                          <td>{{ sks[1] }}</td>
+                          <td>{{ sks[2] }}</td>
+                          <td>{{ sks[3] }}</td>
+                          <td>{{ sks[4] }}</td>
+                          <td>{{ sks[5] }}</td>
+                          <td>{{ sks[6] }}</td>
+                          <td>{{ sks[7] }}</td>
+                          <td>{{ sks[8] }}</td>
+                          <td>{{ sks[9] }}</td>
+                          <td>{{ sks[10] }}</td>
+                          <td>{{ sks[11] }}</td>
+                          <td>{{ sks[12] }}</td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
