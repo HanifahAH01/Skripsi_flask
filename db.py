@@ -410,7 +410,7 @@ def insert_table_heatmap(file_name='app/static/json/total_jadwal.json', limit=88
         else:
             print("File", file_name, "not found")
 
-def insert_data_heatmap():
+def insert_data_kapasitas():
     with app.app_context():
         cur = mysql.connection.cursor()
         

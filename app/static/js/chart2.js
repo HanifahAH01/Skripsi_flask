@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     label: 'Total Ruangan',
                     data: Jumlah_Total_Ruangan,
                     backgroundColor: [
-                        'rgb(255, 0, 0)',
-                        'rgb(0, 0, 255)',
-                        'rgb(0, 255, 0)',
-                        'rgb(255, 255, 0)',
-                        'rgb(153, 102, 255)',
-                        'rgb(255, 159, 64)'
+                        'rgb(255, 0, 0)', //merah
+                        'rgb(0, 0, 255)', //biru
+                        'rgb(0, 255, 0)', //hijau
+                        'rgb(255, 255, 0)', //kuning
+                        'rgb(153, 102, 255)', //default
+                        'rgb(255, 159, 64)' //default
                     ],
                     borderColor: [
                         'rgb(255, 99, 132)',

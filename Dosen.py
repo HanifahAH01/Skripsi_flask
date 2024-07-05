@@ -4,6 +4,8 @@ import requests
 import shutil
 from bs4 import BeautifulSoup
 
+url = 'https://siak.upi.edu/jadwal/dosensks'
+
 class Data_Dosen:
     def __init__(self, url):
         self.url = url
@@ -102,6 +104,6 @@ class Data_Dosen:
         print("Data berhasil digenerate")
 
 if __name__ == "__main__":
-    url = 'https://siak.upi.edu/jadwal/dosensks'
+    
     scraper = Data_Dosen(url=url)
     scraper.get_data_dosen()
