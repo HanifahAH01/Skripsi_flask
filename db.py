@@ -206,6 +206,55 @@ def create_users():
         cur.close()
         print("Tabel Users Telah Dibuat")
 
+def create_booking():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS booking (
+                no INT AUTO_INCREMENT PRIMARY KEY,
+                nama_ruangan VARCHAR(255) NOT NULL,
+                hari VARCHAR(255) NOT NULL,
+                waktu_awal VARCHAR(255) NOT NULL,
+                waktu_akhir VARCHAR(255) NOT NULL,
+                tujuan_boking VARCHAR(255) NOT NULL
+                
+            )
+        """
+        )
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel booking telah dibuat")
+
+def create_report():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS report (
+                no INT AUTO_INCREMENT PRIMARY KEY,
+                nama_ruangan VARCHAR(255) NOT NULL,
+                hari VARCHAR(255) NOT NULL,
+                waktu_awal VARCHAR(255) NOT NULL,
+                alasan VARCHAR(255) NOT NULL
+                
+            )
+        """
+        )
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel report telah dibuat")
+
+def create_jam():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS waktu (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                jam VARCHAR(255) NOT NULL
+            )
+        """)
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel waktu telah dibuat")
 
 # --------------------------------------#
 # Fungsi Fungsi untuk menginputkan Data #
@@ -477,7 +526,32 @@ def insert_data_sks_dosen_fpmipa():
 
     except Exception as e:
         print(f"Error: {e}")
+
+def insert_data_jam_jadwal():
+    with app.app_context():
+        # Buka file JSON jam_jadwal.json
+        with open('app/static/json/jam_jadwal.json', 'r') as file:
+            data = json.load(file)
+
+        # Koneksi ke database MySQL
+        cur = mysql.connection.cursor()
+
+        # Iterasi setiap item dalam data JSON
+        for item in data:
+            # Lakukan operasi INSERT ke dalam tabel waktu
+            cur.execute("""
+                INSERT INTO waktu (jam) 
+                VALUES (%s)
+            """, (item[list(item.keys())[0]],))
         
+        # Commit perubahan ke database
+        mysql.connection.commit()
+
+        # Tutup kursor dan cetak pesan berhasil
+        cur.close()
+    
+    print("Data Jam Jadwal Berhasil Dimasukkan")
+
 def update_data_sks_dosen_fpmipa():
     try:
         with app.app_context():
@@ -918,15 +992,19 @@ if __name__ == "__main__":
     # create_heatmap_gedung()
     # create_heatmap_ruangan()
     # create_sks_dosen_fpmipa()
+    # create_jam()
+    # create_booking()
+    create_report()
 
     # insert
     # insert_data_dosen()
     # insert_data_kapasitas_ruangan()
     # insert_data_jadwal()
     # insert_real_data_jadwal()
-    insert_table_heatmap()
+    # insert_table_heatmap()
     # insert_data_heatmap()
     # insert_data_sks_dosen_fpmipa()
+    # insert_data_jam_jadwal()
     
     # Update
     # update_data_dosen()

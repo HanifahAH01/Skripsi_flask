@@ -63,10 +63,51 @@
             /* Transisi untuk perubahan warna latar */
         }
 
-        /* Hover effect untuk tombol */
+
         #booking-button:hover {
             background-color: #45a049;
-            /* Warna latar hijau lebih gelap saat dihover */
+        }
+
+        /* Style for the WhatsApp booking button */
+        #whatsapp-button {
+            background-color: #25D366;
+            /* Warna latar hijau khas WhatsApp */
+            color: white;
+            /* Warna teks putih */
+            padding: 10px 20px;
+            /* Padding tombol */
+            border: none;
+            /* Menghapus border */
+            border-radius: 5px;
+            /* Border radius */
+            font-size: 16px;
+            /* Ukuran font */
+            cursor: pointer;
+            /* Mengubah kursor menjadi pointer saat diarahkan */
+            transition: background-color 0.3s;
+            /* Transisi untuk perubahan warna latar */
+        }
+
+        #whatsapp-button:hover {
+            background-color: #1EBE5B;
+            /* Warna latar saat tombol di-hover */
+        }
+
+        /* Styling untuk input dengan atribut list */
+        input[list] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[list]:focus {
+            outline: none;
+            border-color: #4CAF50;
+            /* Highlight saat fokus */
         }
     </style>
 </head>
@@ -190,13 +231,14 @@
                     <!-- Form Report Section -->
                     <div id="report-section" class="report-section">
                         <!-- <h2>Report Ruangan</h2> -->
-                        <form action="#">
+                        <form action="/submit_report" method="POST">
                             <label for="judul">Nama Ruangan:</label>
-                            <select id="judul" name="judul" required>
-                                <option value="106">1. 04.4B.01.005 - Lab Pembelajaran Kimia B 106</option>
-                                <option value="305">2. 04.4A.03.013 - Lab Komputer Matematika 1 E 305</option>
-                                <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
-                            </select>
+                            <input list="room-list" id="judul-input" name="judul" oninput="filterRooms()" required>
+                            <datalist id="room-list">
+                                {% for room in rooms %}
+                                <option value="{{ room[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
 
                             <label for="hari">Hari:</label>
                             <select id="hari" name="hari" required>
@@ -207,22 +249,22 @@
                                 <option value="selasa">Jumat</option>
                                 <option value="selasa">Sabtu</option>
                                 <option value="minggu">Minggu</option>
-                                <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
                             </select>
-                            
-                            <label for="waktu">Waktu:</label>
-                            <select id="waktu" name="waktu" required>
-                                <option value="senin">07.00-07.50</option>
-                                <option value="selasa">07.50-08.40</option>
-                                <!-- Tambahkan opsi hari lainnya sesuai kebutuhan -->
-                            </select>
+
+                            <label for="waktu_awal">Waktu :</label>
+                            <input list="waktu-list" id="waktu_awal" name="waktu_awal" oninput="filterWaktu()" required>
+                            <datalist id="waktu-list">
+                                {% for waktu in waktu_data %}
+                                <option value="{{ waktu[1] }}"></option>
+                                {% endfor %}
+                            </datalist>
                             <!-- <input type="text" id="waktu" name="waktu" required> -->
 
                             <label for="alasan">Alasan Report:</label>
                             <textarea id="alasan" name="alasan" required></textarea>
 
                             <input type="submit" value="Report">
-                            
+
                         </form>
                     </div>
                 </div>
@@ -232,7 +274,7 @@
         <!-- ======== Script ======== -->
         <Script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></Script>
 
-        
+
 
         <!-- ======== Ionicons ======== -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

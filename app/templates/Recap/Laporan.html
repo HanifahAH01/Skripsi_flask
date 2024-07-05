@@ -191,76 +191,18 @@
                                 <th>Hari</th>
                                 <th>Waktu</th>
                                 <th>Alasan</th>
-                                <th>Keterangan</th>
-
                             </tr>
                         </thead>
                         <tbody>
+                            {% for laporan in laporan %}
                             <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
+                                <td>{{ laporan[0] }}</td>
+                                <td>{{ laporan[1] }}</td>
+                                <td>{{ laporan[2] }}</td>
+                                <td>{{ laporan[3] }}</td>
+                                <td>{{ laporan[4] }}</td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Ruang 101</td>
-                                <td>Senin</td>
-                                <td>08:00 - 10:00</td>
-                                <td>Kerusakan peralatan</td>
-                                <td>Keterangan</td>
-                            </tr>
-                            <!-- Tambahkan baris-baris data lainnya sesuai dengan hasil report -->
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
