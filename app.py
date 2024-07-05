@@ -8,6 +8,7 @@ from Jadwal import Jadwal
 from db import create_table_dosen,create_real_table_jadwal,create_table_kapasitas_ruangan,create_table_heatmap, insert_data_dosen, insert_data_kapasitas_ruangan, insert_real_data_jadwal, insert_table_heatmap
 from heatmap import generate_plot
 import mysql.connector
+from kapasitas import Kapasitas
 
 # Inisiasi Object Flask
 app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
@@ -37,6 +38,8 @@ insert_data_dosen()
 insert_data_kapasitas_ruangan()
 insert_real_data_jadwal()
 insert_table_heatmap()
+
+scraper = Kapasitas(url=url1)
 
 # Routes Untuk mengakses setiap Halaman Website
 # Welcome
@@ -91,6 +94,14 @@ def login():
     cur.close()
 
     return render_template('Dashboard_Admin/datatables.html', Jadwal=Jadwal, booking=booking, laporan=laporan, sks=sks)
+
+@app.route('/run-kapasitas', methods=['POST'])
+def run_kapasitas():
+    try:
+        scraper.get_data_kapasitas()
+        return jsonify({'message': 'Data Ruangan Berhasil Di-generate'})
+    except Exception as e:
+        return jsonify({'error': str(e)})
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():

@@ -24,6 +24,19 @@
         sessionStorage.fonts = true;
       },
     });
+
+    function runKapasitas() {
+      $.ajax({
+        url: '/run-kapasitas',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
   </script>
 
   <!-- CSS Files -->
@@ -117,15 +130,15 @@
               <div class="collapse" id="tables">
                 <ul class="nav nav-collapse">
                   <li>
-                    <a href="/#">
-                      <span class="sub-item">Kapasitas Json</span>
-                      <button onclick="runKapasitas()">Run Kapasitas Json</button>
+                    <a href="#">
+                      <span class="sub-item">Kapasitas </span>
+                      <button onclick="runKapasitas()">Run Kapasitas </button>
                     </a>
                   </li>
                   <li>
                     <a href="/#">
-                      <span class="sub-item">Kapasitas</span>
-                      <button onclick="runKapasitas()">Run Kapasitas</button>
+                      <span class="sub-item">Kapasitas Json</span>
+                      <button onclick="runKapasitas()">Run Kapasitas Json</button>
                     </a>
                   </li>
                   <li>
