@@ -4,15 +4,12 @@ import requests
 import shutil
 from bs4 import BeautifulSoup
 
-url = 'https://siak.upi.edu/jadwal/dosensks'
-
-class Data_Dosen:
+class DataDosen:
     def __init__(self, url):
         self.url = url
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
         }
-        # Tambahkan list kode khusus sebagai atribut kelas
         self.list_kode_khusus = [
             "3313", "2330", "2358", "2855", "2312", "3397", "3239", "3241", "3240", "2573",
             "2843", "3104", "3152", "2934", "2584", "2891", "1549", "2189", "614", "2673",
@@ -42,68 +39,69 @@ class Data_Dosen:
             "2545", "2920", "2695", "3321", "2878", "3138", "2983"
         ]
 
-    # Metode untuk mendapatkan list kode khusus
     def get_list_kode_khusus(self):
         return self.list_kode_khusus
 
-    def get_data_dosen(self, file_name="app/static/json/Data_Dosen.json", backup_file_name="app/static/json/Data_Dosen_backup.json"):
+    def fetch_html(self):
         response = requests.get(self.url, headers=self.headers)
+        response.raise_for_status()
+        return response.content
 
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.content, "html.parser")
-            content = soup.find("div", class_="table-container mb-0")
+    def parse_html(self, html_content):
+        soup = BeautifulSoup(html_content, "html.parser")
+        return soup
 
-            if content:
-                table = content.find("table", class_="table is-hoverable")
-                if table:
-                    rows = table.find_all("tr")
-                    dosen_list = []
+    def extract_data(self, soup):
+        content = soup.find("div", class_="table-container mb-0")
+        if content:
+            table = content.find("table", class_="table is-hoverable")
+            if table:
+                rows = table.find_all("tr")
+                dosen_list = [self.extract_row_data(row) for row in rows[1:] if self.has_valid_columns(row)]
+                return dosen_list
+        return []
 
-                    for row in rows[1:]:
-                        columns = row.find_all("td")
-                        if columns and len(columns) >= 13:
-                            no = columns[0].get_text(strip=True)
-                            thn_smt = columns[1].get_text(strip=True)
-                            kode = columns[2].find("a").get_text(strip=True) if columns[2].find("a") else ""
-                            dosen = columns[3].get_text(strip=True)
-                            sks1 = columns[4].get_text(strip=True)
-                            sks2 = columns[5].get_text(strip=True)
-                            sks_total = columns[6].get_text(strip=True)
-                            kelas1 = columns[7].get_text(strip=True)
-                            kelas2 = columns[8].get_text(strip=True)
-                            kelas_total = columns[9].get_text(strip=True)
-                            dsn1 = columns[10].get_text(strip=True)
-                            dsn2 = columns[11].get_text(strip=True)
-                            dsn_total = columns[12].get_text(strip=True)
+    def has_valid_columns(self, row):
+        columns = row.find_all("td")
+        return columns and len(columns) >= 13
 
-                            # Simpan data ke dalam dictionary
-                            data_dict = {
-                                "NO": no,
-                                "THN_SMT": thn_smt,
-                                "KODE": kode,
-                                "DOSEN": dosen,
-                                "SKS_1": sks1,
-                                "SKS_2": sks2,
-                                "SKS_TOTAL": sks_total,
-                                "KELAS_1": kelas1,
-                                "KELAS_2": kelas2,
-                                "KELAS_TOTAL": kelas_total,
-                                "Dosen_1": dsn1,
-                                "Dosen_2": dsn2,
-                                "Dosen_Total": dsn_total
-                            }
-                            dosen_list.append(data_dict)
+    def extract_row_data(self, row):
+        columns = row.find_all("td")
+        return {
+            "NO": columns[0].get_text(strip=True),
+            "THN_SMT": columns[1].get_text(strip=True),
+            "KODE": columns[2].find("a").get_text(strip=True) if columns[2].find("a") else "",
+            "DOSEN": columns[3].get_text(strip=True),
+            "SKS_1": columns[4].get_text(strip=True),
+            "SKS_2": columns[5].get_text(strip=True),
+            "SKS_TOTAL": columns[6].get_text(strip=True),
+            "KELAS_1": columns[7].get_text(strip=True),
+            "KELAS_2": columns[8].get_text(strip=True),
+            "KELAS_TOTAL": columns[9].get_text(strip=True),
+            "Dosen_1": columns[10].get_text(strip=True),
+            "Dosen_2": columns[11].get_text(strip=True),
+            "Dosen_Total": columns[12].get_text(strip=True)
+        }
 
-        # Backup file jika sudah ada
+    def save_json(self, data, file_name, backup_file_name):
         if os.path.exists(file_name):
             shutil.copyfile(file_name, backup_file_name)
-
         with open(file_name, "w+") as f:
-            json.dump(dosen_list, f, indent=4)
+            json.dump(data, f, indent=4)
 
-        print("Data berhasil digenerate")
+    def get_data_dosen(self, file_name="app/static/json/Data_Dosen.json", backup_file_name="app/static/json/Data_Dosen_backup.json"):
+        try:
+            html_content = self.fetch_html()
+            soup = self.parse_html(html_content)
+            dosen_list = self.extract_data(soup)
+            self.save_json(dosen_list, file_name, backup_file_name)
+            print("Data berhasil digenerate")
+        except requests.RequestException as e:
+            print(f"Terjadi kesalahan pada saat melakukan request: {e}")
+        except Exception as e:
+            print(f"Terjadi kesalahan: {e}")
 
 if __name__ == "__main__":
-    
-    scraper = Data_Dosen(url=url)
+    url = 'https://siak.upi.edu/jadwal/dosensks'
+    scraper = DataDosen(url=url)
     scraper.get_data_dosen()

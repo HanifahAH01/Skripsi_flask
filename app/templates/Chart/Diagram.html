@@ -240,6 +240,9 @@
                         <!-- Start Jadwal Ruang Kelas -->
                         <div class="chartBox" id="jadwal_ruangan">
                             <h2>Jadwal FPMIPA</h2>
+                            <div class="scrollBox">
+                                <canvas id="myChart8"></canvas>
+                            </div>
                             <br>
                             <a href="/add" class="btn-thirdty">Boking</a>
                             <a href="/report" class="btn-secondary">Report</a>
@@ -287,6 +290,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ url_for('static', filename='js/chart1.js') }}"></script>
     <script src="{{ url_for('static', filename='js/chart2.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chart3.js') }}"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Ruang Kelas -->
     <!-- ======== Popup ======= -->

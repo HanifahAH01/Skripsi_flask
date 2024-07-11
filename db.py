@@ -19,9 +19,6 @@ mysql = MySQL(app)
 # Fungsi Fungsi untuk Membuat table #
 # ----------------------------------#
 
-# Table Dosen
-# Create table
-# Fungsi untuk membuat tabel
 def create_table_dosen():
     with app.app_context():
         cur = mysql.connection.cursor()
@@ -112,6 +109,7 @@ def create_real_table_jadwal():
         mysql.connection.commit()
         cur.close()
     print("Tabel Jadwal Telah Dibuat")
+
 
 def create_table_heatmap():
     with app.app_context():
@@ -212,18 +210,21 @@ def create_booking():
         cur.execute("""
             CREATE TABLE IF NOT EXISTS booking (
                 no INT AUTO_INCREMENT PRIMARY KEY,
+                nama_pemohon VARCHAR(255) NOT NULL,
                 nama_ruangan VARCHAR(255) NOT NULL,
                 hari VARCHAR(255) NOT NULL,
+                tanggal DATE NOT NULL,
                 waktu_awal VARCHAR(255) NOT NULL,
                 waktu_akhir VARCHAR(255) NOT NULL,
-                tujuan_boking VARCHAR(255) NOT NULL
-                
+                tujuan_boking VARCHAR(255) NOT NULL,
+                jumlah_peserta INT NOT NULL                
             )
         """
         )
         mysql.connection.commit()
         cur.close()
         print("Tabel booking telah dibuat")
+
 
 def create_report():
     with app.app_context():
@@ -552,6 +553,10 @@ def insert_data_jam_jadwal():
     
     print("Data Jam Jadwal Berhasil Dimasukkan")
 
+# --------------------------------------#
+# Fungsi Fungsi untuk update Data       #
+# --------------------------------------#
+
 def update_data_sks_dosen_fpmipa():
     try:
         with app.app_context():
@@ -612,11 +617,6 @@ def update_data_sks_dosen_fpmipa():
 
     except Exception as e:
         print(f"Error: {e}")
-
-
-# --------------------------------------#
-# Fungsi Fungsi untuk update Data       #
-# --------------------------------------#
 
 def update_data_dosen():
     with app.app_context():
@@ -806,7 +806,6 @@ def update_data_heatmap():
         cur.close()
         print("Data telah berhasil diperbarui dari JSON")
 
-
 # --------------------------------------#
 # Fungsi Fungsi untuk Trigger Data      #
 # --------------------------------------#
@@ -981,35 +980,7 @@ def create_triggers_sks_dosen_fpmipa():
 
 
 if __name__ == "__main__":
-    # create table
-    # create_users()
-    # create_table_dosen()
-    # create_table_kapasitas_ruangan()
-    # create_table_jadwal()
-    # create_real_table_jadwal()
-    # create_real_table_jadwal()
-    # create_table_heatmap()
-    # create_heatmap_gedung()
-    # create_heatmap_ruangan()
-    # create_sks_dosen_fpmipa()
-    # create_jam()
-    # create_booking()
-    create_report()
+    create_booking()
+    create_jam()
 
-    # insert
-    # insert_data_dosen()
-    # insert_data_kapasitas_ruangan()
-    # insert_data_jadwal()
-    # insert_real_data_jadwal()
-    # insert_table_heatmap()
-    # insert_data_heatmap()
-    # insert_data_sks_dosen_fpmipa()
-    # insert_data_jam_jadwal()
-    
-    # Update
-    # update_data_dosen()
-    # update_real_data_jadwal()
-
-    # trigger
-    # create_triggers()
-    # create_triggers_sks_dosen_fpmipa()
+    insert_data_jam_jadwal()

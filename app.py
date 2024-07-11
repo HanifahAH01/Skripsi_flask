@@ -2,8 +2,9 @@ import os
 import bcrypt
 import werkzeug
 from flask import Flask, jsonify, render_template, send_from_directory, request, redirect, url_for, session, flash
+from collections import defaultdict
 from flask_mysqldb import MySQL
-from Dosen import Data_Dosen
+from Dosen import DataDosen
 from Jadwal import Jadwal
 from db import create_table_dosen,create_real_table_jadwal,create_table_kapasitas_ruangan,create_table_heatmap, insert_data_dosen, insert_data_kapasitas_ruangan, insert_real_data_jadwal, insert_table_heatmap
 from heatmap import generate_plot
@@ -28,17 +29,6 @@ fakultas = 'D'
 url1 = 'https://siak.upi.edu/jadwal/ruang?fak={}'.format(fakultas)
 url2 = 'https://siak.upi.edu/jadwal/dosensks'
 
-# Create and Insert Database
-create_table_dosen()
-create_real_table_jadwal()
-create_table_kapasitas_ruangan()
-create_table_heatmap()
-
-insert_data_dosen()
-insert_data_kapasitas_ruangan()
-insert_real_data_jadwal()
-insert_table_heatmap()
-
 scraper = Kapasitas(url=url1)
 
 # Routes Untuk mengakses setiap Halaman Website
@@ -46,6 +36,10 @@ scraper = Kapasitas(url=url1)
 @app.route("/")
 def index():
     return render_template("Welcome.html")
+
+@app.route("/testing")
+def test():
+    return render_template("Chart/testing.html")
 
 # Home
 @app.route("/home")
@@ -66,29 +60,73 @@ def datatables():
         return render_template("Dashboard_Admin/datatables.html")
     else:
         return redirect(url_for('login'))
-
-@app.route('/login-admin')
+    
+@app.route('/login-admin', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        if 'login' in request.form:
+            nip = request.form['nip']
+            password = request.form['password']
+
+            cur = mysql.connection.cursor()
+            cur.execute("SELECT * FROM users WHERE nip = %s", [nip])
+            user = cur.fetchone()
+            cur.close()
+
+            if user and bcrypt.checkpw(password.encode('utf-8'), user[3].encode('utf-8')):
+                session['nip'] = user[1]
+                flash('Login successful!', 'success')
+                return redirect(url_for('dashboard_admin'))
+            else:
+                flash('Login failed. Check your NIP and password.', 'danger')
+        elif 'register' in request.form:
+            nip = request.form['nip']
+            password = request.form['password']
+            email = request.form['email']
+            hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
+            cur = mysql.connection.cursor()
+            cur.execute("INSERT INTO users(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hashed_password))
+            mysql.connection.commit()
+            cur.close()
+
+            flash('You have successfully registered!', 'success')
+            return redirect(url_for('login'))
+    return render_template('logres/login.html')
+
+
+@app.route('/logout')
+def logout():
+    session.pop('nip', None)
+    flash('You have been logged out!', 'success')
+    return redirect(url_for('login'))
+
+@app.route('/dashboard_admin')
+def dashboard_admin():
+    if 'nip' not in session:
+        flash('Please login first', 'danger')
+        return redirect(url_for('login'))
+    
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM real_jadwal"  # Sesuaikan dengan nama tabel dan kolom Anda
+    query = "SELECT * FROM real_jadwal"
     cur.execute(query)
     Jadwal = cur.fetchall()
     cur.close()
 
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM booking"  # Sesuaikan dengan nama tabel dan kolom Anda
+    query = "SELECT * FROM booking"
     cur.execute(query)
     booking = cur.fetchall()
     cur.close()
 
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM report"  # Sesuaikan dengan nama tabel dan kolom Anda
+    query = "SELECT * FROM report"
     cur.execute(query)
     laporan = cur.fetchall()
     cur.close()
 
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM sks_dosen_fpmipa"  # Sesuaikan dengan nama tabel dan kolom Anda
+    query = "SELECT * FROM sks_dosen_fpmipa"
     cur.execute(query)
     sks = cur.fetchall()
     cur.close()
@@ -103,54 +141,6 @@ def run_kapasitas():
     except Exception as e:
         return jsonify({'error': str(e)})
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     if request.method == 'POST':
-#         nip = request.form['nip']
-#         password = request.form['password'].encode('utf-8')
-#         cur = mysql.connection.cursor()
-#         cur.execute("SELECT * FROM users WHERE nip=%s", (nip,))
-#         user = cur.fetchone()
-#         cur.close()
-
-#         if user is not None and len(user) > 0:
-#             if bcrypt.checkpw(password, user['password'].encode('utf-8')):
-#                 session['nip'] = user['nip']
-#                 session['email'] = user['email']
-#                 return redirect(url_for('admin'))
-#             else:
-#                 flash("Gagal, NIP dan password tidak cocok")
-#                 return redirect(url_for('login'))
-#         else:
-#             flash("Gagal, user tidak ditemukan")
-#             return redirect(url_for('login'))
-#     else:
-#         return render_template("logres/login.html")
-
-# @app.route('/regis', methods=['POST', 'GET'])
-# def registrasi():
-#     if request.method == 'GET':
-#         return render_template('login.html')
-#     else:
-#         nip = request.form['nip']
-#         email = request.form['email']
-#         password = request.form['password']
-#         hash_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-
-#         cur = mysql.connection.cursor()
-#         cur.execute("INSERT INTO users(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hash_password))
-#         mysql.connection.commit()
-#         cur.close()
-
-#         session['nip'] = nip
-#         session['email'] = email
-#         return redirect(url_for('index'))
-
-@app.route('/logout')
-def logout():
-    session.pop('nip', None)
-    session.pop('email', None)
-    return redirect(url_for('login'))
 
 
 
@@ -226,7 +216,6 @@ def laporan():
     cur.close()
     return render_template("Recap/Laporan.html", laporan=laporan)
 
-
 @app.route("/add")
 def add():
     cur = mysql.connection.cursor()
@@ -246,24 +235,30 @@ def add():
 @app.route('/submit_booking', methods=['POST'])
 def submit_booking():
     if request.method == 'POST':
-        nama_ruangan = request.form['judul']
-        hari = request.form['hari']
-        waktu_awal = request.form['waktu_awal']
-        waktu_akhir = request.form['waktu_akhir']
-        tujuan_booking = request.form['alasan']
-        
-        cur = mysql.connection.cursor()
-        cur.execute("""
-            INSERT INTO booking (nama_ruangan, hari, waktu_awal, waktu_akhir, tujuan_boking)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (nama_ruangan, hari, waktu_awal, waktu_akhir, tujuan_booking))
-        
-        mysql.connection.commit()
-        cur.close()
-        
-        flash('Booking berhasil dilakukan', 'success')
+        try:
+            nama_pemohon = request.form['nama_pemohon']
+            nama_ruangan = request.form['nama_ruangan']
+            hari = request.form['hari']
+            tanggal = request.form['tanggal']
+            waktu_awal = request.form['waktu_awal']
+            waktu_akhir = request.form['waktu_akhir']
+            tujuan_booking = request.form['nama_kegiatan']
+            jumlah_peserta = request.form['jumlah_peserta']
+            
+            cur = mysql.connection.cursor()
+            cur.execute("""
+                INSERT INTO booking (nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_boking, jumlah_peserta)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """, (nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_booking, jumlah_peserta))
+            
+            mysql.connection.commit()
+            cur.close()
+            
+            flash('Booking berhasil dilakukan', 'success')
+        except Exception as e:
+            flash(f'Terjadi kesalahan: {str(e)}', 'danger')
         return redirect(url_for('add'))
-    
+
 @app.route('/submit_report', methods=['POST'])
 def submit_report():
     if request.method == 'POST':
@@ -284,7 +279,6 @@ def submit_report():
         flash('Booking berhasil dilakukan', 'success')
         return redirect(url_for('add'))
     
-
 # Kapasitas
 @app.route('/kapasitas')
 def kapasitas_():
@@ -299,7 +293,7 @@ def kapasitas_():
 @app.route("/dosen")
 def dosen():
     # Mendapatkan instance dari kelas Data_Dosen
-    scraper = Data_Dosen(url=url2)
+    scraper = DataDosen(url=url2)
     # Mendapatkan list kode khusus
     list_kode_khusus = scraper.get_list_kode_khusus()
 
@@ -352,6 +346,52 @@ def dosen_chart():
     
     except Exception as e:
         return str(e), 500
+
+@app.route("/booking_all")
+def get_booking_all():
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            SELECT no, nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_boking, jumlah_peserta
+            FROM booking
+        """)
+        result = cur.fetchall()
+        cur.close()
+
+        # Dictionary untuk menyimpan total penggunaan ruangan
+        ruangan_usage = defaultdict(int)
+
+        # Memproses hasil query menjadi format JSON yang diinginkan
+        booking_list = []
+        for row in result:
+            no, nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_boking, jumlah_peserta = row
+            # Menambah jumlah penggunaan ruangan
+            ruangan_usage[nama_ruangan] += 1
+
+            # Mengubah format tanggal
+            tanggal_formatted = tanggal.strftime('%Y-%m-%d')
+
+            # Menambahkan data booking ke booking_list
+            booking_list.append({
+                "No": no,
+                "Nama_Pemohon": nama_pemohon,
+                "Nama_Ruangan": nama_ruangan,
+                "Hari": hari,
+                "Tanggal": tanggal_formatted,
+                "Waktu_Awal": waktu_awal,
+                "Waktu_Akhir": waktu_akhir,
+                "Tujuan_Booking": tujuan_boking,
+                "Jumlah_Peserta": jumlah_peserta
+            })
+
+        # Menggabungkan total penggunaan ruangan ke dalam booking_list
+        for booking in booking_list:
+            booking["Total_Penggunaan"] = ruangan_usage[booking["Nama_Ruangan"]]
+
+        return jsonify({"booking_list": booking_list})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route("/kapasitas_all")
 def get_kapasitas_all():

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,53 +13,63 @@
 <body>
 
     <div class="wrapper">
-    <div class="form-wrapper sign-in">
-        <form action="">
-            <h2>Login</h2>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">NIP</label>
-            </div>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">Password</label>
-            </div>
-            <div class="remember">
-                <label form=""><input type="checkbox">Remember me</label>
-            </div>
-            <button type="Sbmit">Login</button>
-            <div class="signUp-link">
-                <p>Don't have an account? <a href="#" class="SignUpBtn-link">Sign Up</a></p>
-            </div>
-        </form>
+        <div class="form-wrapper sign-in">
+            <form action="{{ url_for('login') }}" method="POST">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <input type="text" name="nip" required>
+                    <label for="">NIP</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox" name="remember">Remember me</label>
+                </div>
+                <button type="submit" name="login">Login</button>
+                <div class="signUp-link">
+                    <p>Don't have an account? <a href="#" class="SignUpBtn-link" id="signUp">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-wrapper sign-up">
+            <form action="{{ url_for('login') }}" method="POST">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <input type="text" name="nip" required>
+                    <label for="">NIP</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox" name="terms">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" name="register">Sign Up</button>
+                <div class="signUp-link">
+                    <p>Already have an account? <a href="#" class="SignInBtn-link" id="signIn">Sign In</a></p>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-wrapper sign-Up">
-        <form action="">
-            <h2>Sign Up</h2>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">NIP</label>
-            </div>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">Password</label>
-            </div>
-            <div class="input-group">
-                <input type="text" required>
-                <label for="">Email</label>
-            </div>
-            <div class="remember">
-                <label form=""><input type="checkbox">I agree to the terms & condition</label>
-            </div>
-            <button type="Sbmit">Sign Up</button>
-            <div class="signUp-link">
-                <p>Already have an account? <a href="#" class="SignUpBtn-link">Sign In</a></p>
-            </div>
-        </form>
-    </div>
-</div>
 
-<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <script>
+        document.getElementById('signUp').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.wrapper').classList.add('active');
+        });
+
+        document.getElementById('signIn').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.wrapper').classList.remove('active');
+        });
+    </script>
 
 </body>
 

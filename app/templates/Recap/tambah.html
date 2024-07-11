@@ -15,9 +15,7 @@
         #jadwal-body td[data-content="Terpakai"] {
             background-color: red !important;
             color: white;
-            /* Text color for better contrast */
             cursor: pointer;
-            /* Change cursor to pointer to indicate clickable */
         }
 
         /* Style for the popup */
@@ -32,7 +30,6 @@
             border-radius: 10px;
             z-index: 1000;
             display: none;
-            /* Initially hidden */
         }
 
         .close-btn {
@@ -46,23 +43,14 @@
         /* Style for the booking button */
         #booking-button {
             background-color: #4CAF50;
-            /* Warna latar hijau */
             color: white;
-            /* Warna teks putih */
             padding: 10px 20px;
-            /* Padding tombol */
             border: none;
-            /* Menghapus border */
             border-radius: 5px;
-            /* Border radius */
             font-size: 16px;
-            /* Ukuran font */
             cursor: pointer;
-            /* Mengubah kursor menjadi pointer saat diarahkan */
             transition: background-color 0.3s;
-            /* Transisi untuk perubahan warna latar */
         }
-
 
         #booking-button:hover {
             background-color: #45a049;
@@ -71,26 +59,17 @@
         /* Style for the WhatsApp booking button */
         #whatsapp-button {
             background-color: #25D366;
-            /* Warna latar hijau khas WhatsApp */
             color: white;
-            /* Warna teks putih */
             padding: 10px 20px;
-            /* Padding tombol */
             border: none;
-            /* Menghapus border */
             border-radius: 5px;
-            /* Border radius */
             font-size: 16px;
-            /* Ukuran font */
             cursor: pointer;
-            /* Mengubah kursor menjadi pointer saat diarahkan */
             transition: background-color 0.3s;
-            /* Transisi untuk perubahan warna latar */
         }
 
         #whatsapp-button:hover {
             background-color: #1EBE5B;
-            /* Warna latar saat tombol di-hover */
         }
 
         /* Styling untuk input dengan atribut list */
@@ -107,7 +86,52 @@
         input[list]:focus {
             outline: none;
             border-color: #4CAF50;
-            /* Highlight saat fokus */
+        }
+
+        /* Styling untuk input jumlah peserta */
+        input[type="number"] {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        /* Untuk penampilan yang konsisten di berbagai browser */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            display: none;
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Placeholder styling */
+        input[type="number"]::placeholder {
+            color: #888;
+            /* Placeholder color */
+        }
+
+        input[type="number"]:placeholder-shown {
+            color: #888;
+            /* Placeholder color */
+        }
+
+        /* Hover effect */
+        input[type="number"]:hover {
+            border-color: #45a049;
+        }
+
+        /* Active effect */
+        input[type="number"]:active {
+            border-color: #45a049;
         }
     </style>
 </head>
@@ -120,14 +144,12 @@
                 <li>
                     <a href="">
                         <span class="icon">
-                            <!-- <ion-icon name="logo-whatsapp"></ion-icon> -->
-                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png') }}" alt="FPMIPA"
                                 class="logo-img">
                         </span>
                         <span class="title-brand">Jadwal <br>
                             <b>FPMIPA UPI</b>
                         </span>
-
                     </a>
                 </li>
 
@@ -171,7 +193,6 @@
                         <span class="title">LogIn</span>
                     </a>
                 </li>
-                </li>
             </ul>
             <footer>
                 <!-- Tautan Sosial Media -->
@@ -191,9 +212,7 @@
                     <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-discord"></ion-icon>
                     </a>
-                    <!-- Tambahkan tautan dan ikon untuk sosial media lainnya sesuai kebutuhan -->
                 </div>
-
                 <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
             </footer>
         </div>
@@ -214,15 +233,31 @@
                         <h2>Booking Ruang Kelas</h2>
                         <div class="btn-group">
                             <a href="/diagram" class="btn-primary">Ruang Kelas</a>
-                            <!-- <a href="#" class="btn-secondary">Laporan</a> -->
                         </div>
                     </div>
+
+                    <!-- Menampilkan pesan flash -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                    
                     <!-- Form Report Section -->
                     <div id="report-section" class="report-section">
-                        <!-- <h2>Report Ruangan</h2> -->
                         <form action="/submit_booking" method="POST">
-                            <label for="judul">Nama Ruangan:</label>
-                            <input list="room-list" id="judul-input" name="judul" oninput="filterRooms()" required>
+                            <label for="nama_pemohon">Nama Pemohon:</label>
+                            <textarea id="nama_pemohon" name="nama_pemohon" required></textarea>
+
+                            <label for="nama_ruangan">Nama Ruangan:</label>
+                            <input list="room-list" id="nama_ruangan" name="nama_ruangan" oninput="filterRooms()"
+                                required>
                             <datalist id="room-list">
                                 {% for room in rooms %}
                                 <option value="{{ room[1] }}"></option>
@@ -239,6 +274,12 @@
                                 <option value="sabtu">Sabtu</option>
                                 <option value="minggu">Minggu</option>
                             </select>
+
+                            <label for="tanggal">Tanggal:</label>
+                            <input type="date" id="tanggal" name="tanggal" required>
+
+                            <br>
+                            <br>
 
                             <label for="waktu_awal">Dari Pukul:</label>
                             <input list="waktu-list" id="waktu_awal" name="waktu_awal" oninput="filterWaktu()" required>
@@ -257,54 +298,27 @@
                                 {% endfor %}
                             </datalist>
 
-                            <label for="alasan">Tujuan Booking:</label>
-                            <textarea id="alasan" name="alasan" required></textarea>
+                            <label for="nama_kegiatan">Nama Kegiatan:</label>
+                            <textarea id="nama_kegiatan" name="nama_kegiatan" required></textarea>
 
+                            <label for="jumlah_peserta">Jumlah Peserta:</label>
+                            <input type="number" id="jumlah_peserta" name="jumlah_peserta" required>
+
+                            <br>
+                            <br>
                             <input type="submit" value="Booking">
-                            <!-- <button type="button" id="whatsapp-button" data-whatsapp="+6281364986912"
-                                onclick="openWhatsApp()">WhatsApp</button> -->
                         </form>
-
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- ======== Script ======== -->
-        <Script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></Script>
-
-
+        <script src="{{ url_for('static', filename='js/Ruangkelas.js') }}"></script>
 
         <!-- ======== Ionicons ======== -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-        <!-- Custom JavaScript for WhatsApp functionality -->
-        <!-- <script>
-            function openWhatsApp() {
-                var phoneNumber = document.getElementById("whatsapp-button").getAttribute("data-whatsapp");
-                var room = document.getElementById("judul").value;
-                var date = document.getElementById("hari").value;
-                var time = document.getElementById("waktu").value;
-                var alasan = document.getElementById("alasan").value;
-
-                var message = `Yth. Bagian Administrasi,\nSaya ingin melakukan pemesanan ruangan perkuliahan untuk kegiatan berikut:\n\n` +
-                    `Atas Nama: [Nama Pemesan]\n` +
-                    `Nama Kegiatan: (Kegiatan / Perkuliahan)\n` +
-                    `Mata Kuliah (Isi jika untuk kegiatan kuliah): [Mata kuliah]\n` +
-                    `Pengajar (Isi jika untuk kegiatan kuliah): [Nama Dosen]\n` +
-                    `Tanggal: ${date}\n` +
-                    `Waktu: ${time}\n` +
-                    `Ruangan yang Diinginkan: ${room}\n\n` +
-                    `Tujuan Booking: ${alasan}\n\n` +
-                    `Mohon konfirmasi ketersediaan ruangan dan informasi lebih lanjut jika ada persyaratan atau prosedur tambahan yang perlu dilakukan.\n` +
-                    `Terima kasih atas perhatian dan kerjasamanya.`;
-
-                var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-                window.open(whatsappURL, '_blank');
-            }
-        </script> -->
 </body>
 
 </html>
