@@ -243,7 +243,10 @@ def create_booking():
                 waktu_awal VARCHAR(255) NOT NULL,
                 waktu_akhir VARCHAR(255) NOT NULL,
                 tujuan_boking VARCHAR(255) NOT NULL,
-                jumlah_peserta INT NOT NULL                
+                jumlah_peserta INT NOT NULL,
+                status INT,
+                Keterangan VARCHAR(255),
+                FOREIGN KEY (status) REFERENCES status_booking(id)
             )
         """
         )
@@ -294,6 +297,19 @@ def create_status():
         mysql.connection.commit()
         cur.close()
         print("Tabel status telah dibuat")
+
+def create_status_booking():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS status_booking (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                keterangan VARCHAR(255) NOT NULL
+            )
+        """)
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel status booking telah dibuat")
 
 # --------------------------------------#
 # Fungsi Fungsi untuk menginputkan Data #
@@ -615,6 +631,33 @@ def insert_data_status():
         cur.close()
     
     print("Data status Jadwal Berhasil Dimasukkan")
+
+def insert_data_status_booking():
+    with app.app_context():
+        # Buka file JSON status.json
+        with open('app/static/json/status_boking.json', 'r') as file:
+            data = json.load(file)
+
+        # Koneksi ke database MySQL
+        cur = mysql.connection.cursor()
+
+        # Iterasi setiap item dalam data JSON
+        for item in data:
+            # Lakukan operasi INSERT ke dalam tabel status
+            cur.execute("""
+                INSERT INTO status_booking (keterangan) 
+                VALUES (%s)
+            """, (item[list(item.keys())[0]],))
+        
+        # Commit perubahan ke database
+        mysql.connection.commit()
+
+        # Tutup kursor dan cetak pesan berhasil
+        cur.close()
+    
+    print("Data status Jadwal Berhasil Dimasukkan")
+
+
 
 # --------------------------------------#
 # Fungsi Fungsi untuk update Data       #
@@ -1063,11 +1106,12 @@ if __name__ == "__main__":
     # create_heatmap_ruangan()
     # create_sks_dosen_fpmipa()
     # create_admin()
-    create_report()
-    # create_booking()
+    # create_report()
+    create_booking()
     # create_jam()
     # create_status()
     # create_real_table_jadwal()
+    # create_status_booking()
 
 
     # insert_data_jadwal()
@@ -1079,3 +1123,4 @@ if __name__ == "__main__":
     # insert_data_kapasitas()
     # insert_data_sks_dosen_fpmipa()
     # insert_data_jam_jadwal()
+    # insert_data_status_booking()

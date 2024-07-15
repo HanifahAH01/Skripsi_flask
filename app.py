@@ -167,32 +167,52 @@ def dashboard_admin():
     
     cur = mysql.connection.cursor()
     cur.execute("""
-            SELECT 
-                real_jadwal.No, 
-                real_jadwal.Span,
-                real_jadwal.Senin, s1.keterangan AS status_senin,
-                real_jadwal.Selasa, s2.keterangan AS status_selasa,
-                real_jadwal.Rabu, s3.keterangan AS status_rabu,
-                real_jadwal.Kamis, s4.keterangan AS status_kamis,
-                real_jadwal.Jumat, s5.keterangan AS status_jumat,
-                real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
-                real_jadwal.Minggu, s7.keterangan AS status_minggu
-            FROM real_jadwal
-            LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
-            LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
-            LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
-            LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
-            LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
-            LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
-            LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
-        """)
+        SELECT 
+            real_jadwal.No, 
+            real_jadwal.Span,
+            real_jadwal.Senin, s1.keterangan AS status_senin,
+            real_jadwal.Selasa, s2.keterangan AS status_selasa,
+            real_jadwal.Rabu, s3.keterangan AS status_rabu,
+            real_jadwal.Kamis, s4.keterangan AS status_kamis,
+            real_jadwal.Jumat, s5.keterangan AS status_jumat,
+            real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
+            real_jadwal.Minggu, s7.keterangan AS status_minggu
+        FROM real_jadwal
+        LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
+        LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
+        LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
+        LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
+        LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
+        LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
+        LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+    """)
     Jadwal = cur.fetchall()
     cur.close()
 
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM booking"
-    cur.execute(query)
+    cur.execute("""
+        SELECT 
+            booking.no,
+            booking.nama_pemohon,
+            booking.nama_ruangan,
+            booking.hari,
+            booking.tanggal,
+            booking.waktu_awal,
+            booking.waktu_akhir,
+            booking.tujuan_boking,
+            booking.jumlah_peserta,
+            s.keterangan AS status,
+            booking.Keterangan
+        FROM booking
+        LEFT JOIN status_booking s ON booking.status = s.id
+    """)
     booking = cur.fetchall()
+    cur.close()
+
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM status_booking"
+    cur.execute(query)
+    statuses = cur.fetchall()
     cur.close()
 
     cur = mysql.connection.cursor()
@@ -207,7 +227,8 @@ def dashboard_admin():
     sks = cur.fetchall()
     cur.close()
 
-    return render_template('Dashboard_Admin/datatables.html', Jadwal=Jadwal, booking=booking, laporan=laporan, sks=sks)
+    return render_template('Dashboard_Admin/datatables.html', Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan, sks=sks)
+
 
 @app.route('/edit/<int:No>', methods=['GET', 'POST'])
 def edit(No):
@@ -274,6 +295,30 @@ def edit_action(No):
     # Jika request bukan POST, tambahkan penanganan yang sesuai (opsional)
     return redirect(url_for('dashboard_admin'))
 
+@app.route('/edit_booking/<int:No>', methods=['POST'])
+def edit_booking(No):
+    status = request.form.get('status')
+    keterangan_status = request.form.get('keterangan_status')
+
+    cur = mysql.connection.cursor()
+    cur.execute("""
+        UPDATE booking
+        SET status=%s, Keterangan=%s
+        WHERE no=%s
+    """, (status, keterangan_status, No))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Data booking berhasil diperbarui!', 'success')
+    return redirect(url_for('dashboard_admin'))
+
+
+
+
+# ******************************************** #
+#                    START                     #
+#                SINKRONISASI                  #
+# ******************************************** #
 @app.route('/run-kapasitas', methods=['POST'])
 def run_kapasitas():
     try:
@@ -289,6 +334,12 @@ def run_jadwal():
         return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
     except Exception as e:
         return jsonify({'error': str(e)})
+    
+# ******************************************** #
+#                    END                       #
+#                SINKRONISASI                  #
+# ******************************************** #
+
 
 
 # Route Diagram
