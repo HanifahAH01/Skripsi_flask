@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPMIPA - Dashboard</title>
+    <!-- ======= Style ====== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/darkmode.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Ruangkelas.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://mpld3.github.io/js/mpld3.v0.3.js"></script>
+
+    <style>
+        .terpakai {
+            background-color: #ffcccc;
+            color: #cc0000;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid #cc0000;
+            border-radius: 4px;
+        }
+
+        .terpakai:hover {
+            background-color: #ff9999;
+        }
+
+        .tersedia {
+            background-color: #ccffcc;
+            color: #006600;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid #006600;
+            border-radius: 4px;
+        }
+
+        .tersedia:hover {
+            background-color: #99ff99;
+        }
+
+        .popup {
+            display: none;
+            /* Default to hidden */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        #popup-content {
+            margin-bottom: 20px;
+        }
+
+        /* Style untuk sel dengan status Boking */
+        td.boking {
+            background-color: green;
+            /* Ganti dengan warna hijau yang Anda inginkan */
+            color: white;
+            /* Ganti dengan warna teks yang sesuai jika perlu */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========  SideBar ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="/">
+                        <span class="icon">
+                            <img src="{{ url_for('static', filename='images/FPMIPAUPI.png')}}" alt="FPMIPA"
+                                class="logo-img">
+                        </span>
+                        <span class="title-brand">Jadwal <br>
+                            <b>FPMIPA UPI</b>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/home-admin">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/diagram-admin">
+                        <span class="icon">
+                            <ion-icon name="duplicate-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/datatables">
+                        <span class="icon">
+                            <ion-icon name="podium-outline"></ion-icon>
+                        </span>
+                        <span class="title">Admin</span>
+                    </a>
+                </li>
+                <li>
+                    <button id="darkModeToggle" onclick="toggleDarkMode()">
+                        <span class="icon">
+                            <ion-icon name="contrast-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dark Mode</span>
+                    </button>
+                </li>
+            </ul>
+            <footer>
+                <!-- Tautan Sosial Media -->
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/hanifahah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="https://github.com/HanifahAH01" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/hah_hanifah" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="http://Wa.me/+6281364986912" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="hanifah al humaira#1327" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-discord"></ion-icon>
+                    </a>
+                </div>
+                <p>&copy; 2024 FPMIPA UPI. Dibuat oleh Hanifah.</p>
+            </footer>
+        </div>
+        <!-- ============== Main ============== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="grid-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- Details -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Ruang Kelas</h2>
+                        <div class="button-group">
+                            <a class="btn-secondary" data-filter="all_chart" onclick="filterCharts(event)">ALL</a>
+                            <a class="btn-thirdty" data-filter="chart_bar" onclick="filterCharts(event)">Bar
+                                Ruangan</a>
+                            <a class="btn-thirdty" data-filter="sks_dosen" onclick="filterCharts(event)">SKS Dosen</a>
+                            <a class="btn-thirdty" data-filter="heatmap" onclick="filterCharts(event)">Heatmap</a>
+                            <a class="btn-thirdty" data-filter="jadwal_ruangan" onclick="filterCharts(event)">Jadwal</a>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="chartCard" id="chartCard">
+                        <!-- Start Chart PIE Gedung FPMIPA -->
+                        <div class="chartBox" id="chart_bar">
+                            <h2>Perbandingan Ruang</h2>
+                            <div class="scrollBox">
+                                <canvas id="myChart3" style="width: 400px; height: 400px;"></canvas>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- FPMIPA A -->
+                            <div class="scrollBox">
+                                <canvas id="myChart4"></canvas>
+                            </div>
+                            <br>
+                            <div class="scrollBox">
+                                <canvas id="myChart5"></canvas>
+                            </div>
+                            <br>
+                            <div class="scrollBox">
+                                <canvas id="myChart6"></canvas>
+                            </div>
+                            <br>
+                            <div class="scrollBox">
+                                <canvas id="myChart7"></canvas>
+                            </div>
+                        </div>
+                        <!-- End Chart PIE Gedung FPMIPA -->
+                        <br>
+                        <!-- Start Chart Bar Horizontal SKS Dosen -->
+                        <div class="chartBox" id="sks_dosen">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
+                                    <h2>SKS Dosen</h2>
+
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <canvas id="myChart2"></canvas>
+                            </div>
+                        </div>
+                        <!-- End Chart Bar Horizontal SKS Dosen -->
+                        <br>
+                        <!-- Start Chart Heatmap -->
+                        <div class="chartBox" id="heatmap">
+                            <div class="scrollBox">
+                                <div class="scrollBoxBody">
+                                    <h2>Heatmap</h2>
+                                    <br>
+                                    <div class="scrollBoxBody">
+                                        <div class="plot-container" style="max-width: 150;">
+                                            {{ plot_html | safe }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Chart Heatmap -->
+                        <br>
+                        <!-- Start Jadwal Ruang Kelas -->
+                        <div class="chartBox" id="jadwal_ruangan">
+                            <h2>Jadwal FPMIPA</h2>
+                            <div class="scrollBox">
+                                <canvas id="myChart8"></canvas>
+                            </div>
+                            <br>
+                            <a href="/add" class="btn-thirdty">Boking</a>
+                            <a href="/report" class="btn-secondary">Report</a>
+                            <a href="/laporan" class="btn-thirdty">Laporan</a>
+                            <br>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Ruangan</th>
+                                        <th>Senin</th>
+                                        <th>Selasa</th>
+                                        <th>Rabu</th>
+                                        <th>Kamis</th>
+                                        <th>Jumat</th>
+                                        <th>Sabtu</th>
+                                        <th>Minggu</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="jadwal-body">
+                                    {% for jadwal in grouped_jadwal %}
+                                    <tr>
+                                        <td>{{ jadwal[1] }}</td>
+                                        <td>{{ jadwal[3] }}</td>
+                                        <td>{{ jadwal[5] }}</td>
+                                        <td>{{ jadwal[7] }}</td>
+                                        <td>{{ jadwal[9] }}</td>
+                                        <td>{{ jadwal[11] }}</td>
+                                        <td>{{ jadwal[13] }}</td>
+                                        <td>{{ jadwal[15] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- End Jadwal Ruang Kelas -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======== Script ========= -->
+    <script src="{{ url_for('static', filename='js/Dashboard.js') }}"></script>
+    <!-- ======== Chartjs ========= -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/chart1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chart2.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chart3.js') }}"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Ruang Kelas -->
+    <!-- ======== Popup ======= -->
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p id="popup-content"></p>
+        <button id="booking-button" data-whatsapp="+6281364986912" onclick="openWhatsApp()">Booking via
+            WhatsApp</button>
+    </div>
+    <div id="popup" class="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <p id="popup-content"></p>
+        <button id="booking-button" data-whatsapp="+6281364986912" onclick="openWhatsApp()">Booking via
+            WhatsApp</button>
+    </div>
+
+    <!-- ======== Script ========= -->
+    <script>
+        function getNextDate(day) {
+            var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            var dayIndex = daysOfWeek.indexOf(day);
+            var today = new Date();
+            var resultDate = new Date(today);
+            resultDate.setDate(today.getDate() + (dayIndex - today.getDay() + 7) % 7);
+            return resultDate.toISOString().split('T')[0];
+        }
+
+        function isTime(content) {
+            return /\d{2}:\d{2}-\d{2}:\d{2}/.test(content);
+        }
+
+        function openWhatsApp() {
+            var phoneNumber = document.getElementById("booking-button").getAttribute("data-whatsapp");
+            var room = document.getElementById("booking-button").getAttribute("data-room");
+            var date = document.getElementById("booking-button").getAttribute("data-date");
+            var time = document.getElementById("booking-button").getAttribute("data-time");
+
+            var message = `Yth. Bagian Administrasi,\nSaya ingin melakukan pemesanan ruangan perkuliahan untuk kegiatan berikut:\n\n` +
+                `Atas Nama: {Nama Pemesan}\n` +
+                `Nama Kegiatan: (Kegiatan / Perkuliahan)\n` +
+                `Mata Kuliah (Isi jika untuk kegiatan kuliah): {Mata kuliah}\n` +
+                `Pengajar (Isi jika untuk kegiatan kuliah): [Nama Dosen]\n` +
+                `Tanggal: ${date}\n` +
+                `Waktu (seusaikan jam yang diinginkan): ${time}\n` +
+                `Ruangan yang Diinginkan: ${room}\n\n` +
+                `Mohon konfirmasi ketersediaan ruangan dan informasi lebih lanjut jika ada persyaratan atau prosedur tambahan yang perlu dilakukan.\n` +
+                `Terima kasih atas perhatian dan kerjasamanya.`;
+
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+
+
+
+        // Function to filter charts
+        function filterCharts(event) {
+            var filter = event.target.getAttribute('data-filter');
+            var charts = document.getElementsByClassName('chartBox');
+
+            for (var i = 0; i < charts.length; i++) {
+                if (filter === 'all_chart') {
+                    charts[i].style.display = 'block';
+                } else if (charts[i].id === filter) {
+                    charts[i].style.display = 'block';
+                } else {
+                    charts[i].style.display = 'none';
+                }
+            }
+
+            // Update button styles
+            var buttons = document.querySelectorAll('.button-group a');
+            buttons.forEach(function (button) {
+                button.classList.remove('btn-secondary');
+                button.classList.add('btn-thirdty');
+            });
+
+            // Set clicked button to btn-secondary
+            event.target.classList.remove('btn-thirdty');
+            event.target.classList.add('btn-secondary');
+        }
+
+
+        // Ensure all charts are displayed on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            var chartBoxes = document.querySelectorAll(".chartBox");
+            chartBoxes.forEach(function (box) {
+                box.style.display = "block";
+            });
+        });
+
+        // Example function to show the popup (could be triggered by another event)
+        function showPopup(room, date, time) {
+            document.getElementById("popup-content").innerText = `Ruangan: ${room}\nTanggal: ${date}\nWaktu: ${time}`;
+            document.getElementById("popup").style.display = "block";
+        }
+
+    </script>
+
+
+    <!-- ======== Ionicons ======== -->
+    <script type="module" src="https://unpkg.com/ionicons@6.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@6.0.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

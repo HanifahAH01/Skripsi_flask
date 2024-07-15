@@ -39,6 +39,58 @@ scraper2 = Jadwal(url=url1)
 def index():
     return render_template("Welcome.html")
 
+@app.route("/recap-admin")
+def recap_admin():
+
+    # heatmap 
+    # Membuat sebuah plot untuk melakukan generate plot
+    plot_html, harvest_data = generate_plot()
+
+    # Mengambil data dosen dari database
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM jdw_dosen")
+    userDetails = cur.fetchall()
+    cur.close()
+
+    # Mengambil data Kapasitas dari database
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM kapasitas_ruangan")
+    userDetailskapasitas = cur.fetchall()
+    cur.close()
+
+    # Mengambil data Heatmap dari database
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM heatmap")
+    heatmap_records = cur.fetchall()
+    cur.close()
+
+    # Mengambil data jadwal dari database
+    cur = mysql.connection.cursor()
+    cur.execute("""
+            SELECT 
+                real_jadwal.No, 
+                real_jadwal.Span,
+                real_jadwal.Senin, s1.keterangan AS status_senin,
+                real_jadwal.Selasa, s2.keterangan AS status_selasa,
+                real_jadwal.Rabu, s3.keterangan AS status_rabu,
+                real_jadwal.Kamis, s4.keterangan AS status_kamis,
+                real_jadwal.Jumat, s5.keterangan AS status_jumat,
+                real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
+                real_jadwal.Minggu, s7.keterangan AS status_minggu
+            FROM real_jadwal
+            LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
+            LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
+            LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
+            LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
+            LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
+            LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
+            LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+        """)
+    jadwal_records = cur.fetchall()
+    cur.close()
+
+    return render_template("Dashboard_Admin/Diagram_Admin.html", grouped_jadwal=jadwal_records,harvest_data=harvest_data, plot_html=plot_html, heatmap_records=heatmap_records,jadwal_records=jadwal_records,userDetails=userDetails, userDetailskapasitas=userDetailskapasitas)
+
 @app.route("/testing")
 def test():
     return render_template("Chart/testing.html")
@@ -47,6 +99,11 @@ def test():
 @app.route("/home")
 def home():
     return render_template("Home/Home.html")
+
+# Home - Admin
+@app.route("/home-admin")
+def home_admin():
+    return render_template("Dashboard_Admin/Home_admin.html")
 
 # admin
 @app.route("/admin")
@@ -95,7 +152,6 @@ def login():
             flash('You have successfully registered!', 'success')
             return redirect(url_for('login'))
     return render_template('logres/login.html')
-
 
 @app.route('/logout')
 def logout():
@@ -254,12 +310,6 @@ def diagram():
     cur.execute("SELECT * FROM kapasitas_ruangan")
     userDetailskapasitas = cur.fetchall()
     cur.close()
-
-    # Mengambil data jadwal dari database
-    # cur = mysql.connection.cursor()
-    # cur.execute("SELECT * FROM real_jadwal")
-    # jadwal_records = cur.fetchall()
-    # cur.close()
 
     # Mengambil data Heatmap dari database
     cur = mysql.connection.cursor()
