@@ -10,6 +10,7 @@ from db import create_table_dosen,create_real_table_jadwal,create_table_kapasita
 from heatmap import generate_plot
 import mysql.connector
 from kapasitas import Kapasitas
+from Jadwal import Jadwal
 
 # Inisiasi Object Flask
 app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
@@ -30,6 +31,7 @@ url1 = 'https://siak.upi.edu/jadwal/ruang?fak={}'.format(fakultas)
 url2 = 'https://siak.upi.edu/jadwal/dosensks'
 
 scraper = Kapasitas(url=url1)
+scraper2 = Jadwal(url=url1)
 
 # Routes Untuk mengakses setiap Halaman Website
 # Welcome
@@ -69,7 +71,7 @@ def login():
             password = request.form['password']
 
             cur = mysql.connection.cursor()
-            cur.execute("SELECT * FROM users WHERE nip = %s", [nip])
+            cur.execute("SELECT * FROM admin WHERE nip = %s", [nip])
             user = cur.fetchone()
             cur.close()
 
@@ -86,7 +88,7 @@ def login():
             hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
             cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO users(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hashed_password))
+            cur.execute("INSERT INTO admin(nip, email, password) VALUES(%s, %s, %s)", (nip, email, hashed_password))
             mysql.connection.commit()
             cur.close()
 
@@ -108,8 +110,26 @@ def dashboard_admin():
         return redirect(url_for('login'))
     
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM real_jadwal"
-    cur.execute(query)
+    cur.execute("""
+            SELECT 
+                real_jadwal.No, 
+                real_jadwal.Span,
+                real_jadwal.Senin, s1.keterangan AS status_senin,
+                real_jadwal.Selasa, s2.keterangan AS status_selasa,
+                real_jadwal.Rabu, s3.keterangan AS status_rabu,
+                real_jadwal.Kamis, s4.keterangan AS status_kamis,
+                real_jadwal.Jumat, s5.keterangan AS status_jumat,
+                real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
+                real_jadwal.Minggu, s7.keterangan AS status_minggu
+            FROM real_jadwal
+            LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
+            LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
+            LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
+            LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
+            LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
+            LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
+            LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+        """)
     Jadwal = cur.fetchall()
     cur.close()
 
@@ -133,6 +153,71 @@ def dashboard_admin():
 
     return render_template('Dashboard_Admin/datatables.html', Jadwal=Jadwal, booking=booking, laporan=laporan, sks=sks)
 
+@app.route('/edit/<int:No>', methods=['GET', 'POST'])
+def edit(No):
+    cur = mysql.connection.cursor()
+    
+    if request.method == 'POST':
+        # Mengambil data dari form edit
+        span = request.form['span']
+        senin = request.form['senin']
+        status_senin = request.form['status_senin']
+        selasa = request.form['selasa']
+        status_selasa = request.form['status_selasa']
+        rabu = request.form['rabu']
+        status_rabu = request.form['status_rabu']
+        kamis = request.form['kamis']
+        status_kamis = request.form['status_kamis']
+        jumat = request.form['jumat']
+        status_jumat = request.form['status_jumat']
+        sabtu = request.form['sabtu']
+        status_sabtu = request.form['status_sabtu']
+        minggu = request.form['minggu']
+        status_minggu = request.form['status_minggu']
+        
+        # Update data ke database
+        query = """
+            UPDATE real_jadwal 
+            SET Span=%s, senin=%s, status_senin=%s, selasa=%s, status_selasa=%s, rabu=%s, status_rabu=%s,
+                kamis=%s, status_kamis=%s, jumat=%s, status_jumat=%s, sabtu=%s, status_sabtu=%s, minggu=%s, status_minggu=%s
+            WHERE No=%s
+        """
+        cur.execute(query, (span, senin, status_senin, selasa, status_selasa, rabu, status_rabu, kamis, status_kamis, jumat, status_jumat, sabtu, status_sabtu, minggu, status_minggu, No))
+        mysql.connection.commit()
+        cur.close()
+        flash('Data updated successfully', 'success')
+        return redirect(url_for('dashboard_admin'))
+    else:
+        # Mengambil data yang akan diedit
+        cur.execute("SELECT * FROM real_jadwal WHERE No = %s", (No,))
+        data = cur.fetchone()
+        
+        # Mengambil data status
+        cur.execute("SELECT * FROM status")
+        statuses = cur.fetchall()
+        cur.close()
+        
+        return render_template('Dashboard_Admin/form_jadwal_admin.html', data=data, statuses=statuses)
+
+
+@app.route('/edit_action/<int:No>', methods=['POST'])
+def edit_action(No):
+    if request.method == 'POST':
+        tindakan_baru = request.form['tindakan']
+
+        # Lakukan update data ke database sesuai dengan No yang diterima
+        cur = mysql.connection.cursor()
+        query = "UPDATE report SET tindakan=%s WHERE No=%s"
+        cur.execute(query, (tindakan_baru, No))
+        mysql.connection.commit()
+        cur.close()
+
+        flash('Tindakan berhasil diupdate', 'success')
+        return redirect(url_for('dashboard_admin'))
+
+    # Jika request bukan POST, tambahkan penanganan yang sesuai (opsional)
+    return redirect(url_for('dashboard_admin'))
+
 @app.route('/run-kapasitas', methods=['POST'])
 def run_kapasitas():
     try:
@@ -140,8 +225,14 @@ def run_kapasitas():
         return jsonify({'message': 'Data Ruangan Berhasil Di-generate'})
     except Exception as e:
         return jsonify({'error': str(e)})
-
-
+    
+@app.route('/run-jadwal', methods=['POST'])
+def run_jadwal():
+    try:
+        scraper2.get_data_jadwal()
+        return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
+    except Exception as e:
+        return jsonify({'error': str(e)})
 
 
 # Route Diagram
@@ -165,10 +256,10 @@ def diagram():
     cur.close()
 
     # Mengambil data jadwal dari database
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM real_jadwal")
-    jadwal_records = cur.fetchall()
-    cur.close()
+    # cur = mysql.connection.cursor()
+    # cur.execute("SELECT * FROM real_jadwal")
+    # jadwal_records = cur.fetchall()
+    # cur.close()
 
     # Mengambil data Heatmap dari database
     cur = mysql.connection.cursor()
@@ -178,7 +269,26 @@ def diagram():
 
     # Mengambil data jadwal dari database
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM real_jadwal")
+    cur.execute("""
+            SELECT 
+                real_jadwal.No, 
+                real_jadwal.Span,
+                real_jadwal.Senin, s1.keterangan AS status_senin,
+                real_jadwal.Selasa, s2.keterangan AS status_selasa,
+                real_jadwal.Rabu, s3.keterangan AS status_rabu,
+                real_jadwal.Kamis, s4.keterangan AS status_kamis,
+                real_jadwal.Jumat, s5.keterangan AS status_jumat,
+                real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
+                real_jadwal.Minggu, s7.keterangan AS status_minggu
+            FROM real_jadwal
+            LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
+            LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
+            LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
+            LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
+            LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
+            LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
+            LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+        """)
     jadwal_records = cur.fetchall()
     cur.close()
 

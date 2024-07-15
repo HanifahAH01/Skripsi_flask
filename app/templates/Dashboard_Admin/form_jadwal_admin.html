@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Jadwal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Edit Jadwal</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label>Span</label>
+                <input type="text" class="form-control" name="span" value="{{ data[1] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Senin</label>
+                <input type="text" class="form-control" name="senin" value="{{ data[2] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Senin</label>
+                <select class="form-control" name="status_senin" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[3]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Selasa</label>
+                <input type="text" class="form-control" name="selasa" value="{{ data[4] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Selasa</label>
+                <select class="form-control" name="status_selasa" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[5]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Rabu</label>
+                <input type="text" class="form-control" name="rabu" value="{{ data[6] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Rabu</label>
+                <select class="form-control" name="status_rabu" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[7]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Kamis</label>
+                <input type="text" class="form-control" name="kamis" value="{{ data[8] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Kamis</label>
+                <select class="form-control" name="status_kamis" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[9]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Jumat</label>
+                <input type="text" class="form-control" name="jumat" value="{{ data[10] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Jumat</label>
+                <select class="form-control" name="status_jumat" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[11]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Sabtu</label>
+                <input type="text" class="form-control" name="sabtu" value="{{ data[12] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Sabtu</label>
+                <select class="form-control" name="status_sabtu" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[13]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Minggu</label>
+                <input type="text" class="form-control" name="minggu" value="{{ data[14] }}" required>
+            </div>
+            <div class="form-group">
+                <label>Status Minggu</label>
+                <select class="form-control" name="status_minggu" required>
+                    {% for status in statuses %}
+                    <option value="{{ status[0] }}" {% if data[15]==status[0] %}selected{% endif %}>{{ status[1] }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</body>
+
+</html>

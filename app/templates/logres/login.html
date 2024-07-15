@@ -24,9 +24,6 @@
                     <input type="password" name="password" required>
                     <label for="">Password</label>
                 </div>
-                <div class="remember">
-                    <label><input type="checkbox" name="remember">Remember me</label>
-                </div>
                 <button type="submit" name="login">Login</button>
                 <div class="signUp-link">
                     <p>Don't have an account? <a href="#" class="SignUpBtn-link" id="signUp">Sign Up</a></p>
@@ -48,9 +45,6 @@
                     <input type="email" name="email" required>
                     <label for="">Email</label>
                 </div>
-                <div class="remember">
-                    <label><input type="checkbox" name="terms">I agree to the terms & conditions</label>
-                </div>
                 <button type="submit" name="register">Sign Up</button>
                 <div class="signUp-link">
                     <p>Already have an account? <a href="#" class="SignInBtn-link" id="signIn">Sign In</a></p>
@@ -60,12 +54,12 @@
     </div>
 
     <script>
-        document.getElementById('signUp').addEventListener('click', function(event) {
+        document.getElementById('signUp').addEventListener('click', function (event) {
             event.preventDefault();
             document.querySelector('.wrapper').classList.add('active');
         });
 
-        document.getElementById('signIn').addEventListener('click', function(event) {
+        document.getElementById('signIn').addEventListener('click', function (event) {
             event.preventDefault();
             document.querySelector('.wrapper').classList.remove('active');
         });

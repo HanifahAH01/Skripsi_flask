@@ -75,14 +75,27 @@ def create_table_jadwal():
             CREATE TABLE IF NOT EXISTS jadwal (
                 No INT AUTO_INCREMENT PRIMARY KEY,
                 Span VARCHAR(255),
-                Waktu VARCHAR(255),
                 Senin VARCHAR(255),
+                status_senin INT,
                 Selasa VARCHAR(255),
+                status_selasa INT,
                 Rabu VARCHAR(255),
+                status_rabu INT,
                 Kamis VARCHAR(255),
+                status_kamis INT,
                 Jumat VARCHAR(255),
+                status_jumat INT,
                 Sabtu VARCHAR(255),
-                Minggu VARCHAR(255)
+                status_sabtu INT,
+                Minggu VARCHAR(255),
+                status_minggu INT,
+                FOREIGN KEY (status_senin) REFERENCES status(id),
+                FOREIGN KEY (status_selasa) REFERENCES status(id),
+                FOREIGN KEY (status_rabu) REFERENCES status(id),
+                FOREIGN KEY (status_kamis) REFERENCES status(id),
+                FOREIGN KEY (status_jumat) REFERENCES status(id),
+                FOREIGN KEY (status_sabtu) REFERENCES status(id),
+                FOREIGN KEY (status_minggu) REFERENCES status(id)
             )
         """)
         mysql.connection.commit()
@@ -98,18 +111,31 @@ def create_real_table_jadwal():
                 No INT AUTO_INCREMENT PRIMARY KEY,
                 Span VARCHAR(255),
                 Senin VARCHAR(255),
+                status_senin INT,
                 Selasa VARCHAR(255),
+                status_selasa INT,
                 Rabu VARCHAR(255),
+                status_rabu INT,
                 Kamis VARCHAR(255),
+                status_kamis INT,
                 Jumat VARCHAR(255),
+                status_jumat INT,
                 Sabtu VARCHAR(255),
-                Minggu VARCHAR(255)
+                status_sabtu INT,
+                Minggu VARCHAR(255),
+                status_minggu INT,
+                FOREIGN KEY (status_senin) REFERENCES status(id),
+                FOREIGN KEY (status_selasa) REFERENCES status(id),
+                FOREIGN KEY (status_rabu) REFERENCES status(id),
+                FOREIGN KEY (status_kamis) REFERENCES status(id),
+                FOREIGN KEY (status_jumat) REFERENCES status(id),
+                FOREIGN KEY (status_sabtu) REFERENCES status(id),
+                FOREIGN KEY (status_minggu) REFERENCES status(id)
             )
         """)
         mysql.connection.commit()
         cur.close()
-    print("Tabel Jadwal Telah Dibuat")
-
+    print("Tabel real_jadwal telah dibuat")
 
 def create_table_heatmap():
     with app.app_context():
@@ -189,11 +215,11 @@ def create_sks_dosen_fpmipa():
         cur.close()
         print("Tabel Heatmap Ruangan telah dibuat")
 
-def create_users():
+def create_admin():
     with app.app_context():
         cur = mysql.connection.cursor()
         cur.execute("""
-            CREATE TABLE IF NOT EXISTS users(
+            CREATE TABLE IF NOT EXISTS admin(
                 no INT AUTO_INCREMENT PRIMARY KEY,
                 nip VARCHAR(50) NOT NULL,
                 email VARCHAR(120) NOT NULL,
@@ -202,7 +228,7 @@ def create_users():
         """)
         mysql.connection.commit()
         cur.close()
-        print("Tabel Users Telah Dibuat")
+        print("Tabel Admin Telah Dibuat")
 
 def create_booking():
     with app.app_context():
@@ -225,7 +251,6 @@ def create_booking():
         cur.close()
         print("Tabel booking telah dibuat")
 
-
 def create_report():
     with app.app_context():
         cur = mysql.connection.cursor()
@@ -235,8 +260,8 @@ def create_report():
                 nama_ruangan VARCHAR(255) NOT NULL,
                 hari VARCHAR(255) NOT NULL,
                 waktu_awal VARCHAR(255) NOT NULL,
-                alasan VARCHAR(255) NOT NULL
-                
+                alasan VARCHAR(255) NOT NULL,
+                tindakan VARCHAR(255)
             )
         """
         )
@@ -256,6 +281,19 @@ def create_jam():
         mysql.connection.commit()
         cur.close()
         print("Tabel waktu telah dibuat")
+
+def create_status():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS status (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                keterangan VARCHAR(255) NOT NULL
+            )
+        """)
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel status telah dibuat")
 
 # --------------------------------------#
 # Fungsi Fungsi untuk menginputkan Data #
@@ -552,6 +590,31 @@ def insert_data_jam_jadwal():
         cur.close()
     
     print("Data Jam Jadwal Berhasil Dimasukkan")
+
+def insert_data_status():
+    with app.app_context():
+        # Buka file JSON status.json
+        with open('app/static/json/status_jadwal.json', 'r') as file:
+            data = json.load(file)
+
+        # Koneksi ke database MySQL
+        cur = mysql.connection.cursor()
+
+        # Iterasi setiap item dalam data JSON
+        for item in data:
+            # Lakukan operasi INSERT ke dalam tabel status
+            cur.execute("""
+                INSERT INTO status (keterangan) 
+                VALUES (%s)
+            """, (item[list(item.keys())[0]],))
+        
+        # Commit perubahan ke database
+        mysql.connection.commit()
+
+        # Tutup kursor dan cetak pesan berhasil
+        cur.close()
+    
+    print("Data status Jadwal Berhasil Dimasukkan")
 
 # --------------------------------------#
 # Fungsi Fungsi untuk update Data       #
@@ -978,9 +1041,41 @@ def create_triggers_sks_dosen_fpmipa():
         cur.close()
         print("Triggers created or already existed for sks_dosen_fpmipa table")
 
+def discard_tablespace():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("ALTER TABLE status DISCARD TABLESPACE")
+            mysql.connection.commit()
+            print("Tablespace untuk tabel 'status' telah dihapus.")
+        except Exception as e:
+            print(f"Terjadi kesalahan saat menghapus tablespace: {e}")
+        finally:
+            cur.close()
 
 if __name__ == "__main__":
-    create_booking()
-    create_jam()
+    # Create Table
+    # create_table_dosen()
+    # create_table_kapasitas_ruangan()
+    # create_table_jadwal()
+    # create_table_heatmap()
+    # create_heatmap_gedung()
+    # create_heatmap_ruangan()
+    # create_sks_dosen_fpmipa()
+    # create_admin()
+    create_report()
+    # create_booking()
+    # create_jam()
+    # create_status()
+    # create_real_table_jadwal()
 
-    insert_data_jam_jadwal()
+
+    # insert_data_jadwal()
+    # insert_data_status()
+    # insert_real_data_jadwal()
+    # insert_data_dosen()
+    # insert_data_kapasitas_ruangan()
+    # insert_table_heatmap()
+    # insert_data_kapasitas()
+    # insert_data_sks_dosen_fpmipa()
+    # insert_data_jam_jadwal()
