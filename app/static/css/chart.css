@@ -419,6 +419,21 @@ body {
     height: 100%;
 }
 
+.scrollBoxBodychart {
+    height: 500px;
+    max-height: 250px;
+}
+
+.box {
+    width: 100%;
+    /* Menyesuaikan lebar dengan parentnya */
+    height: 75px;
+    margin-top: 20px;
+    /* Sesuaikan margin atas jika diperlukan */
+}
+
+
+
 /* ======== Popup WhatsApp Booking ============ */
 .whatsapp-popup {
     position: fixed;
@@ -446,12 +461,19 @@ body {
 }
 
 #myChart3 {
-    max-width: 600px; /* Atur lebar maksimum */
-    max-height: 400px; /* Atur tinggi maksimum */
-    width: 100%; /* Sesuaikan dengan lebar kontainer */
-    height: auto; /* Sesuaikan tinggi dengan proporsi */
-    margin: 0 auto; /* Pusatkan elemen */
+    max-width: 600px;
+    /* Atur lebar maksimum */
+    max-height: 400px;
+    /* Atur tinggi maksimum */
+    width: 100%;
+    /* Sesuaikan dengan lebar kontainer */
+    height: auto;
+    /* Sesuaikan tinggi dengan proporsi */
+    margin: 0 auto;
+    /* Pusatkan elemen */
 }
+
+
 
 /* ======== Media Queries ========== */
 @media screen and (max-width: 768px) {

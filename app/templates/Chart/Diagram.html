@@ -13,19 +13,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="https://mpld3.github.io/js/mpld3.v0.3.js"></script>
 
     <style>
         .merged-row td:first-child {
             border-top: none;
-            /* Hilangkan border atas untuk sel pertama dalam grup */
         }
 
         .merged-row td {
             border-bottom: none;
-            /* Hilangkan border bawah untuk sel dalam grup */
         }
 
         .terpakai:hover {
@@ -34,30 +31,21 @@
 
         .popup button#booking-button {
             background-color: #007bff;
-            /* Warna latar belakang */
             color: #fff;
-            /* Warna teks */
             padding: 10px 20px;
-            /* Padding */
             border: none;
-            /* Tanpa border */
             border-radius: 4px;
-            /* Border radius */
             cursor: pointer;
-            /* Kursor berbentuk tangan */
             transition: background-color 0.3s ease;
-            /* Transisi saat hover */
         }
 
         .popup button#booking-button:hover {
             background-color: #0056b3;
-            /* Warna latar belakang saat hover */
         }
 
 
         .popup {
             display: none;
-            /* Default to hidden */
             position: fixed;
             left: 50%;
             top: 50%;
@@ -80,17 +68,13 @@
             margin-bottom: 20px;
         }
 
-        /* Style untuk sel dengan status Boking */
         td.boking {
             background-color: green;
-            /* Ganti dengan warna hijau yang Anda inginkan */
             color: white;
-            /* Ganti dengan warna teks yang sesuai jika perlu */
         }
 
         .terpakai {
             background-color: yellow !important;
-            /* Tambahkan !important jika perlu */
             color: black;
             cursor: pointer;
             font-weight: bold;
@@ -101,7 +85,6 @@
 
         .none {
             background-color: red !important;
-            /* Tambahkan !important jika perlu */
             color: white;
             cursor: pointer;
             font-weight: bold;
@@ -112,7 +95,6 @@
 
         .booking {
             background-color: green !important;
-            /* Tambahkan !important jika perlu */
             color: white;
             cursor: pointer;
             font-weight: bold;
@@ -123,7 +105,6 @@
 
         .default {
             background-color: yellow !important;
-            /* Tambahkan !important jika perlu */
             color: black;
             cursor: pointer;
             font-weight: bold;

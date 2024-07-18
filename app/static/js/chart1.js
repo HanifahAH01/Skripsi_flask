@@ -1,43 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/dosen_chart";  // Pastikan URL ini sesuai dengan endpoint Flask Anda
+    var url = "http://127.0.0.1:54587/dosen_chart";  // Sesuaikan dengan endpoint Flask Anda
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var data = JSON.parse(this.responseText);
-            var dosen = data.dosen_list.map(function (elem) {
+            var responseData = JSON.parse(this.responseText);
+            var dosenData = responseData.dosen_list.map(function (elem) {
+                return {
+                    Dosen: elem.Dosen,
+                    Total: elem.Total
+                };
+            });
+
+            // Urutkan berdasarkan total nilai dari yang terbesar ke yang terkecil
+            dosenData.sort(function (a, b) {
+                return b.Total - a.Total;
+            });
+
+            // Pisahkan kembali Dosen dan Total setelah diurutkan
+            var sortedDosen = dosenData.map(function (elem) {
                 return elem.Dosen;
             });
-            var Total = data.dosen_list.map(function (elem) {
+
+            var sortedTotal = dosenData.map(function (elem) {
                 return elem.Total;
             });
 
-            // Tentukan warna berdasarkan nilai
+            // Tentukan warna berdasarkan nilai total
             function getColor(value) {
                 if (value >= 1 && value <= 20) {
-                    return 'rgb(155, 236, 0)';
+                    return 'rgb(255, 255, 19)';
                 } else if (value >= 21 && value <= 40) {
-                    return 'rgb(243, 232, 78)';
+                    return 'rgb(255, 210, 11)';
                 } else if (value >= 41 && value <= 60) {
-                    return 'rgb(237, 98, 29)';
+                    return 'rgb(255, 139, 20)';
                 } else if (value >= 61 && value <= 80) {
-                    return 'rgb(231, 30, 30)';
+                    return 'rgb(255, 93, 12)';
                 } else if (value >= 81 && value <= 100) {
-                    return 'rgb(186, 14, 14)';
+                    return 'rgb(255, 70, 6)';
                 }
-                return 'rgba(0, 0, 0, 0.2)';
+                return 'rgb(255, 21, 0)';
             }
 
-            var backgroundColors = Total.map(getColor);
-            var borderColors = Total.map(getColor); // Sama dengan background color
+            var backgroundColors = sortedTotal.map(getColor);
+            var borderColors = sortedTotal.map(getColor); // Sama dengan background color
 
             // Setup Chart 1
             const data1 = {
-                labels: dosen,
+                labels: sortedDosen,
                 datasets: [{
                     label: 'Total',
-                    data: Total,
+                    data: sortedTotal,
                     backgroundColor: backgroundColors,
                     borderColor: borderColors,
                     borderWidth: 1
@@ -49,8 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 type: 'bar',
                 data: data1,
                 options: {
+                    indexAxis: 'y', // Membuat tulisan menjadi horizontal
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    },
                     plugins: {
                         legend: {
+                            display: true,
                             labels: {
                                 usePointStyle: true,
                                 pointStyle: 'rectRounded'
@@ -62,19 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         padding: {
                             right: 4
                         }
-                    },
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            grid: {
-                                drawTicks: false,
-                                drawBoeder: false
-                            },
-                            ticks: {
-                                display: false
-                            }
-                        }
                     }
                 }
             };
@@ -85,68 +93,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 config1
             );
 
-            // Setup Chart 2
-            const data2 = {
-                labels: [],
-                datasets: [{
-                    label: 'Total',
-                    data: myChart.data.datasets[0].data,
-                    backgroundColor: backgroundColors,
-                    borderColor: borderColors,
-                    borderWidth: 1
-                }]
-            };
-
-            // Config Chart 2
-            const config2 = {
-                type: 'bar',
-                data: data2,
-                options: {
-                    maintainAspectRatio: false,
-                    layout: {
-                        padding: {
-                            right: 19,
-                            left: 125
-                        }
-                    },
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            afterFit: ((context) => {
-                                console.log(context)
-                                context.height += 30
-                            })
-                        },
-                        y: {
-                            afterFit: ((context) => {
-                                console.log(context.width)
-                                context.width += myChart.chartArea.left
-                            }),
-                            grid: {
-                                drawTicks: false
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    }
-                }
-            };
-
-            // Render Chart 2
-            const myChart2 = new Chart(
-                document.getElementById('myChart2'),
-                config2
-            );
-
+            // Atur tinggi scrollBoxBody jika lebih dari 7 labels
             const scrollBoxBody = document.querySelector('.scrollBoxBody');
-            if (myChart.data.labels.length > 7) {
-                const newHeight = 300 + ((myChart.data.labels.length - 7) * 20);
+            if (sortedDosen.length > 7) {
+                const newHeight = 300 + ((sortedDosen.length - 7) * 20);
                 scrollBoxBody.style.height = `${newHeight}px`;
             }
         }
-    }
+    };
 });

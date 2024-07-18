@@ -34,11 +34,12 @@ def generate_plot():
 
     # Definisi skala warna kustom dengan 5 warna
     custom_colorscale = [
-        [0, 'rgb(155, 236, 0)'],    # Warna pertama (kuning)
-        [0.20, 'rgb(243, 232, 78)'], # Warna kedua (oranye)
-        [0.40, 'rgb(237, 98, 29)'],  # Warna ketiga (merah oranye)
-        [0.60, 'rgb(231, 30, 30)'],  # Warna keempat (merah tua)
-        [1, 'rgb(186, 14, 14)']      # Warna kelima (merah sangat tua)
+        [0, 'rgb(255, 255, 19)'],    # Warna pertama (kuning)
+        [0.20, 'rgb(255, 210, 11)'], # Warna kedua (oranye)
+        [0.40, 'rgb(255, 139, 20)'],  # Warna ketiga (merah oranye)
+        [0.60, 'rgb(255, 93, 12)'],  # Warna keempat (merah tua)
+        [0.80, 'rgb(255, 70, 6)'],  # Warna keempat (merah tua)
+        [1, 'rgb(255, 21, 0)']      # Warna kelima (merah sangat tua)
     ]
 
     # Membuat plot menggunakan Plotly
