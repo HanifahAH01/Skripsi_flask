@@ -18,33 +18,42 @@
     <script src="https://mpld3.github.io/js/mpld3.v0.3.js"></script>
 
     <style>
-        .terpakai {
-            background-color: #ffcccc;
-            color: #cc0000;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            border: 1px solid #cc0000;
-            border-radius: 4px;
+        .merged-row td:first-child {
+            border-top: none;
+            /* Hilangkan border atas untuk sel pertama dalam grup */
+        }
+
+        .merged-row td {
+            border-bottom: none;
+            /* Hilangkan border bawah untuk sel dalam grup */
         }
 
         .terpakai:hover {
             background-color: #ff9999;
         }
 
-        .tersedia {
-            background-color: #ccffcc;
-            color: #006600;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            border: 1px solid #006600;
+        .popup button#booking-button {
+            background-color: #007bff;
+            /* Warna latar belakang */
+            color: #fff;
+            /* Warna teks */
+            padding: 10px 20px;
+            /* Padding */
+            border: none;
+            /* Tanpa border */
             border-radius: 4px;
+            /* Border radius */
+            cursor: pointer;
+            /* Kursor berbentuk tangan */
+            transition: background-color 0.3s ease;
+            /* Transisi saat hover */
         }
 
-        .tersedia:hover {
-            background-color: #99ff99;
+        .popup button#booking-button:hover {
+            background-color: #0056b3;
+            /* Warna latar belakang saat hover */
         }
+
 
         .popup {
             display: none;
@@ -77,6 +86,50 @@
             /* Ganti dengan warna hijau yang Anda inginkan */
             color: white;
             /* Ganti dengan warna teks yang sesuai jika perlu */
+        }
+
+        .terpakai {
+            background-color: yellow !important;
+            /* Tambahkan !important jika perlu */
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid yellow;
+            border-radius: 4px;
+        }
+
+        .none {
+            background-color: red !important;
+            /* Tambahkan !important jika perlu */
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid red;
+            border-radius: 4px;
+        }
+
+        .booking {
+            background-color: green !important;
+            /* Tambahkan !important jika perlu */
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid green;
+            border-radius: 4px;
+        }
+
+        .default {
+            background-color: yellow !important;
+            /* Tambahkan !important jika perlu */
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid gray;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -297,15 +350,120 @@
         <button id="booking-button" data-whatsapp="+6281364986912" onclick="openWhatsApp()">Booking via
             WhatsApp</button>
     </div>
-    <div id="popup" class="popup">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <p id="popup-content"></p>
-        <button id="booking-button" data-whatsapp="+6281364986912" onclick="openWhatsApp()">Booking via
-            WhatsApp</button>
-    </div>
+
 
     <!-- ======== Script ========= -->
     <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var rows = document.querySelectorAll('#jadwal-body tr');
+            var previousRoom = null;
+            var rowspanCount = 1; // Jumlah sel yang digabungkan
+
+            rows.forEach(function (row, index) {
+                var roomCell = row.querySelector('td:first-child');
+                var currentRoom = roomCell.innerHTML.trim();
+
+                if (previousRoom === currentRoom) {
+                    // Sembunyikan nama ruangan pada sel yang sama
+                    roomCell.style.display = 'none';
+                    // Tambahkan rowspan pada sel pertama jika nama ruangan sama dengan sebelumnya
+                    var firstCell = rows[index - rowspanCount].querySelector('td:first-child');
+                    firstCell.setAttribute('rowspan', rowspanCount + 1);
+                    // Tambahkan class untuk menghilangkan border atas pada sel yang digabungkan
+                    rows[index - rowspanCount].classList.add('merged-row');
+                    // Tambahkan class untuk menghilangkan border bawah pada sel yang digabungkan
+                    row.classList.add('merged-row');
+                    // Tambahkan data-room attribute pada sel pertama untuk identifikasi
+                    firstCell.setAttribute('data-room', currentRoom);
+                    rowspanCount++;
+                } else {
+                    previousRoom = currentRoom;
+                    rowspanCount = 1; // Kembalikan jumlah rowspan ke 1 untuk grup baru
+                }
+            });
+        });
+        window.addEventListener('DOMContentLoaded', function () {
+            var tbody = document.getElementById('jadwal-body');
+            var rows = tbody.getElementsByTagName('tr');
+            var days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+
+            for (var i = 0; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var room = cells[0].innerHTML.trim();
+
+                for (var j = 1; j <= 7; j++) {
+                    var cellContent = cells[j].innerHTML.trim();
+                    if (cellContent.toLowerCase() === 'terpakai') {
+                        cells[j].innerHTML = 'Terpakai';
+                        cells[j].classList.add('terpakai');
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
+                        cells[j].addEventListener('click', openPopup);
+                    } else if (isTime(cellContent)) {
+                        cells[j].innerHTML = cellContent;
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
+                        cells[j].addEventListener('click', openPopup);
+                    } else if (cellContent.toLowerCase() === 'none') {
+                        cells[j].innerHTML = 'None';
+                        cells[j].classList.add('none');
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
+                        cells[j].addEventListener('click', openPopup);
+                    } else if (cellContent.toLowerCase() === 'booking') {
+                        cells[j].innerHTML = 'Booking';
+                        cells[j].classList.add('booking');
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
+                        cells[j].addEventListener('click', openPopup);
+                    } else {
+                        cells[j].innerHTML = cellContent;
+                        cells[j].classList.add('default');
+                        cells[j].setAttribute('data-content', cellContent);
+                        cells[j].setAttribute('data-room', room);
+                        cells[j].setAttribute('data-day', days[j - 1]);
+                        cells[j].addEventListener('click', openPopup);
+                    }
+                }
+            }
+        });
+
+        function openPopup(event) {
+            var popup = document.getElementById('popup');
+            var content = event.target.getAttribute('data-content');
+            var room = event.target.getAttribute('data-room');
+            var day = event.target.getAttribute('data-day');
+            var time = event.target.getAttribute('data-content');
+
+            var date = getNextDate(day);
+
+            var popupContent = document.getElementById('popup-content');
+            popupContent.innerText = `Ruangan: ${room}\nTanggal: ${date}\nWaktu: ${time}`;
+
+            var bookingButton = document.getElementById('booking-button');
+            bookingButton.setAttribute('data-room', room);
+            bookingButton.setAttribute('data-date', date);
+            bookingButton.setAttribute('data-time', time);
+
+            if (event.target.classList.contains('terpakai') || event.target.classList.contains('booking')) {
+                bookingButton.style.display = 'none';
+            } else {
+                bookingButton.style.display = 'block';
+            }
+
+            popup.style.display = 'block';
+        }
+
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+
         function getNextDate(day) {
             var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             var dayIndex = daysOfWeek.indexOf(day);
@@ -342,7 +500,7 @@
         }
 
 
-
+        // Function to filter charts
         // Function to filter charts
         function filterCharts(event) {
             var filter = event.target.getAttribute('data-filter');

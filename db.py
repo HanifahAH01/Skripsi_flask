@@ -1084,18 +1084,6 @@ def create_triggers_sks_dosen_fpmipa():
         cur.close()
         print("Triggers created or already existed for sks_dosen_fpmipa table")
 
-def discard_tablespace():
-    with app.app_context():
-        cur = mysql.connection.cursor()
-        try:
-            cur.execute("ALTER TABLE status DISCARD TABLESPACE")
-            mysql.connection.commit()
-            print("Tablespace untuk tabel 'status' telah dihapus.")
-        except Exception as e:
-            print(f"Terjadi kesalahan saat menghapus tablespace: {e}")
-        finally:
-            cur.close()
-
 if __name__ == "__main__":
     # Create Table
     # create_table_dosen()
@@ -1107,7 +1095,7 @@ if __name__ == "__main__":
     # create_sks_dosen_fpmipa()
     # create_admin()
     # create_report()
-    create_booking()
+    # create_booking()
     # create_jam()
     # create_status()
     # create_real_table_jadwal()
@@ -1124,3 +1112,6 @@ if __name__ == "__main__":
     # insert_data_sks_dosen_fpmipa()
     # insert_data_jam_jadwal()
     # insert_data_status_booking()
+
+    # create_triggers()
+    create_triggers_sks_dosen_fpmipa()

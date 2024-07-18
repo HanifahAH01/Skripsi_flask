@@ -334,6 +334,14 @@ def run_jadwal():
         return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
     except Exception as e:
         return jsonify({'error': str(e)})
+
+@app.route('/run-data-jadwal', methods=['POST'])
+def run_data_jadwal():
+    try:
+        insert_real_data_jadwal()
+        return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
+    except Exception as e:
+        return jsonify({'error': str(e)})
     
 # ******************************************** #
 #                    END                       #

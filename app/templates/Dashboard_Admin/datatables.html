@@ -50,6 +50,19 @@
         }
       });
     }
+
+    function runDataJadwal() {
+      $.ajax({
+        url: 'run-data-jadwal',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
   </script>
 
   <!-- CSS Files -->
@@ -126,6 +139,12 @@
                     <a href="#">
                       <span class="sub-item">Jadwal</span>
                       <button onclick="runJadwal()">Run Jadwal</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="sub-item">Data Jadwal</span>
+                      <button onclick="runDataJadwal()">Run Data Jadwal</button>
                     </a>
                   </li>
                 </ul>
@@ -388,11 +407,69 @@
               </li>
             </ul>
           </div>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <div class="d-flex align-items-center">
+                  <h4 class="card-title">Report</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table id="add-row" class="display table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th>NO</th>
+                        <th>TAHUN</th>
+                        <th>KODE</th>
+                        <th>Nama Dosen</th>
+                        <th>SKS_1</th>
+                        <th>SKS_2</th>
+                        <th>SKS_TOTAL</th>
+                        <th>KELAS_1</th>
+                        <th>KELAS_2</th>
+                        <th>KELAS_TOTAL</th>
+                        <th>DOSEN_1</th>
+                        <th>DOSEN_2</th>
+                        <th>DOSEN_TOTAL</th>
+                        <th>TOTAL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for sks in sks %}
+                      <tr>
+                        <td>{{ sks[0] }}</td>
+                        <td>{{ sks[1] }}</td>
+                        <td>{{ sks[2] }}</td>
+                        <td>{{ sks[3] }}</td>
+                        <td>{{ sks[4] }}</td>
+                        <td>{{ sks[5] }}</td>
+                        <td>{{ sks[6] }}</td>
+                        <td>{{ sks[7] }}</td>
+                        <td>{{ sks[8] }}</td>
+                        <td>{{ sks[9] }}</td>
+                        <td>{{ sks[10] }}</td>
+                        <td>{{ sks[11] }}</td>
+                        <td>{{ sks[12] }}</td>
+                        <td>{{ sks[13] }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Jadwal</h4>
+                  <div class="d-flex align-items-center">
+                    <h4 class="card-title">Jadwal</h4>
+                    <button class="btn btn-primary btn-round ms-auto" onclick="runDataJadwal()">Run Data Jadwal
+                    </button>
+                  </div>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -462,68 +539,9 @@
                 <div class="card-header">
                   <div class="d-flex align-items-center">
                     <h4 class="card-title">Booking</h4>
-                    <button class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal"
-                      data-bs-target="#addRowModal">
-                      <i class="fa fa-plus"></i>
-                      Booking
-                    </button>
                   </div>
                 </div>
                 <div class="card-body">
-                  <!-- Modal -->
-                  <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header border-0">
-                          <h5 class="modal-title">
-                            <span class="fw-mediumbold"> New</span>
-                            <span class="fw-light"> Row </span>
-                          </h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p class="small">
-                            Create a new row using this form, make sure you
-                            fill them all
-                          </p>
-                          <form>
-                            <div class="row">
-                              <div class="col-sm-12">
-                                <div class="form-group form-group-default">
-                                  <label>Name</label>
-                                  <input id="addName" type="text" class="form-control" placeholder="fill name" />
-                                </div>
-                              </div>
-                              <div class="col-md-6 pe-0">
-                                <div class="form-group form-group-default">
-                                  <label>Position</label>
-                                  <input id="addPosition" type="text" class="form-control"
-                                    placeholder="fill position" />
-                                </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="form-group form-group-default">
-                                  <label>Office</label>
-                                  <input id="addOffice" type="text" class="form-control" placeholder="fill office" />
-                                </div>
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer border-0">
-                          <button type="button" id="addRowButton" class="btn btn-primary">
-                            Add
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   <div class="table-responsive">
                     <table id="add-row" class="display table table-striped table-hover">
                       <thead>
@@ -567,7 +585,6 @@
                             </div>
                           </td>
                         </tr>
-
                         <!-- Modal for Edit -->
                         <div class="modal fade" id="editModal{{ booking[0] }}" tabindex="-1"
                           aria-labelledby="editModalLabel{{ booking[0] }}" aria-hidden="true">
@@ -742,7 +759,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">SKS DOSEN</h4>
+                  <h4 class="card-title">Sinkronisasi</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -750,38 +767,21 @@
                       <thead>
                         <tr>
                           <th>NO</th>
-                          <th>TAHUN</th>
-                          <th>KODE</th>
-                          <th>SKS_1</th>
-                          <th>SKS_2</th>
-                          <th>SKS_TOTAL</th>
-                          <th>KELAS_1</th>
-                          <th>KELAS_2</th>
-                          <th>KELAS_TOTAL</th>
-                          <th>DOSEN_1</th>
-                          <th>DOSEN_2</th>
-                          <th>DOSEN_TOTAL</th>
-                          <th>TOTAL</th>
+                          <th>Nama Sinkronisasi</th>
+                          <th>action</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {% for sks in sks %}
                         <tr>
-                          <td>{{ sks[0] }}</td>
-                          <td>{{ sks[1] }}</td>
-                          <td>{{ sks[2] }}</td>
-                          <td>{{ sks[3] }}</td>
-                          <td>{{ sks[4] }}</td>
-                          <td>{{ sks[5] }}</td>
-                          <td>{{ sks[6] }}</td>
-                          <td>{{ sks[7] }}</td>
-                          <td>{{ sks[8] }}</td>
-                          <td>{{ sks[9] }}</td>
-                          <td>{{ sks[10] }}</td>
-                          <td>{{ sks[11] }}</td>
-                          <td>{{ sks[12] }}</td>
+                          <td>1</td>
+                          <td>
+                            <span class="sub-item">Kapasitas </span>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Kapasitas
+                            </button>
+                          </td>
                         </tr>
-                        {% endfor %}
                       </tbody>
                     </table>
                   </div>
