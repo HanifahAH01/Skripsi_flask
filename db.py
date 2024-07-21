@@ -452,6 +452,78 @@ def insert_real_data_jadwal(file_name="app/static/json/hasil_jadwal.json", limit
         else:
             print("File", file_name, "not found")
 
+def insert_real_data_jadwal_tes(file_name="app/static/json/tes.json", limit=5000):
+    with app.app_context():
+        if os.path.exists(file_name):
+            with open(file_name, 'r') as file:
+                data = json.load(file)
+
+            cur = mysql.connection.cursor()
+            try:
+                cur.execute("START TRANSACTION")  # Start transaction
+
+                # Get the current count of data in the table
+                cur.execute("SELECT COUNT(*) FROM real_jadwal")
+                current_count = cur.fetchone()[0]
+
+                count = 0  # Variable to count the number of inserted data
+
+                for key, item in data.items():
+                    span = item['Span']
+                    senin = item['Senin']
+                    status_senin = item['status_senin']
+                    selasa = item['Selasa']
+                    status_selasa = item['status_selasa']
+                    rabu = item['Rabu']
+                    status_rabu = item['status_rabu']
+                    kamis = item['Kamis']
+                    status_kamis = item['status_kamis']
+                    jumat = item['Jumat']
+                    status_jumat = item['status_jumat']
+                    sabtu = item['Sabtu']
+                    status_sabtu = item['status_sabtu']
+                    minggu = item['Minggu']
+                    status_minggu = item['status_minggu']
+
+                    # Check if data insertion will exceed the limit
+                    if current_count + count >= limit:
+                        print("Data insertion limit reached.")
+                        break
+
+                    # Check if data already exists
+                    cur.execute("""
+                        SELECT * FROM real_jadwal 
+                        WHERE Span = %s AND Senin = %s AND status_senin = %s AND Selasa = %s AND status_selasa = %s
+                        AND Rabu = %s AND status_rabu = %s AND Kamis = %s AND status_kamis = %s
+                        AND Jumat = %s AND status_jumat = %s AND Sabtu = %s AND status_sabtu = %s
+                        AND Minggu = %s AND status_minggu = %s
+                    """, (span, senin, status_senin, selasa, status_selasa, rabu, status_rabu, kamis, status_kamis, jumat, status_jumat, sabtu, status_sabtu, minggu, status_minggu))
+                    existing_data = cur.fetchone()
+
+                    if existing_data:
+                        # If data already exists, skip
+                        print(f"Data for {span} already exists, skipping.")
+                    else:
+                        # If data does not exist, insert
+                        cur.execute("""
+                            INSERT INTO real_jadwal 
+                            (Span, Senin, status_senin, Selasa, status_selasa, Rabu, status_rabu, Kamis, status_kamis, Jumat, status_jumat, Sabtu, status_sabtu, Minggu, status_minggu) 
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (span, senin, status_senin, selasa, status_selasa, rabu, status_rabu, kamis, status_kamis, jumat, status_jumat, sabtu, status_sabtu, minggu, status_minggu))
+                        count += 1  # Increment the count of inserted data
+
+                mysql.connection.commit()  # Commit transaction
+                print("Data from", file_name, "has been inserted into the Jadwal table.")
+            except Exception as e:
+                mysql.connection.rollback()  # Rollback transaction in case of error
+                print("Error:", e)
+            finally:
+                cur.close()
+        else:
+            print("File", file_name, "not found")
+
+
+
 def insert_table_heatmap(file_name='app/static/json/total_jadwal.json', limit=88):
     with app.app_context():
         if os.path.exists(file_name):
@@ -1084,6 +1156,180 @@ def create_triggers_sks_dosen_fpmipa():
         cur.close()
         print("Triggers created or already existed for sks_dosen_fpmipa table")
 
+def create_triggers_jadwal_status():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+
+        # Trigger untuk kolom Senin
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_senin
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Senin) > 0 THEN
+                SET NEW.status_senin = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_senin_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Senin) > 0 THEN
+                SET NEW.status_senin = 17;
+            END IF;
+        END
+        """)
+
+        # Trigger untuk kolom Selasa
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_selasa
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Selasa) > 0 THEN
+                SET NEW.status_selasa = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_selasa_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Selasa) > 0 THEN
+                SET NEW.status_selasa = 17;
+            END IF;
+        END
+        """)
+
+        # Trigger untuk kolom Rabu
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_rabu
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Rabu) > 0 THEN
+                SET NEW.status_rabu = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_rabu_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Rabu) > 0 THEN
+                SET NEW.status_rabu = 17;
+            END IF;
+        END
+        """)
+
+        # Trigger untuk kolom Kamis
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_kamis
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Kamis) > 0 THEN
+                SET NEW.status_kamis = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_kamis_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Kamis) > 0 THEN
+                SET NEW.status_kamis = 17;
+            END IF;
+        END
+        """)
+
+        # Trigger untuk kolom Jumat
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_jumat
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Jumat) > 0 THEN
+                SET NEW.status_jumat = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_jumat_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Jumat) > 0 THEN
+                SET NEW.status_jumat = 17;
+            END IF;
+        END
+        """)
+
+        # Trigger untuk kolom Sabtu
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_sabtu
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Sabtu) > 0 THEN
+                SET NEW.status_sabtu = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_sabtu_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Sabtu) > 0 THEN
+                SET NEW.status_sabtu = 17;
+            END IF;
+        END
+        """)
+
+        # Trigger untuk kolom Minggu
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_minggu
+        BEFORE INSERT ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Minggu) > 0 THEN
+                SET NEW.status_minggu = 17;
+            END IF;
+        END
+        """)
+
+        cur.execute("""
+        CREATE TRIGGER IF NOT EXISTS update_status_minggu_update
+        BEFORE UPDATE ON real_jadwal
+        FOR EACH ROW
+        BEGIN
+            IF LOCATE(',', NEW.Minggu) > 0 THEN
+                SET NEW.status_minggu = 17;
+            END IF;
+        END
+        """)
+
+        mysql.connection.commit()
+        cur.close()
+        print("Triggers created or already existed")
+
+
+
+# Repeat for other days if necessary.
+
+
 if __name__ == "__main__":
     # Create Table
     # create_table_dosen()
@@ -1098,9 +1344,8 @@ if __name__ == "__main__":
     # create_booking()
     # create_jam()
     # create_status()
-    # create_real_table_jadwal()
     # create_status_booking()
-
+    # create_real_table_jadwal()
 
     # insert_data_jadwal()
     # insert_data_status()
@@ -1112,6 +1357,10 @@ if __name__ == "__main__":
     # insert_data_sks_dosen_fpmipa()
     # insert_data_jam_jadwal()
     # insert_data_status_booking()
+    insert_real_data_jadwal_tes()
 
     # create_triggers()
-    create_triggers_sks_dosen_fpmipa()
+    # create_triggers_sks_dosen_fpmipa()
+
+    # create_triggers_jadwal_status()
+    # create_triggers_jadwal_status()
