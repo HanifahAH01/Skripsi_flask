@@ -390,69 +390,69 @@ def insert_data_jadwal():
         cur.close()
     print("Data Jadwal Berhasil Dimasukkan")
 
-def insert_real_data_jadwal(file_name="app/static/json/hasil_jadwal.json", limit=886):
-    with app.app_context():
-        if os.path.exists(file_name):
-            with open(file_name, 'r') as file:
-                data = json.load(file)
+# def insert_real_data_jadwal(file_name="app/static/json/hasil_jadwal.json", limit=886):
+#     with app.app_context():
+#         if os.path.exists(file_name):
+#             with open(file_name, 'r') as file:
+#                 data = json.load(file)
 
-            cur = mysql.connection.cursor()
-            try:
-                cur.execute("START TRANSACTION")  # Start transaction
+#             cur = mysql.connection.cursor()
+#             try:
+#                 cur.execute("START TRANSACTION")  # Start transaction
 
-                # Get the current count of data in the table
-                cur.execute("SELECT COUNT(*) FROM real_jadwal")
-                current_count = cur.fetchone()[0]
+#                 # Get the current count of data in the table
+#                 cur.execute("SELECT COUNT(*) FROM real_jadwal")
+#                 current_count = cur.fetchone()[0]
 
-                count = 0  # Variable to count the number of inserted data
+#                 count = 0  # Variable to count the number of inserted data
 
-                for key, item in data.items():
-                    span = item['Span']
-                    senin = item['Senin']
-                    selasa = item['Selasa']
-                    rabu = item['Rabu']
-                    kamis = item['Kamis']
-                    jumat = item['Jumat']
-                    sabtu = item['Sabtu']
-                    minggu = item['Minggu']
+#                 for key, item in data.items():
+#                     span = item['Span']
+#                     senin = item['Senin']
+#                     selasa = item['Selasa']
+#                     rabu = item['Rabu']
+#                     kamis = item['Kamis']
+#                     jumat = item['Jumat']
+#                     sabtu = item['Sabtu']
+#                     minggu = item['Minggu']
 
-                    # Check if data insertion will exceed the limit
-                    if current_count + count >= limit:
-                        print("Data insertion limit reached.")
-                        break
+#                     # Check if data insertion will exceed the limit
+#                     if current_count + count >= limit:
+#                         print("Data insertion limit reached.")
+#                         break
 
-                    # Check if data already exists
-                    cur.execute("""
-                        SELECT * FROM real_jadwal 
-                        WHERE Span = %s AND Senin = %s AND Selasa = %s 
-                        AND Rabu = %s AND Kamis = %s AND Jumat = %s 
-                        AND Sabtu = %s AND Minggu = %s
-                    """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
-                    existing_data = cur.fetchone()
+#                     # Check if data already exists
+#                     cur.execute("""
+#                         SELECT * FROM real_jadwal 
+#                         WHERE Span = %s AND Senin = %s AND Selasa = %s 
+#                         AND Rabu = %s AND Kamis = %s AND Jumat = %s 
+#                         AND Sabtu = %s AND Minggu = %s
+#                     """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
+#                     existing_data = cur.fetchone()
 
-                    if existing_data:
-                        # If data already exists, skip
-                        print(f"Data for {span} already exists, skipping.")
-                    else:
-                        # If data does not exist, insert
-                        cur.execute("""
-                            INSERT INTO real_jadwal 
-                            (Span, Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu) 
-                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-                        """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
-                        count += 1  # Increment the count of inserted data
+#                     if existing_data:
+#                         # If data already exists, skip
+#                         print(f"Data for {span} already exists, skipping.")
+#                     else:
+#                         # If data does not exist, insert
+#                         cur.execute("""
+#                             INSERT INTO real_jadwal 
+#                             (Span, Senin, Selasa, Rabu, Kamis, Jumat, Sabtu, Minggu) 
+#                             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+#                         """, (span, senin, selasa, rabu, kamis, jumat, sabtu, minggu))
+#                         count += 1  # Increment the count of inserted data
 
-                mysql.connection.commit()  # Commit transaction
-                print("Data from", file_name, "has been inserted into the Jadwal table.")
-            except Exception as e:
-                mysql.connection.rollback()  # Rollback transaction in case of error
-                print("Error:", e)
-            finally:
-                cur.close()
-        else:
-            print("File", file_name, "not found")
+#                 mysql.connection.commit()  # Commit transaction
+#                 print("Data from", file_name, "has been inserted into the Jadwal table.")
+#             except Exception as e:
+#                 mysql.connection.rollback()  # Rollback transaction in case of error
+#                 print("Error:", e)
+#             finally:
+#                 cur.close()
+#         else:
+#             print("File", file_name, "not found")
 
-def insert_real_data_jadwal_tes(file_name="app/static/json/tes.json", limit=5000):
+def insert_real_data_jadwal(file_name="app/static/json/jadwaltotal.json", limit=5000):
     with app.app_context():
         if os.path.exists(file_name):
             with open(file_name, 'r') as file:
@@ -521,8 +521,6 @@ def insert_real_data_jadwal_tes(file_name="app/static/json/tes.json", limit=5000
                 cur.close()
         else:
             print("File", file_name, "not found")
-
-
 
 def insert_table_heatmap(file_name='app/static/json/total_jadwal.json', limit=88):
     with app.app_context():
@@ -1326,11 +1324,22 @@ def create_triggers_jadwal_status():
         print("Triggers created or already existed")
 
 
-
-# Repeat for other days if necessary.
-
+def truncate_real_jadwal():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("TRUNCATE TABLE real_jadwal")
+            mysql.connection.commit()
+            print("Table real_jadwal has been truncated.")
+        except Exception as e:
+            mysql.connection.rollback()
+            print(f"Error truncating table real_jadwal: {e}")
+        finally:
+            cur.close()
 
 if __name__ == "__main__":
+    truncate_real_jadwal()
+
     # Create Table
     # create_table_dosen()
     # create_table_kapasitas_ruangan()
@@ -1349,7 +1358,7 @@ if __name__ == "__main__":
 
     # insert_data_jadwal()
     # insert_data_status()
-    # insert_real_data_jadwal()
+    insert_real_data_jadwal()
     # insert_data_dosen()
     # insert_data_kapasitas_ruangan()
     # insert_table_heatmap()
@@ -1357,7 +1366,7 @@ if __name__ == "__main__":
     # insert_data_sks_dosen_fpmipa()
     # insert_data_jam_jadwal()
     # insert_data_status_booking()
-    insert_real_data_jadwal_tes()
+    # insert_real_data_jadwal_tes()
 
     # create_triggers()
     # create_triggers_sks_dosen_fpmipa()

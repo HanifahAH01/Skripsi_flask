@@ -30,26 +30,34 @@ class Jadwal_json:
             content = target_span.find_next("table", class_="table is-hoverable")
             if content:
                 rows = content.find_all("tr")[1:]
-                for row in rows:
+                for idx, row in enumerate(rows, start=1):
                     columns = row.find_all("td")
                     if columns and len(columns) >= 8:
-                        data_dict = self.extract_row_data(span_content, columns)
+                        data_dict = self.extract_row_data(columns, span_content, idx)
                         key = f"{span_content} - {columns[0].get_text(strip=True)}"
                         jadwal_dict[key] = data_dict
                         self.update_total_per_span(total_per_span, span_content, data_dict)
-        
+
         return jadwal_dict, total_per_span
 
-    def extract_row_data(self, span_content, columns):
-        return {
+    def extract_row_data(self, columns, span_content, idx):
+        status_value = str(idx)
+        row_data = {
             "Span": span_content,
             "Senin": columns[1].get_text(strip=True),
+            "status_senin": status_value if columns[1].get_text(strip=True) else "0",
             "Selasa": columns[2].get_text(strip=True),
+            "status_selasa": status_value if columns[2].get_text(strip=True) else "0",
             "Rabu": columns[3].get_text(strip=True),
+            "status_rabu": status_value if columns[3].get_text(strip=True) else "0",
             "Kamis": columns[4].get_text(strip=True),
+            "status_kamis": status_value if columns[4].get_text(strip=True) else "0",
             "Jumat": columns[5].get_text(strip=True),
+            "status_jumat": status_value if columns[5].get_text(strip=True) else "0",
             "Sabtu": columns[6].get_text(strip=True),
+            "status_sabtu": status_value if columns[6].get_text(strip=True) else "0",
             "Minggu": columns[7].get_text(strip=True),
+            "status_minggu": status_value if columns[7].get_text(strip=True) else "0",
             "Total Senin": 1 if "," in columns[1].get_text(strip=True) else 0,
             "Total Selasa": 1 if "," in columns[2].get_text(strip=True) else 0,
             "Total Rabu": 1 if "," in columns[3].get_text(strip=True) else 0,
@@ -58,6 +66,7 @@ class Jadwal_json:
             "Total Sabtu": 1 if "," in columns[6].get_text(strip=True) else 0,
             "Total Minggu": 1 if "," in columns[7].get_text(strip=True) else 0
         }
+        return row_data
 
     def update_total_per_span(self, total_per_span, span_content, data_dict):
         if span_content not in total_per_span:
@@ -110,7 +119,7 @@ class Jadwal_json:
         with open(file_name, 'w') as file:
             json.dump(data, file, indent=4)
 
-    def get_data_jadwal(self, file_name="app/static/json/jadwaltotal.json", backup_file_name="app/static/json/jadwal_backup_total.json", total_file_name="app/static/json/total_jadwal.json", overall_file_name="app/static/json/overall_totals.json"):
+    def get_data_jadwal(self, file_name="app/static/json/jadwaltotal.json", backup_file_name="app/static/json/jadwal_backup_total.json", total_file_name="app/static/json/total_jadwal.json", overall_file_name="app/static/json/overall_totals+1.json"):
         try:
             html_content = self.fetch_html()
             soup = self.parse_html(html_content)
