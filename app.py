@@ -6,7 +6,7 @@ from collections import defaultdict
 from flask_mysqldb import MySQL
 from Dosen import DataDosen
 from Jadwal import Jadwal
-from db import create_table_dosen,create_real_table_jadwal,create_table_kapasitas_ruangan,create_table_heatmap, insert_data_dosen, insert_data_kapasitas_ruangan, insert_real_data_jadwal, insert_table_heatmap
+from db import truncate_real_jadwal, insert_real_data_jadwal
 from heatmap import generate_plot
 import mysql.connector
 from kapasitas import Kapasitas
@@ -339,6 +339,14 @@ def run_jadwal():
 def run_data_jadwal():
     try:
         insert_real_data_jadwal()
+        return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
+    except Exception as e:
+        return jsonify({'error': str(e)})
+    
+@app.route('/run-empty-jadwal', methods=['POST'])
+def run_empty_jadwal():
+    try:
+        truncate_real_jadwal()
         return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
     except Exception as e:
         return jsonify({'error': str(e)})
