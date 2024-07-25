@@ -478,12 +478,14 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <div class="d-flex align-items-center">
+                  <div class="d-flex align-items-center justify-content-between">
                     <h4 class="card-title">Jadwal</h4>
-                    <button class="btn btn-primary btn-round ms-auto" onclick="runDataJadwal()">Run Insert Jadwal
-                    </button>
-                    <button class="btn btn-primary btn-round ms-auto" onclick="runemptyJadwal()">Run TRUNCATE Jadwal
-                    </button>
+                    <div class="d-flex justify-content-end">
+                      <button class="btn btn-primary btn-round ms-2" onclick="runDataJadwal()">Run Sinkron
+                        Jadwal</button>
+                      <button class="btn btn-primary btn-round ms-2" onclick="runemptyJadwal()">Run TRUNCATE
+                        Jadwal</button>
+                    </div>
                   </div>
                 </div>
                 <div class="card-body">
