@@ -10,6 +10,11 @@ class Jadwal:
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
         }
+        self.program_studi_list = [
+            "Ilmu Komputer", "Pendidikan Ilmu Komputer", "Matematika", "Pendidikan Matematika",
+            "Fisika", "Pendidikan Fisika", "International Program on Science Education",
+            "Pendidikan Ilmu Pengetahuan Alam", "Kimia", "Pendidikan Kimia", "Biologi", "Pendidikan Biologi"
+        ]
 
     def fetch_html(self):
         response = requests.get(self.url, headers=self.headers)
@@ -58,6 +63,26 @@ class Jadwal:
         }
         return row_data
 
+    def count_program_studi(self, jadwal):
+        program_studi_list = []
+        for key, value in jadwal.items():
+            span = value.get("Span", "")
+            for day in ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]:
+                schedule = value.get(day, "")
+                if schedule:
+                    for program_studi in self.program_studi_list:
+                        if program_studi in schedule:
+                            program_studi_entry = next((item for item in program_studi_list if item["Span"] == span and item["Program Studi"] == program_studi), None)
+                            if program_studi_entry:
+                                program_studi_entry["Jumlah"] += 1
+                            else:
+                                program_studi_list.append({
+                                    "Span": span,
+                                    "Program Studi": program_studi,
+                                    "Jumlah": 1
+                                })
+        return program_studi_list
+
     def save_json(self, data, file_name, backup_file_name):
         if os.path.exists(file_name):
             shutil.copyfile(file_name, backup_file_name)
@@ -71,6 +96,11 @@ class Jadwal:
             jadwal_dict = self.extract_data(soup)
             self.save_json(jadwal_dict, file_name, backup_file_name)
             print("Data Jadwal Berhasil Di-generate")
+            
+            program_studi_count = self.count_program_studi(jadwal_dict)
+            program_studi_count_file = "app/static/json/program_studi_count.json"
+            self.save_json(program_studi_count, program_studi_count_file, program_studi_count_file.replace(".json", "_backup.json"))
+            print("Jumlah Program Studi berhasil disimpan:", program_studi_count_file)
         except requests.RequestException as e:
             print(f"Terjadi kesalahan pada saat melakukan request: {e}")
         except ValueError as e:

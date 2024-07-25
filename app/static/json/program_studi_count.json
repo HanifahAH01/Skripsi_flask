@@ -1,0 +1,1477 @@
+[
+    {
+        "Span": "1. 04.4B.01.005 - Lab Pembelajaran Kimia B 106",
+        "Program Studi": "Kimia",
+        "Jumlah": 8
+    },
+    {
+        "Span": "1. 04.4B.01.005 - Lab Pembelajaran Kimia B 106",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 8
+    },
+    {
+        "Span": "2. 04.4A.03.013 - Lab Komputer Matematika 1 E 305",
+        "Program Studi": "Matematika",
+        "Jumlah": 11
+    },
+    {
+        "Span": "2. 04.4A.03.013 - Lab Komputer Matematika 1 E 305",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 4
+    },
+    {
+        "Span": "3. 04.4A.03.014 - Lab Komputer Matematika 2 E 306",
+        "Program Studi": "Matematika",
+        "Jumlah": 10
+    },
+    {
+        "Span": "3. 04.4A.03.014 - Lab Komputer Matematika 2 E 306",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "4. 04.4C.01.004 - Lab Komputer Matematika 3 C 104",
+        "Program Studi": "Matematika",
+        "Jumlah": 8
+    },
+    {
+        "Span": "4. 04.4C.01.004 - Lab Komputer Matematika 3 C 104",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "6. 04.4C.02.002 - Lab Kecerdasan Artifisial C 202",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "6. 04.4C.02.002 - Lab Kecerdasan Artifisial C 202",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "7. 04.4C.02.004 - Lab. Sistem Jaringan dan Teknik Komputer C 203",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "7. 04.4C.02.004 - Lab. Sistem Jaringan dan Teknik Komputer C 203",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "7. 04.4C.02.004 - Lab. Sistem Jaringan dan Teknik Komputer C 203",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 1
+    },
+    {
+        "Span": "8. 04.4C.02.005 - Lab Umum C 204",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "8. 04.4C.02.005 - Lab Umum C 204",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "11. 04.4C.02.011 - Lab Rekayasa Perangkat Lunak dan Manajemen Invormasi C 207",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "11. 04.4C.02.011 - Lab Rekayasa Perangkat Lunak dan Manajemen Invormasi C 207",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "12. 04.4C.03.007 - Lab Multimedia Ilkom C 306",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 4
+    },
+    {
+        "Span": "12. 04.4C.03.007 - Lab Multimedia Ilkom C 306",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "12. 04.4C.03.007 - Lab Multimedia Ilkom C 306",
+        "Program Studi": "Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "13. 04.4A.01.006 - Lab Struktur Tumbuhan N - 105",
+        "Program Studi": "Biologi",
+        "Jumlah": 11
+    },
+    {
+        "Span": "13. 04.4A.01.006 - Lab Struktur Tumbuhan N - 105",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 8
+    },
+    {
+        "Span": "15. 04.4A.01.013 - Lab Fisiologi N 118",
+        "Program Studi": "Biologi",
+        "Jumlah": 4
+    },
+    {
+        "Span": "15. 04.4A.01.013 - Lab Fisiologi N 118",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 4
+    },
+    {
+        "Span": "17. 04.4A.02.008 - Lab Struktur Hewan N 205",
+        "Program Studi": "Biologi",
+        "Jumlah": 7
+    },
+    {
+        "Span": "17. 04.4A.02.008 - Lab Struktur Hewan N 205",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 4
+    },
+    {
+        "Span": "18. 04.4A.02.010 - Lab Microbiologi N 210",
+        "Program Studi": "Biologi",
+        "Jumlah": 8
+    },
+    {
+        "Span": "18. 04.4A.02.010 - Lab Microbiologi N 210",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 4
+    },
+    {
+        "Span": "19. 04.4A.02.016 - Lab Bumi Antariksa N 220",
+        "Program Studi": "Fisika",
+        "Jumlah": 13
+    },
+    {
+        "Span": "19. 04.4A.02.016 - Lab Bumi Antariksa N 220",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "20. 04.4A.03.007 - Lab Elektronika N 305",
+        "Program Studi": "Fisika",
+        "Jumlah": 6
+    },
+    {
+        "Span": "20. 04.4A.03.007 - Lab Elektronika N 305",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "21. 04.4A.03.008 - Lab Fisika Dasar N 309",
+        "Program Studi": "Fisika",
+        "Jumlah": 7
+    },
+    {
+        "Span": "21. 04.4A.03.008 - Lab Fisika Dasar N 309",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "22. 04.4A.03.009 - Lab Fisika Lanjut N 313",
+        "Program Studi": "Fisika",
+        "Jumlah": 4
+    },
+    {
+        "Span": "22. 04.4A.03.009 - Lab Fisika Lanjut N 313",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "23. 04.4A.03.010 - Lab Fisika Material N 318",
+        "Program Studi": "Fisika",
+        "Jumlah": 4
+    },
+    {
+        "Span": "23. 04.4A.03.010 - Lab Fisika Material N 318",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "24. 04.4A.03.015 - Lab Pengajaran Matematika E 302",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "25. 04.4A.04.006 - Lab Kimia dasar dan Analiktik N 405",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "25. 04.4A.04.006 - Lab Kimia dasar dan Analiktik N 405",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "26. 04.4A.04.008 - Lab Proses Belajar dan Mengajar Kimia N 410",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "26. 04.4A.04.008 - Lab Proses Belajar dan Mengajar Kimia N 410",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "27. 04.4A.05.006 - Lab Kimia Fisik Dan Anorganik N 505",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "27. 04.4A.05.006 - Lab Kimia Fisik Dan Anorganik N 505",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "28. 04.4A.05.008 - Lab Kimia Organik Dan Bio KIMIA N 509",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "28. 04.4A.05.008 - Lab Kimia Organik Dan Bio KIMIA N 509",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "29. 04.4A.05.014 - Lab Kimia Instrumen N 519",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "29. 04.4A.05.014 - Lab Kimia Instrumen N 519",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "30. 04.4B.01.010 - Lab Pembelajaran Fisika B 108",
+        "Program Studi": "Fisika",
+        "Jumlah": 7
+    },
+    {
+        "Span": "30. 04.4B.01.010 - Lab Pembelajaran Fisika B 108",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 7
+    },
+    {
+        "Span": "31. 04.4B.02.001 - Lab. Biologi IPSE B 201",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 3
+    },
+    {
+        "Span": "32. 04.4B.02.006 - Lab Physics Ipse B - 207",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 6
+    },
+    {
+        "Span": "33. 04.4B.02.010 - Lab Multimedia Ipse B 208",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 5
+    },
+    {
+        "Span": "34. 04.4B.02.014 - Lab Chemistry ipse B 213",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 3
+    },
+    {
+        "Span": "41. 04.4B.04.005 - Lab Instrumentasi Fisika B 407",
+        "Program Studi": "Fisika",
+        "Jumlah": 5
+    },
+    {
+        "Span": "41. 04.4B.04.005 - Lab Instrumentasi Fisika B 407",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "42. 04.4B.04.006 - Lab Komputasi Fisika B 408",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "43. 04.4B.04.010 - Lab Rekayasa Teknologi Fisika B 410",
+        "Program Studi": "Fisika",
+        "Jumlah": 4
+    },
+    {
+        "Span": "43. 04.4B.04.010 - Lab Rekayasa Teknologi Fisika B 410",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "47. 04.4C.03.013 - Lab Ekologi",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "48. 04.4D.01.001 - Lab Ekologi",
+        "Program Studi": "Biologi",
+        "Jumlah": 5
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 4
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Biologi",
+        "Jumlah": 5
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+        "Program Studi": "Matematika",
+        "Jumlah": 9
+    },
+    {
+        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 7
+    },
+    {
+        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+        "Program Studi": "Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 4
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 4
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+        "Program Studi": "Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 6
+    },
+    {
+        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+        "Program Studi": "Biologi",
+        "Jumlah": 3
+    },
+    {
+        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 3
+    },
+    {
+        "Span": "58. 04.4B.01.015 - Ruang Kelas B 113 S2",
+        "Program Studi": "Matematika",
+        "Jumlah": 9
+    },
+    {
+        "Span": "58. 04.4B.01.015 - Ruang Kelas B 113 S2",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 9
+    },
+    {
+        "Span": "58. 04.4B.01.015 - Ruang Kelas B 113 S2",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 2
+    },
+    {
+        "Span": "58. 04.4B.01.015 - Ruang Kelas B 113 S2",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "58. 04.4B.01.015 - Ruang Kelas B 113 S2",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "59. 04.4B.01.016 - Ruang Kelas B 114 S2",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "59. 04.4B.01.016 - Ruang Kelas B 114 S2",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "59. 04.4B.01.016 - Ruang Kelas B 114 S2",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 3
+    },
+    {
+        "Span": "60. 04.4B.01.017 - Ruang Kelas B 115 S2",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "60. 04.4B.01.017 - Ruang Kelas B 115 S2",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "60. 04.4B.01.017 - Ruang Kelas B 115 S2",
+        "Program Studi": "Matematika",
+        "Jumlah": 13
+    },
+    {
+        "Span": "60. 04.4B.01.017 - Ruang Kelas B 115 S2",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 13
+    },
+    {
+        "Span": "60. 04.4B.01.017 - Ruang Kelas B 115 S2",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 2
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Biologi",
+        "Jumlah": 5
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 3
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "61. 04.4B.02.003 - Ruang Kelas B - 203",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Biologi",
+        "Jumlah": 3
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 6
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "62. 04.4B.02.005 - Ruang Kelas B - 205",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "64. 04.4B.02.012 - Ruang Kelas B 210",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 1
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Matematika",
+        "Jumlah": 7
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "65. 04.4B.03.001 - Ruang Kelas B - 301",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Matematika",
+        "Jumlah": 4
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "66. 04.4B.03.003 - Ruang Kelas B - 303",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 3
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "67. 04.4B.03.004 - Ruang Kelas B - 304",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Matematika",
+        "Jumlah": 6
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "68. 04.4B.03.005 - Ruang Kelas B - 305",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 5
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "69. 04.4B.04.004 - Ruang Kelas B - 405",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Kimia",
+        "Jumlah": 4
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "70. 04.4C.01.002 - Ruang Kelas C - 102 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 2
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "71. 04.4C.01.003 - Ruang Kelas C - 103 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Matematika",
+        "Jumlah": 5
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 5
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 1
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Biologi",
+        "Jumlah": 3
+    },
+    {
+        "Span": "72. 04.4C.01.009 - Ruang Kelas C - 105 S2 / S3",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 3
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 2
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "73. 04.4C.01.010 - Ruang Kelas C - 106 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "74. 04.4C.01.011 - Ruang Kelas C - 107 S2 / S3",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "74. 04.4C.01.011 - Ruang Kelas C - 107 S2 / S3",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "74. 04.4C.01.011 - Ruang Kelas C - 107 S2 / S3",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 4
+    },
+    {
+        "Span": "74. 04.4C.01.011 - Ruang Kelas C - 107 S2 / S3",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "74. 04.4C.01.011 - Ruang Kelas C - 107 S2 / S3",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Matematika",
+        "Jumlah": 6
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "75. 04.4C.03.001 - Ruang Kelas C - 301",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "76. 04.4C.03.002 - Ruang Kelas C - 302",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "76. 04.4C.03.002 - Ruang Kelas C - 302",
+        "Program Studi": "Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "76. 04.4C.03.002 - Ruang Kelas C - 302",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "76. 04.4C.03.002 - Ruang Kelas C - 302",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "76. 04.4C.03.002 - Ruang Kelas C - 302",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "77. 04.4C.03.003 - Ruang Kelas C - 303",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 4
+    },
+    {
+        "Span": "77. 04.4C.03.003 - Ruang Kelas C - 303",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 3
+    },
+    {
+        "Span": "77. 04.4C.03.003 - Ruang Kelas C - 303",
+        "Program Studi": "Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "77. 04.4C.03.003 - Ruang Kelas C - 303",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "77. 04.4C.03.003 - Ruang Kelas C - 303",
+        "Program Studi": "Kimia",
+        "Jumlah": 3
+    },
+    {
+        "Span": "77. 04.4C.03.003 - Ruang Kelas C - 303",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Fisika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Pendidikan Ilmu Pengetahuan Alam",
+        "Jumlah": 1
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 5
+    },
+    {
+        "Span": "78. 04.4C.03.004 - Ruang Kelas C - 304",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 3
+    },
+    {
+        "Span": "79. 04.4C.03.006 - Ruang Kelas C - 305",
+        "Program Studi": "Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "79. 04.4C.03.006 - Ruang Kelas C - 305",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "79. 04.4C.03.006 - Ruang Kelas C - 305",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "79. 04.4C.03.006 - Ruang Kelas C - 305",
+        "Program Studi": "Matematika",
+        "Jumlah": 3
+    },
+    {
+        "Span": "79. 04.4C.03.006 - Ruang Kelas C - 305",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 5
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 4
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Kimia",
+        "Jumlah": 2
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "80. 04.4C.03.008 - Ruang Kelas C - 307",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Pendidikan Biologi",
+        "Jumlah": 1
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 13
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Matematika",
+        "Jumlah": 4
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 2
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 5
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "81. 04.4C.03.009 - Ruang Kelas C - 308",
+        "Program Studi": "Pendidikan Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "82. 04.4C.03.010 - Ruang Kelas C - 309",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 5
+    },
+    {
+        "Span": "82. 04.4C.03.010 - Ruang Kelas C - 309",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 1
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Biologi",
+        "Jumlah": 2
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Ilmu Komputer",
+        "Jumlah": 5
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Pendidikan Ilmu Komputer",
+        "Jumlah": 2
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Pendidikan Matematika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Fisika",
+        "Jumlah": 1
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Kimia",
+        "Jumlah": 1
+    },
+    {
+        "Span": "83. 04.4C.03.012 - Ruang Kelas C - 309",
+        "Program Studi": "Pendidikan Kimia",
+        "Jumlah": 1
+    }
+]

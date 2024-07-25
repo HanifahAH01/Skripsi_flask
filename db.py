@@ -311,6 +311,21 @@ def create_status_booking():
         cur.close()
         print("Tabel status booking telah dibuat")
 
+def create_program_studi_count_table():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS kelas_prodi (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                span VARCHAR(255) NOT NULL,
+                program_studi VARCHAR(255) NOT NULL,
+                jumlah INT NOT NULL
+            )
+        """)
+        mysql.connection.commit()
+        cur.close()
+        print("Tabel program_studi_count telah dibuat")
+
 # --------------------------------------#
 # Fungsi Fungsi untuk menginputkan Data #
 # --------------------------------------#
@@ -727,6 +742,34 @@ def insert_data_status_booking():
     
     print("Data status Jadwal Berhasil Dimasukkan")
 
+def insert_program_studi_count_data():
+    with app.app_context():
+        # Buka file JSON program_studi_count.json
+        with open('app/static/json/program_studi_count.json', 'r') as file:
+            data = json.load(file)
+
+        # Koneksi ke database MySQL
+        cur = mysql.connection.cursor()
+
+        # Iterasi setiap item dalam data JSON
+        for item in data:
+            span = item.get("Span")
+            program_studi = item.get("Program Studi")
+            jumlah = item.get("Jumlah")
+
+            # Lakukan operasi INSERT ke dalam tabel program_studi_count
+            cur.execute("""
+                INSERT INTO kelas_prodi (span, program_studi, jumlah) 
+                VALUES (%s, %s, %s)
+            """, (span, program_studi, jumlah))
+        
+        # Commit perubahan ke database
+        mysql.connection.commit()
+
+        # Tutup kursor dan cetak pesan berhasil
+        cur.close()
+    
+    print("Data Program Studi Count berhasil dimasukkan")
 
 
 # --------------------------------------#
@@ -1338,7 +1381,7 @@ def truncate_real_jadwal():
             cur.close()
 
 if __name__ == "__main__":
-    truncate_real_jadwal()
+    # truncate_real_jadwal()
 
     # Create Table
     # create_table_dosen()
@@ -1355,10 +1398,12 @@ if __name__ == "__main__":
     # create_status()
     # create_status_booking()
     # create_real_table_jadwal()
+    # create_program_studi_count_table()
+    insert_program_studi_count_data()
 
     # insert_data_jadwal()
     # insert_data_status()
-    insert_real_data_jadwal()
+    # insert_real_data_jadwal()
     # insert_data_dosen()
     # insert_data_kapasitas_ruangan()
     # insert_table_heatmap()
