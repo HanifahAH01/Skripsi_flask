@@ -56,101 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/kapasitas_fpmipa_a";
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var responseData = JSON.parse(this.responseText);
-            var Gedung = responseData.kapasitas_list.map(function (elem) {
-                return elem.Gedung;
-            });
-
-            // Ekstrak nama ruangan dan kapasitas menggunakan flatMap
-            var ruanganData = responseData.kapasitas_list.flatMap(function (elem) {
-                return elem.Ruangan.map(function (ruangan) {
-                    return {
-                        Nama_Ruangan: ruangan.Nama_Ruangan,
-                        Kapasitas: ruangan.Kapasitas
-                    };
-                });
-            });
-
-            // Urutkan berdasarkan kapasitas dari yang terbesar ke yang terkecil
-            ruanganData.sort(function (a, b) {
-                return b.Kapasitas - a.Kapasitas;
-            });
-
-            // Pisahkan kembali Nama_Ruangan dan Kapasitas setelah diurutkan
-            var sortedNama_Ruangan = ruanganData.map(function (ruangan) {
-                return ruangan.Nama_Ruangan;
-            });
-
-            var sortedKapasitas = ruanganData.map(function (ruangan) {
-                return ruangan.Kapasitas;
-            });
-
-            // Tentukan warna berdasarkan nilai kapasitas
-            function getColor(value) {
-                if (value >= 1 && value <= 20) {
-                    return 'rgb(10, 58, 252)';
-                } else if (value >= 21 && value <= 40) {
-                    return 'rgb(14, 104, 239)';
-                } else if (value >= 41 && value <= 60) {
-                    return 'rgb(0, 153, 255)';
-                } else if (value >= 61 && value <= 80) {
-                    return 'rgb(0, 204, 255)';
-                } else if (value >= 81 && value >= 100) {
-                    return 'rgb(0, 255, 255)';
-                }
-            }
-
-            var backgroundColors = sortedKapasitas.map(getColor);
-            var borderColors = sortedKapasitas.map(getColor); // Sama dengan background color
-
-            // setup myChart 1
-            const data = {
-                labels: sortedNama_Ruangan,
-                datasets: [{
-                    label: Gedung[0],
-                    data: sortedKapasitas,
-                    backgroundColor: backgroundColors, // Warna latar belakang
-                    borderColor: borderColors, // Warna border
-                    borderWidth: 1
-                }]
-            };
-
-            // config 
-            const config = {
-                type: 'bar',
-                data: data,
-                options: {
-                    indexAxis: 'y', // Membuat tulisan menjadi horizontal
-                    scales: {
-                        x: {
-                            beginAtZero: true
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true
-                        }
-                    }
-                }
-            };
-
-            // render init block
-            const myChart4 = new Chart(
-                document.getElementById('myChart4'),
-                config
-            );
-        }
-    }
-});
-
-
 // My Chart 4 ( Diagram Bar Kapasitas Gedung B )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
@@ -188,23 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return ruangan.Kapasitas;
             });
 
-            // Tentukan warna berdasarkan nilai kapasitas
-            function getColor(value) {
-                if (value >= 1 && value <= 20) {
-                    return 'rgb(169, 66, 6)';
-                } else if (value >= 21 && value <= 40) {
-                    return 'rgb(196, 80, 13)';
-                } else if (value >= 41 && value <= 60) {
-                    return 'rgb(229, 102, 28)';
-                } else if (value >= 61 && value <= 80) {
-                    return 'rgb(255, 132, 61)';
-                } else if (value >= 81 && value >= 100) {
-                    return 'rgb(246, 139, 77)';
-                }
-            }
-
-            var backgroundColors = sortedKapasitas.map(getColor);
-            var borderColors = sortedKapasitas.map(getColor); // Sama dengan background color
+            // Warna tetap untuk backgroundColor dan borderColor
+            var color = 'rgb(140, 55, 6)';
 
             // setup myChart 1
             const data = {
@@ -212,8 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 datasets: [{
                     label: Gedung[0],
                     data: sortedKapasitas,
-                    backgroundColor: backgroundColors, // Warna latar belakang
-                    borderColor: borderColors, // Warna border
+                    backgroundColor: color, // Warna latar belakang
+                    borderColor: color, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -245,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-
 
 // My Chart 6 ( Diagram Bar Kapasitas Gedung c )
 document.addEventListener("DOMContentLoaded", function () {
@@ -284,23 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 return ruangan.Kapasitas;
             });
 
-            // Tentukan warna berdasarkan nilai kapasitas
-            function getColor(value) {
-                if (value >= 1 && value <= 20) {
-                    return 'rgb(57, 104, 55)';
-                } else if (value >= 21 && value <= 40) {
-                    return 'rgb(73, 123, 69)';
-                } else if (value >= 41 && value <= 60) {
-                    return 'rgb(94, 137, 90)';
-                } else if (value >= 61 && value <= 80) {
-                    return 'rgb(121, 174, 114)';
-                } else if (value >= 81 && value >= 100) {
-                    return 'rgb(155, 194, 148)';
-                }
-            }
-
-            var backgroundColors = sortedKapasitas.map(getColor);
-            var borderColors = sortedKapasitas.map(getColor); // Sama dengan background color
+            // Warna tetap untuk backgroundColor dan borderColor
+            var color = 'rgb(25, 83, 26)';
 
             // setup myChart 1
             const data = {
@@ -308,8 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 datasets: [{
                     label: Gedung[0],
                     data: sortedKapasitas,
-                    backgroundColor: backgroundColors, // Warna latar belakang
-                    borderColor: borderColors, // Warna border
+                    backgroundColor: color, // Warna latar belakang
+                    borderColor: color, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -343,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
 // My Chart 7 ( Diagram Bar Kapasitas Bangunan Praktek Botani )
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
@@ -369,23 +244,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
-            // Tentukan warna berdasarkan nilai kapasitas
-            function getColor(value) {
-                if (value >= 1 && value <= 20) {
-                    return 'rgb(255, 239, 205)';
-                } else if (value >= 21 && value <= 40) {
-                    return 'rgb(237, 206, 139)';
-                } else if (value >= 41 && value <= 60) {
-                    return 'rgb(250, 207, 120)';
-                } else if (value >= 61 && value <= 80) {
-                    return 'rgb(240, 193, 93)';
-                } else if (value >= 81 && value >= 100) {
-                    return 'rgb(237, 182, 0)';
-                }
-            }
-
-            var backgroundColors = Kapasitas.map(getColor);
-            var borderColors = Kapasitas.map(getColor); // Sama dengan background color
+            // Warna tetap untuk backgroundColor dan borderColor
+            var color = 'rgb(255, 204, 0)';
 
             // setup myChart 1
             const data = {
@@ -393,8 +253,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 datasets: [{
                     label: Gedung[0],
                     data: Kapasitas,
-                    backgroundColor: backgroundColors, // Warna latar belakang
-                    borderColor: borderColors,
+                    backgroundColor: color, // Warna latar belakang
+                    borderColor: color, // Warna border
                     borderWidth: 1
                 }]
             };
@@ -412,4 +272,159 @@ document.addEventListener("DOMContentLoaded", function () {
             );
         }
     }
+});
+
+// # ******************************************** #
+// #                 Function                     #
+// #          Ascending & Descending              #
+// # ******************************************** #
+
+document.addEventListener("DOMContentLoaded", function () {
+    var charts = ['kapasitas_fpmipa_a', 'kapasitas_fpmipa_b', 'kapasitas_fpmipa_c', 'kapasitas_fpmipa_lab'];
+    var chartElements = ['myChart4', 'myChart5', 'myChart6', 'myChart7'];
+    var chartInstances = [];
+    var chartColors = [
+        'rgb(0, 0, 255)',     // myChart4
+        'rgb(140, 55, 6)',    // myChart5
+        'rgb(25, 83, 26)',    // myChart6
+        'rgb(255, 204, 0)'    // myChart7
+    ];
+
+    function fetchData(url, callback) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var responseData = JSON.parse(this.responseText);
+                callback(responseData);
+            }
+        };
+    }
+
+    function getColor(value, index) {
+        return chartColors[index];
+    }
+
+    function updateChart(order) {
+        chartInstances.forEach(function (instance, index) {
+            fetchData('http://127.0.0.1:54587/' + charts[index], function (responseData) {
+                var Gedung = responseData.kapasitas_list.map(function (elem) {
+                    return elem.Gedung;
+                });
+
+                var ruanganData = responseData.kapasitas_list.flatMap(function (elem) {
+                    return elem.Ruangan.map(function (ruangan) {
+                        return {
+                            Nama_Ruangan: ruangan.Nama_Ruangan,
+                            Kapasitas: ruangan.Kapasitas
+                        };
+                    });
+                });
+
+                ruanganData.sort(function (a, b) {
+                    return order === "asc" ? a.Kapasitas - b.Kapasitas : b.Kapasitas - a.Kapasitas;
+                });
+
+                var sortedNama_Ruangan = ruanganData.map(function (ruangan) {
+                    return ruangan.Nama_Ruangan;
+                });
+
+                var sortedKapasitas = ruanganData.map(function (ruangan) {
+                    return ruangan.Kapasitas;
+                });
+
+                var backgroundColors = sortedKapasitas.map(function (value, idx) {
+                    return getColor(value, index);
+                });
+                var borderColors = backgroundColors; // Sama dengan background color
+
+                const data = {
+                    labels: sortedNama_Ruangan,
+                    datasets: [{
+                        label: Gedung[0],
+                        data: sortedKapasitas,
+                        backgroundColor: backgroundColors,
+                        borderColor: borderColors,
+                        borderWidth: 1
+                    }]
+                };
+
+                instance.data = data;
+                instance.update();
+            });
+        });
+    }
+
+    chartElements.forEach(function (elementId, index) {
+        fetchData('http://127.0.0.1:54587/' + charts[index], function (responseData) {
+            var Gedung = responseData.kapasitas_list.map(function (elem) {
+                return elem.Gedung;
+            });
+
+            var ruanganData = responseData.kapasitas_list.flatMap(function (elem) {
+                return elem.Ruangan.map(function (ruangan) {
+                    return {
+                        Nama_Ruangan: ruangan.Nama_Ruangan,
+                        Kapasitas: ruangan.Kapasitas
+                    };
+                });
+            });
+
+            ruanganData.sort(function (a, b) {
+                return b.Kapasitas - a.Kapasitas;
+            });
+
+            var sortedNama_Ruangan = ruanganData.map(function (ruangan) {
+                return ruangan.Nama_Ruangan;
+            });
+
+            var sortedKapasitas = ruanganData.map(function (ruangan) {
+                return ruangan.Kapasitas;
+            });
+
+            var backgroundColors = sortedKapasitas.map(function (value, idx) {
+                return getColor(value, index);
+            });
+            var borderColors = backgroundColors;
+
+            const data = {
+                labels: sortedNama_Ruangan,
+                datasets: [{
+                    label: Gedung[0],
+                    data: sortedKapasitas,
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        }
+                    }
+                }
+            };
+
+            var ctx = document.getElementById(elementId).getContext('2d');
+            var myChart = new Chart(ctx, config);
+            chartInstances.push(myChart);
+        });
+    });
+
+    document.getElementById('sortOrder').addEventListener('change', function () {
+        var order = this.value;
+        updateChart(order);
+    });
 });

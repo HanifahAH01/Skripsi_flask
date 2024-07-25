@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Membuat chart menggunakan Chart.js
                 var myChartHari = new Chart(
-                    document.getElementById('myChart9'), // Sesuaikan dengan ID elemen tempat chart ditampilkan
+                    document.getElementById('myChartHari'), // Sesuaikan dengan ID elemen tempat chart ditampilkan
                     configHari
                 );
             } else {
