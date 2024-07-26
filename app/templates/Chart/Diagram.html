@@ -237,7 +237,7 @@
                         <div class="button-group">
                             <a class="btn-secondary" data-filter="all_chart" onclick="filterCharts(event)">ALL</a>
                             <a class="btn-thirdty" data-filter="chart_bar" onclick="filterCharts(event)">Bar Ruangan</a>
-                            <a class="btn-thirdty" data-filter="sks_dosen" onclick="filterCharts(event)">SKS Dosen</a>
+                            <!-- <a class="btn-thirdty" data-filter="sks_dosen" onclick="filterCharts(event)">SKS Dosen</a> -->
                             <a class="btn-thirdty" data-filter="heatmap" onclick="filterCharts(event)">Heatmap</a>
                             <a class="btn-thirdty" data-filter="chart_line" onclick="filterCharts(event)">Line
                                 Jadwal</a>
@@ -250,7 +250,7 @@
                         <!-- Tombol Navigasi -->
                         <div class="button-group-scroll">
                             <button onclick="scrollToSection('chart_bar')">Bar Ruangan</button>
-                            <button onclick="scrollToSection('sks_dosen')">SKS Dosen</button>
+                            <!-- <button onclick="scrollToSection('sks_dosen')">SKS Dosen</button> -->
                             <button onclick="scrollToSection('heatmap')">Heatmap</button>
                             <button onclick="scrollToSection('chart_line')">Line Jadwal</button>
                             <button onclick="scrollToSection('jadwal_ruangan')">Jadwal</button>
@@ -268,12 +268,6 @@
                             <br>
                             <br>
                             <!-- FPMIPA A -->
-                            <div>
-                                <select id="sortOrder">
-                                    <option value="desc">Descending</option>
-                                    <option value="asc">Ascending</option>
-                                </select>
-                            </div>
                             <div class="scrollBox">
                                 <canvas id="myChart4"></canvas>
                             </div>
@@ -290,7 +284,7 @@
                         <!-- End Chart PIE Gedung FPMIPA -->
                         <br>
                         <!-- Start Chart Bar Horizontal SKS Dosen -->
-                        <div class="chartBox" id="sks_dosen">
+                        <!-- <div class="chartBox" id="sks_dosen">
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
                                     <h2>SKS Dosen</h2>
@@ -301,7 +295,7 @@
                             <div class="box">
                                 <canvas id="myChart2"></canvas>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End Chart Bar Horizontal SKS Dosen -->
                         <br>
                         <!-- Start Chart Heatmap -->
@@ -388,7 +382,7 @@
     <script src="{{ url_for('static', filename='js/Dashboard.js') }}"></script>
     <!-- ======== Chartjs ========= -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ url_for('static', filename='js/chart1.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/chart1.js') }}"></script> -->
     <script src="{{ url_for('static', filename='js/chart2.js') }}"></script>
     <script src="{{ url_for('static', filename='js/chart3.js') }}"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>

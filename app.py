@@ -227,7 +227,13 @@ def dashboard_admin():
     sks = cur.fetchall()
     cur.close()
 
-    return render_template('Dashboard_Admin/datatables.html', Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan, sks=sks)
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM kelas_prodi"
+    cur.execute(query)
+    prodi = cur.fetchall()
+    cur.close()
+
+    return render_template('Dashboard_Admin/datatables.html', prodi=prodi, Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan, sks=sks)
 
 
 @app.route('/edit/<int:No>', methods=['GET', 'POST'])

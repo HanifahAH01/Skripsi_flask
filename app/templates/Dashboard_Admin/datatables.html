@@ -6,6 +6,38 @@
   <title>FPMIPA UPI</title>
   <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
 
+  <style>
+    .button-group-scroll {
+      position: fixed;
+      /* Menjadikan elemen tetap */
+      top: 20px;
+      /* Jarak dari atas halaman */
+      right: 20px;
+      /* Jarak dari sisi kanan halaman */
+      z-index: 1000;
+      /* Menempatkan elemen di atas elemen lain */
+      display: flex;
+      /* Mengatur elemen anak secara horizontal */
+      gap: 10px;
+      /* Jarak antar tombol */
+    }
+
+    .button-group-scroll button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      /* Mencegah teks tombol membungkus */
+    }
+
+    .button-group-scroll button:hover {
+      background-color: #45a049;
+    }
+  </style>
+
   <!-- Fonts and icons -->
   <script src="{{ url_for('static', filename='plugin/webfont/webfont.min.js') }}"></script>
   <script>
@@ -420,60 +452,14 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <div class="d-flex align-items-center">
-                  <h4 class="card-title">Report</h4>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table id="add-row" class="display table table-striped table-hover">
-                    <thead>
-                      <tr>
-                        <th>NO</th>
-                        <th>TAHUN</th>
-                        <th>KODE</th>
-                        <th>Nama Dosen</th>
-                        <th>SKS_1</th>
-                        <th>SKS_2</th>
-                        <th>SKS_TOTAL</th>
-                        <th>KELAS_1</th>
-                        <th>KELAS_2</th>
-                        <th>KELAS_TOTAL</th>
-                        <th>DOSEN_1</th>
-                        <th>DOSEN_2</th>
-                        <th>DOSEN_TOTAL</th>
-                        <th>TOTAL</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {% for sks in sks %}
-                      <tr>
-                        <td>{{ sks[0] }}</td>
-                        <td>{{ sks[1] }}</td>
-                        <td>{{ sks[2] }}</td>
-                        <td>{{ sks[3] }}</td>
-                        <td>{{ sks[4] }}</td>
-                        <td>{{ sks[5] }}</td>
-                        <td>{{ sks[6] }}</td>
-                        <td>{{ sks[7] }}</td>
-                        <td>{{ sks[8] }}</td>
-                        <td>{{ sks[9] }}</td>
-                        <td>{{ sks[10] }}</td>
-                        <td>{{ sks[11] }}</td>
-                        <td>{{ sks[12] }}</td>
-                        <td>{{ sks[13] }}</td>
-                      </tr>
-                      {% endfor %}
-                    </tbody>
 
-                  </table>
-                </div>
-              </div>
-            </div>
+          <!-- Button Group Scroll -->
+          <div class="button-group-scroll" id="buttonGroupScroll">
+            <button onclick="scrollToSection('section1')">Section 1</button>
+            <button onclick="scrollToSection('section2')">Section 2</button>
+            <button onclick="scrollToSection('section3')">Section 3</button>
           </div>
+
           <div class="row">
             <div class="col-md-12">
               <div class="card">
@@ -542,6 +528,40 @@
                               </button>
                             </div>
                           </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <div class="d-flex align-items-center">
+                    <h4 class="card-title">Report</h4>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id="add-row" class="display table table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th>No</th>
+                          <th>Ruang Kelas</th>
+                          <th>Program Studi</th>
+                          <th>Jumlah</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for prodi in prodi %}
+                        <tr>
+                          <td>{{ prodi[0] }}</td>
+                          <td>{{ prodi[1] }}</td>
+                          <td>{{ prodi[2] }}</td>
+                          <td>{{ prodi[3] }}</td>
                         </tr>
                         {% endfor %}
                       </tbody>
@@ -967,6 +987,15 @@
         $("#addRowModal").modal("hide");
       });
     });
+  </script>
+  <script>
+    function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      document.getElementById('buttonGroupScroll').style.display = 'none'; // Hide button group after clicking
+    }
   </script>
 </body>
 
