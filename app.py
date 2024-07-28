@@ -6,7 +6,7 @@ from collections import defaultdict
 from flask_mysqldb import MySQL
 from Dosen import DataDosen
 from Jadwal import Jadwal
-from db import truncate_real_jadwal, insert_real_data_jadwal
+from db import truncate_jadwal_ruangan, insert_real_data_jadwal
 from heatmap import generate_plot
 import mysql.connector
 from kapasitas import Kapasitas
@@ -68,23 +68,23 @@ def recap_admin():
     cur = mysql.connection.cursor()
     cur.execute("""
             SELECT 
-                real_jadwal.No, 
-                real_jadwal.Span,
-                real_jadwal.Senin, s1.keterangan AS status_senin,
-                real_jadwal.Selasa, s2.keterangan AS status_selasa,
-                real_jadwal.Rabu, s3.keterangan AS status_rabu,
-                real_jadwal.Kamis, s4.keterangan AS status_kamis,
-                real_jadwal.Jumat, s5.keterangan AS status_jumat,
-                real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
-                real_jadwal.Minggu, s7.keterangan AS status_minggu
-            FROM real_jadwal
-            LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
-            LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
-            LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
-            LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
-            LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
-            LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
-            LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+                jadwal_ruangan.No, 
+                jadwal_ruangan.Span,
+                jadwal_ruangan.Senin, s1.keterangan AS status_senin,
+                jadwal_ruangan.Selasa, s2.keterangan AS status_selasa,
+                jadwal_ruangan.Rabu, s3.keterangan AS status_rabu,
+                jadwal_ruangan.Kamis, s4.keterangan AS status_kamis,
+                jadwal_ruangan.Jumat, s5.keterangan AS status_jumat,
+                jadwal_ruangan.Sabtu, s6.keterangan AS status_sabtu,
+                jadwal_ruangan.Minggu, s7.keterangan AS status_minggu
+            FROM jadwal_ruangan
+            LEFT JOIN status s1 ON jadwal_ruangan.status_senin = s1.id
+            LEFT JOIN status s2 ON jadwal_ruangan.status_selasa = s2.id
+            LEFT JOIN status s3 ON jadwal_ruangan.status_rabu = s3.id
+            LEFT JOIN status s4 ON jadwal_ruangan.status_kamis = s4.id
+            LEFT JOIN status s5 ON jadwal_ruangan.status_jumat = s5.id
+            LEFT JOIN status s6 ON jadwal_ruangan.status_sabtu = s6.id
+            LEFT JOIN status s7 ON jadwal_ruangan.status_minggu = s7.id
         """)
     jadwal_records = cur.fetchall()
     cur.close()
@@ -168,23 +168,23 @@ def dashboard_admin():
     cur = mysql.connection.cursor()
     cur.execute("""
         SELECT 
-            real_jadwal.No, 
-            real_jadwal.Span,
-            real_jadwal.Senin, s1.keterangan AS status_senin,
-            real_jadwal.Selasa, s2.keterangan AS status_selasa,
-            real_jadwal.Rabu, s3.keterangan AS status_rabu,
-            real_jadwal.Kamis, s4.keterangan AS status_kamis,
-            real_jadwal.Jumat, s5.keterangan AS status_jumat,
-            real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
-            real_jadwal.Minggu, s7.keterangan AS status_minggu
-        FROM real_jadwal
-        LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
-        LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
-        LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
-        LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
-        LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
-        LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
-        LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+            jadwal_ruangan.No, 
+            jadwal_ruangan.Span,
+            jadwal_ruangan.Senin, s1.keterangan AS status_senin,
+            jadwal_ruangan.Selasa, s2.keterangan AS status_selasa,
+            jadwal_ruangan.Rabu, s3.keterangan AS status_rabu,
+            jadwal_ruangan.Kamis, s4.keterangan AS status_kamis,
+            jadwal_ruangan.Jumat, s5.keterangan AS status_jumat,
+            jadwal_ruangan.Sabtu, s6.keterangan AS status_sabtu,
+            jadwal_ruangan.Minggu, s7.keterangan AS status_minggu
+        FROM jadwal_ruangan
+        LEFT JOIN status s1 ON jadwal_ruangan.status_senin = s1.id
+        LEFT JOIN status s2 ON jadwal_ruangan.status_selasa = s2.id
+        LEFT JOIN status s3 ON jadwal_ruangan.status_rabu = s3.id
+        LEFT JOIN status s4 ON jadwal_ruangan.status_kamis = s4.id
+        LEFT JOIN status s5 ON jadwal_ruangan.status_jumat = s5.id
+        LEFT JOIN status s6 ON jadwal_ruangan.status_sabtu = s6.id
+        LEFT JOIN status s7 ON jadwal_ruangan.status_minggu = s7.id
     """)
     Jadwal = cur.fetchall()
     cur.close()
@@ -192,19 +192,19 @@ def dashboard_admin():
     cur = mysql.connection.cursor()
     cur.execute("""
         SELECT 
-            booking.no,
-            booking.nama_pemohon,
-            booking.nama_ruangan,
-            booking.hari,
-            booking.tanggal,
-            booking.waktu_awal,
-            booking.waktu_akhir,
-            booking.tujuan_boking,
-            booking.jumlah_peserta,
+            booking_ruangan.no,
+            booking_ruangan.nama_pemohon,
+            booking_ruangan.nama_ruangan,
+            booking_ruangan.hari,
+            booking_ruangan.tanggal,
+            booking_ruangan.waktu_awal,
+            booking_ruangan.waktu_akhir,
+            booking_ruangan.tujuan_boking,
+            booking_ruangan.jumlah_peserta,
             s.keterangan AS status,
-            booking.Keterangan
-        FROM booking
-        LEFT JOIN status_booking s ON booking.status = s.id
+            booking_ruangan.Keterangan
+        FROM booking_ruangan
+        LEFT JOIN status_booking s ON booking_ruangan.status = s.id
     """)
     booking = cur.fetchall()
     cur.close()
@@ -222,18 +222,12 @@ def dashboard_admin():
     cur.close()
 
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM sks_dosen_fpmipa"
-    cur.execute(query)
-    sks = cur.fetchall()
-    cur.close()
-
-    cur = mysql.connection.cursor()
     query = "SELECT * FROM kelas_prodi"
     cur.execute(query)
     prodi = cur.fetchall()
     cur.close()
 
-    return render_template('Dashboard_Admin/datatables.html', prodi=prodi, Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan, sks=sks)
+    return render_template('Dashboard_Admin/datatables.html', prodi=prodi, Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan)
 
 
 @app.route('/edit/<int:No>', methods=['GET', 'POST'])
@@ -260,7 +254,7 @@ def edit(No):
         
         # Update data ke database
         query = """
-            UPDATE real_jadwal 
+            UPDATE jadwal_ruangan 
             SET Span=%s, senin=%s, status_senin=%s, selasa=%s, status_selasa=%s, rabu=%s, status_rabu=%s,
                 kamis=%s, status_kamis=%s, jumat=%s, status_jumat=%s, sabtu=%s, status_sabtu=%s, minggu=%s, status_minggu=%s
             WHERE No=%s
@@ -272,7 +266,7 @@ def edit(No):
         return redirect(url_for('dashboard_admin'))
     else:
         # Mengambil data yang akan diedit
-        cur.execute("SELECT * FROM real_jadwal WHERE No = %s", (No,))
+        cur.execute("SELECT * FROM jadwal_ruangan WHERE No = %s", (No,))
         data = cur.fetchone()
         
         # Mengambil data status
@@ -318,9 +312,6 @@ def edit_booking(No):
     flash('Data booking berhasil diperbarui!', 'success')
     return redirect(url_for('dashboard_admin'))
 
-
-
-
 # ******************************************** #
 #                    START                     #
 #                SINKRONISASI                  #
@@ -352,7 +343,7 @@ def run_data_jadwal():
 @app.route('/run-empty-jadwal', methods=['POST'])
 def run_empty_jadwal():
     try:
-        truncate_real_jadwal()
+        truncate_jadwal_ruangan()
         return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
     except Exception as e:
         return jsonify({'error': str(e)})
@@ -362,8 +353,6 @@ def run_empty_jadwal():
 #                SINKRONISASI                  #
 # ******************************************** #
 
-
-
 # Route Diagram
 @app.route("/diagram")
 def diagram():
@@ -371,12 +360,6 @@ def diagram():
     # heatmap 
     # Membuat sebuah plot untuk melakukan generate plot
     plot_html, harvest_data = generate_plot()
-
-    # Mengambil data dosen dari database
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM jdw_dosen")
-    userDetails = cur.fetchall()
-    cur.close()
 
     # Mengambil data Kapasitas dari database
     cur = mysql.connection.cursor()
@@ -394,28 +377,28 @@ def diagram():
     cur = mysql.connection.cursor()
     cur.execute("""
             SELECT 
-                real_jadwal.No, 
-                real_jadwal.Span,
-                real_jadwal.Senin, s1.keterangan AS status_senin,
-                real_jadwal.Selasa, s2.keterangan AS status_selasa,
-                real_jadwal.Rabu, s3.keterangan AS status_rabu,
-                real_jadwal.Kamis, s4.keterangan AS status_kamis,
-                real_jadwal.Jumat, s5.keterangan AS status_jumat,
-                real_jadwal.Sabtu, s6.keterangan AS status_sabtu,
-                real_jadwal.Minggu, s7.keterangan AS status_minggu
-            FROM real_jadwal
-            LEFT JOIN status s1 ON real_jadwal.status_senin = s1.id
-            LEFT JOIN status s2 ON real_jadwal.status_selasa = s2.id
-            LEFT JOIN status s3 ON real_jadwal.status_rabu = s3.id
-            LEFT JOIN status s4 ON real_jadwal.status_kamis = s4.id
-            LEFT JOIN status s5 ON real_jadwal.status_jumat = s5.id
-            LEFT JOIN status s6 ON real_jadwal.status_sabtu = s6.id
-            LEFT JOIN status s7 ON real_jadwal.status_minggu = s7.id
+                jadwal_ruangan.No, 
+                jadwal_ruangan.Span,
+                jadwal_ruangan.Senin, s1.keterangan AS status_senin,
+                jadwal_ruangan.Selasa, s2.keterangan AS status_selasa,
+                jadwal_ruangan.Rabu, s3.keterangan AS status_rabu,
+                jadwal_ruangan.Kamis, s4.keterangan AS status_kamis,
+                jadwal_ruangan.Jumat, s5.keterangan AS status_jumat,
+                jadwal_ruangan.Sabtu, s6.keterangan AS status_sabtu,
+                jadwal_ruangan.Minggu, s7.keterangan AS status_minggu
+            FROM jadwal_ruangan
+            LEFT JOIN status s1 ON jadwal_ruangan.status_senin = s1.id
+            LEFT JOIN status s2 ON jadwal_ruangan.status_selasa = s2.id
+            LEFT JOIN status s3 ON jadwal_ruangan.status_rabu = s3.id
+            LEFT JOIN status s4 ON jadwal_ruangan.status_kamis = s4.id
+            LEFT JOIN status s5 ON jadwal_ruangan.status_jumat = s5.id
+            LEFT JOIN status s6 ON jadwal_ruangan.status_sabtu = s6.id
+            LEFT JOIN status s7 ON jadwal_ruangan.status_minggu = s7.id
         """)
     jadwal_records = cur.fetchall()
     cur.close()
 
-    return render_template("Chart/Diagram.html", grouped_jadwal=jadwal_records,harvest_data=harvest_data, plot_html=plot_html, heatmap_records=heatmap_records,jadwal_records=jadwal_records,userDetails=userDetails, userDetailskapasitas=userDetailskapasitas)
+    return render_template("Chart/Diagram.html", grouped_jadwal=jadwal_records,harvest_data=harvest_data, plot_html=plot_html, heatmap_records=heatmap_records,jadwal_records=jadwal_records, userDetailskapasitas=userDetailskapasitas)
 
 # Dashboard
 @app.route("/dashboard")
@@ -439,15 +422,25 @@ def report():
 
     return render_template("Recap/Report.html", rooms=rooms, waktu_data=waktu_data)
 
-# Laporan
-@app.route("/laporan")
-def laporan():
+# Rekap Report
+@app.route("/Rekap-Report")
+def Rekap_Report():
     cur = mysql.connection.cursor()
     query = "SELECT * FROM report"  # Sesuaikan dengan nama tabel dan kolom Anda
     cur.execute(query)
     laporan = cur.fetchall()
     cur.close()
     return render_template("Recap/Laporan.html", laporan=laporan)
+
+# Rekap Booking
+@app.route("/Rekap-Booking")
+def Rekap_Booking():
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM booking_ruangan"  # Sesuaikan dengan nama tabel dan kolom Anda
+    cur.execute(query)
+    laporan = cur.fetchall()
+    cur.close()
+    return render_template("Recap/recapbooking.html", laporan=laporan)
 
 @app.route("/add")
 def add():
@@ -510,7 +503,7 @@ def submit_report():
         cur.close()
         
         flash('Booking berhasil dilakukan', 'success')
-        return redirect(url_for('add'))
+        return redirect(url_for('diagram'))
     
 # Kapasitas
 @app.route('/kapasitas')
@@ -552,7 +545,7 @@ def dosen():
 def ruangan():
     # Mengambil data jadwal dari database
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM real_jadwal")
+    cur.execute("SELECT * FROM jadwal_ruangan")
     jadwal_records = cur.fetchall()
     cur.close()
 
@@ -563,30 +556,13 @@ def get_heatmap():
     json_dir = os.path.join(app.static_folder, 'json')
     return send_from_directory(json_dir, 'total_jadwal.json')
 
-@app.route('/dosen_chart', methods=['GET'])
-def dosen_chart():
-    try:
-        cur = mysql.connection.cursor()
-        cur.execute("SELECT DOSEN, Total FROM sks_dosen_fpmipa")
-        result = cur.fetchall()
-        
-        dosen_list = []
-        for row in result:
-            dosen_list.append({"Dosen": row[0], "Total": row[1]})
-        
-        cur.close()
-        return jsonify(dosen_list=dosen_list)
-    
-    except Exception as e:
-        return str(e), 500
-
 @app.route("/booking_all")
 def get_booking_all():
     try:
         cur = mysql.connection.cursor()
         cur.execute("""
             SELECT no, nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_boking, jumlah_peserta
-            FROM booking
+            FROM booking_ruangan
         """)
         result = cur.fetchall()
         cur.close()
