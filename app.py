@@ -625,6 +625,25 @@ def get_booking_all():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route("/kelas_prodi_data")
+def get_kelas_prodi_data():
+    try:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT span, program_studi, jumlah FROM kelas_prodi")
+        result = cur.fetchall()
+        cur.close()
+
+        kelas_prodi_list = [
+            {"span": row[0], "program_studi": row[1], "jumlah": row[2]} for row in result
+        ]
+
+        return jsonify({"kelas_prodi_list": kelas_prodi_list})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route("/kapasitas_all")
 def get_kapasitas_all():

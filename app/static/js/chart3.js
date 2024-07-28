@@ -67,83 +67,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://127.0.0.1:54587/booking_all"; // Sesuaikan dengan URL endpoint booking_all dari Flask
+    var url = "http://127.0.0.1:54587/kelas_prodi_data";
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
     xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                var responseData = JSON.parse(this.responseText);
+        if (this.readyState == 4 && this.status == 200) {
+            var responseData = JSON.parse(this.responseText);
 
-                // Mengambil data dari responseData
-                var bookingList = responseData.booking_list;
+            var kelasProdiList = responseData.kelas_prodi_list;
 
-                // Objek untuk menyimpan frekuensi penggunaan per hari
-                var dayUsage = {
-                    'Senin': 0,
-                    'Selasa': 0,
-                    'Rabu': 0,
-                    'Kamis': 0,
-                    'Jumat': 0,
-                    'Sabtu': 0,
-                    'Minggu': 0
-                };
+            var dataKelasProdi = {
+                datasets: [{
+                    label: 'Jumlah per Program Studi',
+                    data: kelasProdiList.map(function (kelasProdi) {
+                        return {
+                            x: kelasProdi.program_studi, // Menggunakan 'program_studi' sebagai nilai sumbu X
+                            y: kelasProdi.jumlah,         // Menggunakan 'jumlah' sebagai nilai sumbu Y
+                            z: kelasProdi.span,
+                            r: kelasProdi.jumlah * 5      // Radius gelembung
+                        };
+                    }),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            };
 
-                // Menghitung frekuensi penggunaan per hari
-                bookingList.forEach(function (booking) {
-                    var namaHari = booking.Hari; // Asumsikan 'Hari' adalah field dalam bookingList yang berisi nama hari
-                    if (dayUsage.hasOwnProperty(namaHari)) {
-                        dayUsage[namaHari] += 1; // Tambahkan 1 untuk setiap kejadian
-                    }
-                });
-
-                // Mengambil nama hari dan total frekuensi penggunaan ke dalam array
-                var namaHari = Object.keys(dayUsage);
-                var totalPenggunaanHari = namaHari.map(function (hari) {
-                    return dayUsage[hari];
-                });
-
-                // Membuat data untuk chart
-                var dataHari = {
-                    labels: namaHari, // Label pada sumbu X
-                    datasets: [{
-                        label: 'Frekuensi Penggunaan per Hari',
-                        data: totalPenggunaanHari, // Data frekuensi penggunaan per hari
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                };
-
-                // Konfigurasi chart
-                var configHari = {
-                    type: 'line', // Line chart untuk visualisasi frekuensi penggunaan per hari
-                    data: dataHari,
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    precision: 0, // Menampilkan hanya angka bulat
-                                    callback: function (value) {
-                                        if (Number.isInteger(value)) {
-                                            return value;
-                                        }
+            var configKelasProdi = {
+                type: 'bubble',
+                data: dataKelasProdi,
+                options: {
+                    scales: {
+                        x: {
+                            type: 'category',
+                            labels: kelasProdiList.map(function (kelasProdi) {
+                                return kelasProdi.program_studi; // Label sumbu X
+                            })
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                precision: 0,
+                                callback: function (value) {
+                                    if (Number.isInteger(value)) {
+                                        return value;
                                     }
                                 }
                             }
                         }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    var item = tooltipItem.raw;
+                                    return `Ruangan: ${item.z}, Program Studi: ${item.x}, Jumlah: ${item.y}`;
+                                }
+                            }
+                        }
                     }
-                };
+                }
+            };
 
-                // Membuat chart menggunakan Chart.js
-                var myChartHari = new Chart(
-                    document.getElementById('myChartHari'), // Sesuaikan dengan ID elemen tempat chart ditampilkan
-                    configHari
-                );
-            } else {
-                console.error('Error fetching data: ' + this.statusText);
-            }
+            var myChartHari = new Chart(
+                document.getElementById('myChartHari'),
+                configKelasProdi
+            );
+        } else if (this.readyState == 4) {
+            console.error('Error fetching data: ' + this.statusText);
         }
     };
 });
