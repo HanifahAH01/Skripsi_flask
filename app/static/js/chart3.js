@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     label: 'Jumlah per Program Studi',
                     data: kelasProdiList.map(function (kelasProdi) {
                         return {
-                            x: kelasProdi.program_studi, // Menggunakan 'program_studi' sebagai nilai sumbu X
-                            y: kelasProdi.jumlah,         // Menggunakan 'jumlah' sebagai nilai sumbu Y
+                            x: kelasProdi.jumlah,         // Menggunakan 'jumlah' sebagai nilai sumbu X
+                            y: kelasProdi.program_studi,   // Menggunakan 'program_studi' sebagai nilai sumbu Y
                             z: kelasProdi.span,
                             r: kelasProdi.jumlah * 5      // Radius gelembung
                         };
@@ -99,12 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 options: {
                     scales: {
                         x: {
-                            type: 'category',
-                            labels: kelasProdiList.map(function (kelasProdi) {
-                                return kelasProdi.program_studi; // Label sumbu X
-                            })
-                        },
-                        y: {
                             beginAtZero: true,
                             ticks: {
                                 precision: 0,
@@ -114,6 +108,25 @@ document.addEventListener("DOMContentLoaded", function () {
                                     }
                                 }
                             }
+                        },
+                        y: {
+                            type: 'category',
+                            labels: kelasProdiList.map(function (kelasProdi) {
+                                return kelasProdi.program_studi;
+                            }),
+                            ticks: {
+                                autoSkip: false,
+                                maxRotation: 0,
+                                minRotation: 0,
+                                font: {
+                                    size: 10 // Sesuaikan ukuran font jika diperlukan
+                                },
+                                padding: 20, // Tambahkan padding untuk jarak tambahan
+                                stepSize: 1  // Sesuaikan jika ingin melompat beberapa label
+                            },
+                            grid: {
+                                display: false // Menghilangkan garis grid
+                            }
                         }
                     },
                     plugins: {
@@ -121,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             callbacks: {
                                 label: function (tooltipItem) {
                                     var item = tooltipItem.raw;
-                                    return `Ruangan: ${item.z}, Program Studi: ${item.x}, Jumlah: ${item.y}`;
+                                    return `Ruangan: ${item.z}, Program Studi: ${item.y}, Jumlah: ${item.x}`;
                                 }
                             }
                         }

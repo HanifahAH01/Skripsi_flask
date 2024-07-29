@@ -251,14 +251,32 @@
                     <div class="chartCard" id="chartCard">
                         <!-- Tombol Navigasi -->
                         <div class="button-group-scroll">
-                            <button onclick="scrollToSection('chart_bar')">Okupansi Kapasitas Ruangan</button>
+                            <!-- <button onclick="scrollToSection('chart_bar')">Okupansi Kapasitas Ruangan</button> -->
+                            <select onchange="scrollToSection(this.value)">
+                                <option value="chart_bar">Okupansi Kapasitas Ruangan</option>
+                                <option value="Gedung_A">Okupansi Kapasitas Gedung A</option>
+                                <option value="Gedung_B">Okupansi Kapasitas Gedung B</option>
+                                <option value="Gedung_C">Okupansi Kapasitas Gedung C</option>
+                                <option value="Botani">Okupansi Kapasitas Gedung Praktek Botani</option>
+
+                            </select>
                             <button onclick="scrollToSection('heatmap')">Okupansi Ruangan Dengan Waktu</button>
-                            <button onclick="scrollToSection('chart_line')">Pemakaian Ruangan Esidental</button>
-                            <button onclick="scrollToSection('jadwal_ruangan')">Okupansi Ruangan Dengan Waktu</button>
-                            <button onclick="scrollToSection('booking')">Booking</button>
+                            <select onchange="scrollToSection(this.value)">
+                                <option value="myChart8">Pemakaian Ruangan Esidental</option>
+                                <option value="myChartHari">Rekap Penggunaan Ruangan</option>
+
+                            </select>
+                            <select onchange="scrollToSection(this.value)">
+                                <option value="jadwal_ruangan">Okupansi Ruangan Dengan Waktu</option>
+                                <option value="booking">Booking</option>
+                                <option value="Laporan_booking">Rekap Booking</option>
+                                <option value="report">Report</option>
+                                <option value="Laporan_report">Rekap Report</option>
+                            </select>
+                            <!-- <button onclick="scrollToSection('booking')">Booking</button>
                             <button onclick="scrollToSection('Laporan_booking')">Rekap Booking</button>
                             <button onclick="scrollToSection('report')">Report</button>
-                            <button onclick="scrollToSection('Laporan_report')">Rekap Report</button>
+                            <button onclick="scrollToSection('Laporan_report')">Rekap Report</button> -->
                         </div>
                         <!-- Start Chart PIE Gedung FPMIPA -->
                         <div class="chartBox" id="chart_bar">
@@ -270,15 +288,19 @@
                             <br>
                             <!-- FPMIPA A -->
                             <div class="scrollBox">
+                                <h2 id="Gedung_A">Okupansi Kapasitas Gedung A</h2>
                                 <canvas id="myChart4"></canvas>
                             </div>
                             <div class="scrollBox">
+                                <h2 id="Gedung_B">Okupansi Kapasitas Gedung B</h2>
                                 <canvas id="myChart5"></canvas>
                             </div>
                             <div class="scrollBox">
+                                <h2 id="Gedung_C">Okupansi Kapasitas Gedung C</h2>
                                 <canvas id="myChart6"></canvas>
                             </div>
                             <div class="scrollBox">
+                                <h2 id="Botani">Okupansi Kapasitas Gedung Praktek Botani</h2>
                                 <canvas id="myChart7"></canvas>
                             </div>
                         </div>
@@ -307,8 +329,8 @@
                             </div>
                             <br>
                             <div class="scrollBox">
-                                <h2>Rekap Penggunaan Ruangan</h2>
-                                <canvas id="myChartHari"></canvas>
+                                <h2 id="bubble_chart">Rekap Penggunaan Ruangan</h2>
+                                <canvas id="myChartHari" style="width: 500px; height: 1000px;"></canvas>
                             </div>
                         </div>
                         <!-- End Chart PIE Gedung FPMIPA -->
