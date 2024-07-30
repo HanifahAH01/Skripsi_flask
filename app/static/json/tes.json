@@ -9876,127 +9876,8 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 1.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "07:00-09:30, KOM-C2, 46/80IK170 - SISTEM BASIS DATA - 3sks2808 - Dr. Rani Megasari, S.Kom., M.T.Angkatan 2023D5451 - Ilmu Komputer - S1",
-        "status_senin": "1",
-        "Selasa": "07:00-07:50",
-        "status_selasa": "1",
-        "Rabu": "07:00-08:40, BIO-2A, 20/40BI103 - STATISTIKA - 3sks2182 - Rini Solihat, Dr., M.Si.2182 - Rini Solihat, Dr., M.Si.3401 - Hardini Puspitaningrum, S.Si, M.Si.Angkatan 2023D0351 - Pendidikan Biologi - S1",
-        "status_rabu": "1",
-        "Kamis": "07:00-09:30, KOM-6B, 40/40IK357 - INTERAKSI MANUSIA DAN KOMPUTER - 3sks2590 - Dr. Wahyudin, M.T.2590 - Dr. Wahyudin, M.T.3241 - Andini Setya Arianti, M.Ds.Angkatan 2021D0551 - Pendidikan Ilmu Komputer - S1",
-        "status_kamis": "1",
-        "Jumat": "07:00-08:40, KOM-C, 36/50IK566 - BUSINESS INTELLIGENCE - 2sks3240 - Ani Anisyah, M.T.Angkatan 2021D5451 - Ilmu Komputer - S1",
-        "status_jumat": "1",
-        "Sabtu": "07:00-07:50",
-        "status_sabtu": "1",
-        "Minggu": "07:00-07:50",
-        "status_minggu": "1"
-    },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 4.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "09:30-12:00, KOM-C2, 49/80IK270 - REKAYASA PERANGKAT LUNAK - 3sks2398 - Dr. Asep Wahyudin, S.Kom., M.T.Angkatan 2023D5451 - Ilmu Komputer - S1",
-        "status_senin": "4",
-        "Selasa": "09:30-12:00, BIO-6C, 41/50BI408 - BIOTEKNOLOGI - 3sks1973 - Prof. Topik Hidayat, S.Pd., M.Si., Ph.D.Angkatan 2021D5251 - Biologi - S1",
-        "status_selasa": "4",
-        "Rabu": "09:30-11:10, DIK KIMIA-S1-4AB, 20/100KI201 - KEWIRAUSAHAAN - 2sks0930 - Prof. Dr. H. R. Asep Kadarohman, M.Si.Angkatan 2022D0451 - Pendidikan Kimia - S1",
-        "status_rabu": "4",
-        "Kamis": "09:30-10:20",
-        "status_kamis": "4",
-        "Jumat": "09:30-11:10, MAT-2B, 49/50MT319 - KEWIRAUSAHAAN - 2sks1719 - Dr. H. Cece Kustiawan, M.Si.Angkatan 2023D0151 - Pendidikan Matematika - S1",
-        "status_jumat": "4",
-        "Sabtu": "09:30-10:20",
-        "status_sabtu": "4",
-        "Minggu": "09:30-10:20",
-        "status_minggu": "4"
-    },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 7.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "12:00-13:00",
-        "status_senin": "7",
-        "Selasa": "12:00-13:00",
-        "status_selasa": "7",
-        "Rabu": "12:00-13:00",
-        "status_rabu": "7",
-        "Kamis": "12:00-13:00",
-        "status_kamis": "7",
-        "Jumat": "12:00-13:00",
-        "status_jumat": "7",
-        "Sabtu": "12:00-13:00",
-        "status_sabtu": "7",
-        "Minggu": "12:00-13:00",
-        "status_minggu": "7"
-    },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 8.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "13:00-15:30, KELAS C, 15/25MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks1716 - Prof. Dr. Ida Kaniawati, M.Si.1716 - Prof. Dr. Ida Kaniawati, M.Si.2762 - Prof. Dr. Eng. H. Asep Bayu Dani Nandiyanto, S.T., M.Eng.Angkatan 2021D5251 - Biologi - S1",
-        "status_senin": "8",
-        "Selasa": "13:00-15:30, KELAS C MBKM, 18/25MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks2577 - Tuszie Widhiyanti, M.Pd., Ph.D.Angkatan 2021D0451 - Pendidikan Kimia - S1",
-        "status_selasa": "8",
-        "Rabu": "13:00-13:50, BIO-4C, 18/50BI413 - BIOMODELING - 2sks2175 - Dr. Hj. Diah Kusumawaty, M.Si.2175 - Dr. Hj. Diah Kusumawaty, M.Si.2190 - Dr. Wahyu Surakusumah, M.T.Angkatan 2023D5251 - Biologi - S1",
-        "status_rabu": "8",
-        "Kamis": "13:00-14:40, BIO-2D, 14/40BI212 - GENETIKA - 3sks2170 - Dr. Hj. Any Aryani, S.Si., M.Si.Angkatan 2023D5251 - Biologi - S1",
-        "status_kamis": "8",
-        "Jumat": "13:00-14:40, MAT-4C, 45/50MT427 - KEWIRAUSAHAAN - 2sks1914 - Dr. Entit Puspita, S.Pd., M.Si.Angkatan 2022D5051 - Matematika - S1",
-        "status_jumat": "8",
-        "Sabtu": "13:00-13:50",
-        "status_sabtu": "8",
-        "Minggu": "13:00-13:50",
-        "status_minggu": "8"
-    },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 14.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "18:00-18:50",
-        "status_senin": "14",
-        "Selasa": "18:00-18:50",
-        "status_selasa": "14",
-        "Rabu": "18:00-18:50",
-        "status_rabu": "14",
-        "Kamis": "18:00-18:50",
-        "status_kamis": "14",
-        "Jumat": "18:00-18:50",
-        "status_jumat": "14",
-        "Sabtu": "18:00-18:50",
-        "status_sabtu": "14",
-        "Minggu": "18:00-18:50",
-        "status_minggu": "14"
-    },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 15.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "19:00-19:50",
-        "status_senin": "15",
-        "Selasa": "19:00-19:50",
-        "status_selasa": "15",
-        "Rabu": "19:00-19:50",
-        "status_rabu": "15",
-        "Kamis": "19:00-19:50",
-        "status_kamis": "15",
-        "Jumat": "19:00-19:50",
-        "status_jumat": "15",
-        "Sabtu": "19:00-19:50",
-        "status_sabtu": "15",
-        "Minggu": "19:00-19:50",
-        "status_minggu": "15"
-    },
-    "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406) - 16.": {
-        "Span": "50. 04.4A.04.022 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 406)",
-        "Senin": "19:50-20:40",
-        "status_senin": "16",
-        "Selasa": "19:50-20:40",
-        "status_selasa": "16",
-        "Rabu": "19:50-20:40",
-        "status_rabu": "16",
-        "Kamis": "19:50-20:40",
-        "status_kamis": "16",
-        "Jumat": "19:50-20:40",
-        "status_jumat": "16",
-        "Sabtu": "19:50-20:40",
-        "status_sabtu": "16",
-        "Minggu": "19:50-20:40",
-        "status_minggu": "16"
-    },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 1.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 1.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "07:00-09:30, S3PMAT&BYRESEARCH, 6/7MT824 - KAJIAN TEORETIS-PRAKTIS PROSES DAN HASIL BELAJAR DAN PEMBELAJARAN MATEMATIKA - 3sks1720 - Prof. Dr. H. Dadang Juandi, M.Si.Angkatan 2023P1271 - Pendidikan Matematika - S3",
         "status_senin": "1",
         "Selasa": "07:00-07:50",
@@ -10012,8 +9893,8 @@
         "Minggu": "07:00-10:20, DIK KIMIA-S1-6-P3K, 0/15KM416 - MODUL NUSANTARA - 4sks3102 - ABDUL AZIS, S.Pd., M.Pd.Angkatan 2021D0451 - Pendidikan Kimia - S1",
         "status_minggu": "1"
     },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 7.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 7.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "12:00-13:00",
         "status_senin": "7",
         "Selasa": "12:00-13:00",
@@ -10029,8 +9910,8 @@
         "Minggu": "12:00-13:00",
         "status_minggu": "7"
     },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 8.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 8.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "13:00-15:30, S2PMAT-2B, 18/20MT870 - PSIKOLOGI PERKEMBANGAN KOGNITIF DALAM PEMBELAJARAN MATEMATIKA - 3sks0962 - Prof. Turmudi, M.Ed., M.Sc., Ph.D.Angkatan 2023P1261 - Pendidikan Matematika - S2",
         "status_senin": "8",
         "Selasa": "13:00-15:30, MAT-4AB1, 34/34MT400 - TEORI GRUP - 3sks2314 - Ririn Sispiyati, S.Si., M.Si.Angkatan 2022D0151 - Pendidikan Matematika - S1",
@@ -10046,8 +9927,8 @@
         "Minggu": "13:00-13:50",
         "status_minggu": "8"
     },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 11.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 11.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "15:30-18:00, KELAS B MBKM, 2/20MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks1656 - Dr. Elah Nurlaelah, M.Si.Angkatan 2021D0151 - Pendidikan Matematika - S1",
         "status_senin": "11",
         "Selasa": "15:30-16:20",
@@ -10063,8 +9944,8 @@
         "Minggu": "15:30-16:20",
         "status_minggu": "11"
     },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 14.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 14.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "18:00-18:50",
         "status_senin": "14",
         "Selasa": "18:00-18:50",
@@ -10080,8 +9961,8 @@
         "Minggu": "18:00-18:50",
         "status_minggu": "14"
     },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 15.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 15.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10097,8 +9978,8 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 16.": {
-        "Span": "51. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
+    "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika - 16.": {
+        "Span": "50. 04.4A.03.016 - Ruang Kelas E - 301 PPG Matematika",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",
@@ -10114,8 +9995,8 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 1.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 1.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "07:00-08:40, KOM-2A, 37/50IK231 - PARADIGMA BERPIKIR KOMPUTASI - 2sks2657 - Harsa Wara Prabawa, S.Si., M.Pd.Angkatan 2023D0551 - Pendidikan Ilmu Komputer - S1",
         "status_senin": "1",
         "Selasa": "07:00-08:40, KIMIA-S1-4C, 38/55KI313 - METABOLISME BIOMOLEKUL DAN INFORMASI GENETIKA - 2sks0735 - Prof. Dr. Florentina Maria Titin Supriyanti, M.Si.Angkatan 2022D5351 - Kimia - S1",
@@ -10131,8 +10012,8 @@
         "Minggu": "07:00-07:50",
         "status_minggu": "1"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 7.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 7.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "12:00-13:00",
         "status_senin": "7",
         "Selasa": "12:00-13:00",
@@ -10148,8 +10029,8 @@
         "Minggu": "12:00-13:00",
         "status_minggu": "7"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 8.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 8.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "13:00-15:30, FIS-4A, 40/40FI571 - FISIKA KUANTUM - 3sks1134 - Prof. Dr. Parlindungan Sinaga, M.Si.Angkatan 2022D0251 - Pendidikan Fisika - S1",
         "status_senin": "8",
         "Selasa": "13:00-14:40, KOM-C1, 48/50IK310 - KRIPTOGRAFI - 2sks2401 - Rizky Rachman Judhie Putra, M.Kom.Angkatan 2023D5451 - Ilmu Komputer - S1",
@@ -10165,8 +10046,8 @@
         "Minggu": "13:00-13:50",
         "status_minggu": "8"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 11.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 11.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "15:30-17:10, FIS-2A, 38/40FI113 - FISIKA DASAR II - 4sks2768 - Dr. Duden Saepuzaman, S.Pd., M.Pd., M.Si.Angkatan 2021D0251 - Pendidikan Fisika - S1",
         "status_senin": "11",
         "Selasa": "15:30-18:00, KOM-C1, 43/50IK400 - METODOLOGI PENELITIAN - 3sks2147 - Prof. Dr. Munir, M.IT.Angkatan 2022D5451 - Ilmu Komputer - S1",
@@ -10182,8 +10063,8 @@
         "Minggu": "15:30-16:20",
         "status_minggu": "11"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 14.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 14.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "18:00-18:50",
         "status_senin": "14",
         "Selasa": "18:00-18:50",
@@ -10199,8 +10080,8 @@
         "Minggu": "18:00-18:50",
         "status_minggu": "14"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 15.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 15.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10216,8 +10097,8 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "52. 04.4A.03.018 - Ruang Kelas S- 306 - 16.": {
-        "Span": "52. 04.4A.03.018 - Ruang Kelas S- 306",
+    "51. 04.4A.03.018 - Ruang Kelas S- 306 - 16.": {
+        "Span": "51. 04.4A.03.018 - Ruang Kelas S- 306",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",
@@ -10233,8 +10114,8 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "53. 04.4A.03.019 - Ruang Kelas S -305 - 1.": {
-        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+    "52. 04.4A.03.019 - Ruang Kelas S -305 - 1.": {
+        "Span": "52. 04.4A.03.019 - Ruang Kelas S -305",
         "Senin": "07:00-09:30, DIK KIMIA-S1-2B, 27/40KI341 - KIMIA FISIKA 1 - 3sks1326 - Dr. rer. nat. Omay Sumarna, M.Si.Angkatan 2023D0451 - Pendidikan Kimia - S1",
         "status_senin": "1",
         "Selasa": "07:00-08:40, FIS-2B, 34/40FI113 - FISIKA DASAR II - 4sks1736 - Drs. Saeful Karim, M.Si.1736 - Drs. Saeful Karim, M.Si.3397 - Alfiansah Sandion Prakoso, S.Pd., M.Pd.Angkatan 2023D0251 - Pendidikan Fisika - S1",
@@ -10250,8 +10131,8 @@
         "Minggu": "07:00-07:50",
         "status_minggu": "1"
     },
-    "53. 04.4A.03.019 - Ruang Kelas S -305 - 7.": {
-        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+    "52. 04.4A.03.019 - Ruang Kelas S -305 - 7.": {
+        "Span": "52. 04.4A.03.019 - Ruang Kelas S -305",
         "Senin": "12:00-13:00",
         "status_senin": "7",
         "Selasa": "12:00-13:50, KOM-2B, 39/50IK151 - BAHASA INGGRIS - 2sks2585 - Prof. Dr. Lala Septem Riza, M.T.2585 - Prof. Dr. Lala Septem Riza, M.T.3241 - Andini Setya Arianti, M.Ds.Angkatan 2023D0551 - Pendidikan Ilmu Komputer - S1",
@@ -10267,8 +10148,8 @@
         "Minggu": "12:00-13:00",
         "status_minggu": "7"
     },
-    "53. 04.4A.03.019 - Ruang Kelas S -305 - 11.": {
-        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+    "52. 04.4A.03.019 - Ruang Kelas S -305 - 11.": {
+        "Span": "52. 04.4A.03.019 - Ruang Kelas S -305",
         "Senin": "15:30-18:50, KOM-C1, 39/50PT502 - PROYEK KONSULTANSI - 4sks2556 - Eddy Prasetyo Nugroho, M.T.Angkatan 2022D5451 - Ilmu Komputer - S1",
         "status_senin": "11",
         "Selasa": "15:30-18:00, FIS-4C, 35/40FI563 - METODE RISET DAN PUBLIKASI ILMIAH - 3sks2359 - Nanang Dwi Ardi, S.Si., M.T.Angkatan 2022D5151 - Fisika - S1",
@@ -10284,8 +10165,8 @@
         "Minggu": "15:30-16:20",
         "status_minggu": "11"
     },
-    "53. 04.4A.03.019 - Ruang Kelas S -305 - 15.": {
-        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+    "52. 04.4A.03.019 - Ruang Kelas S -305 - 15.": {
+        "Span": "52. 04.4A.03.019 - Ruang Kelas S -305",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10301,8 +10182,8 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "53. 04.4A.03.019 - Ruang Kelas S -305 - 16.": {
-        "Span": "53. 04.4A.03.019 - Ruang Kelas S -305",
+    "52. 04.4A.03.019 - Ruang Kelas S -305 - 16.": {
+        "Span": "52. 04.4A.03.019 - Ruang Kelas S -305",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",
@@ -10318,8 +10199,8 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "54. 04.4A.03.020 - Ruang Kelas S- 304 - 1.": {
-        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+    "53. 04.4A.03.020 - Ruang Kelas S- 304 - 1.": {
+        "Span": "53. 04.4A.03.020 - Ruang Kelas S- 304",
         "Senin": "07:00-08:40, BIO-6B, 6/50BI409 - PENGANTAR BIOTEKNOLOGI - 2sks1551 - Prof. Dr. Hj. Widi Purwianingsih, M.Si.Angkatan 2021D0351 - Pendidikan Biologi - S1",
         "status_senin": "1",
         "Selasa": "07:00-09:30, MAT-6AB, 53/55MT421 - NILAI AWAL DAN SYARAT BATAS - 3sks1404 - Dr. H. Endang Cahya Mulyaning A., M.Si.Angkatan 2021D0151 - Pendidikan Matematika - S1",
@@ -10335,8 +10216,8 @@
         "Minggu": "07:00-10:20, DIK KIMIA-S1-6-SI, 6/150KM443 - LITERASI EKONOMI DIGITAL - 4sks2076 - Drs. Hokcu Suhanda, M.Si.Angkatan 2021D0451 - Pendidikan Kimia - S1",
         "status_minggu": "1"
     },
-    "54. 04.4A.03.020 - Ruang Kelas S- 304 - 14.": {
-        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+    "53. 04.4A.03.020 - Ruang Kelas S- 304 - 14.": {
+        "Span": "53. 04.4A.03.020 - Ruang Kelas S- 304",
         "Senin": "18:00-18:50",
         "status_senin": "14",
         "Selasa": "18:00-18:50",
@@ -10352,8 +10233,8 @@
         "Minggu": "18:00-18:50",
         "status_minggu": "14"
     },
-    "54. 04.4A.03.020 - Ruang Kelas S- 304 - 15.": {
-        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+    "53. 04.4A.03.020 - Ruang Kelas S- 304 - 15.": {
+        "Span": "53. 04.4A.03.020 - Ruang Kelas S- 304",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10369,8 +10250,8 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "54. 04.4A.03.020 - Ruang Kelas S- 304 - 16.": {
-        "Span": "54. 04.4A.03.020 - Ruang Kelas S- 304",
+    "53. 04.4A.03.020 - Ruang Kelas S- 304 - 16.": {
+        "Span": "53. 04.4A.03.020 - Ruang Kelas S- 304",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",
@@ -10386,8 +10267,8 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "55. 04.4A.03.022 - Ruang Kelas S - 302 - 1.": {
-        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+    "54. 04.4A.03.022 - Ruang Kelas S - 302 - 1.": {
+        "Span": "54. 04.4A.03.022 - Ruang Kelas S - 302",
         "Senin": "07:00-08:40, FIS-4AB, 40/40FI353 - FISIKA MODERN - 4sks1134 - Prof. Dr. Parlindungan Sinaga, M.Si.Angkatan 2022D0251 - Pendidikan Fisika - S1",
         "status_senin": "1",
         "Selasa": "07:00-08:40, BIO-6C, 21/40BI316 - BIOLOGI LAUT - 3sks0731 - Prof. Dr. Hj. RR. Hertien Koosbandiah S., M.Sc.Angkatan 2021D5251 - Biologi - S1",
@@ -10403,8 +10284,8 @@
         "Minggu": "07:00-07:50",
         "status_minggu": "1"
     },
-    "55. 04.4A.03.022 - Ruang Kelas S - 302 - 7.": {
-        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+    "54. 04.4A.03.022 - Ruang Kelas S - 302 - 7.": {
+        "Span": "54. 04.4A.03.022 - Ruang Kelas S - 302",
         "Senin": "12:00-13:00",
         "status_senin": "7",
         "Selasa": "12:00-13:00",
@@ -10420,8 +10301,8 @@
         "Minggu": "12:00-13:00",
         "status_minggu": "7"
     },
-    "55. 04.4A.03.022 - Ruang Kelas S - 302 - 8.": {
-        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+    "54. 04.4A.03.022 - Ruang Kelas S - 302 - 8.": {
+        "Span": "54. 04.4A.03.022 - Ruang Kelas S - 302",
         "Senin": "13:00-15:30, MAT-6AB, 21/40MT508 - METODA STATISTIKA MULTIVARIAT - 3sks1656 - Dr. Elah Nurlaelah, M.Si.Angkatan 2021D0151 - Pendidikan Matematika - S1",
         "status_senin": "8",
         "Selasa": "13:00-14:40, MAT-6A, 27/32MT433 - PENELITIAN KUALITATIF - 2sks0726 - Prof. Dr. H. Didi Suryadi, M.Ed.Angkatan 2021D0151 - Pendidikan Matematika - S1",
@@ -10437,8 +10318,8 @@
         "Minggu": "13:00-13:50",
         "status_minggu": "8"
     },
-    "55. 04.4A.03.022 - Ruang Kelas S - 302 - 14.": {
-        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+    "54. 04.4A.03.022 - Ruang Kelas S - 302 - 14.": {
+        "Span": "54. 04.4A.03.022 - Ruang Kelas S - 302",
         "Senin": "18:00-18:50",
         "status_senin": "14",
         "Selasa": "18:00-18:50",
@@ -10454,8 +10335,8 @@
         "Minggu": "18:00-18:50",
         "status_minggu": "14"
     },
-    "55. 04.4A.03.022 - Ruang Kelas S - 302 - 15.": {
-        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+    "54. 04.4A.03.022 - Ruang Kelas S - 302 - 15.": {
+        "Span": "54. 04.4A.03.022 - Ruang Kelas S - 302",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10471,8 +10352,8 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "55. 04.4A.03.022 - Ruang Kelas S - 302 - 16.": {
-        "Span": "55. 04.4A.03.022 - Ruang Kelas S - 302",
+    "54. 04.4A.03.022 - Ruang Kelas S - 302 - 16.": {
+        "Span": "54. 04.4A.03.022 - Ruang Kelas S - 302",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",
@@ -10488,8 +10369,8 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "56. 04.4A.03.023 - Ruang Kelas S - 301 - 1.": {
-        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+    "55. 04.4A.03.023 - Ruang Kelas S - 301 - 1.": {
+        "Span": "55. 04.4A.03.023 - Ruang Kelas S - 301",
         "Senin": "07:00-09:30, MAT-4AB3, 30/33MT400 - TEORI GRUP - 3sks1656 - Dr. Elah Nurlaelah, M.Si.Angkatan 2022D0151 - Pendidikan Matematika - S1",
         "status_senin": "1",
         "Selasa": "07:00-08:40, FIS-2D, 35/40FI240 - FISIKA MATEMATIKA II - 4sks1810 - Prof. Dr. Andi Suhandi, M.Si.Angkatan 2023D5151 - Fisika - S1",
@@ -10505,8 +10386,8 @@
         "Minggu": "07:00-13:50, DIK KIMIA-S1-6-P3K, 133/150KM417 - PRAKTIK MENGAJAR - 8sks0932 - Dra. Wiwi Siswaningsih, M.Si.Angkatan 2021D0451 - Pendidikan Kimia - S1",
         "status_minggu": "1"
     },
-    "56. 04.4A.03.023 - Ruang Kelas S - 301 - 14.": {
-        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+    "55. 04.4A.03.023 - Ruang Kelas S - 301 - 14.": {
+        "Span": "55. 04.4A.03.023 - Ruang Kelas S - 301",
         "Senin": "18:00-18:50",
         "status_senin": "14",
         "Selasa": "18:00-18:50",
@@ -10522,8 +10403,8 @@
         "Minggu": "18:00-18:50",
         "status_minggu": "14"
     },
-    "56. 04.4A.03.023 - Ruang Kelas S - 301 - 15.": {
-        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+    "55. 04.4A.03.023 - Ruang Kelas S - 301 - 15.": {
+        "Span": "55. 04.4A.03.023 - Ruang Kelas S - 301",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10539,8 +10420,8 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "56. 04.4A.03.023 - Ruang Kelas S - 301 - 16.": {
-        "Span": "56. 04.4A.03.023 - Ruang Kelas S - 301",
+    "55. 04.4A.03.023 - Ruang Kelas S - 301 - 16.": {
+        "Span": "55. 04.4A.03.023 - Ruang Kelas S - 301",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",
@@ -10556,42 +10437,42 @@
         "Minggu": "19:50-20:40",
         "status_minggu": "16"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 1.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
-        "Senin": "07:00-09:30, KOM-C1, 36/50IK250 - SISTEM OPERASI - 3sks2400 - Dr. Rasim, S.T., M.T.Angkatan 2022D5451 - Ilmu Komputer - S1",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 1.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
+        "Senin": "07:00-09:30, KOM-C2, 46/80IK170 - SISTEM BASIS DATA - 3sks2808 - Dr. Rani Megasari, S.Kom., M.T.Angkatan 2023D5451 - Ilmu Komputer - S1",
         "status_senin": "1",
-        "Selasa": "07:00-08:40, KIMIA-S1-6C/D, 61/65KI319 - PENGANTAR KIMIA LINGKUNGAN - 2sks2186 - Prof. Dr. Fitri Khoerunnisa, M.Si., Ph.D.2186 - Prof. Dr. Fitri Khoerunnisa, M.Si., Ph.D.1410 - Drs. Yaya Sonjaya, M.Si.Angkatan 2021D5351 - Kimia - S1",
+        "Selasa": "07:00-07:50",
         "status_selasa": "1",
-        "Rabu": "07:00-09:30, KOM-2A, 39/50IK141 - STRUKTUR DATA - 3sks2990 - Erna Piantari,S.Kom.,M.T.Angkatan 2023D0551 - Pendidikan Ilmu Komputer - S1",
+        "Rabu": "07:00-08:40, BIO-2A, 20/40BI103 - STATISTIKA - 3sks2182 - Rini Solihat, Dr., M.Si.2182 - Rini Solihat, Dr., M.Si.3401 - Hardini Puspitaningrum, S.Si, M.Si.Angkatan 2023D0351 - Pendidikan Biologi - S1",
         "status_rabu": "1",
-        "Kamis": "07:00-09:30, DIK KIMIA-S1-4A, 41/50KI345 - KIMIA ANALITIK 2 - 3sks2076 - Drs. Hokcu Suhanda, M.Si.Angkatan 2022D0451 - Pendidikan Kimia - S1",
+        "Kamis": "07:00-09:30, KOM-6B, 40/40IK357 - INTERAKSI MANUSIA DAN KOMPUTER - 3sks2590 - Dr. Wahyudin, M.T.2590 - Dr. Wahyudin, M.T.3241 - Andini Setya Arianti, M.Ds.Angkatan 2021D0551 - Pendidikan Ilmu Komputer - S1",
         "status_kamis": "1",
-        "Jumat": "07:00-07:50",
+        "Jumat": "07:00-08:40, KOM-C, 36/50IK566 - BUSINESS INTELLIGENCE - 2sks3240 - Ani Anisyah, M.T.Angkatan 2021D5451 - Ilmu Komputer - S1",
         "status_jumat": "1",
         "Sabtu": "07:00-07:50",
         "status_sabtu": "1",
         "Minggu": "07:00-07:50",
         "status_minggu": "1"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 4.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
-        "Senin": "09:30-10:20",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 4.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
+        "Senin": "09:30-12:00, KOM-C2, 49/80IK270 - REKAYASA PERANGKAT LUNAK - 3sks2398 - Dr. Asep Wahyudin, S.Kom., M.T.Angkatan 2023D5451 - Ilmu Komputer - S1",
         "status_senin": "4",
-        "Selasa": "09:30-12:00, KOM-C2, 48/50IK230 - DESIGN DAN PEMROGRAMAN WEB - 3sks2591 - Herbert, S.Kom., M.T.Angkatan 2023D5451 - Ilmu Komputer - S1",
+        "Selasa": "09:30-12:00, BIO-6C, 41/50BI408 - BIOTEKNOLOGI - 3sks1973 - Prof. Topik Hidayat, S.Pd., M.Si., Ph.D.Angkatan 2021D5251 - Biologi - S1",
         "status_selasa": "4",
-        "Rabu": "09:30-10:20",
+        "Rabu": "09:30-11:10, DIK KIMIA-S1-4AB, 20/100KI201 - KEWIRAUSAHAAN - 2sks0930 - Prof. Dr. H. R. Asep Kadarohman, M.Si.Angkatan 2022D0451 - Pendidikan Kimia - S1",
         "status_rabu": "4",
-        "Kamis": "09:30-12:00, BIO-4A, 40/50BI204 - EVALUASI PEMBELAJARAN BIOLOGI - 3sks2189 - Dr. Ana Ratna Wulan, M.Pd.Angkatan 2022D0351 - Pendidikan Biologi - S1",
+        "Kamis": "09:30-10:20",
         "status_kamis": "4",
-        "Jumat": "09:30-11:10, 4A, 41/50DK304 - PENGELOLAAN PENDIDIKAN - 2sks1957 - Dr. H. Abubakar, M.Pd.Angkatan 2022D0551 - Pendidikan Ilmu Komputer - S1",
+        "Jumat": "09:30-11:10, MAT-2B, 49/50MT319 - KEWIRAUSAHAAN - 2sks1719 - Dr. H. Cece Kustiawan, M.Si.Angkatan 2023D0151 - Pendidikan Matematika - S1",
         "status_jumat": "4",
         "Sabtu": "09:30-10:20",
         "status_sabtu": "4",
         "Minggu": "09:30-10:20",
         "status_minggu": "4"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 7.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 7.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
         "Senin": "12:00-13:00",
         "status_senin": "7",
         "Selasa": "12:00-13:00",
@@ -10607,25 +10488,25 @@
         "Minggu": "12:00-13:00",
         "status_minggu": "7"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 8.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
-        "Senin": "13:00-14:40, BIO-4A, 21/50BI212 - GENETIKA - 3sks1191 - Prof. Dr. H. Riandi, M.Si.Angkatan 2022D0351 - Pendidikan Biologi - S1",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 8.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
+        "Senin": "13:00-15:30, KELAS C, 15/25MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks1716 - Prof. Dr. Ida Kaniawati, M.Si.1716 - Prof. Dr. Ida Kaniawati, M.Si.2762 - Prof. Dr. Eng. H. Asep Bayu Dani Nandiyanto, S.T., M.Eng.Angkatan 2021D5251 - Biologi - S1",
         "status_senin": "8",
-        "Selasa": "13:00-14:40, KOM-C, 27/50IK581 - SOFTWARE QUALITY ASSURANCE - 2sks3138 - Yudi Ahmad Hambali, S.Kom., M.T.Angkatan 2021D5451 - Ilmu Komputer - S1",
+        "Selasa": "13:00-15:30, KELAS C MBKM, 18/25MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks2577 - Tuszie Widhiyanti, M.Pd., Ph.D.Angkatan 2021D0451 - Pendidikan Kimia - S1",
         "status_selasa": "8",
-        "Rabu": "13:00-14:40, BIO-2A, 22/50BI201 - BIOKIMIA - 3sks1838 - Dr. Mimin Nurjhani Kusumastuti, M.Pd.Angkatan 2023D0351 - Pendidikan Biologi - S1",
+        "Rabu": "13:00-13:50, BIO-4C, 18/50BI413 - BIOMODELING - 2sks2175 - Dr. Hj. Diah Kusumawaty, M.Si.2175 - Dr. Hj. Diah Kusumawaty, M.Si.2190 - Dr. Wahyu Surakusumah, M.T.Angkatan 2023D5251 - Biologi - S1",
         "status_rabu": "8",
-        "Kamis": "13:00-15:30, KELAS D, 23/70MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks2585 - Prof. Dr. Lala Septem Riza, M.T.2585 - Prof. Dr. Lala Septem Riza, M.T.3036 - Tri Suwandi, S.Pd., M.Sc.Angkatan 2021D5451 - Ilmu Komputer - S1",
+        "Kamis": "13:00-14:40, BIO-2D, 14/40BI212 - GENETIKA - 3sks2170 - Dr. Hj. Any Aryani, S.Si., M.Si.Angkatan 2023D5251 - Biologi - S1",
         "status_kamis": "8",
-        "Jumat": "13:00-14:40, KIMIA-S1-6C/D PANGAN, 14/40KI515 - PENGAWETAN BAHAN PANGAN - 2sks3239 - Amelinda Pratiwi, M.Si.Angkatan 2021D5351 - Kimia - S1",
+        "Jumat": "13:00-14:40, MAT-4C, 45/50MT427 - KEWIRAUSAHAAN - 2sks1914 - Dr. Entit Puspita, S.Pd., M.Si.Angkatan 2022D5051 - Matematika - S1",
         "status_jumat": "8",
         "Sabtu": "13:00-13:50",
         "status_sabtu": "8",
         "Minggu": "13:00-13:50",
         "status_minggu": "8"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 14.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 14.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
         "Senin": "18:00-18:50",
         "status_senin": "14",
         "Selasa": "18:00-18:50",
@@ -10641,8 +10522,8 @@
         "Minggu": "18:00-18:50",
         "status_minggu": "14"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 15.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 15.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
         "Senin": "19:00-19:50",
         "status_senin": "15",
         "Selasa": "19:00-19:50",
@@ -10658,8 +10539,127 @@
         "Minggu": "19:00-19:50",
         "status_minggu": "15"
     },
-    "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405) - 16.": {
-        "Span": "57. 04.4A.04.023 - Ruang Kegiatan Akademik dan Kemahasiswaan Internal FPMIPA (E - 405)",
+    "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406) - 16.": {
+        "Span": "56. 04.4A.04.022 - Ruang Kuliah FPMIPA (E - 406)",
+        "Senin": "19:50-20:40",
+        "status_senin": "16",
+        "Selasa": "19:50-20:40",
+        "status_selasa": "16",
+        "Rabu": "19:50-20:40",
+        "status_rabu": "16",
+        "Kamis": "19:50-20:40",
+        "status_kamis": "16",
+        "Jumat": "19:50-20:40",
+        "status_jumat": "16",
+        "Sabtu": "19:50-20:40",
+        "status_sabtu": "16",
+        "Minggu": "19:50-20:40",
+        "status_minggu": "16"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 1.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
+        "Senin": "07:00-09:30, KOM-C1, 36/50IK250 - SISTEM OPERASI - 3sks2400 - Dr. Rasim, S.T., M.T.Angkatan 2022D5451 - Ilmu Komputer - S1",
+        "status_senin": "1",
+        "Selasa": "07:00-08:40, KIMIA-S1-6C/D, 61/65KI319 - PENGANTAR KIMIA LINGKUNGAN - 2sks2186 - Prof. Dr. Fitri Khoerunnisa, M.Si., Ph.D.2186 - Prof. Dr. Fitri Khoerunnisa, M.Si., Ph.D.1410 - Drs. Yaya Sonjaya, M.Si.Angkatan 2021D5351 - Kimia - S1",
+        "status_selasa": "1",
+        "Rabu": "07:00-09:30, KOM-2A, 39/50IK141 - STRUKTUR DATA - 3sks2990 - Erna Piantari,S.Kom.,M.T.Angkatan 2023D0551 - Pendidikan Ilmu Komputer - S1",
+        "status_rabu": "1",
+        "Kamis": "07:00-09:30, DIK KIMIA-S1-4A, 41/50KI345 - KIMIA ANALITIK 2 - 3sks2076 - Drs. Hokcu Suhanda, M.Si.Angkatan 2022D0451 - Pendidikan Kimia - S1",
+        "status_kamis": "1",
+        "Jumat": "07:00-07:50",
+        "status_jumat": "1",
+        "Sabtu": "07:00-07:50",
+        "status_sabtu": "1",
+        "Minggu": "07:00-07:50",
+        "status_minggu": "1"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 4.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
+        "Senin": "09:30-10:20",
+        "status_senin": "4",
+        "Selasa": "09:30-12:00, KOM-C2, 48/50IK230 - DESIGN DAN PEMROGRAMAN WEB - 3sks2591 - Herbert, S.Kom., M.T.Angkatan 2023D5451 - Ilmu Komputer - S1",
+        "status_selasa": "4",
+        "Rabu": "09:30-10:20",
+        "status_rabu": "4",
+        "Kamis": "09:30-12:00, BIO-4A, 40/50BI204 - EVALUASI PEMBELAJARAN BIOLOGI - 3sks2189 - Dr. Ana Ratna Wulan, M.Pd.Angkatan 2022D0351 - Pendidikan Biologi - S1",
+        "status_kamis": "4",
+        "Jumat": "09:30-11:10, 4A, 41/50DK304 - PENGELOLAAN PENDIDIKAN - 2sks1957 - Dr. H. Abubakar, M.Pd.Angkatan 2022D0551 - Pendidikan Ilmu Komputer - S1",
+        "status_jumat": "4",
+        "Sabtu": "09:30-10:20",
+        "status_sabtu": "4",
+        "Minggu": "09:30-10:20",
+        "status_minggu": "4"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 7.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
+        "Senin": "12:00-13:00",
+        "status_senin": "7",
+        "Selasa": "12:00-13:00",
+        "status_selasa": "7",
+        "Rabu": "12:00-13:00",
+        "status_rabu": "7",
+        "Kamis": "12:00-13:00",
+        "status_kamis": "7",
+        "Jumat": "12:00-13:00",
+        "status_jumat": "7",
+        "Sabtu": "12:00-13:00",
+        "status_sabtu": "7",
+        "Minggu": "12:00-13:00",
+        "status_minggu": "7"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 8.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
+        "Senin": "13:00-14:40, BIO-4A, 21/50BI212 - GENETIKA - 3sks1191 - Prof. Dr. H. Riandi, M.Si.Angkatan 2022D0351 - Pendidikan Biologi - S1",
+        "status_senin": "8",
+        "Selasa": "13:00-14:40, KOM-C, 27/50IK581 - SOFTWARE QUALITY ASSURANCE - 2sks3138 - Yudi Ahmad Hambali, S.Kom., M.T.Angkatan 2021D5451 - Ilmu Komputer - S1",
+        "status_selasa": "8",
+        "Rabu": "13:00-14:40, BIO-2A, 22/50BI201 - BIOKIMIA - 3sks1838 - Dr. Mimin Nurjhani Kusumastuti, M.Pd.Angkatan 2023D0351 - Pendidikan Biologi - S1",
+        "status_rabu": "8",
+        "Kamis": "13:00-15:30, KELAS D, 23/70MA100 - MATEMATIKA, SAINS, TEKNOLOGI, DAN REKAYASA - 3sks2585 - Prof. Dr. Lala Septem Riza, M.T.2585 - Prof. Dr. Lala Septem Riza, M.T.3036 - Tri Suwandi, S.Pd., M.Sc.Angkatan 2021D5451 - Ilmu Komputer - S1",
+        "status_kamis": "8",
+        "Jumat": "13:00-14:40, KIMIA-S1-6C/D PANGAN, 14/40KI515 - PENGAWETAN BAHAN PANGAN - 2sks3239 - Amelinda Pratiwi, M.Si.Angkatan 2021D5351 - Kimia - S1",
+        "status_jumat": "8",
+        "Sabtu": "13:00-13:50",
+        "status_sabtu": "8",
+        "Minggu": "13:00-13:50",
+        "status_minggu": "8"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 14.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
+        "Senin": "18:00-18:50",
+        "status_senin": "14",
+        "Selasa": "18:00-18:50",
+        "status_selasa": "14",
+        "Rabu": "18:00-18:50",
+        "status_rabu": "14",
+        "Kamis": "18:00-18:50",
+        "status_kamis": "14",
+        "Jumat": "18:00-18:50",
+        "status_jumat": "14",
+        "Sabtu": "18:00-18:50",
+        "status_sabtu": "14",
+        "Minggu": "18:00-18:50",
+        "status_minggu": "14"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 15.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
+        "Senin": "19:00-19:50",
+        "status_senin": "15",
+        "Selasa": "19:00-19:50",
+        "status_selasa": "15",
+        "Rabu": "19:00-19:50",
+        "status_rabu": "15",
+        "Kamis": "19:00-19:50",
+        "status_kamis": "15",
+        "Jumat": "19:00-19:50",
+        "status_jumat": "15",
+        "Sabtu": "19:00-19:50",
+        "status_sabtu": "15",
+        "Minggu": "19:00-19:50",
+        "status_minggu": "15"
+    },
+    "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405) - 16.": {
+        "Span": "57. 04.4A.04.023 - Ruang Kuliah FPMIPA (E - 405)",
         "Senin": "19:50-20:40",
         "status_senin": "16",
         "Selasa": "19:50-20:40",

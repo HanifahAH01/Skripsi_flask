@@ -232,8 +232,7 @@
             <!-- Details -->
             <div class="details">
                 <div class="recentOrders">
-                    <div class="cardHeader">
-                        <!-- <h2>Ruang Kelas</h2> -->
+                    <!-- <div class="cardHeader">
                         <div class="button-group">
                             <a class="btn-secondary" data-filter="all_chart" onclick="filterCharts(event)">ALL</a>
                             <a class="btn-thirdty" data-filter="chart_bar" onclick="filterCharts(event)">Okupansi
@@ -244,30 +243,30 @@
                                 Ruangan Esidental</a>
                             <a class="btn-thirdty" data-filter="jadwal_ruangan" onclick="filterCharts(event)">Okupansi
                                 Ruangan Dengan Waktu</a>
-
                         </div>
-                    </div>
+                    </div> -->
                     <br>
                     <div class="chartCard" id="chartCard">
                         <!-- Tombol Navigasi -->
                         <div class="button-group-scroll">
                             <!-- <button onclick="scrollToSection('chart_bar')">Okupansi Kapasitas Ruangan</button> -->
                             <select onchange="scrollToSection(this.value)">
-                                <option value="chart_bar">Okupansi Kapasitas Ruangan</option>
+                                <!-- <option value="chart_bar">Okupansi Kapasitas Ruangan</option> -->
                                 <option value="Gedung_A">Okupansi Kapasitas Gedung A</option>
                                 <option value="Gedung_B">Okupansi Kapasitas Gedung B</option>
                                 <option value="Gedung_C">Okupansi Kapasitas Gedung C</option>
                                 <option value="Botani">Okupansi Kapasitas Gedung Praktek Botani</option>
 
                             </select>
-                            <button onclick="scrollToSection('heatmap')">Okupansi Ruangan Dengan Waktu</button>
+                            <!-- <button onclick="scrollToSection('heatmap')">Okupansi Ruangan Dengan Waktu</button> -->
                             <select onchange="scrollToSection(this.value)">
                                 <option value="myChart8">Pemakaian Ruangan Esidental</option>
                                 <option value="myChartHari">Rekap Penggunaan Ruangan</option>
 
                             </select>
                             <select onchange="scrollToSection(this.value)">
-                                <option value="jadwal_ruangan">Okupansi Ruangan Dengan Waktu</option>
+                                <option value="heatmap">Okupansi Penggunaan Ruangan</option>
+                                <option value="jadwal_ruangan">Jadwal Ruangan</option>
                                 <option value="booking">Booking</option>
                                 <option value="Laporan_booking">Rekap Booking</option>
                                 <option value="report">Report</option>
@@ -280,11 +279,11 @@
                         </div>
                         <!-- Start Chart PIE Gedung FPMIPA -->
                         <div class="chartBox" id="chart_bar">
-                            <h2>Okupansi Kapasitas Ruangan</h2>
-                            <div class="scrollBox">
+                            <!-- <h2>Okupansi Kapasitas Ruangan</h2> -->
+                            <!-- <div class="scrollBox">
                                 <canvas id="myChart3" style="width: 400px; height: 400px;"></canvas>
                             </div>
-                            <br>
+                            <br> -->
                             <br>
                             <!-- FPMIPA A -->
                             <div class="scrollBox">
@@ -309,7 +308,7 @@
                         <div class="chartBox" id="heatmap">
                             <div class="scrollBox">
                                 <div class="scrollBoxBody">
-                                    <h2>Okupansi Ruangan Dengan Waktu</h2>
+                                    <h2>Penggunaan Ruangan</h2>
                                     <br>
                                     <div class="scrollBoxBody">
                                         <div class="plot-container" style="max-width: 150;">
@@ -337,7 +336,7 @@
                         <br>
                         <!-- Start Jadwal Ruang Kelas -->
                         <div class="chartBox" id="jadwal_ruangan">
-                            <h2>Okupansi Ruangan Dengan Waktu</h2>
+                            <h2>Jadwal Ruangan</h2>
 
                             <br>
                             <a href="/add" class="btn-secondary" id="booking">Booking</a>

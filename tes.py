@@ -10,11 +10,20 @@ class Jadwal:
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
         }
-        self.program_studi_list = [
-            "Ilmu Komputer", "Pendidikan Ilmu Komputer", "Matematika", "Pendidikan Matematika",
-            "Fisika", "Pendidikan Fisika", "International Program on Science Education",
-            "Pendidikan Ilmu Pengetahuan Alam", "Kimia", "Pendidikan Kimia", "Biologi", "Pendidikan Biologi"
-        ]
+        self.program_studi_mapping = {
+            "Ilmu Komputer": "IK",
+            "Pendidikan Ilmu Komputer": "PIK",
+            "Matematika": "M",
+            "Pendidikan Matematika": "PM",
+            "Fisika": "F",
+            "Pendidikan Fisika": "PF",
+            "International Program on Science Education": "IPSE",
+            "Pendidikan Ilmu Pengetahuan Alam": "PIPA",
+            "Kimia": "K",
+            "Pendidikan Kimia": "PK",
+            "Biologi": "B",
+            "Pendidikan Biologi": "PB"
+        }
 
     def fetch_html(self):
         response = requests.get(self.url, headers=self.headers)
@@ -46,22 +55,25 @@ class Jadwal:
         status_value = str(idx)
         row_data = {
             "Span": span_content,
-            "Senin": columns[1].get_text(strip=True),
+            "Senin": self.get_short_name(columns[1].get_text(strip=True)),
             "status_senin": status_value if columns[1].get_text(strip=True) else "0",
-            "Selasa": columns[2].get_text(strip=True),
+            "Selasa": self.get_short_name(columns[2].get_text(strip=True)),
             "status_selasa": status_value if columns[2].get_text(strip=True) else "0",
-            "Rabu": columns[3].get_text(strip=True),
+            "Rabu": self.get_short_name(columns[3].get_text(strip=True)),
             "status_rabu": status_value if columns[3].get_text(strip=True) else "0",
-            "Kamis": columns[4].get_text(strip=True),
+            "Kamis": self.get_short_name(columns[4].get_text(strip=True)),
             "status_kamis": status_value if columns[4].get_text(strip=True) else "0",
-            "Jumat": columns[5].get_text(strip=True),
+            "Jumat": self.get_short_name(columns[5].get_text(strip=True)),
             "status_jumat": status_value if columns[5].get_text(strip=True) else "0",
-            "Sabtu": columns[6].get_text(strip=True),
+            "Sabtu": self.get_short_name(columns[6].get_text(strip=True)),
             "status_sabtu": status_value if columns[6].get_text(strip=True) else "0",
-            "Minggu": columns[7].get_text(strip=True),
+            "Minggu": self.get_short_name(columns[7].get_text(strip=True)),
             "status_minggu": status_value if columns[7].get_text(strip=True) else "0"
         }
         return row_data
+
+    def get_short_name(self, full_name):
+        return self.program_studi_mapping.get(full_name, full_name)
 
     def count_program_studi(self, jadwal):
         program_studi_list = []
@@ -70,15 +82,15 @@ class Jadwal:
             for day in ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"]:
                 schedule = value.get(day, "")
                 if schedule:
-                    for program_studi in self.program_studi_list:
+                    for program_studi, short_name in self.program_studi_mapping.items():
                         if program_studi in schedule:
-                            program_studi_entry = next((item for item in program_studi_list if item["Span"] == span and item["Program Studi"] == program_studi), None)
+                            program_studi_entry = next((item for item in program_studi_list if item["Span"] == span and item["Program Studi"] == short_name), None)
                             if program_studi_entry:
                                 program_studi_entry["Jumlah"] += 1
                             else:
                                 program_studi_list.append({
                                     "Span": span,
-                                    "Program Studi": program_studi,
+                                    "Program Studi": short_name,
                                     "Jumlah": 1
                                 })
         return program_studi_list

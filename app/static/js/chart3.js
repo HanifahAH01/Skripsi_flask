@@ -102,10 +102,17 @@ document.addEventListener("DOMContentLoaded", function () {
                             type: 'category',
                             labels: kelasProdiList.map(function (kelasProdi) {
                                 return kelasProdi.program_studi; // Label sumbu X
-                            })
+                            }),
+                            ticks: {
+                                autoSkip: true,   // Mengaktifkan auto-skip untuk mengurangi label yang ditampilkan
+                                maxTicksLimit: 60, // Membatasi jumlah maksimal label yang ditampilkan
+                                maxRotation: 0,   // Rotasi maksimal 0 derajat
+                                minRotation: 0,   // Rotasi minimal 0 derajat
+                                padding: 20       // Jarak antar label
+                            }
                         },
                         y: {
-                            beginAtZero: true,
+                            beginAtZero: true, // Memastikan sumbu Y dimulai dari 0
                             ticks: {
                                 precision: 0,
                                 callback: function (value) {
@@ -121,13 +128,14 @@ document.addEventListener("DOMContentLoaded", function () {
                             callbacks: {
                                 label: function (tooltipItem) {
                                     var item = tooltipItem.raw;
-                                    return "Ruangan: ${ item.z }, Program Studi: ${ item.x }, Jumlah: ${ item.y }";
+                                    return `Ruangan: ${item.z}, Program Studi: ${item.x}, Jumlah: ${item.y}`;
                                 }
                             }
                         }
                     }
                 }
             };
+
 
             var myChartHari = new Chart(
                 document.getElementById('myChartHari'),
