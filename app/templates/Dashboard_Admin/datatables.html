@@ -96,9 +96,35 @@
       });
     }
 
+    function runDataRekap() {
+      $.ajax({
+        url: 'run-data-rekap',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+
     function runemptyJadwal() {
       $.ajax({
         url: 'run-empty-jadwal',
+        type: 'POST',
+        success: function (response) {
+          alert(response.message);
+        },
+        error: function (error) {
+          alert('Error: ' + error.responseText);
+        }
+      });
+    }
+
+    function runemptyRekapPenggunaan() {
+      $.ajax({
+        url: 'run-empty-rekap-penggunaan',
         type: 'POST',
         success: function (response) {
           alert(response.message);
@@ -161,35 +187,6 @@
                   <li>
                     <a href="/recap-admin">
                       <span class="sub-item">Recap</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item active">
-              <a data-bs-toggle="collapse" href="#tables">
-                <i class="fas fa-table"></i>
-                <p>Sinkronisasi</p>
-                <span class="caret"></span>
-              </a>
-              <div class="collapse" id="tables">
-                <ul class="nav nav-collapse">
-                  <li>
-                    <a href="#">
-                      <span class="sub-item">Kapasitas </span>
-                      <button onclick="runKapasitas()">Run Kapasitas </button>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="sub-item">Jadwal</span>
-                      <button onclick="runJadwal()">Run Jadwal</button>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <span class="sub-item">Data Jadwal</span>
-                      <button onclick="runDataJadwal()">Run Data Jadwal</button>
                     </a>
                   </li>
                 </ul>
@@ -540,463 +537,479 @@
               <div class="card">
                 <div class="card-header">
                   <div class="d-flex align-items-center">
-                    <h4 class="card-title">Report</h4>
+                    <h4 class="card-title">Rekap penggunaan Ruangan</h4>
+                    <div class="ms-auto">
+                      <button class="btn btn-primary btn-round ms-2" onclick="runDataRekap()">Run Sinkron
+                        Rekap</button>
+                      <button class="btn btn-primary btn-round ms-2" onclick="runemptyRekapPenggunaan()">Run TRUNCATE
+                        Rekap</button>
+                    </div>
                   </div>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="add-row" class="display table table-striped table-hover">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Ruang Kelas</th>
-                          <th>Program Studi</th>
-                          <th>Jumlah</th>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Ruang Kelas</th>
+                            <th>Program Studi</th>
+                            <th>Jumlah</th>
 
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for prodi in prodi %}
-                        <tr>
-                          <td>{{ prodi[0] }}</td>
-                          <td>{{ prodi[1] }}</td>
-                          <td>{{ prodi[2] }}</td>
-                          <td>{{ prodi[3] }}</td>
-                        </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for prodi in prodi %}
+                          <tr>
+                            <td>{{ prodi[0] }}</td>
+                            <td>{{ prodi[1] }}</td>
+                            <td>{{ prodi[2] }}</td>
+                            <td>{{ prodi[3] }}</td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <div class="d-flex align-items-center">
-                    <h4 class="card-title">Booking</h4>
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                      <h4 class="card-title">Booking</h4>
+                    </div>
                   </div>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="add-row" class="display table table-striped table-hover">
-                      <thead>
-                        <tr>
-                          <th>Nama Pemohon</th>
-                          <th>Nama Ruangan</th>
-                          <th>Hari</th>
-                          <th>Tanggal</th>
-                          <th>Waktu Awal</th>
-                          <th>Waktu Akhir</th>
-                          <th>Tujuan Booking</th>
-                          <th>Jumlah Peserta</th>
-                          <th>Status</th>
-                          <th>Keterangan Status</th>
-                          <th style="width: 10%">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for booking in booking %}
-                        <tr>
-                          <td>{{ booking[1] }}</td>
-                          <td>{{ booking[2] }}</td>
-                          <td>{{ booking[3] }}</td>
-                          <td>{{ booking[4] }}</td>
-                          <td>{{ booking[5] }}</td>
-                          <td>{{ booking[6] }}</td>
-                          <td>{{ booking[7] }}</td>
-                          <td>{{ booking[8] }}</td>
-                          <td>{{ booking[9] }}</td>
-                          <td>{{ booking[10] }}</td>
-                          <td>
-                            <div class="form-button-action">
-                              <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#editModal{{ booking[0] }}">
-                                <i class="fa fa-edit" data-bs-toggle="tooltip" title="Edit Task"></i>
-                              </button>
-                              <button type="button" class="btn btn-link btn-danger" data-bs-toggle="tooltip"
-                                title="Remove">
-                                <i class="fa fa-times"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                        <!-- Modal for Edit -->
-                        <div class="modal fade" id="editModal{{ booking[0] }}" tabindex="-1"
-                          aria-labelledby="editModalLabel{{ booking[0] }}" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ booking[0] }}">Edit Status dan Keterangan
-                                  Status</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                  aria-label="Close"></button>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>Nama Pemohon</th>
+                            <th>Nama Ruangan</th>
+                            <th>Hari</th>
+                            <th>Tanggal</th>
+                            <th>Waktu Awal</th>
+                            <th>Waktu Akhir</th>
+                            <th>Tujuan Booking</th>
+                            <th>Jumlah Peserta</th>
+                            <th>Status</th>
+                            <th>Keterangan Status</th>
+                            <th style="width: 10%">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for booking in booking %}
+                          <tr>
+                            <td>{{ booking[1] }}</td>
+                            <td>{{ booking[2] }}</td>
+                            <td>{{ booking[3] }}</td>
+                            <td>{{ booking[4] }}</td>
+                            <td>{{ booking[5] }}</td>
+                            <td>{{ booking[6] }}</td>
+                            <td>{{ booking[7] }}</td>
+                            <td>{{ booking[8] }}</td>
+                            <td>{{ booking[9] }}</td>
+                            <td>{{ booking[10] }}</td>
+                            <td>
+                              <div class="form-button-action">
+                                <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
+                                  data-bs-target="#editModal{{ booking[0] }}">
+                                  <i class="fa fa-edit" data-bs-toggle="tooltip" title="Edit Task"></i>
+                                </button>
+                                <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal"
+                                  data-bs-target="#deleteModal{{ booking[0] }}" title="Remove">
+                                  <i class="fa fa-times"></i>
+                                </button>
                               </div>
-                              <div class="modal-body">
-                                <form action="{{ url_for('edit_booking', No=booking[0]) }}" method="POST">
-                                  <div class="form-group">
-                                    <label for="status">Status</label>
-                                    <select class="form-control" id="status" name="status">
-                                      {% for status in statuses %}
-                                      <option value="{{ status[0] }}" {% if booking[9]==status[1] %}selected{% endif %}>
-                                        {{ status[1] }}</option>
-                                      {% endfor %}
-                                    </select>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="keterangan_status">Keterangan Status</label>
-                                    <input type="text" class="form-control" id="keterangan_status"
-                                      name="keterangan_status" value="{{ booking[10] }}">
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Simpan</button>
-                                </form>
+                            </td>
+                          </tr>
+                          <!-- Modal for Edit -->
+                          <div class="modal fade" id="editModal{{ booking[0] }}" tabindex="-1"
+                            aria-labelledby="editModalLabel{{ booking[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="editModalLabel{{ booking[0] }}">Edit Status dan Keterangan
+                                    Status</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form action="{{ url_for('edit_booking', No=booking[0]) }}" method="POST">
+                                    <div class="form-group">
+                                      <label for="status">Status</label>
+                                      <select class="form-control" id="status" name="status">
+                                        {% for status in statuses %}
+                                        <option value="{{ status[0] }}" {% if booking[9]==status[1] %}selected{% endif
+                                          %}>
+                                          {{ status[1] }}</option>
+                                        {% endfor %}
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="keterangan_status">Keterangan Status</label>
+                                      <input type="text" class="form-control" id="keterangan_status"
+                                        name="keterangan_status" value="{{ booking[10] }}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                  </form>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        {% endfor %}
-                      </tbody>
-                    </table>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <div class="d-flex align-items-center">
-                    <h4 class="card-title">Report</h4>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <!-- Modal -->
-                  <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header border-0">
-                          <h5 class="modal-title">
-                            <span class="fw-mediumbold"> New</span>
-                            <span class="fw-light"> Row </span>
-                          </h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <p class="small">
-                            Create a new row using this form, make sure you
-                            fill them all
-                          </p>
-                          <form>
-                            <div class="row">
-                              <div class="col-sm-12">
-                                <div class="form-group form-group-default">
-                                  <label>Name</label>
-                                  <input id="addName" type="text" class="form-control" placeholder="fill name" />
+                          <!-- Modal for Delete Confirmation -->
+                          <div class="modal fade" id="deleteModal{{ booking[0] }}" tabindex="-1"
+                            aria-labelledby="deleteModalLabel{{ booking[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="deleteModalLabel{{ booking[0] }}">Hapus Booking</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                                 </div>
-                              </div>
-                              <div class="col-md-6 pe-0">
-                                <div class="form-group form-group-default">
-                                  <label>Position</label>
-                                  <input id="addPosition" type="text" class="form-control"
-                                    placeholder="fill position" />
+                                <div class="modal-body">
+                                  Apakah Anda yakin ingin menghapus booking ini?
                                 </div>
-                              </div>
-                              <div class="col-md-6">
-                                <div class="form-group form-group-default">
-                                  <label>Office</label>
-                                  <input id="addOffice" type="text" class="form-control" placeholder="fill office" />
+                                <div class="modal-footer">
+                                  <form action="{{ url_for('delete_booking', No=booking[0]) }}" method="POST">
+                                    <button type="button" class="btn btn-secondary"
+                                      data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                  </form>
                                 </div>
                               </div>
                             </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer border-0">
-                          <button type="button" id="addRowButton" class="btn btn-primary">
-                            Add
-                          </button>
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">
-                            Close
-                          </button>
+                          </div>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center">
+                      <h4 class="card-title">Report</h4>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <!-- Modal -->
+                    <div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header border-0">
+                            <h5 class="modal-title">
+                              <span class="fw-mediumbold"> New</span>
+                              <span class="fw-light"> Row </span>
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p class="small">
+                              Create a new row using this form, make sure you
+                              fill them all
+                            </p>
+                            <form>
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <div class="form-group form-group-default">
+                                    <label>Name</label>
+                                    <input id="addName" type="text" class="form-control" placeholder="fill name" />
+                                  </div>
+                                </div>
+                                <div class="col-md-6 pe-0">
+                                  <div class="form-group form-group-default">
+                                    <label>Position</label>
+                                    <input id="addPosition" type="text" class="form-control"
+                                      placeholder="fill position" />
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-group form-group-default">
+                                    <label>Office</label>
+                                    <input id="addOffice" type="text" class="form-control" placeholder="fill office" />
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer border-0">
+                            <button type="button" id="addRowButton" class="btn btn-primary">
+                              Add
+                            </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                              Close
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="table-responsive">
-                    <table id="add-row" class="display table table-striped table-hover">
-                      <thead>
-                        <tr>
-                          <th>Nama Ruangan</th>
-                          <th>Hari</th>
-                          <th>Waktu</th>
-                          <th>Alasan</th>
-                          <th>Tindakan</th>
-                          <th style="width: 10%">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for laporan in laporan %}
-                        <tr>
-                          <td>{{ laporan[1] }}</td>
-                          <td>{{ laporan[2] }}</td>
-                          <td>{{ laporan[3] }}</td>
-                          <td>{{ laporan[4] }}</td>
-                          <td>{{ laporan[5] }}</td>
-                          <td>
-                            <div class="form-button-action">
-                              <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#editModal{{ laporan[0] }}">
-                                <i class="fa fa-edit" data-bs-toggle="tooltip" title="Edit Task"></i>
-                              </button>
-                              <button type="button" class="btn btn-link btn-danger" data-bs-toggle="tooltip"
-                                title="Remove">
-                                <i class="fa fa-times"></i>
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <!-- Modal for Edit -->
-                        <div class="modal fade" id="editModal{{ laporan[0] }}" tabindex="-1"
-                          aria-labelledby="editModalLabel{{ laporan[0] }}" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ laporan[0] }}">Edit Tindakan</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                  aria-label="Close"></button>
+                    <div class="table-responsive">
+                      <table id="add-row" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>Nama Ruangan</th>
+                            <th>Hari</th>
+                            <th>Waktu</th>
+                            <th>Alasan</th>
+                            <th>Tindakan</th>
+                            <th style="width: 10%">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for laporan in laporan %}
+                          <tr>
+                            <td>{{ laporan[1] }}</td>
+                            <td>{{ laporan[2] }}</td>
+                            <td>{{ laporan[3] }}</td>
+                            <td>{{ laporan[4] }}</td>
+                            <td>{{ laporan[5] }}</td>
+                            <td>
+                              <div class="form-button-action">
+                                <button type="button" class="btn btn-link btn-primary btn-lg" data-bs-toggle="modal"
+                                  data-bs-target="#editTindakanModal{{ laporan[0] }}">
+                                  <i class="fa fa-edit" data-bs-toggle="tooltip" title="Edit Tindakan"></i>
+                                </button>
+                                <button type="button" class="btn btn-link btn-danger" data-bs-toggle="modal"
+                                  data-bs-target="#deleteModallaporan{{ laporan[0] }}" title="Remove">
+                                  <i class="fa fa-times"></i>
+                                </button>
                               </div>
-                              <div class="modal-body">
-                                <!-- Isi form edit disini -->
-                                <form action="{{ url_for('edit_action', No=laporan[0]) }}" method="POST">
-                                  <div class="form-group">
-                                    <label for="tindakan">Tindakan</label>
-                                    <input type="text" class="form-control" id="tindakan" name="tindakan"
-                                      value="{{ laporan[5] }}">
-                                  </div>
-                                  <button type="submit" class="btn btn-primary">Simpan</button>
-                                </form>
+                            </td>
+                          </tr>
+
+                          <!-- Modal for Edit -->
+                          <div class="modal fade" id="editTindakanModal{{ laporan[0] }}" tabindex="-1"
+                            aria-labelledby="editTindakanModalLabel{{ laporan[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="editTindakanModalLabel{{ laporan[0] }}">Edit Tindakan</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form action="{{ url_for('edit_action', No=laporan[0]) }}" method="POST">
+                                    <div class="form-group">
+                                      <label for="tindakan{{ laporan[0] }}">Tindakan</label>
+                                      <input type="text" class="form-control" id="tindakan{{ laporan[0] }}"
+                                        name="tindakan" value="{{ laporan[5] }}">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                  </form>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        {% endfor %}
-                      </tbody>
 
-                    </table>
+                          <!-- Modal for Delete Confirmation -->
+                          <div class="modal fade" id="deleteModallaporan{{ laporan[0] }}" tabindex="-1"
+                            aria-labelledby="deleteModallaporanLabel{{ laporan[0] }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="deleteModallaporanLabel{{ laporan[0] }}">Hapus Report</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  Apakah Anda yakin ingin menghapus Report ini?
+                                </div>
+                                <div class="modal-footer">
+                                  <form action="{{ url_for('delete_laporan', No=laporan[0]) }}" method="POST">
+                                    <button type="button" class="btn btn-secondary"
+                                      data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                        </tbody>
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Sinkronisasi</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="basic-datatables" class="display table table-striped table-hover">
+                        <thead>
+                          <tr>
+                            <th>NO</th>
+                            <th>Nama Sinkronisasi</th>
+                            <th>action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>
+                              <span class="sub-item">Kapasitas </span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Scrapping
+                                Kapasitas
+                              </button>
+                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Sinkron
+                                Kapasitas
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>
+                              <span class="sub-item">Jadwal </span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Scrapping
+                                Jadwal
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>
+                              <span class="sub-item">Heatmap</span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Scrapping
+                                Heatmap</button>
+                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Sinkron
+                                Heatmap</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Sinkronisasi</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="basic-datatables" class="display table table-striped table-hover">
-                      <thead>
-                        <tr>
-                          <th>NO</th>
-                          <th>Nama Sinkronisasi</th>
-                          <th>action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            <span class="sub-item">Kapasitas </span>
-                          </td>
-                          <td>
-                            <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Kapasitas
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
 
-      <footer class="footer">
-        <div class="container-fluid d-flex justify-content-between">
-          <nav class="pull-left">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  FPMIPA UPI
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright">
-            2024, made with <i class="fa fa-heart heart text-danger"></i> by
-            <a href="#">Hanifah</a>
-          </div>
-          <div>
-            Distributed by
-            <a target="_blank" href="">Ilmu Komputer FPMIPA UPI</a>.
-          </div>
-        </div>
-      </footer>
-    </div>
-
-    <!-- Custom template | don't include it in your project! -->
-    <div class="custom-template">
-      <div class="title">Settings</div>
-      <div class="custom-content">
-        <div class="switcher">
-          <div class="switch-block">
-            <h4>Logo Header</h4>
-            <div class="btnSwitch">
-              <button type="button" class="selected changeLogoHeaderColor" data-color="dark"></button>
-              <button type="button" class="selected changeLogoHeaderColor" data-color="blue"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="green"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="red"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="white"></button>
-              <br />
-              <button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
-              <button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    FPMIPA UPI
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="copyright">
+              2024, made with by
+              <a href="#">Hanifah</a>
+            </div>
+            <div>
+              Distributed by
+              <a target="_blank" href="">Ilmu Komputer FPMIPA UPI</a>.
             </div>
           </div>
-          <div class="switch-block">
-            <h4>Navbar Header</h4>
-            <div class="btnSwitch">
-              <button type="button" class="changeTopBarColor" data-color="dark"></button>
-              <button type="button" class="changeTopBarColor" data-color="blue"></button>
-              <button type="button" class="changeTopBarColor" data-color="purple"></button>
-              <button type="button" class="changeTopBarColor" data-color="light-blue"></button>
-              <button type="button" class="changeTopBarColor" data-color="green"></button>
-              <button type="button" class="changeTopBarColor" data-color="orange"></button>
-              <button type="button" class="changeTopBarColor" data-color="red"></button>
-              <button type="button" class="changeTopBarColor" data-color="white"></button>
-              <br />
-              <button type="button" class="changeTopBarColor" data-color="dark2"></button>
-              <button type="button" class="selected changeTopBarColor" data-color="blue2"></button>
-              <button type="button" class="changeTopBarColor" data-color="purple2"></button>
-              <button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
-              <button type="button" class="changeTopBarColor" data-color="green2"></button>
-              <button type="button" class="changeTopBarColor" data-color="orange2"></button>
-              <button type="button" class="changeTopBarColor" data-color="red2"></button>
-            </div>
-          </div>
-          <div class="switch-block">
-            <h4>Sidebar</h4>
-            <div class="btnSwitch">
-              <button type="button" class="selected changeSideBarColor" data-color="white"></button>
-              <button type="button" class="changeSideBarColor" data-color="dark"></button>
-              <button type="button" class="changeSideBarColor" data-color="dark2"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="custom-toggle">
-        <i class="icon-settings"></i>
+        </footer>
       </div>
     </div>
-    <!-- End Custom template -->
-  </div>
-  <!--   Core JS Files   -->
-  <script src="{{ url_for('static', filename='core/jquery-3.7.1.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='core/popper.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='core/bootstrap.min.js') }}"></script>
+    <!--   Core JS Files   -->
+    <script src="{{ url_for('static', filename='core/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='core/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='core/bootstrap.min.js') }}"></script>
 
-  <!-- jQuery Scrollbar -->
+    <!-- jQuery Scrollbar -->
 
-  <script src="{{ url_for('static', filename='plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 
-  <!-- Datatables -->
-  <script src="{{ url_for('static', filename='plugin/datatables/datatables.min.js') }}"></script>
+    <!-- Datatables -->
+    <script src="{{ url_for('static', filename='plugin/datatables/datatables.min.js') }}"></script>
 
-  <!-- Kaiadmin JS -->
-  <script src="{{ url_for('static', filename='js/kaiadmin.min.js') }}"></script>
+    <!-- Kaiadmin JS -->
+    <script src="{{ url_for('static', filename='js/kaiadmin.min.js') }}"></script>
 
-  <!-- Kaiadmin DEMO methods, don't include it in your project! -->
-  <script>
-    $(document).ready(function () {
-      $("#basic-datatables").DataTable({});
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script>
+      $(document).ready(function () {
+        $("#basic-datatables").DataTable({});
 
-      $("#multi-filter-select").DataTable({
-        pageLength: 5,
-        initComplete: function () {
-          this.api()
-            .columns()
-            .every(function () {
-              var column = this;
-              var select = $(
-                '<select class="form-select"><option value=""></option></select>'
-              )
-                .appendTo($(column.footer()).empty())
-                .on("change", function () {
-                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
+        $("#multi-filter-select").DataTable({
+          pageLength: 5,
+          initComplete: function () {
+            this.api()
+              .columns()
+              .every(function () {
+                var column = this;
+                var select = $(
+                  '<select class="form-select"><option value=""></option></select>'
+                )
+                  .appendTo($(column.footer()).empty())
+                  .on("change", function () {
+                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
 
-                  column
-                    .search(val ? "^" + val + "$" : "", true, false)
-                    .draw();
-                });
+                    column
+                      .search(val ? "^" + val + "$" : "", true, false)
+                      .draw();
+                  });
 
-              column
-                .data()
-                .unique()
-                .sort()
-                .each(function (d, j) {
-                  select.append(
-                    '<option value="' + d + '">' + d + "</option>"
-                  );
-                });
-            });
-        },
+                column
+                  .data()
+                  .unique()
+                  .sort()
+                  .each(function (d, j) {
+                    select.append(
+                      '<option value="' + d + '">' + d + "</option>"
+                    );
+                  });
+              });
+          },
+        });
+
+        // Add Row
+        $("#add-row").DataTable({
+          pageLength: 5,
+        });
+
+        var action =
+          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
+
+        $("#addRowButton").click(function () {
+          $("#add-row")
+            .dataTable()
+            .fnAddData([
+              $("#addName").val(),
+              $("#addPosition").val(),
+              $("#addOffice").val(),
+              action,
+            ]);
+          $("#addRowModal").modal("hide");
+        });
       });
-
-      // Add Row
-      $("#add-row").DataTable({
-        pageLength: 5,
-      });
-
-      var action =
-        '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-      $("#addRowButton").click(function () {
-        $("#add-row")
-          .dataTable()
-          .fnAddData([
-            $("#addName").val(),
-            $("#addPosition").val(),
-            $("#addOffice").val(),
-            action,
-          ]);
-        $("#addRowModal").modal("hide");
-      });
-    });
-  </script>
-  <script>
-    function scrollToSection(sectionId) {
-      var section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+    </script>
+    <script>
+      function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+        document.getElementById('buttonGroupScroll').style.display = 'none'; // Hide button group after clicking
       }
-      document.getElementById('buttonGroupScroll').style.display = 'none'; // Hide button group after clicking
-    }
-  </script>
+    </script>
 </body>
 
 </html>

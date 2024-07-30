@@ -864,6 +864,19 @@ def truncate_jadwal_ruangan():
         finally:
             cur.close()
 
+def truncate_rekap_penggunaan_ruangan():
+    with app.app_context():
+        cur = mysql.connection.cursor()
+        try:
+            cur.execute("TRUNCATE TABLE kelas_prodi")
+            mysql.connection.commit()
+            print("Table jadwal_ruangan has been truncated.")
+        except Exception as e:
+            mysql.connection.rollback()
+            logging.error(f"Error truncating table kelas_prodi: {e}")
+        finally:
+            cur.close()
+
 if __name__ == "__main__":
     # create_table_status()
     # create_table_status_booking()

@@ -6,7 +6,7 @@ from collections import defaultdict
 from flask_mysqldb import MySQL
 from Dosen import DataDosen
 from Jadwal import Jadwal
-from db import truncate_jadwal_ruangan, insert_real_data_jadwal
+from db import truncate_jadwal_ruangan, insert_real_data_jadwal,truncate_rekap_penggunaan_ruangan,insert_program_studi
 from heatmap import generate_plot
 import mysql.connector
 from kapasitas import Kapasitas
@@ -302,7 +302,7 @@ def edit_booking(No):
 
     cur = mysql.connection.cursor()
     cur.execute("""
-        UPDATE booking
+        UPDATE booking_ruangan
         SET status=%s, Keterangan=%s
         WHERE no=%s
     """, (status, keterangan_status, No))
@@ -310,6 +310,25 @@ def edit_booking(No):
     cur.close()
 
     flash('Data booking berhasil diperbarui!', 'success')
+    return redirect(url_for('dashboard_admin'))
+
+@app.route('/delete_booking/<int:No>', methods=['POST'])
+def delete_booking(No):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM booking_ruangan WHERE no = %s", (No,))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Data booking berhasil dihapus!', 'success')
+    return redirect(url_for('dashboard_admin'))
+
+@app.route('/delete_laporan/<int:No>', methods=['POST'])
+def delete_laporan(No):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM report WHERE No = %s", (No,))
+    mysql.connection.commit()
+    cur.close()
+    flash('Data laporan berhasil dihapus!', 'success')
     return redirect(url_for('dashboard_admin'))
 
 # ******************************************** #
@@ -340,11 +359,27 @@ def run_data_jadwal():
     except Exception as e:
         return jsonify({'error': str(e)})
     
+@app.route('/run-data-rekap', methods=['POST'])
+def run_data_rekap():
+    try:
+        insert_program_studi()
+        return jsonify({'message': 'Data Rekap Penggunaan Berhasil Di-generate'})
+    except Exception as e:
+        return jsonify({'error': str(e)})
+    
 @app.route('/run-empty-jadwal', methods=['POST'])
 def run_empty_jadwal():
     try:
         truncate_jadwal_ruangan()
-        return jsonify({'message': 'Data Jadwal Berhasil Di-generate'})
+        return jsonify({'message': 'Data Jadwal Berhasil Di Hapus'})
+    except Exception as e:
+        return jsonify({'error': str(e)})
+    
+@app.route('/run-empty-rekap-penggunaan', methods=['POST'])
+def run_empty_rekap_penggunaan():
+    try:
+        truncate_rekap_penggunaan_ruangan()
+        return jsonify({'message': 'Data Rekap Penggunaan Berhasil Di Hapus'})
     except Exception as e:
         return jsonify({'error': str(e)})
     
@@ -436,10 +471,15 @@ def Rekap_Report():
 @app.route("/Rekap-Booking")
 def Rekap_Booking():
     cur = mysql.connection.cursor()
-    query = "SELECT * FROM booking_ruangan"  # Sesuaikan dengan nama tabel dan kolom Anda
+    query = """
+    SELECT b.no, b.nama_pemohon, b.nama_ruangan, b.hari, b.tanggal, b.waktu_awal, b.waktu_akhir, b.tujuan_boking, b.jumlah_peserta, COALESCE(s.Keterangan, 'Tidak Ada Status') AS Status_Keterangan, b.Keterangan
+    FROM booking_ruangan b
+    LEFT JOIN status_booking s ON b.status = s.id
+    """
     cur.execute(query)
     laporan = cur.fetchall()
     cur.close()
+    
     return render_template("Recap/recapbooking.html", laporan=laporan)
 
 @app.route("/add")
@@ -473,7 +513,7 @@ def submit_booking():
             
             cur = mysql.connection.cursor()
             cur.execute("""
-                INSERT INTO booking (nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_boking, jumlah_peserta)
+                INSERT INTO booking_ruangan (nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_boking, jumlah_peserta)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """, (nama_pemohon, nama_ruangan, hari, tanggal, waktu_awal, waktu_akhir, tujuan_booking, jumlah_peserta))
             
@@ -619,7 +659,6 @@ def get_kelas_prodi_data():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 
 @app.route("/kapasitas_all")
 def get_kapasitas_all():
