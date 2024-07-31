@@ -11,18 +11,18 @@ class Jadwal:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
         }
         self.program_studi_mapping = {
-            "Ilmu Komputer": "IK",
-            "Pendidikan Ilmu Komputer": "PIK",
-            "Matematika": "M",
-            "Pendidikan Matematika": "PM",
-            "Fisika": "F",
-            "Pendidikan Fisika": "PF",
+            "Ilmu Komputer": "ILKOM",
+            "Pendidikan Ilmu Komputer": "P.ILKOM",
+            "Matematika": "MTK",
+            "Pendidikan Matematika": "P.MTK",
+            "Fisika": "FIS",
+            "Pendidikan Fisika": "P.FIS",
             "International Program on Science Education": "IPSE",
             "Pendidikan Ilmu Pengetahuan Alam": "PIPA",
-            "Kimia": "K",
-            "Pendidikan Kimia": "PK",
-            "Biologi": "B",
-            "Pendidikan Biologi": "PB"
+            "Kimia": "KIM",
+            "Pendidikan Kimia": "P.KIM",
+            "Biologi": "BIO",
+            "Pendidikan Biologi": "P.BIO"
         }
 
     def fetch_html(self):

@@ -216,6 +216,12 @@ def dashboard_admin():
     cur.close()
 
     cur = mysql.connection.cursor()
+    query = "SELECT * FROM heatmap"
+    cur.execute(query)
+    heatmap = cur.fetchall()
+    cur.close()
+
+    cur = mysql.connection.cursor()
     query = "SELECT * FROM report"
     cur.execute(query)
     laporan = cur.fetchall()
@@ -226,8 +232,14 @@ def dashboard_admin():
     cur.execute(query)
     prodi = cur.fetchall()
     cur.close()
+    
+    cur = mysql.connection.cursor()
+    query = "SELECT * FROM kapasitas_ruangan"
+    cur.execute(query)
+    kapasitas = cur.fetchall()
+    cur.close()
 
-    return render_template('Dashboard_Admin/datatables.html', prodi=prodi, Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan)
+    return render_template('Dashboard_Admin/datatables.html', kapasitas=kapasitas,heatmap=heatmap,prodi=prodi, Jadwal=Jadwal, statuses=statuses, booking=booking, laporan=laporan)
 
 
 @app.route('/edit/<int:No>', methods=['GET', 'POST'])

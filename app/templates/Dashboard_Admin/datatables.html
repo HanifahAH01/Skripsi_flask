@@ -533,6 +533,8 @@
                 </div>
               </div>
             </div>
+
+
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
@@ -572,7 +574,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
@@ -841,60 +842,104 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Sinkronisasi</h4>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h4 class="card-title">Heatmap</h4>
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary btn-round ms-2" onclick="runDataJadwal()">Run Sinkron
+                          Heatmap</button>
+                        <button class="btn btn-primary btn-round ms-2" onclick="runemptyJadwal()">Run TRUNCATE
+                          Heatmap</button>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
                       <table id="basic-datatables" class="display table table-striped table-hover">
                         <thead>
                           <tr>
-                            <th>NO</th>
-                            <th>Nama Sinkronisasi</th>
-                            <th>action</th>
+                            <th style="text-align: center;">No</th>
+                            <th style="text-align: center;">Nama Ruangan</th>
+                            <th style="text-align: center;">Senin</th>
+                            <th style="text-align: center;">Selasa</th>
+                            <th style="text-align: center;">Rabu</th>
+                            <th style="text-align: center;">Kamis</th>
+                            <th style="text-align: center;">Jumat</th>
+                            <th style="text-align: center;">Sabtu</th>
+                            <th style="text-align: center;">Minggu</th>
                           </tr>
                         </thead>
                         <tbody>
+                          {% for heatmap in heatmap %}
                           <tr>
-                            <td>1</td>
-                            <td>
-                              <span class="sub-item">Kapasitas </span>
-                            </td>
-                            <td>
-                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Scrapping
-                                Kapasitas
-                              </button>
-                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Sinkron
-                                Kapasitas
-                              </button>
-                            </td>
+                            <td style="text-align: center;">{{ heatmap[0] }}</td>
+                            <td style="text-align: center;">{{ heatmap[1] }}</td>
+                            <td style="text-align: center;">{{ heatmap[2] }}</td>
+                            <td style="text-align: center;">{{ heatmap[3] }}</td>
+                            <td style="text-align: center;">{{ heatmap[4] }}</td>
+                            <td style="text-align: center;">{{ heatmap[5] }}</td>
+                            <td style="text-align: center;">{{ heatmap[6] }}</td>
+                            <td style="text-align: center;">{{ heatmap[7] }}</td>
+                            <td style="text-align: center;">{{ heatmap[8] }}</td>
+                            <td style="text-align: center;">{{ heatmap[9] }}</td>
+
                           </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <h4 class="card-title">kapasitas Ruangan</h4>
+                      <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary btn-round ms-2" onclick="runDataJadwal()">Run Sinkron
+                          Kapasitas Ruangan</button>
+                        <button class="btn btn-primary btn-round ms-2" onclick="runemptyJadwal()">Run TRUNCATE
+                          Kapasitas Ruangan</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="basic-datatables" class="display table table-striped table-hover">
+                        <thead>
                           <tr>
-                            <td>2</td>
-                            <td>
-                              <span class="sub-item">Jadwal </span>
-                            </td>
-                            <td>
-                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Scrapping
-                                Jadwal
-                              </button>
-                            </td>
+                            <th style="text-align: center;">No</th>
+                            <th style="text-align: center;">Fakultas</th>
+                            <th style="text-align: center;">Kode Ruangan</th>
+                            <th style="text-align: center;">Nama Ruangan</th>
+                            <th style="text-align: center;">Kapasitas</th>
+                            <th style="text-align: center;">Gedung</th>
+                            <th style="text-align: center;">Lantai</th>
+                            <th style="text-align: center;">Jenis Ruangan</th>
+                            <th style="text-align: center;">Berbagi / Tidak Berbagi</th>
+                            <th style="text-align: center;">SKS</th>
                           </tr>
+                        </thead>
+                        <tbody>
+                          {% for kapasitas in kapasitas %}
                           <tr>
-                            <td>3</td>
-                            <td>
-                              <span class="sub-item">Heatmap</span>
-                            </td>
-                            <td>
-                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Scrapping
-                                Heatmap</button>
-                              <button class="btn btn-primary btn-round ms-auto" onclick="runKapasitas()">Run Sinkron
-                                Heatmap</button>
-                            </td>
+                            <td style="text-align: center;">{{ kapasitas[0] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[1] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[2] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[3] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[4] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[5] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[6] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[7] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[8] }}</td>
+                            <td style="text-align: center;">{{ kapasitas[9] }}</td>
+
                           </tr>
+                          {% endfor %}
                         </tbody>
                       </table>
                     </div>
