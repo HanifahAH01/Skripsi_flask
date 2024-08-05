@@ -239,9 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             var Kapasitas = responseData.kapasitas_list.flatMap(function (elem) {
-                return elem.Ruangan.map(function (ruangan) {
-                    return ruangan.Kapasitas;
-                });
+                return ruangan.Kapasitas;
             });
 
             // Warna tetap untuk backgroundColor dan borderColor
@@ -259,10 +257,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }]
             };
 
-            // config 
+            // config
             const config = {
                 type: 'bar',
                 data: data,
+                options: {
+                    indexAxis: 'y', // Ubah sumbu menjadi horizontal
+                }
             };
 
             // render init block
@@ -273,6 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
 
 // # ******************************************** #
 // #                 Function                     #

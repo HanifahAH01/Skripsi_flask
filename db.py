@@ -900,5 +900,5 @@ if __name__ == "__main__":
     # insert_data_jam_jadwal()
     insert_program_studi()
 
-    # create_triggers_jadwal_status()
+    create_triggers_jadwal_status()
     # truncate_jadwal_ruangan()

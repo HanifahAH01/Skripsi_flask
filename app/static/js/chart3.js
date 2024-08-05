@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 };
 
                 // Membuat chart menggunakan Chart.js
-                var myChart9 = new Chart(
+                var myChartHari = new Chart(
                     document.getElementById('myChart9'), // Sesuaikan dengan ID elemen tempat chart ditampilkan
                     configHari
                 );
@@ -147,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 });
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var xmlhttp = new XMLHttpRequest();
